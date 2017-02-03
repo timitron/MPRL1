@@ -1,0 +1,476 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MPRL
+</name>
+</assembly>
+<members>
+<member name="T:MPRL.MPRLDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.AdditionalResourcesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.ClampingMethodsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.EntitiesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Entity_ResourceLinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.HazardsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Instruction_EntityLinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.InstructionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Machine_MachineToolLinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachinesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_ClampingMethodsLinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_MachiningMethodsLinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_PPELinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineToolsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachiningMethodsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.PPEDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.ClampingMethodsIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineNameDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineToolsIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachiningMethodsIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.PPEIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.AdditionalResourcesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.ClampingMethodsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.EntitiesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Entity_ResourceLinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.HazardsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Instruction_EntityLinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.InstructionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Machine_MachineToolLinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachinesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_ClampingMethodsLinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_MachiningMethodsLinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_PPELinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineToolsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachiningMethodsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.PPERow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.ClampingMethodsIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineNameRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineToolsIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachiningMethodsIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.PPEIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.AdditionalResourcesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.ClampingMethodsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.EntitiesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Entity_ResourceLinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.HazardsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Instruction_EntityLinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.InstructionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Machine_MachineToolLinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachinesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_ClampingMethodsLinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_MachiningMethodsLinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._MachineTool_PPELinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineToolsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachiningMethodsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.PPERowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.ClampingMethodsIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineNameRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachineToolsIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.MachiningMethodsIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.PPEIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.AdditionalResourcesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.ClampingMethodsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.EntitiesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.Entity_ResourceLinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.HazardsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.Instruction_EntityLinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.InstructionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.Machine_MachineToolLinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachinesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_ClampingMethodsLinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_MachiningMethodsLinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_PPELinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineToolsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachiningMethodsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.PPETableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.ClampingMethodsIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineNameTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineToolsIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachiningMethodsIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.PPEIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:MPRL.MPRLDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(MPRL.MPRLDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:MPRL.MPRLDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(MPRL.MPRLDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:MPRL.MPRLDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(MPRL.MPRLDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:MPRL.MPRLDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:MPRL.MPRLDataSetTableAdapters.TableAdapterManager.UpdateAll(MPRL.MPRLDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:MPRL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:MPRL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:MPRL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:MPRL.My.Resources.Resources.engineering_graph_paper_10x1_inch_grid">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>
