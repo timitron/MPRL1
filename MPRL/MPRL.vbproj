@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD6979A5-D11D-4F35-97EB-7F5950B9DA0F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MPRL.My.MyApplication</StartupObject>
+    <RootNamespace>MPRL</RootNamespace>
+    <AssemblyName>MPRL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MPRL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MPRL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClampingMethod.Designer.vb">
+      <DependentUpon>ClampingMethod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ClampingMethod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRequiredPPE.Designer.vb">
+      <DependentUpon>EditRequiredPPE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditRequiredPPE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditOptionalPPE.Designer.vb">
+      <DependentUpon>EditOptionalPPE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditOptionalPPE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMachineMachiningMethodLink.Designer.vb">
+      <DependentUpon>EditMachineMachiningMethodLink.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditMachineMachiningMethodLink.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMachiningMethodMachineToolLink.Designer.vb">
+      <DependentUpon>EditMachiningMethodMachineToolLink.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditMachiningMethodMachineToolLink.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddMachine.Designer.vb">
+      <DependentUpon>FormAddMachine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddMachine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminPanel.Designer.vb">
+      <DependentUpon>FormAdminPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdminPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClampingLink.Designer.vb">
+      <DependentUpon>FormClampingLink.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormClampingLink.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachiningMethodDisplay.Designer.vb">
+      <DependentUpon>MachiningMethodDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MachiningMethodDisplay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineDetails.Designer.vb">
+      <DependentUpon>MachineDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MachineDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalVariables.vb" />
+    <Compile Include="MachiningMethod.Designer.vb">
+      <DependentUpon>MachiningMethod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MachiningMethod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineToolDetails.Designer.vb">
+      <DependentUpon>MachineToolDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MachineToolDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineToolDisplay.Designer.vb">
+      <DependentUpon>MachineToolDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MachineToolDisplay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPRLDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MPRLDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MPRLDataSet.vb">
+      <DependentUpon>MPRLDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ClampingMethod.resx">
+      <DependentUpon>ClampingMethod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRequiredPPE.resx">
+      <DependentUpon>EditRequiredPPE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditOptionalPPE.resx">
+      <DependentUpon>EditOptionalPPE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMachineMachiningMethodLink.resx">
+      <DependentUpon>EditMachineMachiningMethodLink.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMachiningMethodMachineToolLink.resx">
+      <DependentUpon>EditMachiningMethodMachineToolLink.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddMachine.resx">
+      <DependentUpon>FormAddMachine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminPanel.resx">
+      <DependentUpon>FormAdminPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClampingLink.resx">
+      <DependentUpon>FormClampingLink.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachiningMethodDisplay.resx">
+      <DependentUpon>MachiningMethodDisplay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineDetails.resx">
+      <DependentUpon>MachineDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachiningMethod.resx">
+      <DependentUpon>MachiningMethod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineToolDetails.resx">
+      <DependentUpon>MachineToolDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineToolDisplay.resx">
+      <DependentUpon>MachineToolDisplay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MPRLDataSet.xsc">
+      <DependentUpon>MPRLDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MPRLDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MPRLDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MPRLDataSet.xss">
+      <DependentUpon>MPRLDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engineering-graph-paper-10x1-inch-grid.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
