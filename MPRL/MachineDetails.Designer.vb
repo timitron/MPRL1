@@ -39,8 +39,12 @@ Partial Class FormMachineDetails
         Me.BtnEditReqPPE = New System.Windows.Forms.Button()
         Me.BtnEditOptionalPPE = New System.Windows.Forms.Button()
         Me.EBtnEditAdditionalResources = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'LstResources
@@ -90,9 +94,9 @@ Partial Class FormMachineDetails
         'BttnPrint
         '
         Me.BttnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BttnPrint.Location = New System.Drawing.Point(874, 13)
+        Me.BttnPrint.Location = New System.Drawing.Point(186, 3)
         Me.BttnPrint.Name = "BttnPrint"
-        Me.BttnPrint.Size = New System.Drawing.Size(57, 49)
+        Me.BttnPrint.Size = New System.Drawing.Size(54, 45)
         Me.BttnPrint.TabIndex = 26
         Me.BttnPrint.Text = "Print"
         Me.BttnPrint.UseVisualStyleBackColor = True
@@ -172,13 +176,45 @@ Partial Class FormMachineDetails
         Me.EBtnEditAdditionalResources.Text = "Edit"
         Me.EBtnEditAdditionalResources.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.BttnPrint)
+        Me.Panel1.Location = New System.Drawing.Point(613, 9)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(251, 53)
+        Me.Panel1.TabIndex = 34
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Button2.Location = New System.Drawing.Point(12, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 45)
+        Me.Button2.TabIndex = 28
+        Me.Button2.Text = "Home"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Button1.Location = New System.Drawing.Point(93, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(87, 45)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Previous"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FormMachineDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(984, 1108)
+        Me.ClientSize = New System.Drawing.Size(984, 741)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.EBtnEditAdditionalResources)
         Me.Controls.Add(Me.BtnEditOptionalPPE)
         Me.Controls.Add(Me.BtnEditReqPPE)
@@ -189,13 +225,13 @@ Partial Class FormMachineDetails
         Me.Controls.Add(Me.LblAdditionalResources)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.PictureOverview)
-        Me.Controls.Add(Me.BttnPrint)
         Me.Controls.Add(Me.LstReqPPE)
         Me.Name = "FormMachineDetails"
         Me.Text = "Machine Details "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -216,4 +252,7 @@ Partial Class FormMachineDetails
     Friend WithEvents EBtnEditAdditionalResources As Button
     Friend WithEvents BtnEditOptionalPPE As Button
     Friend WithEvents BtnEditReqPPE As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class

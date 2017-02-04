@@ -10,6 +10,16 @@ Public Class GlobalVariables
 
     Public Shared Click As String
     Public Shared Clicked As String
+
+    Public Shared prevMachineTool As String 'stores previously selected machine tool 
+
+
+    Public Shared CloseAll As Boolean = True
+    Public Shared MethodStart As Boolean
+
+
+
+
 End Class
 
 Public Class CustFunctions

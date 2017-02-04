@@ -32,8 +32,12 @@ Partial Class FormClampingMethod
         Me.BttnPrint = New System.Windows.Forms.Button()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Home = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'LstResources
@@ -83,9 +87,9 @@ Partial Class FormClampingMethod
         'BttnPrint
         '
         Me.BttnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BttnPrint.Location = New System.Drawing.Point(862, 31)
+        Me.BttnPrint.Location = New System.Drawing.Point(186, 2)
         Me.BttnPrint.Name = "BttnPrint"
-        Me.BttnPrint.Size = New System.Drawing.Size(57, 49)
+        Me.BttnPrint.Size = New System.Drawing.Size(57, 46)
         Me.BttnPrint.TabIndex = 26
         Me.BttnPrint.Text = "Print"
         Me.BttnPrint.UseVisualStyleBackColor = True
@@ -98,6 +102,37 @@ Partial Class FormClampingMethod
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.Home)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.BttnPrint)
+        Me.Panel1.Location = New System.Drawing.Point(664, 27)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(256, 53)
+        Me.Panel1.TabIndex = 27
+        '
+        'Home
+        '
+        Me.Home.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Home.Location = New System.Drawing.Point(12, 3)
+        Me.Home.Name = "Home"
+        Me.Home.Size = New System.Drawing.Size(75, 45)
+        Me.Home.TabIndex = 28
+        Me.Home.Text = "Home"
+        Me.Home.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Button1.Location = New System.Drawing.Point(93, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(87, 45)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Previous"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FormClampingMethod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -108,11 +143,12 @@ Partial Class FormClampingMethod
         Me.Controls.Add(Me.LblAdditionalResources)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.PictureOverview)
-        Me.Controls.Add(Me.BttnPrint)
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "FormClampingMethod"
         Me.Text = "Clamping Method Form"
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -126,4 +162,7 @@ Partial Class FormClampingMethod
     Friend WithEvents LblTitle As Label
     Friend WithEvents LblAdditionalResources As Label
     Friend WithEvents LstResources As ListView
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Home As Button
+    Friend WithEvents Button1 As Button
 End Class

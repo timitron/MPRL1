@@ -42,5 +42,40 @@ Public Class FormMachiningMethod
         CustFunctions.ResourceDoubleClickHandler(LstResources, ds)
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        FormHome.Show()
+        GlobalVariables.CloseAll = False
+        Me.Close()
+        GlobalVariables.CloseAll = True
 
+    End Sub
+
+    Private Sub Form1_Closing(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        If GlobalVariables.CloseAll = True Then
+            FormHome.Close()
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If GlobalVariables.MethodStart = True Then
+            Dim newform
+            newform = FormMachiningMethodsDisplay
+
+            newform.Show()
+
+            GlobalVariables.CloseAll = False
+            Me.Close()
+            GlobalVariables.CloseAll = True
+        Else
+            Global.MPRL.GlobalVariables.Click = GlobalVariables.prevMachineTool
+
+            Dim newform
+            newform = FormMachineToolDetails
+            newform.Show()
+
+            GlobalVariables.CloseAll = False
+            Me.Close()
+            GlobalVariables.CloseAll = True
+        End If
+    End Sub
 End Class
