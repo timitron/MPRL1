@@ -84,6 +84,12 @@
     <Compile Include="ClampingMethod.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditForm.Designer.vb">
+      <DependentUpon>EditForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EditRequiredPPE.Designer.vb">
       <DependentUpon>EditRequiredPPE.vb</DependentUpon>
     </Compile>
@@ -108,10 +114,10 @@
     <Compile Include="EditMachiningMethodMachineToolLink.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddMachine.Designer.vb">
-      <DependentUpon>FormAddMachine.vb</DependentUpon>
+    <Compile Include="AddItem.Designer.vb">
+      <DependentUpon>AddItem.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAddMachine.vb">
+    <Compile Include="AddItem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAdminPanel.Designer.vb">
@@ -192,6 +198,9 @@
     <EmbeddedResource Include="ClampingMethod.resx">
       <DependentUpon>ClampingMethod.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditForm.resx">
+      <DependentUpon>EditForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditRequiredPPE.resx">
       <DependentUpon>EditRequiredPPE.vb</DependentUpon>
     </EmbeddedResource>
@@ -204,8 +213,8 @@
     <EmbeddedResource Include="EditMachiningMethodMachineToolLink.resx">
       <DependentUpon>EditMachiningMethodMachineToolLink.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddMachine.resx">
-      <DependentUpon>FormAddMachine.vb</DependentUpon>
+    <EmbeddedResource Include="AddItem.resx">
+      <DependentUpon>AddItem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminPanel.resx">
       <DependentUpon>FormAdminPanel.vb</DependentUpon>

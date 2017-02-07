@@ -28,8 +28,37 @@
 
     End Sub
 
-    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
-
+    Private Sub AddToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem6.Click
+        GlobalVariables.additem = "PPE"
+        Dim newform
+        newform = AddItem
+        newform.show()
+    End Sub
+    Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
+        GlobalVariables.additem = "Machines"
+        Dim newform
+        newform = AddItem
+        newform.show()
     End Sub
 
+    Private Sub AddToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem2.Click
+        GlobalVariables.additem = "Machining Method"
+        Dim newform
+        newform = AddItem
+        newform.show()
+    End Sub
+
+    Private Sub AddToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem3.Click
+        GlobalVariables.additem = "Clamping Method"
+        Dim newform
+        newform = AddItem
+        newform.show()
+    End Sub
+
+    Private Sub AddToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem1.Click
+        GlobalVariables.additem = "Machine Tools"
+        Dim newform
+        newform = AddItem
+        newform.show()
+    End Sub
 End Class

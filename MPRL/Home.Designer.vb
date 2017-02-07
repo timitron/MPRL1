@@ -50,8 +50,12 @@ Partial Class FormHome
         Me.AddToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemoveToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MprlDataSet1 = New MPRL.MPRLDataSet()
+        Me.PPE = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RemoveToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TxtboxTitle = New System.Windows.Forms.TextBox()
+        Me.MprlDataSet1 = New MPRL.MPRLDataSet()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -101,7 +105,7 @@ Partial Class FormHome
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MachinesToolStripMenuItem, Me.MachineToolsToolStripMenuItem, Me.MachiningMethodsToolStripMenuItem, Me.ClampingMethodsToolStripMenuItem, Me.FeaturesToolStripMenuItem, Me.ResourcesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MachinesToolStripMenuItem, Me.MachineToolsToolStripMenuItem, Me.MachiningMethodsToolStripMenuItem, Me.ClampingMethodsToolStripMenuItem, Me.FeaturesToolStripMenuItem, Me.ResourcesToolStripMenuItem, Me.PPE})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 299)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -119,19 +123,19 @@ Partial Class FormHome
         'AddToolStripMenuItem
         '
         Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
-        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(127, 24)
         Me.AddToolStripMenuItem.Text = "Add"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(127, 24)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'RemoveToolStripMenuItem
         '
         Me.RemoveToolStripMenuItem.Name = "RemoveToolStripMenuItem"
-        Me.RemoveToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.RemoveToolStripMenuItem.Size = New System.Drawing.Size(127, 24)
         Me.RemoveToolStripMenuItem.Text = "Remove"
         '
         'MachineToolsToolStripMenuItem
@@ -169,19 +173,19 @@ Partial Class FormHome
         'AddToolStripMenuItem2
         '
         Me.AddToolStripMenuItem2.Name = "AddToolStripMenuItem2"
-        Me.AddToolStripMenuItem2.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem2.Size = New System.Drawing.Size(127, 24)
         Me.AddToolStripMenuItem2.Text = "Add"
         '
         'EditToolStripMenuItem2
         '
         Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
-        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(127, 24)
         Me.EditToolStripMenuItem2.Text = "Edit"
         '
         'RemoveToolStripMenuItem2
         '
         Me.RemoveToolStripMenuItem2.Name = "RemoveToolStripMenuItem2"
-        Me.RemoveToolStripMenuItem2.Size = New System.Drawing.Size(152, 24)
+        Me.RemoveToolStripMenuItem2.Size = New System.Drawing.Size(127, 24)
         Me.RemoveToolStripMenuItem2.Text = "Remove"
         '
         'ClampingMethodsToolStripMenuItem
@@ -194,19 +198,19 @@ Partial Class FormHome
         'AddToolStripMenuItem3
         '
         Me.AddToolStripMenuItem3.Name = "AddToolStripMenuItem3"
-        Me.AddToolStripMenuItem3.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem3.Size = New System.Drawing.Size(127, 24)
         Me.AddToolStripMenuItem3.Text = "Add"
         '
         'EditToolStripMenuItem3
         '
         Me.EditToolStripMenuItem3.Name = "EditToolStripMenuItem3"
-        Me.EditToolStripMenuItem3.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem3.Size = New System.Drawing.Size(127, 24)
         Me.EditToolStripMenuItem3.Text = "Edit"
         '
         'RemoveToolStripMenuItem3
         '
         Me.RemoveToolStripMenuItem3.Name = "RemoveToolStripMenuItem3"
-        Me.RemoveToolStripMenuItem3.Size = New System.Drawing.Size(152, 24)
+        Me.RemoveToolStripMenuItem3.Size = New System.Drawing.Size(127, 24)
         Me.RemoveToolStripMenuItem3.Text = "Remove"
         '
         'FeaturesToolStripMenuItem
@@ -219,19 +223,19 @@ Partial Class FormHome
         'AddToolStripMenuItem4
         '
         Me.AddToolStripMenuItem4.Name = "AddToolStripMenuItem4"
-        Me.AddToolStripMenuItem4.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem4.Size = New System.Drawing.Size(127, 24)
         Me.AddToolStripMenuItem4.Text = "Add"
         '
         'EditToolStripMenuItem4
         '
         Me.EditToolStripMenuItem4.Name = "EditToolStripMenuItem4"
-        Me.EditToolStripMenuItem4.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem4.Size = New System.Drawing.Size(127, 24)
         Me.EditToolStripMenuItem4.Text = "Edit"
         '
         'RemoveToolStripMenuItem4
         '
         Me.RemoveToolStripMenuItem4.Name = "RemoveToolStripMenuItem4"
-        Me.RemoveToolStripMenuItem4.Size = New System.Drawing.Size(152, 24)
+        Me.RemoveToolStripMenuItem4.Size = New System.Drawing.Size(127, 24)
         Me.RemoveToolStripMenuItem4.Text = "Remove"
         '
         'ResourcesToolStripMenuItem
@@ -244,25 +248,45 @@ Partial Class FormHome
         'AddToolStripMenuItem5
         '
         Me.AddToolStripMenuItem5.Name = "AddToolStripMenuItem5"
-        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(127, 24)
         Me.AddToolStripMenuItem5.Text = "Add"
         '
         'EditToolStripMenuItem5
         '
         Me.EditToolStripMenuItem5.Name = "EditToolStripMenuItem5"
-        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(127, 24)
         Me.EditToolStripMenuItem5.Text = "Edit"
         '
         'RemoveToolStripMenuItem5
         '
         Me.RemoveToolStripMenuItem5.Name = "RemoveToolStripMenuItem5"
-        Me.RemoveToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
+        Me.RemoveToolStripMenuItem5.Size = New System.Drawing.Size(127, 24)
         Me.RemoveToolStripMenuItem5.Text = "Remove"
         '
-        'MprlDataSet1
+        'PPE
         '
-        Me.MprlDataSet1.DataSetName = "MPRLDataSet"
-        Me.MprlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.PPE.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem6, Me.EditToolStripMenuItem6, Me.RemoveToolStripMenuItem6})
+        Me.PPE.Name = "PPE"
+        Me.PPE.Size = New System.Drawing.Size(44, 23)
+        Me.PPE.Text = "PPE"
+        '
+        'AddToolStripMenuItem6
+        '
+        Me.AddToolStripMenuItem6.Name = "AddToolStripMenuItem6"
+        Me.AddToolStripMenuItem6.Size = New System.Drawing.Size(127, 24)
+        Me.AddToolStripMenuItem6.Text = "Add"
+        '
+        'EditToolStripMenuItem6
+        '
+        Me.EditToolStripMenuItem6.Name = "EditToolStripMenuItem6"
+        Me.EditToolStripMenuItem6.Size = New System.Drawing.Size(127, 24)
+        Me.EditToolStripMenuItem6.Text = "Edit"
+        '
+        'RemoveToolStripMenuItem6
+        '
+        Me.RemoveToolStripMenuItem6.Name = "RemoveToolStripMenuItem6"
+        Me.RemoveToolStripMenuItem6.Size = New System.Drawing.Size(127, 24)
+        Me.RemoveToolStripMenuItem6.Text = "Remove"
         '
         'TxtboxTitle
         '
@@ -280,6 +304,11 @@ Partial Class FormHome
         Me.TxtboxTitle.Text = "MPRL KnowledgeBase"
         Me.TxtboxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'MprlDataSet1
+        '
+        Me.MprlDataSet1.DataSetName = "MPRLDataSet"
+        Me.MprlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'FormHome
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.Alert
@@ -287,6 +316,7 @@ Partial Class FormHome
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(721, 329)
         Me.Controls.Add(Me.ButtonMachineToolFlow)
@@ -337,4 +367,8 @@ Partial Class FormHome
     Friend WithEvents AddToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents MprlDataSet1 As MPRLDataSet
     Friend WithEvents TxtboxTitle As TextBox
+    Friend WithEvents PPE As ToolStripMenuItem
+    Friend WithEvents AddToolStripMenuItem6 As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem6 As ToolStripMenuItem
+    Friend WithEvents RemoveToolStripMenuItem6 As ToolStripMenuItem
 End Class
