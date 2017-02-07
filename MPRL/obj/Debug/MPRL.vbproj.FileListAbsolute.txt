@@ -10,7 +10,6 @@ C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditRequiredPP
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditOptPPE.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditMachineLink.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditMachiningMethodMachineToolLink.resources
-C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormAddMachine.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormAdminPanel.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormClampingLink.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachiningMethodsDisplay.resources
@@ -51,3 +50,5 @@ C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.Resourc
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.vbproj.GenerateResource.Cache
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.AddItem.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.EditForm.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.EditForm.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.AddItem.resources

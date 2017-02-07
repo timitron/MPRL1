@@ -35,6 +35,7 @@ Partial Class FormClampingMethod
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Home = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.AdditionalResourcesTableAdapter1 = New MPRL.MPRLDataSetTableAdapters.AdditionalResourcesTableAdapter()
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -46,7 +47,7 @@ Partial Class FormClampingMethod
         Me.LstResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LstResources.Location = New System.Drawing.Point(20, 517)
         Me.LstResources.Name = "LstResources"
-        Me.LstResources.Size = New System.Drawing.Size(900, 100)
+        Me.LstResources.Size = New System.Drawing.Size(900, 163)
         Me.LstResources.TabIndex = 25
         Me.LstResources.UseCompatibleStateImageBehavior = False
         '
@@ -56,9 +57,9 @@ Partial Class FormClampingMethod
         Me.LblAdditionalResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblAdditionalResources.Location = New System.Drawing.Point(26, 490)
         Me.LblAdditionalResources.Name = "LblAdditionalResources"
-        Me.LblAdditionalResources.Size = New System.Drawing.Size(184, 24)
+        Me.LblAdditionalResources.Size = New System.Drawing.Size(101, 24)
         Me.LblAdditionalResources.TabIndex = 23
-        Me.LblAdditionalResources.Text = "AdditionalResources"
+        Me.LblAdditionalResources.Text = "Resources"
         '
         'LblTitle
         '
@@ -66,9 +67,9 @@ Partial Class FormClampingMethod
         Me.LblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 34.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblTitle.Location = New System.Drawing.Point(0, 27)
         Me.LblTitle.Name = "LblTitle"
-        Me.LblTitle.Size = New System.Drawing.Size(497, 53)
+        Me.LblTitle.Size = New System.Drawing.Size(257, 53)
         Me.LblTitle.TabIndex = 22
-        Me.LblTitle.Text = "Clamping Method Here"
+        Me.LblTitle.Text = "Setup Here"
         '
         'PictureOverview
         '
@@ -108,7 +109,7 @@ Partial Class FormClampingMethod
         Me.Panel1.Controls.Add(Me.Home)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.BttnPrint)
-        Me.Panel1.Location = New System.Drawing.Point(664, 27)
+        Me.Panel1.Location = New System.Drawing.Point(621, 27)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(256, 53)
         Me.Panel1.TabIndex = 27
@@ -133,19 +134,23 @@ Partial Class FormClampingMethod
         Me.Button1.Text = "Previous"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'AdditionalResourcesTableAdapter1
+        '
+        Me.AdditionalResourcesTableAdapter1.ClearBeforeFill = True
+        '
         'FormClampingMethod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(984, 705)
+        Me.ClientSize = New System.Drawing.Size(941, 704)
         Me.Controls.Add(Me.LstResources)
         Me.Controls.Add(Me.LblAdditionalResources)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.PictureOverview)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormClampingMethod"
-        Me.Text = "Clamping Method Form"
+        Me.Text = "Machine Setup"
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -165,4 +170,5 @@ Partial Class FormClampingMethod
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Home As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents AdditionalResourcesTableAdapter1 As MPRLDataSetTableAdapters.AdditionalResourcesTableAdapter
 End Class

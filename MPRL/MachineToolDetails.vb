@@ -225,7 +225,7 @@ Public Class FormMachineToolDetails
         CustFunctions.ResourceDoubleClickHandler(LstResources, ds)
 
     End Sub
-    Private Sub LstClampingMethods_DoubleClick(sender As Object, e As EventArgs) Handles LstClampingMethods.DoubleClick
+    Private Sub LstClampingMethods_DoubleClick(sender As Object, e As EventArgs)
         Dim index As Integer = LstClampingMethods.FocusedItem.Index
         Global.MPRL.GlobalVariables.Click = ds.Tables("ClampingMethods").Rows(index)("Name")
         Dim newform
@@ -275,7 +275,7 @@ Public Class FormMachineToolDetails
         newform.Show()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles BtnEditClampingLinks.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
         Global.MPRL.GlobalVariables.Click = Machine
         Dim newform
         newform = FormClampingLink
@@ -313,6 +313,18 @@ Public Class FormMachineToolDetails
         GlobalVariables.CloseAll = False
         Me.Close()
         GlobalVariables.CloseAll = True
+
+    End Sub
+
+    Private Sub LblOptionalPPE_Click(sender As Object, e As EventArgs) Handles LblOptionalPPE.Click
+
+    End Sub
+
+    Private Sub LstOptPPE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstOptPPE.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub LblRequiredPPE_Click(sender As Object, e As EventArgs) Handles LblRequiredPPE.Click
 
     End Sub
 End Class

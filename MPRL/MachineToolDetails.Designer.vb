@@ -25,29 +25,37 @@ Partial Class FormMachineToolDetails
         Me.LblTitle = New System.Windows.Forms.Label()
         Me.LblRequiredPPE = New System.Windows.Forms.Label()
         Me.LblOptionalPPE = New System.Windows.Forms.Label()
-        Me.LblMachiningMethods = New System.Windows.Forms.Label()
-        Me.LblMachines = New System.Windows.Forms.Label()
-        Me.LblClamping = New System.Windows.Forms.Label()
         Me.PictureMachineOverview = New System.Windows.Forms.PictureBox()
         Me.LstReqPPE = New System.Windows.Forms.ListView()
         Me.LstOptPPE = New System.Windows.Forms.ListView()
         Me.LstMachineMethods = New System.Windows.Forms.ListView()
         Me.LstMachines = New System.Windows.Forms.ListView()
-        Me.LstClampingMethods = New System.Windows.Forms.ListView()
         Me.LstResources = New System.Windows.Forms.ListView()
-        Me.LblResources = New System.Windows.Forms.Label()
         Me.BtnEditReqPPE = New System.Windows.Forms.Button()
         Me.BtnEditOptPPE = New System.Windows.Forms.Button()
         Me.BtnEditMachineLinks = New System.Windows.Forms.Button()
         Me.BtnEditMachiningMethodsLink = New System.Windows.Forms.Button()
-        Me.BtnEditClampingLinks = New System.Windows.Forms.Button()
         Me.BtnEditResourcesLink = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BttnPrint = New System.Windows.Forms.Button()
+        Me.TabMachines = New System.Windows.Forms.TabControl()
+        Me.TabPPE = New System.Windows.Forms.TabPage()
+        Me.TabMach = New System.Windows.Forms.TabPage()
+        Me.TabOperations = New System.Windows.Forms.TabPage()
+        Me.TabSetups = New System.Windows.Forms.TabPage()
+        Me.BtnEditClampingLinks = New System.Windows.Forms.Button()
+        Me.LstClampingMethods = New System.Windows.Forms.ListView()
+        Me.TabResources = New System.Windows.Forms.TabPage()
         CType(Me.PictureMachineOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.TabMachines.SuspendLayout()
+        Me.TabPPE.SuspendLayout()
+        Me.TabMach.SuspendLayout()
+        Me.TabOperations.SuspendLayout()
+        Me.TabSetups.SuspendLayout()
+        Me.TabResources.SuspendLayout()
         Me.SuspendLayout()
         '
         'LblTitle
@@ -64,7 +72,7 @@ Partial Class FormMachineToolDetails
         '
         Me.LblRequiredPPE.AutoSize = True
         Me.LblRequiredPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblRequiredPPE.Location = New System.Drawing.Point(51, 473)
+        Me.LblRequiredPPE.Location = New System.Drawing.Point(21, 15)
         Me.LblRequiredPPE.Name = "LblRequiredPPE"
         Me.LblRequiredPPE.Size = New System.Drawing.Size(130, 24)
         Me.LblRequiredPPE.TabIndex = 2
@@ -74,42 +82,11 @@ Partial Class FormMachineToolDetails
         '
         Me.LblOptionalPPE.AutoSize = True
         Me.LblOptionalPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblOptionalPPE.Location = New System.Drawing.Point(513, 473)
+        Me.LblOptionalPPE.Location = New System.Drawing.Point(539, 2)
         Me.LblOptionalPPE.Name = "LblOptionalPPE"
-        Me.LblOptionalPPE.Size = New System.Drawing.Size(122, 24)
+        Me.LblOptionalPPE.Size = New System.Drawing.Size(135, 24)
         Me.LblOptionalPPE.TabIndex = 3
-        Me.LblOptionalPPE.Text = "Optional PPE"
-        '
-        'LblMachiningMethods
-        '
-        Me.LblMachiningMethods.AutoSize = True
-        Me.LblMachiningMethods.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblMachiningMethods.Location = New System.Drawing.Point(51, 638)
-        Me.LblMachiningMethods.Name = "LblMachiningMethods"
-        Me.LblMachiningMethods.Size = New System.Drawing.Size(176, 24)
-        Me.LblMachiningMethods.TabIndex = 4
-        Me.LblMachiningMethods.Text = "Machining Methods"
-        Me.LblMachiningMethods.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'LblMachines
-        '
-        Me.LblMachines.AutoSize = True
-        Me.LblMachines.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblMachines.Location = New System.Drawing.Point(512, 638)
-        Me.LblMachines.Name = "LblMachines"
-        Me.LblMachines.Size = New System.Drawing.Size(92, 24)
-        Me.LblMachines.TabIndex = 5
-        Me.LblMachines.Text = "Machines"
-        '
-        'LblClamping
-        '
-        Me.LblClamping.AutoSize = True
-        Me.LblClamping.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblClamping.Location = New System.Drawing.Point(512, 803)
-        Me.LblClamping.Name = "LblClamping"
-        Me.LblClamping.Size = New System.Drawing.Size(168, 24)
-        Me.LblClamping.TabIndex = 6
-        Me.LblClamping.Text = "Clamping Methods"
+        Me.LblOptionalPPE.Text = "Additional PPE"
         '
         'PictureMachineOverview
         '
@@ -124,9 +101,9 @@ Partial Class FormMachineToolDetails
         '
         Me.LstReqPPE.BackColor = System.Drawing.SystemColors.Control
         Me.LstReqPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstReqPPE.Location = New System.Drawing.Point(45, 500)
+        Me.LstReqPPE.Location = New System.Drawing.Point(6, 42)
         Me.LstReqPPE.Name = "LstReqPPE"
-        Me.LstReqPPE.Size = New System.Drawing.Size(437, 135)
+        Me.LstReqPPE.Size = New System.Drawing.Size(403, 274)
         Me.LstReqPPE.TabIndex = 8
         Me.LstReqPPE.UseCompatibleStateImageBehavior = False
         '
@@ -134,9 +111,9 @@ Partial Class FormMachineToolDetails
         '
         Me.LstOptPPE.BackColor = System.Drawing.SystemColors.Control
         Me.LstOptPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstOptPPE.Location = New System.Drawing.Point(508, 500)
+        Me.LstOptPPE.Location = New System.Drawing.Point(534, 29)
         Me.LstOptPPE.Name = "LstOptPPE"
-        Me.LstOptPPE.Size = New System.Drawing.Size(437, 135)
+        Me.LstOptPPE.Size = New System.Drawing.Size(352, 287)
         Me.LstOptPPE.TabIndex = 9
         Me.LstOptPPE.UseCompatibleStateImageBehavior = False
         '
@@ -144,9 +121,9 @@ Partial Class FormMachineToolDetails
         '
         Me.LstMachineMethods.BackColor = System.Drawing.SystemColors.Control
         Me.LstMachineMethods.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstMachineMethods.Location = New System.Drawing.Point(44, 665)
+        Me.LstMachineMethods.Location = New System.Drawing.Point(6, 6)
         Me.LstMachineMethods.Name = "LstMachineMethods"
-        Me.LstMachineMethods.Size = New System.Drawing.Size(437, 300)
+        Me.LstMachineMethods.Size = New System.Drawing.Size(871, 310)
         Me.LstMachineMethods.TabIndex = 10
         Me.LstMachineMethods.TileSize = New System.Drawing.Size(100, 100)
         Me.LstMachineMethods.UseCompatibleStateImageBehavior = False
@@ -155,48 +132,29 @@ Partial Class FormMachineToolDetails
         '
         Me.LstMachines.BackColor = System.Drawing.SystemColors.Control
         Me.LstMachines.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstMachines.Location = New System.Drawing.Point(507, 665)
+        Me.LstMachines.Location = New System.Drawing.Point(6, 6)
         Me.LstMachines.Name = "LstMachines"
-        Me.LstMachines.Size = New System.Drawing.Size(437, 135)
+        Me.LstMachines.Size = New System.Drawing.Size(880, 310)
         Me.LstMachines.TabIndex = 11
         Me.LstMachines.UseCompatibleStateImageBehavior = False
-        '
-        'LstClampingMethods
-        '
-        Me.LstClampingMethods.BackColor = System.Drawing.SystemColors.Control
-        Me.LstClampingMethods.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstClampingMethods.Location = New System.Drawing.Point(507, 830)
-        Me.LstClampingMethods.Name = "LstClampingMethods"
-        Me.LstClampingMethods.Size = New System.Drawing.Size(437, 135)
-        Me.LstClampingMethods.TabIndex = 12
-        Me.LstClampingMethods.UseCompatibleStateImageBehavior = False
         '
         'LstResources
         '
         Me.LstResources.BackColor = System.Drawing.SystemColors.Control
         Me.LstResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstResources.Location = New System.Drawing.Point(44, 995)
+        Me.LstResources.Location = New System.Drawing.Point(6, 6)
         Me.LstResources.Margin = New System.Windows.Forms.Padding(3, 3, 3, 200)
-        Me.LstResources.MinimumSize = New System.Drawing.Size(900, 100)
+        Me.LstResources.MinimumSize = New System.Drawing.Size(500, 100)
         Me.LstResources.MultiSelect = False
         Me.LstResources.Name = "LstResources"
-        Me.LstResources.Size = New System.Drawing.Size(900, 135)
+        Me.LstResources.Size = New System.Drawing.Size(880, 310)
         Me.LstResources.TabIndex = 14
         Me.LstResources.UseCompatibleStateImageBehavior = False
         '
-        'LblResources
-        '
-        Me.LblResources.AutoSize = True
-        Me.LblResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblResources.Location = New System.Drawing.Point(51, 968)
-        Me.LblResources.Name = "LblResources"
-        Me.LblResources.Size = New System.Drawing.Size(189, 24)
-        Me.LblResources.TabIndex = 13
-        Me.LblResources.Text = "Additional Resources"
-        '
         'BtnEditReqPPE
         '
-        Me.BtnEditReqPPE.Location = New System.Drawing.Point(406, 476)
+        Me.BtnEditReqPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditReqPPE.Location = New System.Drawing.Point(334, 18)
         Me.BtnEditReqPPE.Name = "BtnEditReqPPE"
         Me.BtnEditReqPPE.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditReqPPE.TabIndex = 15
@@ -205,16 +163,18 @@ Partial Class FormMachineToolDetails
         '
         'BtnEditOptPPE
         '
-        Me.BtnEditOptPPE.Location = New System.Drawing.Point(870, 476)
+        Me.BtnEditOptPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditOptPPE.Location = New System.Drawing.Point(811, 5)
         Me.BtnEditOptPPE.Name = "BtnEditOptPPE"
-        Me.BtnEditOptPPE.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEditOptPPE.Size = New System.Drawing.Size(75, 175)
         Me.BtnEditOptPPE.TabIndex = 16
         Me.BtnEditOptPPE.Text = "Edit"
         Me.BtnEditOptPPE.UseVisualStyleBackColor = True
         '
         'BtnEditMachineLinks
         '
-        Me.BtnEditMachineLinks.Location = New System.Drawing.Point(869, 641)
+        Me.BtnEditMachineLinks.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditMachineLinks.Location = New System.Drawing.Point(811, 6)
         Me.BtnEditMachineLinks.Name = "BtnEditMachineLinks"
         Me.BtnEditMachineLinks.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditMachineLinks.TabIndex = 17
@@ -223,25 +183,18 @@ Partial Class FormMachineToolDetails
         '
         'BtnEditMachiningMethodsLink
         '
-        Me.BtnEditMachiningMethodsLink.Location = New System.Drawing.Point(407, 641)
+        Me.BtnEditMachiningMethodsLink.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditMachiningMethodsLink.Location = New System.Drawing.Point(811, 6)
         Me.BtnEditMachiningMethodsLink.Name = "BtnEditMachiningMethodsLink"
         Me.BtnEditMachiningMethodsLink.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditMachiningMethodsLink.TabIndex = 18
         Me.BtnEditMachiningMethodsLink.Text = "Edit"
         Me.BtnEditMachiningMethodsLink.UseVisualStyleBackColor = True
         '
-        'BtnEditClampingLinks
-        '
-        Me.BtnEditClampingLinks.Location = New System.Drawing.Point(869, 806)
-        Me.BtnEditClampingLinks.Name = "BtnEditClampingLinks"
-        Me.BtnEditClampingLinks.Size = New System.Drawing.Size(75, 23)
-        Me.BtnEditClampingLinks.TabIndex = 19
-        Me.BtnEditClampingLinks.Text = "Edit"
-        Me.BtnEditClampingLinks.UseVisualStyleBackColor = True
-        '
         'BtnEditResourcesLink
         '
-        Me.BtnEditResourcesLink.Location = New System.Drawing.Point(869, 971)
+        Me.BtnEditResourcesLink.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditResourcesLink.Location = New System.Drawing.Point(811, 6)
         Me.BtnEditResourcesLink.Name = "BtnEditResourcesLink"
         Me.BtnEditResourcesLink.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditResourcesLink.TabIndex = 20
@@ -254,7 +207,7 @@ Partial Class FormMachineToolDetails
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.BttnPrint)
-        Me.Panel1.Location = New System.Drawing.Point(587, 11)
+        Me.Panel1.Location = New System.Drawing.Point(559, 11)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(256, 53)
         Me.Panel1.TabIndex = 28
@@ -289,33 +242,114 @@ Partial Class FormMachineToolDetails
         Me.BttnPrint.Text = "Print NA"
         Me.BttnPrint.UseVisualStyleBackColor = True
         '
+        'TabMachines
+        '
+        Me.TabMachines.Controls.Add(Me.TabPPE)
+        Me.TabMachines.Controls.Add(Me.TabMach)
+        Me.TabMachines.Controls.Add(Me.TabOperations)
+        Me.TabMachines.Controls.Add(Me.TabSetups)
+        Me.TabMachines.Controls.Add(Me.TabResources)
+        Me.TabMachines.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabMachines.Location = New System.Drawing.Point(45, 476)
+        Me.TabMachines.Name = "TabMachines"
+        Me.TabMachines.SelectedIndex = 0
+        Me.TabMachines.Size = New System.Drawing.Size(900, 364)
+        Me.TabMachines.TabIndex = 29
+        '
+        'TabPPE
+        '
+        Me.TabPPE.Controls.Add(Me.LblRequiredPPE)
+        Me.TabPPE.Controls.Add(Me.LstReqPPE)
+        Me.TabPPE.Controls.Add(Me.BtnEditReqPPE)
+        Me.TabPPE.Controls.Add(Me.LblOptionalPPE)
+        Me.TabPPE.Controls.Add(Me.LstOptPPE)
+        Me.TabPPE.Controls.Add(Me.BtnEditOptPPE)
+        Me.TabPPE.Location = New System.Drawing.Point(4, 38)
+        Me.TabPPE.Name = "TabPPE"
+        Me.TabPPE.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPPE.Size = New System.Drawing.Size(892, 322)
+        Me.TabPPE.TabIndex = 0
+        Me.TabPPE.Text = "PPE"
+        Me.TabPPE.UseVisualStyleBackColor = True
+        '
+        'TabMach
+        '
+        Me.TabMach.Controls.Add(Me.BtnEditMachineLinks)
+        Me.TabMach.Controls.Add(Me.LstMachines)
+        Me.TabMach.Location = New System.Drawing.Point(4, 38)
+        Me.TabMach.Name = "TabMach"
+        Me.TabMach.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabMach.Size = New System.Drawing.Size(892, 322)
+        Me.TabMach.TabIndex = 1
+        Me.TabMach.Text = "Machines"
+        Me.TabMach.UseVisualStyleBackColor = True
+        '
+        'TabOperations
+        '
+        Me.TabOperations.Controls.Add(Me.BtnEditMachiningMethodsLink)
+        Me.TabOperations.Controls.Add(Me.LstMachineMethods)
+        Me.TabOperations.Location = New System.Drawing.Point(4, 38)
+        Me.TabOperations.Name = "TabOperations"
+        Me.TabOperations.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabOperations.Size = New System.Drawing.Size(892, 322)
+        Me.TabOperations.TabIndex = 2
+        Me.TabOperations.Text = "Operations"
+        Me.TabOperations.UseVisualStyleBackColor = True
+        '
+        'TabSetups
+        '
+        Me.TabSetups.Controls.Add(Me.BtnEditClampingLinks)
+        Me.TabSetups.Controls.Add(Me.LstClampingMethods)
+        Me.TabSetups.Location = New System.Drawing.Point(4, 38)
+        Me.TabSetups.Name = "TabSetups"
+        Me.TabSetups.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabSetups.Size = New System.Drawing.Size(892, 322)
+        Me.TabSetups.TabIndex = 3
+        Me.TabSetups.Text = "Setups"
+        Me.TabSetups.UseVisualStyleBackColor = True
+        '
+        'BtnEditClampingLinks
+        '
+        Me.BtnEditClampingLinks.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditClampingLinks.Location = New System.Drawing.Point(811, 6)
+        Me.BtnEditClampingLinks.Name = "BtnEditClampingLinks"
+        Me.BtnEditClampingLinks.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEditClampingLinks.TabIndex = 22
+        Me.BtnEditClampingLinks.Text = "Edit"
+        Me.BtnEditClampingLinks.UseVisualStyleBackColor = True
+        '
+        'LstClampingMethods
+        '
+        Me.LstClampingMethods.BackColor = System.Drawing.SystemColors.Control
+        Me.LstClampingMethods.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LstClampingMethods.Location = New System.Drawing.Point(6, 6)
+        Me.LstClampingMethods.Name = "LstClampingMethods"
+        Me.LstClampingMethods.Size = New System.Drawing.Size(880, 310)
+        Me.LstClampingMethods.TabIndex = 21
+        Me.LstClampingMethods.UseCompatibleStateImageBehavior = False
+        '
+        'TabResources
+        '
+        Me.TabResources.Controls.Add(Me.BtnEditResourcesLink)
+        Me.TabResources.Controls.Add(Me.LstResources)
+        Me.TabResources.Location = New System.Drawing.Point(4, 38)
+        Me.TabResources.Name = "TabResources"
+        Me.TabResources.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabResources.Size = New System.Drawing.Size(892, 322)
+        Me.TabResources.TabIndex = 4
+        Me.TabResources.Text = "Resources"
+        Me.TabResources.UseVisualStyleBackColor = True
+        '
         'FormMachineToolDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1011, 741)
+        Me.ClientSize = New System.Drawing.Size(983, 845)
+        Me.Controls.Add(Me.TabMachines)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.BtnEditResourcesLink)
-        Me.Controls.Add(Me.BtnEditClampingLinks)
-        Me.Controls.Add(Me.BtnEditMachiningMethodsLink)
-        Me.Controls.Add(Me.BtnEditMachineLinks)
-        Me.Controls.Add(Me.BtnEditOptPPE)
-        Me.Controls.Add(Me.BtnEditReqPPE)
-        Me.Controls.Add(Me.LstResources)
-        Me.Controls.Add(Me.LblResources)
-        Me.Controls.Add(Me.LstClampingMethods)
-        Me.Controls.Add(Me.LstMachines)
-        Me.Controls.Add(Me.LstOptPPE)
-        Me.Controls.Add(Me.LstReqPPE)
-        Me.Controls.Add(Me.LblClamping)
-        Me.Controls.Add(Me.LblMachines)
-        Me.Controls.Add(Me.LblMachiningMethods)
-        Me.Controls.Add(Me.LblOptionalPPE)
-        Me.Controls.Add(Me.LblRequiredPPE)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.PictureMachineOverview)
-        Me.Controls.Add(Me.LstMachineMethods)
         Me.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.Name = "FormMachineToolDetails"
         Me.Padding = New System.Windows.Forms.Padding(0, 0, 0, 200)
@@ -323,6 +357,13 @@ Partial Class FormMachineToolDetails
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PictureMachineOverview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.TabMachines.ResumeLayout(False)
+        Me.TabPPE.ResumeLayout(False)
+        Me.TabPPE.PerformLayout()
+        Me.TabMach.ResumeLayout(False)
+        Me.TabOperations.ResumeLayout(False)
+        Me.TabSetups.ResumeLayout(False)
+        Me.TabResources.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -331,25 +372,27 @@ Partial Class FormMachineToolDetails
     Friend WithEvents LblTitle As Label
     Friend WithEvents LblRequiredPPE As Label
     Friend WithEvents LblOptionalPPE As Label
-    Friend WithEvents LblMachiningMethods As Label
-    Friend WithEvents LblMachines As Label
-    Friend WithEvents LblClamping As Label
     Friend WithEvents PictureMachineOverview As PictureBox
     Friend WithEvents LstReqPPE As ListView
     Friend WithEvents LstOptPPE As ListView
     Friend WithEvents LstMachineMethods As ListView
     Friend WithEvents LstMachines As ListView
-    Friend WithEvents LstClampingMethods As ListView
     Friend WithEvents LstResources As ListView
-    Friend WithEvents LblResources As Label
     Friend WithEvents BtnEditReqPPE As Button
     Friend WithEvents BtnEditOptPPE As Button
     Friend WithEvents BtnEditMachineLinks As Button
     Friend WithEvents BtnEditMachiningMethodsLink As Button
-    Friend WithEvents BtnEditClampingLinks As Button
     Friend WithEvents BtnEditResourcesLink As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents BttnPrint As Button
+    Friend WithEvents TabMachines As TabControl
+    Friend WithEvents TabPPE As TabPage
+    Friend WithEvents TabMach As TabPage
+    Friend WithEvents TabOperations As TabPage
+    Friend WithEvents TabSetups As TabPage
+    Friend WithEvents TabResources As TabPage
+    Friend WithEvents LstClampingMethods As ListView
+    Friend WithEvents BtnEditClampingLinks As Button
 End Class
