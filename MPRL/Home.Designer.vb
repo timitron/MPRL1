@@ -56,6 +56,7 @@ Partial Class FormHome
         Me.RemoveToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TxtboxTitle = New System.Windows.Forms.TextBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
+        Me.LnkAbout = New System.Windows.Forms.LinkLabel()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -148,19 +149,19 @@ Partial Class FormHome
         'AddToolStripMenuItem1
         '
         Me.AddToolStripMenuItem1.Name = "AddToolStripMenuItem1"
-        Me.AddToolStripMenuItem1.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem1.Size = New System.Drawing.Size(127, 24)
         Me.AddToolStripMenuItem1.Text = "Add"
         '
         'EditToolStripMenuItem1
         '
         Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
-        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(127, 24)
         Me.EditToolStripMenuItem1.Text = "Edit"
         '
         'RemoveToolStripMenuItem1
         '
         Me.RemoveToolStripMenuItem1.Name = "RemoveToolStripMenuItem1"
-        Me.RemoveToolStripMenuItem1.Size = New System.Drawing.Size(152, 24)
+        Me.RemoveToolStripMenuItem1.Size = New System.Drawing.Size(127, 24)
         Me.RemoveToolStripMenuItem1.Text = "Remove"
         '
         'MachiningMethodsToolStripMenuItem
@@ -309,6 +310,16 @@ Partial Class FormHome
         Me.MprlDataSet1.DataSetName = "MPRLDataSet"
         Me.MprlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'LnkAbout
+        '
+        Me.LnkAbout.AutoSize = True
+        Me.LnkAbout.Location = New System.Drawing.Point(683, 10)
+        Me.LnkAbout.Name = "LnkAbout"
+        Me.LnkAbout.Size = New System.Drawing.Size(35, 13)
+        Me.LnkAbout.TabIndex = 9
+        Me.LnkAbout.TabStop = True
+        Me.LnkAbout.Text = "About"
+        '
         'FormHome
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.Alert
@@ -319,6 +330,7 @@ Partial Class FormHome
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(721, 329)
+        Me.Controls.Add(Me.LnkAbout)
         Me.Controls.Add(Me.ButtonMachineToolFlow)
         Me.Controls.Add(Me.ButtonMethodSuggestorFlow)
         Me.Controls.Add(Me.ButtonMachiningMethodsFlow)
@@ -371,4 +383,5 @@ Partial Class FormHome
     Friend WithEvents AddToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents RemoveToolStripMenuItem6 As ToolStripMenuItem
+    Friend WithEvents LnkAbout As LinkLabel
 End Class

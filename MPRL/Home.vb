@@ -61,4 +61,10 @@
         newform = AddItem
         newform.show()
     End Sub
+
+    Private Sub LnkAbout_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LnkAbout.LinkClicked
+        Dim frm As New Form
+        frm = FormAbout
+        frm.Show()
+    End Sub
 End Class

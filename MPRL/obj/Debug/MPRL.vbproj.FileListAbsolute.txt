@@ -52,3 +52,4 @@ C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.AddItem
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.EditForm.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.EditForm.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.AddItem.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormAbout.resources
