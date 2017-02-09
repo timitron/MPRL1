@@ -23,16 +23,10 @@ Partial Class FormMachineToolDetails
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.LblTitle = New System.Windows.Forms.Label()
-        Me.LblRequiredPPE = New System.Windows.Forms.Label()
-        Me.LblOptionalPPE = New System.Windows.Forms.Label()
         Me.PictureMachineOverview = New System.Windows.Forms.PictureBox()
-        Me.LstReqPPE = New System.Windows.Forms.ListView()
-        Me.LstOptPPE = New System.Windows.Forms.ListView()
         Me.LstMachineMethods = New System.Windows.Forms.ListView()
         Me.LstMachines = New System.Windows.Forms.ListView()
         Me.LstResources = New System.Windows.Forms.ListView()
-        Me.BtnEditReqPPE = New System.Windows.Forms.Button()
-        Me.BtnEditOptPPE = New System.Windows.Forms.Button()
         Me.BtnEditMachineLinks = New System.Windows.Forms.Button()
         Me.BtnEditMachiningMethodsLink = New System.Windows.Forms.Button()
         Me.BtnEditResourcesLink = New System.Windows.Forms.Button()
@@ -41,7 +35,6 @@ Partial Class FormMachineToolDetails
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BttnPrint = New System.Windows.Forms.Button()
         Me.TabMachines = New System.Windows.Forms.TabControl()
-        Me.TabPPE = New System.Windows.Forms.TabPage()
         Me.TabMach = New System.Windows.Forms.TabPage()
         Me.TabOperations = New System.Windows.Forms.TabPage()
         Me.TabSetups = New System.Windows.Forms.TabPage()
@@ -51,7 +44,6 @@ Partial Class FormMachineToolDetails
         CType(Me.PictureMachineOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TabMachines.SuspendLayout()
-        Me.TabPPE.SuspendLayout()
         Me.TabMach.SuspendLayout()
         Me.TabOperations.SuspendLayout()
         Me.TabSetups.SuspendLayout()
@@ -68,26 +60,6 @@ Partial Class FormMachineToolDetails
         Me.LblTitle.TabIndex = 1
         Me.LblTitle.Text = "Machine Name Here"
         '
-        'LblRequiredPPE
-        '
-        Me.LblRequiredPPE.AutoSize = True
-        Me.LblRequiredPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblRequiredPPE.Location = New System.Drawing.Point(21, 15)
-        Me.LblRequiredPPE.Name = "LblRequiredPPE"
-        Me.LblRequiredPPE.Size = New System.Drawing.Size(130, 24)
-        Me.LblRequiredPPE.TabIndex = 2
-        Me.LblRequiredPPE.Text = "Required PPE"
-        '
-        'LblOptionalPPE
-        '
-        Me.LblOptionalPPE.AutoSize = True
-        Me.LblOptionalPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblOptionalPPE.Location = New System.Drawing.Point(539, 2)
-        Me.LblOptionalPPE.Name = "LblOptionalPPE"
-        Me.LblOptionalPPE.Size = New System.Drawing.Size(135, 24)
-        Me.LblOptionalPPE.TabIndex = 3
-        Me.LblOptionalPPE.Text = "Additional PPE"
-        '
         'PictureMachineOverview
         '
         Me.PictureMachineOverview.Location = New System.Drawing.Point(45, 70)
@@ -96,26 +68,6 @@ Partial Class FormMachineToolDetails
         Me.PictureMachineOverview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureMachineOverview.TabIndex = 7
         Me.PictureMachineOverview.TabStop = False
-        '
-        'LstReqPPE
-        '
-        Me.LstReqPPE.BackColor = System.Drawing.SystemColors.Control
-        Me.LstReqPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstReqPPE.Location = New System.Drawing.Point(6, 42)
-        Me.LstReqPPE.Name = "LstReqPPE"
-        Me.LstReqPPE.Size = New System.Drawing.Size(403, 274)
-        Me.LstReqPPE.TabIndex = 8
-        Me.LstReqPPE.UseCompatibleStateImageBehavior = False
-        '
-        'LstOptPPE
-        '
-        Me.LstOptPPE.BackColor = System.Drawing.SystemColors.Control
-        Me.LstOptPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstOptPPE.Location = New System.Drawing.Point(534, 29)
-        Me.LstOptPPE.Name = "LstOptPPE"
-        Me.LstOptPPE.Size = New System.Drawing.Size(352, 287)
-        Me.LstOptPPE.TabIndex = 9
-        Me.LstOptPPE.UseCompatibleStateImageBehavior = False
         '
         'LstMachineMethods
         '
@@ -150,26 +102,6 @@ Partial Class FormMachineToolDetails
         Me.LstResources.Size = New System.Drawing.Size(880, 310)
         Me.LstResources.TabIndex = 14
         Me.LstResources.UseCompatibleStateImageBehavior = False
-        '
-        'BtnEditReqPPE
-        '
-        Me.BtnEditReqPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditReqPPE.Location = New System.Drawing.Point(334, 18)
-        Me.BtnEditReqPPE.Name = "BtnEditReqPPE"
-        Me.BtnEditReqPPE.Size = New System.Drawing.Size(75, 23)
-        Me.BtnEditReqPPE.TabIndex = 15
-        Me.BtnEditReqPPE.Text = "Edit"
-        Me.BtnEditReqPPE.UseVisualStyleBackColor = True
-        '
-        'BtnEditOptPPE
-        '
-        Me.BtnEditOptPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditOptPPE.Location = New System.Drawing.Point(811, 5)
-        Me.BtnEditOptPPE.Name = "BtnEditOptPPE"
-        Me.BtnEditOptPPE.Size = New System.Drawing.Size(75, 175)
-        Me.BtnEditOptPPE.TabIndex = 16
-        Me.BtnEditOptPPE.Text = "Edit"
-        Me.BtnEditOptPPE.UseVisualStyleBackColor = True
         '
         'BtnEditMachineLinks
         '
@@ -244,7 +176,6 @@ Partial Class FormMachineToolDetails
         '
         'TabMachines
         '
-        Me.TabMachines.Controls.Add(Me.TabPPE)
         Me.TabMachines.Controls.Add(Me.TabMach)
         Me.TabMachines.Controls.Add(Me.TabOperations)
         Me.TabMachines.Controls.Add(Me.TabSetups)
@@ -255,22 +186,6 @@ Partial Class FormMachineToolDetails
         Me.TabMachines.SelectedIndex = 0
         Me.TabMachines.Size = New System.Drawing.Size(900, 364)
         Me.TabMachines.TabIndex = 29
-        '
-        'TabPPE
-        '
-        Me.TabPPE.Controls.Add(Me.LblRequiredPPE)
-        Me.TabPPE.Controls.Add(Me.LstReqPPE)
-        Me.TabPPE.Controls.Add(Me.BtnEditReqPPE)
-        Me.TabPPE.Controls.Add(Me.LblOptionalPPE)
-        Me.TabPPE.Controls.Add(Me.LstOptPPE)
-        Me.TabPPE.Controls.Add(Me.BtnEditOptPPE)
-        Me.TabPPE.Location = New System.Drawing.Point(4, 38)
-        Me.TabPPE.Name = "TabPPE"
-        Me.TabPPE.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPPE.Size = New System.Drawing.Size(892, 322)
-        Me.TabPPE.TabIndex = 0
-        Me.TabPPE.Text = "PPE"
-        Me.TabPPE.UseVisualStyleBackColor = True
         '
         'TabMach
         '
@@ -358,8 +273,6 @@ Partial Class FormMachineToolDetails
         CType(Me.PictureMachineOverview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.TabMachines.ResumeLayout(False)
-        Me.TabPPE.ResumeLayout(False)
-        Me.TabPPE.PerformLayout()
         Me.TabMach.ResumeLayout(False)
         Me.TabOperations.ResumeLayout(False)
         Me.TabSetups.ResumeLayout(False)
@@ -370,16 +283,10 @@ Partial Class FormMachineToolDetails
     End Sub
 
     Friend WithEvents LblTitle As Label
-    Friend WithEvents LblRequiredPPE As Label
-    Friend WithEvents LblOptionalPPE As Label
     Friend WithEvents PictureMachineOverview As PictureBox
-    Friend WithEvents LstReqPPE As ListView
-    Friend WithEvents LstOptPPE As ListView
     Friend WithEvents LstMachineMethods As ListView
     Friend WithEvents LstMachines As ListView
     Friend WithEvents LstResources As ListView
-    Friend WithEvents BtnEditReqPPE As Button
-    Friend WithEvents BtnEditOptPPE As Button
     Friend WithEvents BtnEditMachineLinks As Button
     Friend WithEvents BtnEditMachiningMethodsLink As Button
     Friend WithEvents BtnEditResourcesLink As Button
@@ -388,7 +295,6 @@ Partial Class FormMachineToolDetails
     Friend WithEvents Button1 As Button
     Friend WithEvents BttnPrint As Button
     Friend WithEvents TabMachines As TabControl
-    Friend WithEvents TabPPE As TabPage
     Friend WithEvents TabMach As TabPage
     Friend WithEvents TabOperations As TabPage
     Friend WithEvents TabSetups As TabPage

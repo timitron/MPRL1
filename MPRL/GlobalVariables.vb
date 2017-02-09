@@ -5,6 +5,9 @@ Public Class GlobalVariables
     Public Shared AdminBuild As Boolean = True 'Set to true and build the application for an admin .exe, set to false for a client exe. 
     Public Shared IconSizeWidth As Int16 = 90 '1-128 
     Public Shared IconSizeHeight As Int16 = 90 '1-128
+    Public Shared FormWidth As Int32 = 800 'width in pixels of forms, generally 900 - 1600. 
+    Public Shared FormBuffer As Int16 = 50 'distance in pixels between form obejects and groupbox walls. generallt 10 - 200 
+
 
     Dim test As String = "testytest"
 
@@ -33,11 +36,11 @@ Public Class CustFunctions
         Dim query As String
         Dim Table_ As String
         If required = True Then
-            query = "SELECT PPE.Name, PPE.ImageURL FROM ((PPE INNER JOIN [MachineTool-PPELink] ON PPE.Name = [MachineTool-PPELink].PPEID) INNER JOIN MachineTools ON [MachineTool-PPELink].MachineToolID = MachineTools.Name) WHERE (MachineTools.Name = '" & targetID & "') AND ([MachineTool-PPELink].Required = true)"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
+            query = "SELECT PPE.Name, PPE.Description, PPE.ImageURL FROM ((PPE INNER JOIN [Machine-PPELink] ON PPE.Name = [Machine-PPELink].PPEID) INNER JOIN Machines ON [Machine-PPELink].MachineID = Machines.Name) WHERE ([Machine-PPELink].Required = True) AND (Machines.Name = '" & targetID & "')"
             Table_ = "ReqPPE"
         End If
         If required = False Then
-            query = "SELECT PPE.Name, PPE.ImageURL FROM ((PPE INNER JOIN [MachineTool-PPELink] ON PPE.Name = [MachineTool-PPELink].PPEID) INNER JOIN MachineTools ON [MachineTool-PPELink].MachineToolID = MachineTools.Name) WHERE (MachineTools.Name = '" & targetID & "') AND ([MachineTool-PPELink].Required = false)"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
+            query = "SELECT PPE.Name, PPE.Description, PPE.ImageURL FROM ((PPE INNER JOIN [Machine-PPELink] ON PPE.Name = [Machine-PPELink].PPEID) INNER JOIN Machines ON [Machine-PPELink].MachineID = Machines.Name) WHERE ([Machine-PPELink].Required = False) AND (Machines.Name = '" & targetID & "')"
             Table_ = "OptPPE"
         End If
 
@@ -179,17 +182,17 @@ Public Class CustFunctions
         Dim query As String
         Dim Table_ As String = "Resources"
 
-        If type = "ClampingMethod" Then
-            query = "Select AdditionalResources.Name, AdditionalResources.Type, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] On AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN ClampingMethods On [Entity-ResourceLink].EntitiesID = ClampingMethods.Name) WHERE([Entity-ResourceLink].Entities = 'Clamping Method') AND (ClampingMethods.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
+        If type = "Setup" Then
+            query = "SELECT AdditionalResources.Name, AdditionalResources.Hyperlink FROM ((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN Setups ON [Entity-ResourceLink].EntitiesID = Setups.Name) WHERE ([Entity-ResourceLink].Entities = 'Setup') AND (Setups.Name = '" & targetID & "')"
         End If
         If type = "Machine" Then
-            query = "SELECT AdditionalResources.Name, AdditionalResources.Type, AdditionalResources.Hyperlink FROM ((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN Machines ON [Entity-ResourceLink].EntitiesID = Machines.Name) WHERE ([Entity-ResourceLink].Entities = 'Machine') AND (Machines.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
+            query = "Select AdditionalResources.Name, AdditionalResources.Hyperlink FROM ((AdditionalResources INNER JOIN [Entity-ResourceLink] On AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN Machines On [Entity-ResourceLink].EntitiesID = Machines.Name) WHERE ([Entity-ResourceLink].Entities = 'Machine') AND (Machines.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
         End If
-        If type = "MachiningMethod" Then
-            query = "Select AdditionalResources.Name, AdditionalResources.Type, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] On AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN MachiningMethods On [Entity-ResourceLink].EntitiesID = MachiningMethods.Name) WHERE([Entity-ResourceLink].Entities = 'Machining Method') AND (MachiningMethods.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
+        If type = "Operation" Then
+            query = "Select AdditionalResources.Name, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] On AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN Operations On [Entity-ResourceLink].EntitiesID = Operations.Name) WHERE([Entity-ResourceLink].Entities = 'Operations') AND (OperationsZZ.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
         End If
         If type = "MachineTool" Then
-            query = "SELECT AdditionalResources.Name, AdditionalResources.Type, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN MachineTools ON [Entity-ResourceLink].EntitiesID = MachineTools.Name) WHERE([Entity-ResourceLink].Entities = 'Machine Tool') AND (MachineTools.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
+            query = "SELECT AdditionalResources.Name, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN MachineTools ON [Entity-ResourceLink].EntitiesID = MachineTools.Name) WHERE([Entity-ResourceLink].Entities = 'Machine Tool') AND (MachineTools.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
         End If
 
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
@@ -217,20 +220,20 @@ Public Class CustFunctions
         Next
         returnListView.Update()
     End Sub
-    Shared Sub SetImage(cnn As OleDbConnection, Type As String, TargetID As String, returnPictureBox As PictureBox, ds As DataSet, ByRef htmlprint As String)
+    Shared Sub SetImage(cnn As OleDbConnection, Type As String, TargetID As String, returnPictureBox As PictureBox, ds As DataSet)
         'This sub takes the inputs and applies the correct image to the speciefied page. 
         Dim query As String
         Dim Table_ As String = "Target"
         Dim url As String = ""
 
-        If Type = "ClampingMethod" Then
-            query = "SELECT * from ClampingMethods Where Name = '" & TargetID & "';"
+        If Type = "Setup" Then
+            query = "SELECT * from Setups Where Name = '" & TargetID & "';"
         End If
         If Type = "Machine" Then
             query = "SELECT * from Machines Where Name = '" & TargetID & "';"
         End If
-        If Type = "MachiningMethod" Then
-            query = "SELECT * from MachiningMethods Where Name = '" & TargetID & "';"
+        If Type = "Operation" Then
+            query = "SELECT * from Operations Where Name = '" & TargetID & "';"
         End If
         If Type = "MachineTool" Then
             query = "SELECT * from MachineTools Where Name = '" & TargetID & "';"
@@ -242,11 +245,6 @@ Public Class CustFunctions
 
         Dim picture As Image = Image.FromFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
         returnPictureBox.Image = picture
-
-        'Add info to print file" 
-        htmlprint &= "<div style=""width: 8in;border-style: solid;border-width: medium;""><H1>" & TargetID & "</H1>"
-        url = ds.Tables(Table_).Rows(0)("ImageURL").replace("\", "/")
-        htmlprint &= "<img src =""." & url & " "" style=""width: 8in""><br>"
     End Sub
     Shared Sub ResourceDoubleClickHandler(ListResource As ListView, ByRef ds As DataSet)
         Dim index As Integer = ListResource.FocusedItem.Index

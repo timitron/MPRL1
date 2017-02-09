@@ -84,10 +84,16 @@
     <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClampingMethod.Designer.vb">
-      <DependentUpon>ClampingMethod.vb</DependentUpon>
+    <Compile Include="FormAddResourceLink.Designer.vb">
+      <DependentUpon>FormAddResourceLink.vb</DependentUpon>
     </Compile>
-    <Compile Include="ClampingMethod.vb">
+    <Compile Include="FormAddResourceLink.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetup.Designer.vb">
+      <DependentUpon>FormSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetup.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditForm.Designer.vb">
@@ -114,10 +120,10 @@
     <Compile Include="EditMachineMachiningMethodLink.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditMachiningMethodMachineToolLink.Designer.vb">
-      <DependentUpon>EditMachiningMethodMachineToolLink.vb</DependentUpon>
+    <Compile Include="EditOperationMachineLink.Designer.vb">
+      <DependentUpon>EditOperationMachineLink.vb</DependentUpon>
     </Compile>
-    <Compile Include="EditMachiningMethodMachineToolLink.vb">
+    <Compile Include="EditOperationMachineLink.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddItem.Designer.vb">
@@ -132,10 +138,10 @@
     <Compile Include="FormAdminPanel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClampingLink.Designer.vb">
-      <DependentUpon>FormClampingLink.vb</DependentUpon>
+    <Compile Include="FormSetupLink.Designer.vb">
+      <DependentUpon>FormSetupLink.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormClampingLink.vb">
+    <Compile Include="FormSetupLink.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MachiningMethodDisplay.Designer.vb">
@@ -176,13 +182,10 @@
     <Compile Include="MachineToolDisplay.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MPRLDataSet.Designer.vb">
+    <Compile Include="MPRLDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MPRLDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MPRLDataSet.vb">
-      <DependentUpon>MPRLDataSet.xsd</DependentUpon>
+      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -204,8 +207,11 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClampingMethod.resx">
-      <DependentUpon>ClampingMethod.vb</DependentUpon>
+    <EmbeddedResource Include="FormAddResourceLink.resx">
+      <DependentUpon>FormAddResourceLink.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetup.resx">
+      <DependentUpon>FormSetup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditForm.resx">
       <DependentUpon>EditForm.vb</DependentUpon>
@@ -219,8 +225,8 @@
     <EmbeddedResource Include="EditMachineMachiningMethodLink.resx">
       <DependentUpon>EditMachineMachiningMethodLink.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditMachiningMethodMachineToolLink.resx">
-      <DependentUpon>EditMachiningMethodMachineToolLink.vb</DependentUpon>
+    <EmbeddedResource Include="EditOperationMachineLink.resx">
+      <DependentUpon>EditOperationMachineLink.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.vb</DependentUpon>
@@ -228,8 +234,8 @@
     <EmbeddedResource Include="FormAdminPanel.resx">
       <DependentUpon>FormAdminPanel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormClampingLink.resx">
-      <DependentUpon>FormClampingLink.vb</DependentUpon>
+    <EmbeddedResource Include="FormSetupLink.resx">
+      <DependentUpon>FormSetupLink.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MachiningMethodDisplay.resx">
       <DependentUpon>MachiningMethodDisplay.vb</DependentUpon>
@@ -257,16 +263,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MPRLDataSet.xsc">
-      <DependentUpon>MPRLDataSet.xsd</DependentUpon>
+    <None Include="MPRLDataSet1.xsc">
+      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="MPRLDataSet.xsd">
+    <None Include="MPRLDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MPRLDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>MPRLDataSet1.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="MPRLDataSet.xss">
-      <DependentUpon>MPRLDataSet.xsd</DependentUpon>
+    <None Include="MPRLDataSet1.xss">
+      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

@@ -16,11 +16,6 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.ClampingMethodsDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSet.EntitiesDataTable">
 <summary>
 Represents the strongly named DataTable class.
@@ -36,17 +31,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._Instruction_EntityLinkDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.InstructionsDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSet._Machine_MachineToolLinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Machine_PPELinkDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -56,17 +46,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_ClampingMethodsLinkDataTable">
+<member name="T:MPRL.MPRLDataSet.MachineToolDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_MachiningMethodsLinkDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_PPELinkDataTable">
+<member name="T:MPRL.MPRLDataSet._MachineTool_OperationsLinkDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -76,7 +61,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.MachiningMethodsDataTable">
+<member name="T:MPRL.MPRLDataSet._MachineTool_SetupLinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.OperationsDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -86,37 +76,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.ClampingMethodsIDDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachineNameDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachineToolsIDDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachiningMethodsIDDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.PPEIDDataTable">
+<member name="T:MPRL.MPRLDataSet.SetupsDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSet.AdditionalResourcesRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.ClampingMethodsRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -136,17 +101,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._Instruction_EntityLinkRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.InstructionsRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSet._Machine_MachineToolLinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Machine_PPELinkRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -156,17 +116,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_ClampingMethodsLinkRow">
+<member name="T:MPRL.MPRLDataSet.MachineToolRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_MachiningMethodsLinkRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_PPELinkRow">
+<member name="T:MPRL.MPRLDataSet._MachineTool_OperationsLinkRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -176,7 +131,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.MachiningMethodsRow">
+<member name="T:MPRL.MPRLDataSet._MachineTool_SetupLinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.OperationsRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -186,37 +146,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.ClampingMethodsIDRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachineNameRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachineToolsIDRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachiningMethodsIDRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.PPEIDRow">
+<member name="T:MPRL.MPRLDataSet.SetupsRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSet.AdditionalResourcesRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.ClampingMethodsRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -236,17 +171,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._Instruction_EntityLinkRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.InstructionsRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSet._Machine_MachineToolLinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet._Machine_PPELinkRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -256,17 +186,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_ClampingMethodsLinkRowChangeEvent">
+<member name="T:MPRL.MPRLDataSet.MachineToolRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_MachiningMethodsLinkRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet._MachineTool_PPELinkRowChangeEvent">
+<member name="T:MPRL.MPRLDataSet._MachineTool_OperationsLinkRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -276,7 +201,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.MachiningMethodsRowChangeEvent">
+<member name="T:MPRL.MPRLDataSet._MachineTool_SetupLinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.OperationsRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -286,37 +216,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.ClampingMethodsIDRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachineNameRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachineToolsIDRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.MachiningMethodsIDRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSet.PPEIDRowChangeEvent">
+<member name="T:MPRL.MPRLDataSet.SetupsRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSetTableAdapters.AdditionalResourcesTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.ClampingMethodsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -336,17 +241,12 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.Instruction_EntityLinkTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.InstructionsTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSetTableAdapters.Machine_MachineToolLinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.Machine_PPELinkTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -356,17 +256,12 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_ClampingMethodsLinkTableAdapter">
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineToolTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_MachiningMethodsLinkTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_PPELinkTableAdapter">
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_OperationsLinkTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -376,7 +271,12 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.MachiningMethodsTableAdapter">
+<member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_SetupLinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.OperationsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -386,27 +286,7 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.ClampingMethodsIDTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.MachineNameTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.MachineToolsIDTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.MachiningMethodsIDTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.PPEIDTableAdapter">
+<member name="T:MPRL.MPRLDataSetTableAdapters.SetupsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

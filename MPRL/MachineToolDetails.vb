@@ -10,21 +10,20 @@ Public Class FormMachineToolDetails
 
     Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
-    Dim htmlprint As String
+
 
     Private Sub FormMachineToolDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'make db connection
         connect()
 
-        CustFunctions.SetImage(cnn, "MachineTool", Machine, PictureMachineOverview, ds, htmlprint)
+        CustFunctions.SetImage(cnn, "MachineTool", Machine, PictureMachineOverview, ds)
 
         'set name
         LblTitle.Text = Machine
 
         'Add PPE To Listviews
-        CustFunctions.PPE(cnn, Machine, LstReqPPE, True, ds)
-        CustFunctions.PPE(cnn, Machine, LstOptPPE, False, ds)
+
 
         fill_machining_methods()
         fill_machines()
@@ -38,8 +37,6 @@ Public Class FormMachineToolDetails
             BtnEditClampingLinks.Visible = False
             BtnEditMachineLinks.Visible = False
             BtnEditMachiningMethodsLink.Visible = False
-            BtnEditOptPPE.Visible = False
-            BtnEditReqPPE.Visible = False
             BtnEditResourcesLink.Visible = False
         End If
 
@@ -52,8 +49,8 @@ Public Class FormMachineToolDetails
     Sub fill_machining_methods()
 
         'define connection string and create connection object 
-        Dim Table_ As String = "MachiningMethods"   'defines table inside the dataset to store information recieved from data connections
-        Dim query As String = "SELECT MachiningMethods.Name, MachiningMethods.ImageURL FROM ((MachiningMethods INNER JOIN [MachineTool-MachiningMethodsLink] ON MachiningMethods.Name = [MachineTool-MachiningMethodsLink].MachiningMethodID) INNER JOIN                         MachineTools ON [MachineTool-MachiningMethodsLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & Machine & "');" 'data connection querry this must be run through the oledb command interpreter before executing it on the connection
+        Dim Table_ As String = "Operations"   'defines table inside the dataset to store information recieved from data connections
+        Dim query As String = "SELECT        Operations.Name, Operations.ImageURL FROM            ((Operations INNER JOIN                         [MachineTool-OperationsLink] ON Operations.Name = [MachineTool-OperationsLink].OperationsID) INNER JOIN                         MachineTools ON [MachineTool-OperationsLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & Machine & "')"
 
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
@@ -105,7 +102,7 @@ Public Class FormMachineToolDetails
 
         'define connection string and create connection object 
         Dim Table_ As String = "Machines"   'defines table inside the dataset to store information recieved from data connections
-        Dim query As String = "SELECT Machines.MachineRoom, Machines.MachineDescription, Machines.EntityType, Machines.ImageURL, Machines.Name FROM(([Machine-MachineToolLink] INNER JOIN Machines ON [Machine-MachineToolLink].MachineID = Machines.Name) INNER JOIN MachineTools ON [Machine-MachineToolLink].MachineToolID = MachineTools.Name) WHERE(MachineTools.Name = '" & Machine & "')"
+        Dim query As String = "Select Machines.MachineRoom, Machines.MachineDescription, Machines.EntityType, Machines.ImageURL, Machines.Name FROM(([Machine-MachineToolLink] INNER JOIN Machines On [Machine-MachineToolLink].MachineID = Machines.Name) INNER JOIN MachineTools On [Machine-MachineToolLink].MachineToolID = MachineTools.Name) WHERE(MachineTools.Name = '" & Machine & "')"
 
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
@@ -156,8 +153,8 @@ Public Class FormMachineToolDetails
     Sub fill_clamping()
 
         'define connection string and create connection object 
-        Dim Table_ As String = "ClampingMethods"   'defines table inside the dataset to store information recieved from data connections
-        Dim query As String = "Select        ClampingMethods.Name, ClampingMethods.ImageURL FROM((MachineTools INNER JOIN                         [MachineTool-ClampingMethodsLink] On MachineTools.Name = [MachineTool-ClampingMethodsLink].MachineToolID) INNER JOIN                          ClampingMethods On [MachineTool-ClampingMethodsLink].ClampingMethodsID = ClampingMethods.Name) WHERE(MachineTools.Name = '" & Machine & "')"
+        Dim Table_ As String = "Setups"   'defines table inside the dataset to store information recieved from data connections
+        Dim query As String = "SELECT        Setups.Name, Setups.ImageURL FROM            ((Setups INNER JOIN                         [MachineTool-SetupLink] ON Setups.Name = [MachineTool-SetupLink].SetupID) INNER JOIN                        MachineTools ON [MachineTool-SetupLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & Machine & "')"
 
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
@@ -207,7 +204,7 @@ Public Class FormMachineToolDetails
     End Sub
     Private Sub LstMachineMethods_DoubleClick(sender As Object, e As EventArgs) Handles LstMachineMethods.DoubleClick
         Dim index As Integer = LstMachineMethods.FocusedItem.Index
-        Global.MPRL.GlobalVariables.Click = ds.Tables("MachiningMethods").Rows(index)("Name")
+        Global.MPRL.GlobalVariables.Click = ds.Tables("Operations").Rows(index)("Name")
 
         Dim newform
         newform = FormMachiningMethod
@@ -225,11 +222,11 @@ Public Class FormMachineToolDetails
         CustFunctions.ResourceDoubleClickHandler(LstResources, ds)
 
     End Sub
-    Private Sub LstClampingMethods_DoubleClick(sender As Object, e As EventArgs)
+    Private Sub LstClampingMethods_DoubleClick(sender As Object, e As EventArgs) Handles LstClampingMethods.DoubleClick
         Dim index As Integer = LstClampingMethods.FocusedItem.Index
-        Global.MPRL.GlobalVariables.Click = ds.Tables("ClampingMethods").Rows(index)("Name")
+        Global.MPRL.GlobalVariables.Click = ds.Tables("Setups").Rows(index)("Name")
         Dim newform
-        newform = FormClampingMethod
+        newform = FormSetup
         newform.Show()
         GlobalVariables.CloseAll = False
         Me.Close()
@@ -249,7 +246,7 @@ Public Class FormMachineToolDetails
         GlobalVariables.CloseAll = True
     End Sub
 
-    Private Sub BtnEditReqPPE_Click(sender As Object, e As EventArgs) Handles BtnEditReqPPE.Click
+    Private Sub BtnEditReqPPE_Click(sender As Object, e As EventArgs)
 
         Global.MPRL.GlobalVariables.Click = Machine
         Dim newform
@@ -258,7 +255,7 @@ Public Class FormMachineToolDetails
         newform.Show()
     End Sub
 
-    Private Sub BtnEditOptPPE_Click(sender As Object, e As EventArgs) Handles BtnEditOptPPE.Click
+    Private Sub BtnEditOptPPE_Click(sender As Object, e As EventArgs)
 
         Global.MPRL.GlobalVariables.Click = Machine
         Dim newform
@@ -278,7 +275,7 @@ Public Class FormMachineToolDetails
     Private Sub Button4_Click(sender As Object, e As EventArgs)
         Global.MPRL.GlobalVariables.Click = Machine
         Dim newform
-        newform = FormClampingLink
+        newform = FormSetupLink
 
         newform.Show()
     End Sub
@@ -316,15 +313,27 @@ Public Class FormMachineToolDetails
 
     End Sub
 
-    Private Sub LblOptionalPPE_Click(sender As Object, e As EventArgs) Handles LblOptionalPPE.Click
+    Private Sub LblOptionalPPE_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub LstOptPPE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstOptPPE.SelectedIndexChanged
+    Private Sub LstOptPPE_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub LblRequiredPPE_Click(sender As Object, e As EventArgs) Handles LblRequiredPPE.Click
+    Private Sub LblRequiredPPE_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub LstClampingMethods_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstClampingMethods.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub BtnEditClampingLinks_Click(sender As Object, e As EventArgs) Handles BtnEditClampingLinks.Click
+        Global.MPRL.GlobalVariables.Click = Machine
+        Dim newform As Form
+        newform = FormSetupLink
+
+        newform.Show()
     End Sub
 End Class

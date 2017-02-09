@@ -5,13 +5,11 @@ C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\bin\Debug\MPRL.xml
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.vbprojResolveAssemblyReference.cache
-C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormClampingMethod.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditRequiredPPE.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditOptPPE.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditMachineLink.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditMachiningMethodMachineToolLink.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormAdminPanel.resources
-C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormClampingLink.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachiningMethodsDisplay.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachineDetails.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachiningMethod.resources
@@ -53,3 +51,6 @@ C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.EditFor
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.EditForm.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.AddItem.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormAbout.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormSetup.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormAddResourceLink.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormSetupLink.resources

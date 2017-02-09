@@ -14,19 +14,14 @@ Public Class FormMachiningMethod
     Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
-    Dim printfile As New System.IO.StreamWriter(Application.StartupPath & "\printfile.html", False)
-    Dim htmlprint As String = ""
-    Dim url As String = ""
     Private Sub MachiningMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LblTitle.Text = MachiningMethod
 
         Dim startpoint As New Point(40, 600)
-        CustFunctions.SetImage(cnn, "MachiningMethod", MachiningMethod, PictureOverview, ds, htmlprint)
-        CustFunctions.Resources(cnn, "MachiningMethod", MachiningMethod, LstResources, ds)
-        CustFunctions.Instructions(cnn, "MachiningMethod", MachiningMethod, startpoint, 90, ds, htmlprint, Me)
+        CustFunctions.SetImage(cnn, "Operation", MachiningMethod, PictureOverview, ds)
+        CustFunctions.Resources(cnn, "Operation", MachiningMethod, LstResources, ds)
 
-        printfile.Write(htmlprint)
-        printfile.Close()
+
 
     End Sub
 

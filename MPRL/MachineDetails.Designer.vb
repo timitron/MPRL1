@@ -29,7 +29,6 @@ Partial Class FormMachineDetails
         Me.LblTitle = New System.Windows.Forms.Label()
         Me.PictureOverview = New System.Windows.Forms.PictureBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
-        Me.BttnPrint = New System.Windows.Forms.Button()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.LstOptPPE = New System.Windows.Forms.ListView()
@@ -42,18 +41,24 @@ Partial Class FormMachineDetails
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TabInfo = New System.Windows.Forms.TabControl()
+        Me.TabPPE = New System.Windows.Forms.TabPage()
+        Me.TabResources = New System.Windows.Forms.TabPage()
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.TabInfo.SuspendLayout()
+        Me.TabPPE.SuspendLayout()
+        Me.TabResources.SuspendLayout()
         Me.SuspendLayout()
         '
         'LstResources
         '
         Me.LstResources.BackColor = System.Drawing.SystemColors.Control
         Me.LstResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstResources.Location = New System.Drawing.Point(32, 695)
+        Me.LstResources.Location = New System.Drawing.Point(6, 30)
         Me.LstResources.Name = "LstResources"
-        Me.LstResources.Size = New System.Drawing.Size(900, 100)
+        Me.LstResources.Size = New System.Drawing.Size(888, 252)
         Me.LstResources.TabIndex = 25
         Me.LstResources.UseCompatibleStateImageBehavior = False
         '
@@ -61,7 +66,7 @@ Partial Class FormMachineDetails
         '
         Me.LblAdditionalResources.AutoSize = True
         Me.LblAdditionalResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblAdditionalResources.Location = New System.Drawing.Point(38, 668)
+        Me.LblAdditionalResources.Location = New System.Drawing.Point(6, 3)
         Me.LblAdditionalResources.Name = "LblAdditionalResources"
         Me.LblAdditionalResources.Size = New System.Drawing.Size(184, 24)
         Me.LblAdditionalResources.TabIndex = 23
@@ -79,7 +84,7 @@ Partial Class FormMachineDetails
         '
         'PictureOverview
         '
-        Me.PictureOverview.Location = New System.Drawing.Point(32, 69)
+        Me.PictureOverview.Location = New System.Drawing.Point(21, 65)
         Me.PictureOverview.Name = "PictureOverview"
         Me.PictureOverview.Size = New System.Drawing.Size(900, 400)
         Me.PictureOverview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -90,16 +95,6 @@ Partial Class FormMachineDetails
         '
         Me.MprlDataSet1.DataSetName = "MPRLDataSet"
         Me.MprlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BttnPrint
-        '
-        Me.BttnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BttnPrint.Location = New System.Drawing.Point(186, 3)
-        Me.BttnPrint.Name = "BttnPrint"
-        Me.BttnPrint.Size = New System.Drawing.Size(54, 45)
-        Me.BttnPrint.TabIndex = 26
-        Me.BttnPrint.Text = "Print"
-        Me.BttnPrint.UseVisualStyleBackColor = True
         '
         'PrintForm1
         '
@@ -113,9 +108,9 @@ Partial Class FormMachineDetails
         '
         Me.LstOptPPE.BackColor = System.Drawing.SystemColors.Control
         Me.LstOptPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstOptPPE.Location = New System.Drawing.Point(495, 514)
+        Me.LstOptPPE.Location = New System.Drawing.Point(463, 33)
         Me.LstOptPPE.Name = "LstOptPPE"
-        Me.LstOptPPE.Size = New System.Drawing.Size(437, 135)
+        Me.LstOptPPE.Size = New System.Drawing.Size(431, 249)
         Me.LstOptPPE.TabIndex = 30
         Me.LstOptPPE.UseCompatibleStateImageBehavior = False
         '
@@ -123,9 +118,9 @@ Partial Class FormMachineDetails
         '
         Me.LstReqPPE.BackColor = System.Drawing.SystemColors.Control
         Me.LstReqPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LstReqPPE.Location = New System.Drawing.Point(32, 514)
+        Me.LstReqPPE.Location = New System.Drawing.Point(6, 30)
         Me.LstReqPPE.Name = "LstReqPPE"
-        Me.LstReqPPE.Size = New System.Drawing.Size(437, 135)
+        Me.LstReqPPE.Size = New System.Drawing.Size(437, 252)
         Me.LstReqPPE.TabIndex = 29
         Me.LstReqPPE.UseCompatibleStateImageBehavior = False
         '
@@ -133,7 +128,7 @@ Partial Class FormMachineDetails
         '
         Me.LblOptionalPPE.AutoSize = True
         Me.LblOptionalPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblOptionalPPE.Location = New System.Drawing.Point(500, 487)
+        Me.LblOptionalPPE.Location = New System.Drawing.Point(468, 6)
         Me.LblOptionalPPE.Name = "LblOptionalPPE"
         Me.LblOptionalPPE.Size = New System.Drawing.Size(122, 24)
         Me.LblOptionalPPE.TabIndex = 28
@@ -143,7 +138,7 @@ Partial Class FormMachineDetails
         '
         Me.LblRequiredPPE.AutoSize = True
         Me.LblRequiredPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblRequiredPPE.Location = New System.Drawing.Point(38, 487)
+        Me.LblRequiredPPE.Location = New System.Drawing.Point(6, 3)
         Me.LblRequiredPPE.Name = "LblRequiredPPE"
         Me.LblRequiredPPE.Size = New System.Drawing.Size(130, 24)
         Me.LblRequiredPPE.TabIndex = 27
@@ -151,7 +146,7 @@ Partial Class FormMachineDetails
         '
         'BtnEditReqPPE
         '
-        Me.BtnEditReqPPE.Location = New System.Drawing.Point(394, 490)
+        Me.BtnEditReqPPE.Location = New System.Drawing.Point(368, 4)
         Me.BtnEditReqPPE.Name = "BtnEditReqPPE"
         Me.BtnEditReqPPE.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditReqPPE.TabIndex = 31
@@ -160,7 +155,7 @@ Partial Class FormMachineDetails
         '
         'BtnEditOptionalPPE
         '
-        Me.BtnEditOptionalPPE.Location = New System.Drawing.Point(856, 490)
+        Me.BtnEditOptionalPPE.Location = New System.Drawing.Point(819, 7)
         Me.BtnEditOptionalPPE.Name = "BtnEditOptionalPPE"
         Me.BtnEditOptionalPPE.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditOptionalPPE.TabIndex = 32
@@ -169,7 +164,7 @@ Partial Class FormMachineDetails
         '
         'EBtnEditAdditionalResources
         '
-        Me.EBtnEditAdditionalResources.Location = New System.Drawing.Point(857, 671)
+        Me.EBtnEditAdditionalResources.Location = New System.Drawing.Point(819, 4)
         Me.EBtnEditAdditionalResources.Name = "EBtnEditAdditionalResources"
         Me.EBtnEditAdditionalResources.Size = New System.Drawing.Size(75, 23)
         Me.EBtnEditAdditionalResources.TabIndex = 33
@@ -181,10 +176,9 @@ Partial Class FormMachineDetails
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.BttnPrint)
-        Me.Panel1.Location = New System.Drawing.Point(613, 9)
+        Me.Panel1.Location = New System.Drawing.Point(742, 9)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(251, 53)
+        Me.Panel1.Size = New System.Drawing.Size(195, 53)
         Me.Panel1.TabIndex = 34
         '
         'Button2
@@ -207,31 +201,67 @@ Partial Class FormMachineDetails
         Me.Button1.Text = "Previous"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'TabInfo
+        '
+        Me.TabInfo.Controls.Add(Me.TabPPE)
+        Me.TabInfo.Controls.Add(Me.TabResources)
+        Me.TabInfo.Location = New System.Drawing.Point(23, 471)
+        Me.TabInfo.Name = "TabInfo"
+        Me.TabInfo.SelectedIndex = 0
+        Me.TabInfo.Size = New System.Drawing.Size(908, 314)
+        Me.TabInfo.TabIndex = 35
+        '
+        'TabPPE
+        '
+        Me.TabPPE.Controls.Add(Me.LblRequiredPPE)
+        Me.TabPPE.Controls.Add(Me.LstReqPPE)
+        Me.TabPPE.Controls.Add(Me.BtnEditReqPPE)
+        Me.TabPPE.Controls.Add(Me.BtnEditOptionalPPE)
+        Me.TabPPE.Controls.Add(Me.LblOptionalPPE)
+        Me.TabPPE.Controls.Add(Me.LstOptPPE)
+        Me.TabPPE.Location = New System.Drawing.Point(4, 22)
+        Me.TabPPE.Name = "TabPPE"
+        Me.TabPPE.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPPE.Size = New System.Drawing.Size(900, 288)
+        Me.TabPPE.TabIndex = 0
+        Me.TabPPE.Text = "PPE"
+        Me.TabPPE.UseVisualStyleBackColor = True
+        '
+        'TabResources
+        '
+        Me.TabResources.Controls.Add(Me.LblAdditionalResources)
+        Me.TabResources.Controls.Add(Me.LstResources)
+        Me.TabResources.Controls.Add(Me.EBtnEditAdditionalResources)
+        Me.TabResources.Location = New System.Drawing.Point(4, 22)
+        Me.TabResources.Name = "TabResources"
+        Me.TabResources.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabResources.Size = New System.Drawing.Size(900, 288)
+        Me.TabResources.TabIndex = 1
+        Me.TabResources.Text = "Resources"
+        Me.TabResources.UseVisualStyleBackColor = True
+        '
         'FormMachineDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(984, 741)
+        Me.ClientSize = New System.Drawing.Size(949, 802)
+        Me.Controls.Add(Me.TabInfo)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.EBtnEditAdditionalResources)
-        Me.Controls.Add(Me.BtnEditOptionalPPE)
-        Me.Controls.Add(Me.BtnEditReqPPE)
-        Me.Controls.Add(Me.LstOptPPE)
-        Me.Controls.Add(Me.LblOptionalPPE)
-        Me.Controls.Add(Me.LblRequiredPPE)
-        Me.Controls.Add(Me.LstResources)
-        Me.Controls.Add(Me.LblAdditionalResources)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.PictureOverview)
-        Me.Controls.Add(Me.LstReqPPE)
         Me.Name = "FormMachineDetails"
         Me.Text = "Machine Details "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.TabInfo.ResumeLayout(False)
+        Me.TabPPE.ResumeLayout(False)
+        Me.TabPPE.PerformLayout()
+        Me.TabResources.ResumeLayout(False)
+        Me.TabResources.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -242,7 +272,6 @@ Partial Class FormMachineDetails
     Friend WithEvents LblTitle As Label
     Friend WithEvents PictureOverview As PictureBox
     Friend WithEvents MprlDataSet1 As MPRLDataSet
-    Friend WithEvents BttnPrint As Button
     Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents LstOptPPE As ListView
@@ -255,4 +284,7 @@ Partial Class FormMachineDetails
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents TabInfo As TabControl
+    Friend WithEvents TabPPE As TabPage
+    Friend WithEvents TabResources As TabPage
 End Class

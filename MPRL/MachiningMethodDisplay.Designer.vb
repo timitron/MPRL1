@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormMachiningMethodsDisplay
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormMachiningMethodsDisplay
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.LstViewMachiningMethods = New System.Windows.Forms.ListView()
@@ -29,7 +29,6 @@ Partial Class FormMachiningMethodsDisplay
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.BttnPrint = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -62,10 +61,9 @@ Partial Class FormMachiningMethodsDisplay
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.BttnPrint)
-        Me.Panel1.Location = New System.Drawing.Point(1094, 12)
+        Me.Panel1.Location = New System.Drawing.Point(1148, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(256, 53)
+        Me.Panel1.Size = New System.Drawing.Size(190, 53)
         Me.Panel1.TabIndex = 28
         '
         'Button2
@@ -87,16 +85,6 @@ Partial Class FormMachiningMethodsDisplay
         Me.Button1.TabIndex = 27
         Me.Button1.Text = "Previous"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'BttnPrint
-        '
-        Me.BttnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BttnPrint.Location = New System.Drawing.Point(186, 2)
-        Me.BttnPrint.Name = "BttnPrint"
-        Me.BttnPrint.Size = New System.Drawing.Size(57, 46)
-        Me.BttnPrint.TabIndex = 26
-        Me.BttnPrint.Text = "Print NA"
-        Me.BttnPrint.UseVisualStyleBackColor = True
         '
         'FormMachiningMethodsDisplay
         '
@@ -120,5 +108,4 @@ Partial Class FormMachiningMethodsDisplay
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents BttnPrint As Button
 End Class

@@ -30,7 +30,7 @@ Public Class FormEditOptPPE
 
         Dim query As String
         Dim Table_ As String = "RequiredSelected"
-        query = "DELETE FROM [MachineTool-PPELink] WHERE(MachineToolID = '" & GlobalVariables.Click & "') AND (PPEID = '" & CmboboxRemove.SelectedItem & "') AND (Required = 0)"
+        query = "DELETE FROM [Machine-PPELink] WHERE(MachineID = '" & GlobalVariables.Click & "') AND (PPEID = '" & CmboboxRemove.SelectedItem & "') AND (Required = 0)"
         Dim response As Integer
         Dim cmd As New OleDbCommand(query, cnn)
 
@@ -61,7 +61,7 @@ Public Class FormEditOptPPE
         Dim query As String
         Dim Table_ As String = "RequiredSelected"
 
-        query = "INSERT INTO [MachineTool-PPELink] (MachineToolID, PPEID, Required, Hidden) VALUES('" & GlobalVariables.Click & "', '" & CmboboxAdd.SelectedItem & "', 0, 0)"
+        query = "INSERT INTO [Machine-PPELink] (MachineID, PPEID, Required, Hidden) VALUES('" & GlobalVariables.Click & "', '" & CmboboxAdd.SelectedItem & "', 0, 0)"
         Dim cmd As New OleDbCommand(query, cnn)
         Dim response As Integer
 
@@ -87,7 +87,7 @@ Public Class FormEditOptPPE
         CmboboxRemove.Items.Clear()
         Dim query As String
         Dim Table_ As String = "RequiredSelected"
-        query = "SELECT PPE.Name, PPE.ImageURL FROM ((PPE INNER JOIN [MachineTool-PPELink] ON PPE.Name = [MachineTool-PPELink].PPEID) INNER JOIN MachineTools ON [MachineTool-PPELink].MachineToolID = MachineTools.Name) WHERE (MachineTools.Name = '" & TargetID & "') AND ([MachineTool-PPELink].Required = false)"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
+        query = "SELECT PPE.Name, PPE.Description, PPE.ImageURL FROM ((PPE INNER JOIN [Machine-PPELink] ON PPE.Name = [Machine-PPELink].PPEID) INNER JOIN Machines ON [Machine-PPELink].MachineID = Machines.Name) WHERE ([Machine-PPELink].Required = False) AND (Machines.Name = '" & TargetID & "')"
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
