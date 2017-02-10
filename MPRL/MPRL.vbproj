@@ -84,6 +84,18 @@
     <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Edititems.Designer.vb">
+      <DependentUpon>Edititems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edititems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSelection.Designer.vb">
+      <DependentUpon>EditSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormAddResourceLink.Designer.vb">
       <DependentUpon>FormAddResourceLink.vb</DependentUpon>
     </Compile>
@@ -94,12 +106,6 @@
       <DependentUpon>FormSetup.vb</DependentUpon>
     </Compile>
     <Compile Include="FormSetup.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditForm.Designer.vb">
-      <DependentUpon>EditForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EditForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditRequiredPPE.Designer.vb">
@@ -187,6 +193,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MPRLDataSet1.vb">
+      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -207,14 +216,17 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edititems.resx">
+      <DependentUpon>Edititems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSelection.resx">
+      <DependentUpon>EditSelection.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddResourceLink.resx">
       <DependentUpon>FormAddResourceLink.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetup.resx">
       <DependentUpon>FormSetup.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditForm.resx">
-      <DependentUpon>EditForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditRequiredPPE.resx">
       <DependentUpon>EditRequiredPPE.vb</DependentUpon>

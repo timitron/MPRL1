@@ -102,7 +102,7 @@ Public Class FormMachineToolDetails
 
         'define connection string and create connection object 
         Dim Table_ As String = "Machines"   'defines table inside the dataset to store information recieved from data connections
-        Dim query As String = "Select Machines.MachineRoom, Machines.MachineDescription, Machines.EntityType, Machines.ImageURL, Machines.Name FROM(([Machine-MachineToolLink] INNER JOIN Machines On [Machine-MachineToolLink].MachineID = Machines.Name) INNER JOIN MachineTools On [Machine-MachineToolLink].MachineToolID = MachineTools.Name) WHERE(MachineTools.Name = '" & Machine & "')"
+        Dim query As String = "Select Machines.MachineRoom, Machines.Description, Machines.EntityType, Machines.ImageURL, Machines.Name FROM(([Machine-MachineToolLink] INNER JOIN Machines On [Machine-MachineToolLink].MachineID = Machines.Name) INNER JOIN MachineTools On [Machine-MachineToolLink].MachineToolID = MachineTools.Name) WHERE(MachineTools.Name = '" & Machine & "')"
 
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object

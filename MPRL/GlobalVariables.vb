@@ -13,7 +13,6 @@ Public Class GlobalVariables
 
     Public Shared Click As String
     Public Shared Clicked As String
-    Public Shared additem As String
 
 
     Public Shared prevMachineTool As String 'stores previously selected machine tool 

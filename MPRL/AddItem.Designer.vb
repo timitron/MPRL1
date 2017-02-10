@@ -88,7 +88,7 @@ Partial Class AddItem
         '
         'SubmitChanges
         '
-        Me.SubmitChanges.Location = New System.Drawing.Point(226, 181)
+        Me.SubmitChanges.Location = New System.Drawing.Point(226, 206)
         Me.SubmitChanges.Name = "SubmitChanges"
         Me.SubmitChanges.Size = New System.Drawing.Size(153, 43)
         Me.SubmitChanges.TabIndex = 7
@@ -99,7 +99,7 @@ Partial Class AddItem
         '
         Me.Browse.Location = New System.Drawing.Point(15, 230)
         Me.Browse.Name = "Browse"
-        Me.Browse.Size = New System.Drawing.Size(75, 23)
+        Me.Browse.Size = New System.Drawing.Size(100, 23)
         Me.Browse.TabIndex = 8
         Me.Browse.Text = "Browse"
         Me.Browse.UseVisualStyleBackColor = True

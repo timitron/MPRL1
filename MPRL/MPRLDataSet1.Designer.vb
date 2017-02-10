@@ -2622,7 +2622,7 @@ Partial Public Class MPRLDataSet
         
         Private columnMachineRoom As Global.System.Data.DataColumn
         
-        Private columnMachineDescription As Global.System.Data.DataColumn
+        Private columnDescription As Global.System.Data.DataColumn
         
         Private columnEntityType As Global.System.Data.DataColumn
         
@@ -2681,9 +2681,9 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property MachineDescriptionColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property DescriptionColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnMachineDescription
+                Return Me.columnDescription
             End Get
         End Property
         
@@ -2740,9 +2740,9 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddMachinesRow(ByVal Name As String, ByVal MachineRoom As String, ByVal MachineDescription As String, ByVal EntityType As String, ByVal ImageURL As String) As MachinesRow
+        Public Overloads Function AddMachinesRow(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String) As MachinesRow
             Dim rowMachinesRow As MachinesRow = CType(Me.NewRow,MachinesRow)
-            Dim columnValuesArray() As Object = New Object() {Name, MachineRoom, MachineDescription, EntityType, ImageURL}
+            Dim columnValuesArray() As Object = New Object() {Name, MachineRoom, Description, EntityType, ImageURL}
             rowMachinesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMachinesRow)
             Return rowMachinesRow
@@ -2773,7 +2773,7 @@ Partial Public Class MPRLDataSet
         Friend Sub InitVars()
             Me.columnName = MyBase.Columns("Name")
             Me.columnMachineRoom = MyBase.Columns("MachineRoom")
-            Me.columnMachineDescription = MyBase.Columns("MachineDescription")
+            Me.columnDescription = MyBase.Columns("Description")
             Me.columnEntityType = MyBase.Columns("EntityType")
             Me.columnImageURL = MyBase.Columns("ImageURL")
         End Sub
@@ -2785,8 +2785,8 @@ Partial Public Class MPRLDataSet
             MyBase.Columns.Add(Me.columnName)
             Me.columnMachineRoom = New Global.System.Data.DataColumn("MachineRoom", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMachineRoom)
-            Me.columnMachineDescription = New Global.System.Data.DataColumn("MachineDescription", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnMachineDescription)
+            Me.columnDescription = New Global.System.Data.DataColumn("Description", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescription)
             Me.columnEntityType = New Global.System.Data.DataColumn("EntityType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEntityType)
             Me.columnImageURL = New Global.System.Data.DataColumn("ImageURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -2796,7 +2796,7 @@ Partial Public Class MPRLDataSet
             Me.columnName.Unique = true
             Me.columnName.MaxLength = 255
             Me.columnMachineRoom.MaxLength = 255
-            Me.columnMachineDescription.MaxLength = 536870910
+            Me.columnDescription.MaxLength = 536870910
             Me.columnEntityType.MaxLength = 255
             Me.columnImageURL.MaxLength = 536870910
         End Sub
@@ -5567,16 +5567,16 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property MachineDescription() As String
+        Public Property Description() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableMachines.MachineDescriptionColumn),String)
+                    Return CType(Me(Me.tableMachines.DescriptionColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'MachineDescription' in table 'Machines' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Description' in table 'Machines' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableMachines.MachineDescriptionColumn) = value
+                Me(Me.tableMachines.DescriptionColumn) = value
             End Set
         End Property
         
@@ -5624,14 +5624,14 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsMachineDescriptionNull() As Boolean
-            Return Me.IsNull(Me.tableMachines.MachineDescriptionColumn)
+        Public Function IsDescriptionNull() As Boolean
+            Return Me.IsNull(Me.tableMachines.DescriptionColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetMachineDescriptionNull()
-            Me(Me.tableMachines.MachineDescriptionColumn) = Global.System.Convert.DBNull
+        Public Sub SetDescriptionNull()
+            Me(Me.tableMachines.DescriptionColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9002,7 +9002,7 @@ Namespace MPRLDataSetTableAdapters
             tableMapping.DataSetTable = "Machines"
             tableMapping.ColumnMappings.Add("Name", "Name")
             tableMapping.ColumnMappings.Add("MachineRoom", "MachineRoom")
-            tableMapping.ColumnMappings.Add("MachineDescription", "MachineDescription")
+            tableMapping.ColumnMappings.Add("Description", "Description")
             tableMapping.ColumnMappings.Add("EntityType", "EntityType")
             tableMapping.ColumnMappings.Add("ImageURL", "ImageURL")
             Me._adapter.TableMappings.Add(tableMapping)
@@ -9019,24 +9019,24 @@ Namespace MPRLDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Machines` (`Name`, `MachineRoom`, `MachineDescription`, `EntityType`"& _ 
-                ", `ImageURL`) VALUES (?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Machines` (`Name`, `MachineRoom`, `Description`, `EntityType`, `Imag"& _ 
+                "eURL`) VALUES (?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MachineRoom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineRoom", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MachineDescription", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineDescription", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Machines` SET `Name` = ?, `MachineRoom` = ?, `MachineDescription` = ?, `E"& _ 
-                "ntityType` = ?, `ImageURL` = ? WHERE ((`Name` = ?) AND ((? = 1 AND `MachineRoom`"& _ 
-                " IS NULL) OR (`MachineRoom` = ?)) AND ((? = 1 AND `EntityType` IS NULL) OR (`Ent"& _ 
-                "ityType` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Machines` SET `Name` = ?, `MachineRoom` = ?, `Description` = ?, `EntityTy"& _ 
+                "pe` = ?, `ImageURL` = ? WHERE ((`Name` = ?) AND ((? = 1 AND `MachineRoom` IS NUL"& _ 
+                "L) OR (`MachineRoom` = ?)) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType"& _ 
+                "` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MachineRoom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineRoom", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MachineDescription", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineDescription", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -9059,7 +9059,7 @@ Namespace MPRLDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Name, MachineRoom, MachineDescription, EntityType, ImageURL FROM Machines"
+            Me._commandCollection(0).CommandText = "SELECT Name, MachineRoom, Description, EntityType, ImageURL FROM Machines"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -9158,7 +9158,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal MachineRoom As String, ByVal MachineDescription As String, ByVal EntityType As String, ByVal ImageURL As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -9169,10 +9169,10 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(MachineRoom,String)
             End If
-            If (MachineDescription Is Nothing) Then
+            If (Description Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(MachineDescription,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Description,String)
             End If
             If (EntityType Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
@@ -9203,7 +9203,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal MachineRoom As String, ByVal MachineDescription As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal Original_Name As String, ByVal Original_MachineRoom As String, ByVal Original_EntityType As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal Original_Name As String, ByVal Original_MachineRoom As String, ByVal Original_EntityType As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -9214,10 +9214,10 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(MachineRoom,String)
             End If
-            If (MachineDescription Is Nothing) Then
+            If (Description Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(MachineDescription,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Description,String)
             End If
             If (EntityType Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
@@ -9267,8 +9267,8 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal MachineRoom As String, ByVal MachineDescription As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal Original_Name As String, ByVal Original_MachineRoom As String, ByVal Original_EntityType As String) As Integer
-            Return Me.Update(Original_Name, MachineRoom, MachineDescription, EntityType, ImageURL, Original_Name, Original_MachineRoom, Original_EntityType)
+        Public Overloads Overridable Function Update(ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal Original_Name As String, ByVal Original_MachineRoom As String, ByVal Original_EntityType As String) As Integer
+            Return Me.Update(Original_Name, MachineRoom, Description, EntityType, ImageURL, Original_Name, Original_MachineRoom, Original_EntityType)
         End Function
     End Class
     

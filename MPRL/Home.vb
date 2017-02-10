@@ -29,42 +29,79 @@
     End Sub
 
     Private Sub AddToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem6.Click
-        GlobalVariables.additem = "PPE"
+        GlobalVariables.Click = "PPE"
         Dim newform
         newform = AddItem
         newform.show()
     End Sub
     Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
-        GlobalVariables.additem = "Machines"
+        GlobalVariables.Click = "Machines"
         Dim newform
         newform = AddItem
         newform.show()
     End Sub
 
     Private Sub AddToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem2.Click
-        GlobalVariables.additem = "Machining Method"
+        GlobalVariables.Click = "Machining Method"
         Dim newform
         newform = AddItem
         newform.show()
     End Sub
 
     Private Sub AddToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem3.Click
-        GlobalVariables.additem = "Clamping Method"
+        GlobalVariables.Click = "Clamping Method"
         Dim newform
         newform = AddItem
         newform.show()
     End Sub
 
     Private Sub AddToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem1.Click
-        GlobalVariables.additem = "Machine Tools"
+        GlobalVariables.Click = "Machine Tools"
         Dim newform
         newform = AddItem
         newform.show()
     End Sub
 
-    Private Sub LnkAbout_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LnkAbout.LinkClicked
-        Dim frm As New Form
-        frm = FormAbout
-        frm.Show()
+    Private Sub EditToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem6.Click
+        GlobalVariables.Click = "PPE"
+
+        Dim newform
+        newform = EditForm
+        newform.show()
+
+    End Sub
+
+    Private Sub EditToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem3.Click
+        GlobalVariables.Click = "Clamping Methods"
+
+        Dim newform
+        newform = EditForm
+        newform.show()
+
+    End Sub
+
+    Private Sub EditToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem1.Click
+        GlobalVariables.Click = "Machine Tools"
+
+        Dim newform
+        newform = EditForm
+        newform.show()
+    End Sub
+
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        GlobalVariables.Click = "Machines"
+
+        Dim newform
+        newform = EditForm
+        newform.show()
+    End Sub
+
+    Private Sub EditToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem2.Click
+        GlobalVariables.Click = "Machining Methods"
+
+        Dim newform
+        newform = EditForm
+        newform.show()
     End Sub
 End Class
+
