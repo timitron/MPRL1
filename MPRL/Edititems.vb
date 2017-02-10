@@ -52,6 +52,11 @@ Public Class Edititems
             Exit Sub
         End If
 
+        If DescriptionTextBox.Text = "" Then
+            MessageBox.Show("You must enter a description.")
+            Exit Sub
+        End If
+
         If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then
             MessageBox.Show("Image must be in ""Debug"" folder")
             Exit Sub
@@ -63,7 +68,7 @@ Public Class Edititems
 
         End If
 
-        Dim result As Integer = MessageBox.Show("Are you sure you want to edit" & GlobalVariables.Clicked & "?", "Submit Changes?", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Are you sure you want to edit " & GlobalVariables.Clicked & "?", "Submit Changes?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
         ElseIf result = DialogResult.Yes Then
@@ -75,15 +80,15 @@ Public Class Edititems
             Dim query As String
 
             If GlobalVariables.Click = "PPE" Then
-                query = "Update `PPE` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (('" & GlobalVariables.Clicked & "'))"
+                query = "Update `PPE` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machines" Then
-                query = "Update `Machines' Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (('" & GlobalVariables.Clicked & "'))"
+                query = "Update `Machines' Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machining Method" Then
-                query = "Update `MachiningMethods` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (('" & GlobalVariables.Clicked & "'))"
+                query = "Update `MachiningMethods` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name = '" & GlobalVariables.Click & "'))"
             ElseIf GlobalVariables.Click = "Clamping Method" Then
-                query = "Update `Clamping Method` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (('" & GlobalVariables.Clicked & "'))"
+                query = "Update `Clamping Method` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
-                query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (('" & GlobalVariables.Clicked & "'))"
+                query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
             End If
 
             Dim cmd As New OleDbCommand(query, cnn)
@@ -91,7 +96,7 @@ Public Class Edititems
 
             cnn.Open()
 
-
+            GlobalVariables.Click = "PPE"
             response = cmd.ExecuteNonQuery()
 
             cnn.Close()
@@ -102,4 +107,9 @@ Public Class Edititems
         End If
     End Sub
 
-  End Class
+    Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click
+        OpenFileDialog1.ShowDialog()
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
+        PictureBox1.ImageLocation = OpenFileDialog1.FileName
+    End Sub
+End Class

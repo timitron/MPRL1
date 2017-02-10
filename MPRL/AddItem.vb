@@ -19,6 +19,10 @@ Public Class AddItem
             MessageBox.Show("You must enter a " & GlobalVariables.Click & " name.")
             Exit Sub
         End If
+        If DescriptionTextBox.Text = "" Then
+            MessageBox.Show("You must enter a description.")
+            Exit Sub
+        End If
 
         If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then
             MessageBox.Show("Image must be in ""Debug"" folder")
