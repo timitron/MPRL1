@@ -51,28 +51,28 @@ Public Class FormSetup
 
     End Sub
 
-
-    Private Sub PictureOverview_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-
-        FormHome.Show()
-        GlobalVariables.CloseAll = False
-        Me.Close()
-        GlobalVariables.CloseAll = True
-
-    End Sub
-
     Private Sub Form1_Closing(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
         If GlobalVariables.CloseAll = True Then
             FormHome.Close()
         End If
 
     End Sub
+    Private Sub BtnEditResources_Click(sender As Object, e As EventArgs) Handles BtnEditResources.Click
+        Global.MPRL.GlobalVariables.Click = Setup
+        GlobalVariables.Clicked = "Setup"
+        Dim newform
+        newform = FormAddResourceLink
+        newform.Show()
+    End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub Home_Click(sender As Object, e As EventArgs) Handles Home.Click
+        FormHome.Show()
+        GlobalVariables.CloseAll = False
+        Me.Close()
+        GlobalVariables.CloseAll = True
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Global.MPRL.GlobalVariables.Click = GlobalVariables.prevMachineTool
 
         Dim newform
@@ -83,14 +83,5 @@ Public Class FormSetup
         Me.Close()
         GlobalVariables.CloseAll = True
 
-    End Sub
-
-    Private Sub BtnEditResources_Click(sender As Object, e As EventArgs) Handles BtnEditResources.Click
-        Global.MPRL.GlobalVariables.Click = Setup
-        GlobalVariables.Clicked = "Setup"
-        Dim newform
-        newform = FormAddResourceLink
-
-        newform.Show()
     End Sub
 End Class

@@ -1,5 +1,7 @@
 ﻿Public Class FormHome
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Activate()
+
         If GlobalVariables.AdminBuild = False Then
             MenuStrip1.Visible = False
         End If
@@ -18,7 +20,7 @@
 
     End Sub
 
-    Private Sub ButtonMachiningMethodsFlow_DoubleClick(sender As Object, e As EventArgs) Handles ButtonMachiningMethodsFlow.Click
+    Private Sub ButtonOperationsFlow_DoubleClick(sender As Object, e As EventArgs) Handles ButtonOperationsFlow.Click
         GlobalVariables.MethodStart = True
 
         Dim newform
@@ -42,14 +44,14 @@
     End Sub
 
     Private Sub AddToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem2.Click
-        GlobalVariables.Click = "Machining Method"
+        GlobalVariables.Click = "Operations"
         Dim newform
         newform = AddItem
         newform.show()
     End Sub
 
     Private Sub AddToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem3.Click
-        GlobalVariables.Click = "Clamping Method"
+        GlobalVariables.Click = "Setups"
         Dim newform
         newform = AddItem
         newform.show()
@@ -72,7 +74,7 @@
     End Sub
 
     Private Sub EditToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem3.Click
-        GlobalVariables.Click = "Clamping Methods"
+        GlobalVariables.Click = "Setups"
 
         Dim newform
         newform = EditForm
@@ -97,11 +99,12 @@
     End Sub
 
     Private Sub EditToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem2.Click
-        GlobalVariables.Click = "Machining Methods"
+        GlobalVariables.Click = "Operations"
 
         Dim newform
         newform = EditForm
         newform.show()
     End Sub
+
 End Class
 

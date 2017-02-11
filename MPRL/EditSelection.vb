@@ -14,18 +14,20 @@ Public Class EditForm
         Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
         Dim Table_ As String
         Dim query As String
+
+
         'open connection to database and execute the query string
         cnn.Open()
         Label2.Text = "Choose " & GlobalVariables.Click & " to edit."
         If GlobalVariables.Click = "PPE" Then
             Table_ = "PPE"   'defines table inside the dataset to store information recieved from data connections
             query = "SELECT Name FROM PPE;"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
-        ElseIf GlobalVariables.Click = "Clamping Methods" Then
-            Table_ = "ClampingMethods"
-            query = "SELECT Name FROM ClampingMethods"
-        ElseIf GlobalVariables.Click = "Machining Methods" Then
-            Table_ = "MachiningMethods"
-            query = "SELECT Name FROM MachiningMethods"
+        ElseIf GlobalVariables.Click = "Setups" Then
+            Table_ = "Setups"
+            query = "SELECT Name FROM Setups"
+        ElseIf GlobalVariables.Click = "Operations" Then
+            Table_ = "Operations"
+            query = "SELECT Name FROM Operations"
         ElseIf GlobalVariables.Click = "Machine Tools" Then
             Table_ = "MachineTools"
             query = "Select Name FROM MachineTools"
@@ -53,14 +55,17 @@ Public Class EditForm
         Next
 
         editList.Update()
+        cnn.Close()
     End Sub
+
 
     Private Sub editList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles editList.DoubleClick
         GlobalVariables.Clicked = editList.SelectedItem
         Dim newform
         newform = Edititems
         Edititems.Show()
-        Me.Hide()
+        Me.Close()
+
 
     End Sub
 End Class

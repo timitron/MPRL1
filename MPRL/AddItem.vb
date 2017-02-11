@@ -44,10 +44,10 @@ Public Class AddItem
                 query = "insert into [PPE](Name, Description, Imageurl) values('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machines" Then
                 query = "INSERT INTO [Machines] (Name, MachineRoom, Description, EntityType, ImageURL) VALUES ('" & NameTextBox.Text & "', 'Rogers118', '" & DescriptionTextBox.Text & "', 'Machines', '" & PictureBox1.ImageLocation & "')"
-            ElseIf GlobalVariables.Click = "Machining Method" Then
-                query = "INSERT INTO [MachiningMethods] (`Name`, `Description`, `EntityType`,  `ImageURL`) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', 'Machining Method', '" & PictureBox1.ImageLocation & "')"
-            ElseIf GlobalVariables.Click = "Clamping Method" Then
-                query = "INSERT INTO [ClampingMethods] (`Name`, `Description`, `ImageURL`) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
+            ElseIf GlobalVariables.Click = "Operations" Then
+                query = "INSERT INTO [Operations] (`Name`, `Description`, `EntityType`,  `ImageURL`) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', 'Operations', '" & PictureBox1.ImageLocation & "')"
+            ElseIf GlobalVariables.Click = "Setups" Then
+                query = "INSERT INTO [Setups] (`Name`, `Description`, `ImageURL`) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
                 query = "INSERT INTO [MachineTools] (`Name`, `Description`, `ImageURL`) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
             End If
@@ -75,15 +75,7 @@ Public Class AddItem
 
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
-    End Sub
 
-    Private Sub DescriptionTextBox_TextChanged(sender As Object, e As EventArgs) Handles DescriptionTextBox.TextChanged
 
-    End Sub
-
-    Private Sub NameTextBox_TextChanged(sender As Object, e As EventArgs) Handles NameTextBox.TextChanged
-
-    End Sub
 End Class

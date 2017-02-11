@@ -6,6 +6,7 @@ Imports System.Net
 
 Public Class Edititems
     Dim ds As New DataSet                       'defines dataset for data table
+    Dim query As String
 
     Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
@@ -18,18 +19,16 @@ Public Class Edititems
 
         Dim Table_ As String = "MachineTool"
 
-        Dim query As String
-        'open connection to database and execute the query string
         cnn.Open()
 
         If GlobalVariables.Click = "PPE" Then
             query = "SELECT Name, Description, ImageURL From PPE Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.click = "Machines" Then
             query = "SELECT Name,  Description, ImageURL From Machines Where (([Name] = '" & GlobalVariables.Clicked & "'));"
-        ElseIf GlobalVariables.Click = "Machining Method" Then
-            query = "SELECT Name, Description, ImageURL From MachiningMethods Where (([Name] = '" & GlobalVariables.Clicked & "'));"
-        ElseIf GlobalVariables.Click = "Clamping Method" Then
-            query = "SELECT Name, Description, ImageURL From ClampingMethods Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+        ElseIf GlobalVariables.Click = "Operations" Then
+            query = "SELECT Name, Description, ImageURL From Operations Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+        ElseIf GlobalVariables.Click = "Setups" Then
+            query = "SELECT Name, Description, ImageURL From Setups Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.click = "Machine Tools" Then
             query = "SELECT Name, Description, ImageURL From MachineTools Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         End If
@@ -64,6 +63,7 @@ Public Class Edititems
 
         If originalText <> NameTextBox.Text Then
             MessageBox.Show("Currently the name can not be edited. If it must be changed then delete thie item and add a new one with the correct name * note any relationships will have to be added again")
+            NameTextBox.Text = originalText
             Exit Sub
 
         End If
@@ -83,10 +83,10 @@ Public Class Edititems
                 query = "Update `PPE` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machines" Then
                 query = "Update `Machines' Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name ='" & GlobalVariables.Clicked & "'))"
-            ElseIf GlobalVariables.Click = "Machining Method" Then
-                query = "Update `MachiningMethods` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name = '" & GlobalVariables.Click & "'))"
-            ElseIf GlobalVariables.Click = "Clamping Method" Then
-                query = "Update `Clamping Method` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
+            ElseIf GlobalVariables.Click = "Operations" Then
+                query = "Update `Operations` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name = '" & GlobalVariables.Clicked & "'))"
+            ElseIf GlobalVariables.Click = "Setups" Then
+                query = "Update `Setups` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
                 query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
             End If
@@ -96,7 +96,6 @@ Public Class Edititems
 
             cnn.Open()
 
-            GlobalVariables.Click = "PPE"
             response = cmd.ExecuteNonQuery()
 
             cnn.Close()
@@ -111,5 +110,41 @@ Public Class Edititems
         OpenFileDialog1.ShowDialog()
         OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
         PictureBox1.ImageLocation = OpenFileDialog1.FileName
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+
+
+        cnn.Close()
+        Dim result As Integer = MessageBox.Show("Are you sure you want to edit " & GlobalVariables.Clicked & "?", "Submit Changes?", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            Exit Sub
+        End If
+
+        PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
+        If GlobalVariables.Click = "PPE" Then
+            query = "DELETE FROM `PPE` WHERE (name ='" & GlobalVariables.Clicked & "')"
+        ElseIf GlobalVariables.Click = "Machines" Then
+            query = "DELETE FROM `Machines` WHERE (( name ='" & GlobalVariables.Clicked & "'))"
+        ElseIf GlobalVariables.Click = "Operations" Then
+            query = "DELETE FROM `Operations` WHERE (( name = '" & GlobalVariables.Clicked & "'))"
+        ElseIf GlobalVariables.Click = "Setups" Then
+            query = "DELETE FROM `Setups` WHERE ((name ='" & GlobalVariables.Clicked & "'))"
+        ElseIf GlobalVariables.Click = "Machine Tools" Then
+            query = "DELETE FROM `MachineTools` WHERE ((name = '" & GlobalVariables.Clicked & "'))"
+        End If
+
+            Dim cmd As New OleDbCommand(query, cnn)
+            Dim response As Integer
+
+            cnn.Open()
+
+            response = cmd.ExecuteNonQuery()
+            cnn.Close()
+        Me.Close()
+        FormHome.Show()
+
+
     End Sub
 End Class

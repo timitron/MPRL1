@@ -92,7 +92,7 @@ Public Class CustFunctions
             query = "SELECT Instructions.[Text], Instructions.Tool, Instructions.FeedsAndSpeeds FROM((Instructions INNER JOIN [Instruction-EntityLink] ON Instructions.ID = [Instruction-EntityLink].InstructionID) INNER JOIN Machines On [Instruction-EntityLink].EntityID = Machines.Name) WHERE(Machines.Name = '" & targetID & "') AND ([Instruction-EntityLink].EntityType = 'Machine') ORDER BY [Instruction-EntityLink].Sequence"
         End If
         If type = "MachiningMethod" Then
-            query = "SELECT Instructions.[Text], Instructions.Tool, Instructions.FeedsAndSpeeds FROM((Instructions INNER JOIN [Instruction-EntityLink] ON Instructions.ID = [Instruction-EntityLink].InstructionID) INNER JOIN MachiningMethods On [Instruction-EntityLink].EntityID = MachiningMethods.Name) WHERE(MachiningMethods.Name = '" & targetID & "') AND ([Instruction-EntityLink].EntityType = 'Machining Method') ORDER BY [Instruction-EntityLink].Sequence"
+            query = "SELECT Instructions.[Text], Instructions.Tool, Instructions.FeedsAndSpeeds FROM((Instructions INNER JOIN [Instruction-EntityLink] ON Instructions.ID = [Instruction-EntityLink].InstructionID) INNER JOIN MachiningMethods On [Instruction-EntityLink].EntityID = MachiningMethods.Name) WHERE(MachiningMethods.Name = '" & targetID & "') AND ([Instruction-EntityLink].EntityType = 'Operations') ORDER BY [Instruction-EntityLink].Sequence"
         End If
 
         'define connection string and create connection object 

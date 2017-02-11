@@ -24,7 +24,7 @@ Partial Class FormHome
     Private Sub InitializeComponent()
         Me.ButtonMachineToolFlow = New System.Windows.Forms.Button()
         Me.ButtonMethodSuggestorFlow = New System.Windows.Forms.Button()
-        Me.ButtonMachiningMethodsFlow = New System.Windows.Forms.Button()
+        Me.ButtonOperationsFlow = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MachinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,10 +32,10 @@ Partial Class FormHome
         Me.MachineToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MachiningMethodsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OperationsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClampingMethodsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SetupsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FeaturesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -81,25 +81,25 @@ Partial Class FormHome
         Me.ButtonMethodSuggestorFlow.Text = "Machining Method Suggestor"
         Me.ButtonMethodSuggestorFlow.UseVisualStyleBackColor = True
         '
-        'ButtonMachiningMethodsFlow
+        'ButtonOperationsFlow
         '
-        Me.ButtonMachiningMethodsFlow.AutoSize = True
-        Me.ButtonMachiningMethodsFlow.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ButtonMachiningMethodsFlow.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonMachiningMethodsFlow.Location = New System.Drawing.Point(0, 224)
-        Me.ButtonMachiningMethodsFlow.MinimumSize = New System.Drawing.Size(600, 75)
-        Me.ButtonMachiningMethodsFlow.Name = "ButtonMachiningMethodsFlow"
-        Me.ButtonMachiningMethodsFlow.Size = New System.Drawing.Size(721, 75)
-        Me.ButtonMachiningMethodsFlow.TabIndex = 3
-        Me.ButtonMachiningMethodsFlow.Text = "Browse Machining Methods"
-        Me.ButtonMachiningMethodsFlow.UseVisualStyleBackColor = True
+        Me.ButtonOperationsFlow.AutoSize = True
+        Me.ButtonOperationsFlow.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ButtonOperationsFlow.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonOperationsFlow.Location = New System.Drawing.Point(0, 224)
+        Me.ButtonOperationsFlow.MinimumSize = New System.Drawing.Size(600, 75)
+        Me.ButtonOperationsFlow.Name = "ButtonOperationsFlow"
+        Me.ButtonOperationsFlow.Size = New System.Drawing.Size(721, 75)
+        Me.ButtonOperationsFlow.TabIndex = 3
+        Me.ButtonOperationsFlow.Text = "Browse Machining Methods"
+        Me.ButtonOperationsFlow.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MachinesToolStripMenuItem, Me.MachineToolsToolStripMenuItem, Me.MachiningMethodsToolStripMenuItem, Me.ClampingMethodsToolStripMenuItem, Me.FeaturesToolStripMenuItem, Me.ResourcesToolStripMenuItem, Me.PPE})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MachineToolsToolStripMenuItem, Me.MachinesToolStripMenuItem, Me.OperationsToolStripMenuItem, Me.SetupsToolStripMenuItem, Me.FeaturesToolStripMenuItem, Me.ResourcesToolStripMenuItem, Me.PPE})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 299)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -117,13 +117,13 @@ Partial Class FormHome
         'AddToolStripMenuItem
         '
         Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
-        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(103, 24)
+        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
         Me.AddToolStripMenuItem.Text = "Add"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(103, 24)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'MachineToolsToolStripMenuItem
@@ -145,31 +145,31 @@ Partial Class FormHome
         Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(103, 24)
         Me.EditToolStripMenuItem1.Text = "Edit"
         '
-        'MachiningMethodsToolStripMenuItem
+        'OperationsToolStripMenuItem
         '
-        Me.MachiningMethodsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem2, Me.EditToolStripMenuItem2})
-        Me.MachiningMethodsToolStripMenuItem.Name = "MachiningMethodsToolStripMenuItem"
-        Me.MachiningMethodsToolStripMenuItem.Size = New System.Drawing.Size(144, 23)
-        Me.MachiningMethodsToolStripMenuItem.Text = "Machining Methods"
+        Me.OperationsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem2, Me.EditToolStripMenuItem2})
+        Me.OperationsToolStripMenuItem.Name = "OperationsToolStripMenuItem"
+        Me.OperationsToolStripMenuItem.Size = New System.Drawing.Size(89, 23)
+        Me.OperationsToolStripMenuItem.Text = "Operations"
         '
         'AddToolStripMenuItem2
         '
         Me.AddToolStripMenuItem2.Name = "AddToolStripMenuItem2"
-        Me.AddToolStripMenuItem2.Size = New System.Drawing.Size(103, 24)
+        Me.AddToolStripMenuItem2.Size = New System.Drawing.Size(152, 24)
         Me.AddToolStripMenuItem2.Text = "Add"
         '
         'EditToolStripMenuItem2
         '
         Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
-        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(103, 24)
+        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(152, 24)
         Me.EditToolStripMenuItem2.Text = "Edit"
         '
-        'ClampingMethodsToolStripMenuItem
+        'SetupsToolStripMenuItem
         '
-        Me.ClampingMethodsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem3, Me.EditToolStripMenuItem3})
-        Me.ClampingMethodsToolStripMenuItem.Name = "ClampingMethodsToolStripMenuItem"
-        Me.ClampingMethodsToolStripMenuItem.Size = New System.Drawing.Size(138, 23)
-        Me.ClampingMethodsToolStripMenuItem.Text = "Clamping Methods"
+        Me.SetupsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem3, Me.EditToolStripMenuItem3})
+        Me.SetupsToolStripMenuItem.Name = "SetupsToolStripMenuItem"
+        Me.SetupsToolStripMenuItem.Size = New System.Drawing.Size(62, 23)
+        Me.SetupsToolStripMenuItem.Text = "Setups"
         '
         'AddToolStripMenuItem3
         '
@@ -212,13 +212,13 @@ Partial Class FormHome
         'AddToolStripMenuItem5
         '
         Me.AddToolStripMenuItem5.Name = "AddToolStripMenuItem5"
-        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
+        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
         Me.AddToolStripMenuItem5.Text = "Add"
         '
         'EditToolStripMenuItem5
         '
         Me.EditToolStripMenuItem5.Name = "EditToolStripMenuItem5"
-        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
+        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
         Me.EditToolStripMenuItem5.Text = "Edit"
         '
         'PPE
@@ -284,7 +284,7 @@ Partial Class FormHome
         Me.Controls.Add(Me.LnkAbout)
         Me.Controls.Add(Me.ButtonMachineToolFlow)
         Me.Controls.Add(Me.ButtonMethodSuggestorFlow)
-        Me.Controls.Add(Me.ButtonMachiningMethodsFlow)
+        Me.Controls.Add(Me.ButtonOperationsFlow)
         Me.Controls.Add(Me.TxtboxTitle)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -302,14 +302,14 @@ Partial Class FormHome
     End Sub
     Friend WithEvents ButtonMachineToolFlow As Button
     Friend WithEvents ButtonMethodSuggestorFlow As Button
-    Friend WithEvents ButtonMachiningMethodsFlow As Button
+    Friend WithEvents ButtonOperationsFlow As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MachinesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AddToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MachineToolsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MachiningMethodsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ClampingMethodsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OperationsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SetupsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FeaturesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem5 As ToolStripMenuItem
     Friend WithEvents AddToolStripMenuItem5 As ToolStripMenuItem

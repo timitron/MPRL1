@@ -55,7 +55,7 @@ Partial Public Class MPRLDataSet
     
     Private _relationAdditionalResourcesEntity_ResourceLink As Global.System.Data.DataRelation
     
-    Private _relationClampingMethodsEntity_ResourceLink As Global.System.Data.DataRelation
+    Private _relationSetupsEntity_ResourceLink As Global.System.Data.DataRelation
     
     Private _relationEntitiesEntity_ResourceLink As Global.System.Data.DataRelation
     
@@ -75,9 +75,9 @@ Partial Public Class MPRLDataSet
     
     Private _relationMachiningMethodsMachineTool_MachiningMethodsLink As Global.System.Data.DataRelation
     
-    Private _relationClampingMethodsMachineTool_ClampingMethodsLink As Global.System.Data.DataRelation
+    Private _relationSetupsMachineTool_SetupsLink As Global.System.Data.DataRelation
     
-    Private _relationMachineToolsMachineTool_ClampingMethodsLink As Global.System.Data.DataRelation
+    Private _relationMachineToolsMachineTool_SetupsLink As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -533,7 +533,7 @@ Partial Public Class MPRLDataSet
             End If
         End If
         Me._relationAdditionalResourcesEntity_ResourceLink = Me.Relations("AdditionalResourcesEntity-ResourceLink")
-        Me._relationClampingMethodsEntity_ResourceLink = Me.Relations("ClampingMethodsEntity-ResourceLink")
+        Me._relationSetupsEntity_ResourceLink = Me.Relations("SetupsEntity-ResourceLink")
         Me._relationEntitiesEntity_ResourceLink = Me.Relations("EntitiesEntity-ResourceLink")
         Me._relationMachinesEntity_ResourceLink = Me.Relations("MachinesEntity-ResourceLink")
         Me._relationMachiningMethodsEntity_ResourceLink = Me.Relations("MachiningMethodsEntity-ResourceLink")
@@ -543,8 +543,8 @@ Partial Public Class MPRLDataSet
         Me._relationPPEMachineTool_PPELink = Me.Relations("PPEMachineTool-PPELink")
         Me._relationMachineToolsMachineTool_MachiningMethodsLink = Me.Relations("MachineToolsMachineTool-MachiningMethodsLink")
         Me._relationMachiningMethodsMachineTool_MachiningMethodsLink = Me.Relations("MachiningMethodsMachineTool-MachiningMethodsLink")
-        Me._relationClampingMethodsMachineTool_ClampingMethodsLink = Me.Relations("ClampingMethodsMachineTool-ClampingMethodsLink")
-        Me._relationMachineToolsMachineTool_ClampingMethodsLink = Me.Relations("MachineToolsMachineTool-ClampingMethodsLink")
+        Me._relationSetupsMachineTool_SetupsLink = Me.Relations("SetupsMachineTool-SetupsLink")
+        Me._relationMachineToolsMachineTool_SetupsLink = Me.Relations("MachineToolsMachineTool-SetupsLink")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -585,8 +585,8 @@ Partial Public Class MPRLDataSet
         MyBase.Tables.Add(Me.tableSetups)
         Me._relationAdditionalResourcesEntity_ResourceLink = New Global.System.Data.DataRelation("AdditionalResourcesEntity-ResourceLink", New Global.System.Data.DataColumn() {Me.tableAdditionalResources.IDColumn}, New Global.System.Data.DataColumn() {Me._tableEntity_ResourceLink.ResourceIDColumn}, false)
         Me.Relations.Add(Me._relationAdditionalResourcesEntity_ResourceLink)
-        Me._relationClampingMethodsEntity_ResourceLink = New Global.System.Data.DataRelation("ClampingMethodsEntity-ResourceLink", New Global.System.Data.DataColumn() {Me.tableSetups.NameColumn}, New Global.System.Data.DataColumn() {Me._tableEntity_ResourceLink.EntitiesIDColumn}, false)
-        Me.Relations.Add(Me._relationClampingMethodsEntity_ResourceLink)
+        Me._relationSetupsEntity_ResourceLink = New Global.System.Data.DataRelation("SetupsEntity-ResourceLink", New Global.System.Data.DataColumn() {Me.tableSetups.NameColumn}, New Global.System.Data.DataColumn() {Me._tableEntity_ResourceLink.EntitiesIDColumn}, false)
+        Me.Relations.Add(Me._relationSetupsEntity_ResourceLink)
         Me._relationEntitiesEntity_ResourceLink = New Global.System.Data.DataRelation("EntitiesEntity-ResourceLink", New Global.System.Data.DataColumn() {Me.tableEntities.EntityNameColumn}, New Global.System.Data.DataColumn() {Me._tableEntity_ResourceLink.EntitiesColumn}, false)
         Me.Relations.Add(Me._relationEntitiesEntity_ResourceLink)
         Me._relationMachinesEntity_ResourceLink = New Global.System.Data.DataRelation("MachinesEntity-ResourceLink", New Global.System.Data.DataColumn() {Me.tableMachines.NameColumn}, New Global.System.Data.DataColumn() {Me._tableEntity_ResourceLink.EntitiesIDColumn}, false)
@@ -605,10 +605,10 @@ Partial Public Class MPRLDataSet
         Me.Relations.Add(Me._relationMachineToolsMachineTool_MachiningMethodsLink)
         Me._relationMachiningMethodsMachineTool_MachiningMethodsLink = New Global.System.Data.DataRelation("MachiningMethodsMachineTool-MachiningMethodsLink", New Global.System.Data.DataColumn() {Me.tableOperations.NameColumn}, New Global.System.Data.DataColumn() {Me._tableMachineTool_OperationsLink.OperationsIDColumn}, false)
         Me.Relations.Add(Me._relationMachiningMethodsMachineTool_MachiningMethodsLink)
-        Me._relationClampingMethodsMachineTool_ClampingMethodsLink = New Global.System.Data.DataRelation("ClampingMethodsMachineTool-ClampingMethodsLink", New Global.System.Data.DataColumn() {Me.tableSetups.NameColumn}, New Global.System.Data.DataColumn() {Me._tableMachineTool_SetupLink.SetupIDColumn}, false)
-        Me.Relations.Add(Me._relationClampingMethodsMachineTool_ClampingMethodsLink)
-        Me._relationMachineToolsMachineTool_ClampingMethodsLink = New Global.System.Data.DataRelation("MachineToolsMachineTool-ClampingMethodsLink", New Global.System.Data.DataColumn() {Me.tableMachineTools.NameColumn}, New Global.System.Data.DataColumn() {Me._tableMachineTool_SetupLink.MachineToolIDColumn}, false)
-        Me.Relations.Add(Me._relationMachineToolsMachineTool_ClampingMethodsLink)
+        Me._relationSetupsMachineTool_SetupsLink = New Global.System.Data.DataRelation("SetupsMachineTool-SetupsLink", New Global.System.Data.DataColumn() {Me.tableSetups.NameColumn}, New Global.System.Data.DataColumn() {Me._tableMachineTool_SetupLink.SetupIDColumn}, false)
+        Me.Relations.Add(Me._relationSetupsMachineTool_SetupsLink)
+        Me._relationMachineToolsMachineTool_SetupsLink = New Global.System.Data.DataRelation("MachineToolsMachineTool-SetupsLink", New Global.System.Data.DataColumn() {Me.tableMachineTools.NameColumn}, New Global.System.Data.DataColumn() {Me._tableMachineTool_SetupLink.MachineToolIDColumn}, false)
+        Me.Relations.Add(Me._relationMachineToolsMachineTool_SetupsLink)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1497,14 +1497,14 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Add_Entity_ResourceLinkRow(ByVal _parentEntitiesRowByEntitiesEntity_ResourceLink As EntitiesRow, ByVal _parentSetupsRowByClampingMethodsEntity_ResourceLink As SetupsRow, ByVal _parentAdditionalResourcesRowByAdditionalResourcesEntity_ResourceLink As AdditionalResourcesRow) As _Entity_ResourceLinkRow
+        Public Overloads Function Add_Entity_ResourceLinkRow(ByVal _parentEntitiesRowByEntitiesEntity_ResourceLink As EntitiesRow, ByVal _parentSetupsRowBySetupsEntity_ResourceLink As SetupsRow, ByVal _parentAdditionalResourcesRowByAdditionalResourcesEntity_ResourceLink As AdditionalResourcesRow) As _Entity_ResourceLinkRow
             Dim row_Entity_ResourceLinkRow As _Entity_ResourceLinkRow = CType(Me.NewRow,_Entity_ResourceLinkRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, Nothing}
             If (Not (_parentEntitiesRowByEntitiesEntity_ResourceLink) Is Nothing) Then
                 columnValuesArray(1) = _parentEntitiesRowByEntitiesEntity_ResourceLink(0)
             End If
-            If (Not (_parentSetupsRowByClampingMethodsEntity_ResourceLink) Is Nothing) Then
-                columnValuesArray(2) = _parentSetupsRowByClampingMethodsEntity_ResourceLink(0)
+            If (Not (_parentSetupsRowBySetupsEntity_ResourceLink) Is Nothing) Then
+                columnValuesArray(2) = _parentSetupsRowBySetupsEntity_ResourceLink(0)
             End If
             If (Not (_parentAdditionalResourcesRowByAdditionalResourcesEntity_ResourceLink) Is Nothing) Then
                 columnValuesArray(3) = _parentAdditionalResourcesRowByAdditionalResourcesEntity_ResourceLink(0)
@@ -3866,14 +3866,14 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Add_MachineTool_SetupLinkRow(ByVal _parentMachineToolsRowByMachineToolsMachineTool_ClampingMethodsLink As MachineToolsRow, ByVal _parentSetupsRowByClampingMethodsMachineTool_ClampingMethodsLink As SetupsRow) As _MachineTool_SetupLinkRow
+        Public Overloads Function Add_MachineTool_SetupLinkRow(ByVal _parentMachineToolsRowByMachineToolsMachineTool_SetupsLink As MachineToolsRow, ByVal _parentSetupsRowBySetupsMachineTool_SetupsLink As SetupsRow) As _MachineTool_SetupLinkRow
             Dim row_MachineTool_SetupLinkRow As _MachineTool_SetupLinkRow = CType(Me.NewRow,_MachineTool_SetupLinkRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Nothing}
-            If (Not (_parentMachineToolsRowByMachineToolsMachineTool_ClampingMethodsLink) Is Nothing) Then
-                columnValuesArray(0) = _parentMachineToolsRowByMachineToolsMachineTool_ClampingMethodsLink(0)
+            If (Not (_parentMachineToolsRowByMachineToolsMachineTool_SetupsLink) Is Nothing) Then
+                columnValuesArray(0) = _parentMachineToolsRowByMachineToolsMachineTool_SetupsLink(0)
             End If
-            If (Not (_parentSetupsRowByClampingMethodsMachineTool_ClampingMethodsLink) Is Nothing) Then
-                columnValuesArray(1) = _parentSetupsRowByClampingMethodsMachineTool_ClampingMethodsLink(0)
+            If (Not (_parentSetupsRowBySetupsMachineTool_SetupsLink) Is Nothing) Then
+                columnValuesArray(1) = _parentSetupsRowBySetupsMachineTool_SetupsLink(0)
             End If
             row_MachineTool_SetupLinkRow.ItemArray = columnValuesArray
             Me.Rows.Add(row_MachineTool_SetupLinkRow)
@@ -5190,10 +5190,10 @@ Partial Public Class MPRLDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property SetupsRow() As SetupsRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ClampingMethodsEntity-ResourceLink")),SetupsRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("SetupsEntity-ResourceLink")),SetupsRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("ClampingMethodsEntity-ResourceLink"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("SetupsEntity-ResourceLink"))
             End Set
         End Property
         
@@ -5879,10 +5879,10 @@ Partial Public Class MPRLDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function _GetMachineTool_SetupLinkRows() As _MachineTool_SetupLinkRow()
-            If (Me.Table.ChildRelations("MachineToolsMachineTool-ClampingMethodsLink") Is Nothing) Then
+            If (Me.Table.ChildRelations("MachineToolsMachineTool-SetupsLink") Is Nothing) Then
                 Return New _MachineTool_SetupLinkRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("MachineToolsMachineTool-ClampingMethodsLink")),_MachineTool_SetupLinkRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("MachineToolsMachineTool-SetupsLink")),_MachineTool_SetupLinkRow())
             End If
         End Function
     End Class
@@ -5928,10 +5928,10 @@ Partial Public Class MPRLDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property SetupsRow() As SetupsRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ClampingMethodsMachineTool-ClampingMethodsLink")),SetupsRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("SetupsMachineTool-SetupsLink")),SetupsRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("ClampingMethodsMachineTool-ClampingMethodsLink"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("SetupsMachineTool-SetupsLink"))
             End Set
         End Property
         
@@ -5939,10 +5939,10 @@ Partial Public Class MPRLDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property MachineToolsRow() As MachineToolsRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("MachineToolsMachineTool-ClampingMethodsLink")),MachineToolsRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("MachineToolsMachineTool-SetupsLink")),MachineToolsRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("MachineToolsMachineTool-ClampingMethodsLink"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("MachineToolsMachineTool-SetupsLink"))
             End Set
         End Property
     End Class
@@ -6249,20 +6249,20 @@ Partial Public Class MPRLDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function _GetEntity_ResourceLinkRows() As _Entity_ResourceLinkRow()
-            If (Me.Table.ChildRelations("ClampingMethodsEntity-ResourceLink") Is Nothing) Then
+            If (Me.Table.ChildRelations("SetupsEntity-ResourceLink") Is Nothing) Then
                 Return New _Entity_ResourceLinkRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ClampingMethodsEntity-ResourceLink")),_Entity_ResourceLinkRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("SetupsEntity-ResourceLink")),_Entity_ResourceLinkRow())
             End If
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function _GetMachineTool_SetupLinkRows() As _MachineTool_SetupLinkRow()
-            If (Me.Table.ChildRelations("ClampingMethodsMachineTool-ClampingMethodsLink") Is Nothing) Then
+            If (Me.Table.ChildRelations("SetupsMachineTool-SetupsLink") Is Nothing) Then
                 Return New _MachineTool_SetupLinkRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ClampingMethodsMachineTool-ClampingMethodsLink")),_MachineTool_SetupLinkRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("SetupsMachineTool-SetupsLink")),_MachineTool_SetupLinkRow())
             End If
         End Function
     End Class
