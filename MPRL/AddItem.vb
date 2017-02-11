@@ -8,6 +8,7 @@ Public Class AddItem
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub AddPPE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         PictureBox1.ImageLocation = Application.StartupPath & "\Images\default\noimage.jpg"
         Label5.Text = "Add " & GlobalVariables.Click
         DescriptionTextBox.Text = "Description Goes Here"
@@ -20,8 +21,7 @@ Public Class AddItem
             Exit Sub
         End If
         If DescriptionTextBox.Text = "" Then
-            MessageBox.Show("You must enter a description.")
-            Exit Sub
+            DescriptionTextBox.Text = "Description Goes Here"
         End If
 
         If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then
@@ -33,6 +33,7 @@ Public Class AddItem
         If result = DialogResult.No Then
             Exit Sub
         ElseIf result = DialogResult.Yes Then
+            GlobalVariables.Clicked = NameTextBox.Text
             PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
 
 
@@ -53,17 +54,46 @@ Public Class AddItem
             End If
 
             Dim cmd As New OleDbCommand(query, cnn)
-                Dim response As Integer
+            Dim response As Integer
 
-                cnn.Open()
+            cnn.Open()
 
 
-                response = cmd.ExecuteNonQuery()
+            response = cmd.ExecuteNonQuery()
 
-                cnn.Close()
+            cnn.Close()
+
 
 
             Me.Close()
+            FormHome.Hide()
+            GlobalVariables.fromadd = True
+            If GlobalVariables.Click = "Machines" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormMachineDetails
+                newform.show()
+            ElseIf GlobalVariables.Click = "Operations" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormMachiningMethod
+                newform.show()
+
+            ElseIf GlobalVariables.Click = "Setups" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormSetup
+                newform.show()
+            ElseIf GlobalVariables.Click = "Machine Tools" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormMachineToolDetails
+                newform.show()
+            End If
 
         End If
     End Sub

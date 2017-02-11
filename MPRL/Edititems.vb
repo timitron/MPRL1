@@ -52,7 +52,7 @@ Public Class Edititems
         End If
 
         If DescriptionTextBox.Text = "" Then
-            MessageBox.Show("You must enter a description.")
+            DescriptionTextBox.Text = "Description Goes Here"
             Exit Sub
         End If
 
@@ -102,8 +102,38 @@ Public Class Edititems
 
 
             Me.Close()
+            FormHome.Hide()
+            GlobalVariables.fromadd = True
+            If GlobalVariables.Click = "Machines" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormMachineDetails
+                newform.show()
+            ElseIf GlobalVariables.Click = "Operations" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormMachiningMethod
+                newform.show()
+
+            ElseIf GlobalVariables.Click = "Setups" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormSetup
+                newform.show()
+            ElseIf GlobalVariables.Click = "Machine Tools" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormMachineToolDetails
+                newform.show()
+            End If
+
 
         End If
+
     End Sub
 
     Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click

@@ -13,7 +13,9 @@ Public Class FormSetup
 
 
     Private Sub FormClampingMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        If GlobalVariables.fromadd = True Then
+            Button1.Hide()
+        End If
         Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
         Dim screenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
 

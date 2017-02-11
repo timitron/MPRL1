@@ -13,7 +13,9 @@ Public Class FormMachineToolDetails
 
 
     Private Sub FormMachineToolDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        If GlobalVariables.fromadd = True Then
+            Button1.Hide()
+        End If
         'make db connection
         connect()
 
@@ -313,21 +315,6 @@ Public Class FormMachineToolDetails
 
     End Sub
 
-    Private Sub LblOptionalPPE_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LstOptPPE_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LblRequiredPPE_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LstClampingMethods_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstClampingMethods.SelectedIndexChanged
-
-    End Sub
 
     Private Sub BtnEditClampingLinks_Click(sender As Object, e As EventArgs) Handles BtnEditClampingLinks.Click
         Global.MPRL.GlobalVariables.Click = Machine

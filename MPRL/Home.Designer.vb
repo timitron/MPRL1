@@ -26,12 +26,12 @@ Partial Class FormHome
         Me.ButtonMethodSuggestorFlow = New System.Windows.Forms.Button()
         Me.ButtonOperationsFlow = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.MachinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MachineToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MachinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OperationsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -107,25 +107,6 @@ Partial Class FormHome
         Me.MenuStrip1.TabIndex = 8
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'MachinesToolStripMenuItem
-        '
-        Me.MachinesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.EditToolStripMenuItem})
-        Me.MachinesToolStripMenuItem.Name = "MachinesToolStripMenuItem"
-        Me.MachinesToolStripMenuItem.Size = New System.Drawing.Size(79, 23)
-        Me.MachinesToolStripMenuItem.Text = "Machines"
-        '
-        'AddToolStripMenuItem
-        '
-        Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
-        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
-        Me.AddToolStripMenuItem.Text = "Add"
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
-        Me.EditToolStripMenuItem.Text = "Edit"
-        '
         'MachineToolsToolStripMenuItem
         '
         Me.MachineToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem1, Me.EditToolStripMenuItem1})
@@ -144,6 +125,25 @@ Partial Class FormHome
         Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
         Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(103, 24)
         Me.EditToolStripMenuItem1.Text = "Edit"
+        '
+        'MachinesToolStripMenuItem
+        '
+        Me.MachinesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.EditToolStripMenuItem})
+        Me.MachinesToolStripMenuItem.Name = "MachinesToolStripMenuItem"
+        Me.MachinesToolStripMenuItem.Size = New System.Drawing.Size(79, 23)
+        Me.MachinesToolStripMenuItem.Text = "Machines"
+        '
+        'AddToolStripMenuItem
+        '
+        Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
+        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(103, 24)
+        Me.AddToolStripMenuItem.Text = "Add"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(103, 24)
+        Me.EditToolStripMenuItem.Text = "Edit"
         '
         'OperationsToolStripMenuItem
         '
@@ -212,13 +212,13 @@ Partial Class FormHome
         'AddToolStripMenuItem5
         '
         Me.AddToolStripMenuItem5.Name = "AddToolStripMenuItem5"
-        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
         Me.AddToolStripMenuItem5.Text = "Add"
         '
         'EditToolStripMenuItem5
         '
         Me.EditToolStripMenuItem5.Name = "EditToolStripMenuItem5"
-        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
         Me.EditToolStripMenuItem5.Text = "Edit"
         '
         'PPE

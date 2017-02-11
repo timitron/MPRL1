@@ -15,9 +15,13 @@ Public Class FormMachiningMethod
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub MachiningMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If GlobalVariables.fromadd = True Then
+            Button1.Hide()
+        End If
+
         LblTitle.Text = MachiningMethod
 
-        Dim startpoint As New Point(40, 600)
+            Dim startpoint As New Point(40, 600)
         CustFunctions.SetImage(cnn, "Operation", MachiningMethod, PictureOverview, ds)
         CustFunctions.Resources(cnn, "Operation", MachiningMethod, LstResources, ds)
 

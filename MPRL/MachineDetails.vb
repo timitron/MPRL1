@@ -12,6 +12,9 @@ Public Class FormMachineDetails
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub FormMachineDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If GlobalVariables.fromadd = True Then
+            Button1.Hide()
+        End If
         LblTitle.Text = Machine
 
         CustFunctions.SetImage(cnn, "Machine", Machine, PictureOverview, ds)

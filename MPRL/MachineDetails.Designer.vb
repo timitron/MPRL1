@@ -176,7 +176,7 @@ Partial Class FormMachineDetails
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(742, 9)
+        Me.Panel1.Location = New System.Drawing.Point(708, 9)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(195, 53)
         Me.Panel1.TabIndex = 34
@@ -246,7 +246,7 @@ Partial Class FormMachineDetails
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(949, 802)
+        Me.ClientSize = New System.Drawing.Size(949, 741)
         Me.Controls.Add(Me.TabInfo)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LblTitle)

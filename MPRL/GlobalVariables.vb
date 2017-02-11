@@ -17,7 +17,7 @@ Public Class GlobalVariables
 
     Public Shared prevMachineTool As String 'stores previously selected machine tool 
 
-
+    Public Shared fromadd As Boolean
     Public Shared CloseAll As Boolean = True
     Public Shared MethodStart As Boolean
 

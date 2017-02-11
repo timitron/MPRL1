@@ -53,7 +53,7 @@ Public Class EditForm
             editList.Items.Add(row(0).ToString) 'NextListItem)
 
         Next
-
+        editList.Sorted = True
         editList.Update()
         cnn.Close()
     End Sub
