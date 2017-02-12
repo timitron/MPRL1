@@ -29,7 +29,6 @@ Partial Class FormMachiningMethod
         Me.LblTitle = New System.Windows.Forms.Label()
         Me.PictureOverview = New System.Windows.Forms.PictureBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
-        Me.BttnPrint = New System.Windows.Forms.Button()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -84,16 +83,6 @@ Partial Class FormMachiningMethod
         Me.MprlDataSet1.DataSetName = "MPRLDataSet"
         Me.MprlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'BttnPrint
-        '
-        Me.BttnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BttnPrint.Location = New System.Drawing.Point(186, 3)
-        Me.BttnPrint.Name = "BttnPrint"
-        Me.BttnPrint.Size = New System.Drawing.Size(57, 45)
-        Me.BttnPrint.TabIndex = 21
-        Me.BttnPrint.Text = "Print"
-        Me.BttnPrint.UseVisualStyleBackColor = True
-        '
         'PrintForm1
         '
         Me.PrintForm1.DocumentName = "document"
@@ -106,11 +95,10 @@ Partial Class FormMachiningMethod
         '
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.BttnPrint)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(685, 10)
+        Me.Panel1.Location = New System.Drawing.Point(749, 9)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(256, 53)
+        Me.Panel1.Size = New System.Drawing.Size(192, 53)
         Me.Panel1.TabIndex = 28
         '
         'Button2
@@ -158,7 +146,6 @@ Partial Class FormMachiningMethod
     Friend WithEvents LblTitle As Label
     Friend WithEvents PictureOverview As PictureBox
     Friend WithEvents MprlDataSet1 As MPRLDataSet
-    Friend WithEvents BttnPrint As Button
     Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents Panel1 As Panel

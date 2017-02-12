@@ -323,4 +323,8 @@ Public Class FormMachineToolDetails
 
         newform.Show()
     End Sub
+
+    Private Sub BtnEditResourcesLink_Click(sender As Object, e As EventArgs) Handles BtnEditResourcesLink.Click
+
+    End Sub
 End Class

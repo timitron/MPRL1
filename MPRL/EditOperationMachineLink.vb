@@ -14,7 +14,7 @@ Public Class FormEditMachiningMethodMachineToolLink
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub FormEditMachiningMethodMachineToolLink_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LblTitle.Text = TargetID
+        LblTargetName.Text = "For: " & TargetID
 
         update_linkedmethods_combobox()
         update_allMachiningMethods_combobox()

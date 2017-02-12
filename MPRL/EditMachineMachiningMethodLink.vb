@@ -13,7 +13,7 @@ Public Class FormEditMachineLink
 
     Private Sub FormEditMachineLink_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        LblTitle.Text = TargetID
+        LblTargetName.Text = "For: " & TargetID
 
         update_machines_combobox()
         update_allmachines_combobox()

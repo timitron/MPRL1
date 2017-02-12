@@ -13,7 +13,7 @@ Public Class FormSetupLink
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub FormClampingLink_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LblTitle.Text = TargetID
+        LblTargetName.Text = "For: " & TargetID
 
         update_Clamping_combobox()
         update_allClamps_combobox()

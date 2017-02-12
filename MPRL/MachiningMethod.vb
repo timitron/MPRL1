@@ -29,7 +29,7 @@ Public Class FormMachiningMethod
 
     End Sub
 
-    Private Sub BttnPrint_Click(sender As Object, e As EventArgs) Handles BttnPrint.Click
+    Private Sub BttnPrint_Click(sender As Object, e As EventArgs) 
 
         Dim webAddress As String = Application.StartupPath & "\printfile.html"
         Process.Start(webAddress)
