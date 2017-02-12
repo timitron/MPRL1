@@ -15,7 +15,7 @@ Public Class FormMachiningMethod
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub MachiningMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If GlobalVariables.fromadd = True Then
+        If GlobalVariables.fromadd = True Then                  'hides previous button if opend from add/edit page
             Button1.Hide()
         End If
 

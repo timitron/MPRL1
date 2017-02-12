@@ -16,12 +16,13 @@ Public Class EditForm
         Dim query As String
 
 
-        'open connection to database and execute the query string
-        cnn.Open()
-        Label2.Text = "Choose " & GlobalVariables.Click & " to edit."
+        cnn.Open()       'open connection to database and execute the query string
+        Label2.Text = "Choose " & GlobalVariables.Click & " to edit." 'states what type of item is being edited
+
+        ''' retrives the names of all items based on item type
         If GlobalVariables.Click = "PPE" Then
-            Table_ = "PPE"   'defines table inside the dataset to store information recieved from data connections
-            query = "SELECT Name FROM PPE;"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
+            Table_ = "PPE"
+            query = "SELECT Name FROM PPE;"
         ElseIf GlobalVariables.Click = "Setups" Then
             Table_ = "Setups"
             query = "SELECT Name FROM Setups"
@@ -40,32 +41,23 @@ Public Class EditForm
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                               'This inserts the returned data into the table name defined above in a useable matrix format
 
+        Dim row As DataRow                                                  ' Dim t1 As DataTable = ds.Tables(Table_)
 
-        ' Dim t1 As DataTable = ds.Tables(Table_)
-        Dim row As DataRow
-
-        'for each result in the query creat a new list view item, get the picture from a website and then put 
-        'it into a image list And apply the correct image index to the list view item. Finally add the list view item to the list view. 
         For Each row In ds.Tables(Table_).Rows
-            ' Dim NextListItem As New ListViewItem(row(0).ToString) 'create a new list view object to add to the list view window after informatoin has been added to it
-
-            'add the new item to the list view
-            editList.Items.Add(row(0).ToString) 'NextListItem)
-
+            editList.Items.Add(row(0).ToString)                             ' adds each item name to the list
         Next
-        editList.Sorted = True
-        editList.Update()
-        cnn.Close()
+
+        editList.Sorted = True                                              'sorts list alphabetically
+        editList.Update()                                                   'updates the list
+        cnn.Close()                                                         'closes the connection
     End Sub
 
-
     Private Sub editList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles editList.DoubleClick
-        GlobalVariables.Clicked = editList.SelectedItem
-        Dim newform
-        newform = Edititems
-        Edititems.Show()
-        Me.Close()
+        'opens page to edit item
+        GlobalVariables.Clicked = editList.SelectedItem 'stores the name of the item that was selected
 
-
+        Dim newform = Edititems
+        Edititems.Show()                                                    'opens edit form
+        Me.Close()                                                          'closes form
     End Sub
 End Class

@@ -13,7 +13,7 @@ Public Class FormSetup
 
 
     Private Sub FormClampingMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If GlobalVariables.fromadd = True Then
+        If GlobalVariables.fromadd = True Then              'hides previous button if opend from add/edit page
             Button1.Hide()
         End If
         Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width

@@ -1,25 +1,24 @@
 ﻿Public Class FormHome
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Activate()
+    Private Function multitabs()
+        Dim pleaseclose As Boolean = False
+        If My.Application.OpenForms.Count = 2 Then
+            MessageBox.Show("Please close open add/edit tab before continuing.")
+            Return pleaseclose = True
+        End If
+    End Function
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If GlobalVariables.AdminBuild = False Then
             MenuStrip1.Visible = False
         End If
-
     End Sub
 
-
-
     Private Sub ButtonMachineToolFlow_Click(sender As Object, e As EventArgs) Handles ButtonMachineToolFlow.Click
-        If My.Application.OpenForms.Count = 2 Then
-            MessageBox.Show("Please close open add/edit tab before continuing.")
-            Exit Sub
-        End If
-
         GlobalVariables.MethodStart = False
         GlobalVariables.fromadd = False
-        Dim newform
-        newform = FormMachineToolsDisplay
+
+        If multitabs() = True Then Exit Sub
+        Dim newform = FormMachineToolsDisplay
         newform.Show()
         Me.Hide()
 
