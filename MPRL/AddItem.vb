@@ -3,11 +3,14 @@
 Imports System.Data.OleDb
 Imports System.IO
 Imports System.Net
+Imports System.Timers
+
 Public Class AddItem
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
+
+    Dim responsetime As Integer = 0
 
     Private Sub AddPPE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer1.Start()
 
         PictureBox1.ImageLocation = Application.StartupPath & "\Images\default\noimage.jpg"
         Label5.Text = "Add " & GlobalVariables.Click
@@ -53,15 +56,16 @@ Public Class AddItem
                 query = "INSERT INTO [MachineTools] (`Name`, `Description`, `ImageURL`) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
             End If
 
-            Dim cmd As New OleDbCommand(query, cnn)
+            Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
             Dim response As Integer
 
-            cnn.Open()
+            Dim ResponseQuery = "INSERT INTO `Times` (`EntityType`, `Entity`, `TimeElapsed`) VALUES ('" & GlobalVariables.Click & "', '" & NameTextBox.Text & "', '" & responsetime & "')"
+            Dim TimerCMD As New OleDbCommand(ResponseQuery, GlobalVariables.cnn)
 
-
+            GlobalVariables.cnn.Open()
             response = cmd.ExecuteNonQuery()
-
-            cnn.Close()
+            TimerCMD.ExecuteNonQuery()
+            GlobalVariables.cnn.Close()
 
 
 
@@ -105,7 +109,10 @@ Public Class AddItem
 
     End Sub
 
-
+    Private Sub Timer_Clock_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        ' Update clock label Format (HH:MM:SS)
+        responsetime = responsetime + 1
+    End Sub
 
 
 End Class

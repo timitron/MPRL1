@@ -178,5 +178,11 @@
         newform = FeatureView
         newform.show()
     End Sub
+
+    Private Sub LnkAbout_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LnkAbout.LinkClicked
+        Dim newform
+        newform = FormAbout
+        newform.show()
+    End Sub
 End Class
 

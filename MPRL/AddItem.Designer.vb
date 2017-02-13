@@ -22,6 +22,7 @@ Partial Class AddItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -33,6 +34,7 @@ Partial Class AddItem
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -126,6 +128,11 @@ Partial Class AddItem
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'AddItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -160,4 +167,5 @@ Partial Class AddItem
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Timer1 As Timer
 End Class

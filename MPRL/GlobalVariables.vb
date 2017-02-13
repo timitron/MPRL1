@@ -8,7 +8,6 @@ Public Class GlobalVariables
     Public Shared FormWidth As Int32 = 800 'width in pixels of forms, generally 900 - 1600. 
     Public Shared FormBuffer As Int16 = 50 'distance in pixels between form obejects and groupbox walls. generallt 10 - 200 
 
-
     Dim test As String = "testytest"
 
     Public Shared Click As String

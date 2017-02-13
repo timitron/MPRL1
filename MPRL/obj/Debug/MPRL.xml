@@ -51,11 +51,6 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.MachineToolDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSet._MachineTool_OperationsLinkDataTable">
 <summary>
 Represents the strongly named DataTable class.
@@ -92,6 +87,11 @@ Represents the strongly named DataTable class.
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSet.TimesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.TimingRecordsDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -136,11 +136,6 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.MachineToolRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSet._MachineTool_OperationsLinkRow">
 <summary>
 Represents strongly named DataRow class.
@@ -177,6 +172,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSet.TimesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.TimingRecordsRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -221,11 +221,6 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.MachineToolRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSet._MachineTool_OperationsLinkRowChangeEvent">
 <summary>
 Row event argument class
@@ -262,6 +257,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSet.TimesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.TimingRecordsRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -306,11 +306,6 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.MachineToolTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSetTableAdapters.MachineTool_OperationsLinkTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -347,6 +342,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSetTableAdapters.TimesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.TimingRecordsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
