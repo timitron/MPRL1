@@ -22,6 +22,7 @@ Partial Class FormHome
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ButtonMachineToolFlow = New System.Windows.Forms.Button()
         Me.ButtonMethodSuggestorFlow = New System.Windows.Forms.Button()
         Me.ButtonOperationsFlow = New System.Windows.Forms.Button()
@@ -50,6 +51,7 @@ Partial Class FormHome
         Me.TxtboxTitle = New System.Windows.Forms.TextBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
         Me.LnkAbout = New System.Windows.Forms.LinkLabel()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,7 +67,9 @@ Partial Class FormHome
         Me.ButtonMachineToolFlow.Name = "ButtonMachineToolFlow"
         Me.ButtonMachineToolFlow.Size = New System.Drawing.Size(721, 75)
         Me.ButtonMachineToolFlow.TabIndex = 1
-        Me.ButtonMachineToolFlow.Text = "Browse Machine Tools"
+        Me.ButtonMachineToolFlow.Text = "Machines"
+        Me.ToolTip1.SetToolTip(Me.ButtonMachineToolFlow, "Browse a list of machine tools to find specific machines, operations, PPE and res" &
+        "ources")
         Me.ButtonMachineToolFlow.UseVisualStyleBackColor = True
         '
         'ButtonMethodSuggestorFlow
@@ -78,7 +82,8 @@ Partial Class FormHome
         Me.ButtonMethodSuggestorFlow.Name = "ButtonMethodSuggestorFlow"
         Me.ButtonMethodSuggestorFlow.Size = New System.Drawing.Size(721, 75)
         Me.ButtonMethodSuggestorFlow.TabIndex = 2
-        Me.ButtonMethodSuggestorFlow.Text = "Machining Method Suggestor"
+        Me.ButtonMethodSuggestorFlow.Text = "Machining Operations Suggestor"
+        Me.ToolTip1.SetToolTip(Me.ButtonMethodSuggestorFlow, "Suggests a machining operation based on input parameters.")
         Me.ButtonMethodSuggestorFlow.UseVisualStyleBackColor = True
         '
         'ButtonOperationsFlow
@@ -91,7 +96,8 @@ Partial Class FormHome
         Me.ButtonOperationsFlow.Name = "ButtonOperationsFlow"
         Me.ButtonOperationsFlow.Size = New System.Drawing.Size(721, 75)
         Me.ButtonOperationsFlow.TabIndex = 3
-        Me.ButtonOperationsFlow.Text = "Browse Machining Methods"
+        Me.ButtonOperationsFlow.Text = "Machining Operations"
+        Me.ToolTip1.SetToolTip(Me.ButtonOperationsFlow, "Browse a list of machining operations.")
         Me.ButtonOperationsFlow.UseVisualStyleBackColor = True
         '
         'MenuStrip1
@@ -155,13 +161,13 @@ Partial Class FormHome
         'AddToolStripMenuItem2
         '
         Me.AddToolStripMenuItem2.Name = "AddToolStripMenuItem2"
-        Me.AddToolStripMenuItem2.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem2.Size = New System.Drawing.Size(103, 24)
         Me.AddToolStripMenuItem2.Text = "Add"
         '
         'EditToolStripMenuItem2
         '
         Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
-        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(103, 24)
         Me.EditToolStripMenuItem2.Text = "Edit"
         '
         'SetupsToolStripMenuItem
@@ -212,13 +218,13 @@ Partial Class FormHome
         'AddToolStripMenuItem5
         '
         Me.AddToolStripMenuItem5.Name = "AddToolStripMenuItem5"
-        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
+        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
         Me.AddToolStripMenuItem5.Text = "Add"
         '
         'EditToolStripMenuItem5
         '
         Me.EditToolStripMenuItem5.Name = "EditToolStripMenuItem5"
-        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
+        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
         Me.EditToolStripMenuItem5.Text = "Edit"
         '
         'PPE
@@ -293,6 +299,7 @@ Partial Class FormHome
         Me.Name = "FormHome"
         Me.Padding = New System.Windows.Forms.Padding(0, 10, 0, 3)
         Me.Text = "Home"
+        Me.ToolTip1.SetToolTip(Me, "Suggests a machining operation based on input parameters.")
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -328,4 +335,5 @@ Partial Class FormHome
     Friend WithEvents AddToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents LnkAbout As LinkLabel
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

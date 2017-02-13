@@ -58,3 +58,7 @@ C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormAdd
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormSetup.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormSetupLink.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormResource.resources
+C:\Users\Matthew\Documents\My Documents\School\New folder\MPRL1\MPRL\bin\Debug\MPRL.exe.config
+C:\Users\Matthew\Documents\My Documents\School\New folder\MPRL1\MPRL\obj\Debug\MPRL.exe
+C:\Users\Matthew\Documents\My Documents\School\New folder\MPRL1\MPRL\obj\Debug\MPRL.xml
+C:\Users\Matthew\Documents\My Documents\School\New folder\MPRL1\MPRL\obj\Debug\MPRL.pdb

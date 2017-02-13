@@ -93,14 +93,14 @@ Partial Class FormEditMachineLink
         Me.NotifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon1.Text = "MPRL Knowledgebase"
+        Me.NotifyIcon1.Text = "changed"
         Me.NotifyIcon1.Visible = True
         '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'FormEditMachineLink
         '

@@ -70,7 +70,7 @@ Public Class AddItem
             cnn.Close()
 
             Me.Close()                                              'closes from
-            FormHome.Hide()
+
 
             GlobalVariables.fromadd = True                          'sets form add to true to hide previous button in opened page
 
@@ -78,18 +78,22 @@ Public Class AddItem
             If GlobalVariables.Click = "Machines" Then
                 Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked 'changes click from type of added item to items name so it can be opened
                 Dim newform = FormMachineDetails
+                FormHome.Hide()
                 newform.Show()
             ElseIf GlobalVariables.Click = "Operations" Then
                 Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked 'changes click from type of added item to items name so it can be opened
                 Dim newform = FormMachiningMethod
+                FormHome.Hide()
                 newform.Show()
             ElseIf GlobalVariables.Click = "Setups" Then
                 Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked 'changes click from type of added item to items name so it can be opened
                 Dim newform = FormSetup
+                FormHome.Hide()
                 newform.Show()
             ElseIf GlobalVariables.Click = "Machine Tools" Then
                 Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked 'changes click from type of added item to items name so it can be opened
                 Dim newform = FormMachineToolDetails
+                FormHome.Hide()
                 newform.Show()
             End If
         End If
