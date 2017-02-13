@@ -13,6 +13,8 @@ Public Class GlobalVariables
 
     Public Shared Click As String
     Public Shared Clicked As String
+    Public Shared FeedbackEntity As String
+    Public Shared FeedbackEntityType As String
 
 
     Public Shared prevMachineTool As String 'stores previously selected machine tool 
@@ -22,7 +24,8 @@ Public Class GlobalVariables
     Public Shared MethodStart As Boolean
 
 
-
+    'define connection string and create connection object 
+    Public Shared cnn As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb")
 
 End Class
 
@@ -181,17 +184,19 @@ Public Class CustFunctions
         Dim query As String
         Dim Table_ As String = "Resources"
 
+        returnListView.Items.Clear()
+
         If type = "Setup" Then
-            query = "SELECT AdditionalResources.Name, AdditionalResources.Hyperlink FROM ((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN Setups ON [Entity-ResourceLink].EntitiesID = Setups.Name) WHERE ([Entity-ResourceLink].Entities = 'Setup') AND (Setups.Name = '" & targetID & "')"
+            query = "SELECT AdditionalResources.Name, AdditionalResources.Hyperlink FROM ((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.Name = [Entity-ResourceLink].ResourceID) INNER JOIN Setups ON [Entity-ResourceLink].EntitiesID = Setups.Name) WHERE ([Entity-ResourceLink].Entities = 'Setup') AND (Setups.Name = '" & targetID & "');"
         End If
         If type = "Machine" Then
-            query = "Select AdditionalResources.Name, AdditionalResources.Hyperlink FROM ((AdditionalResources INNER JOIN [Entity-ResourceLink] On AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN Machines On [Entity-ResourceLink].EntitiesID = Machines.Name) WHERE ([Entity-ResourceLink].Entities = 'Machine') AND (Machines.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
+            query = "Select AdditionalResources.Name, AdditionalResources.Hyperlink FROM ((AdditionalResources INNER JOIN [Entity-ResourceLink] On AdditionalResources.Name = [Entity-ResourceLink].ResourceID) INNER JOIN Machines On [Entity-ResourceLink].EntitiesID = Machines.Name) WHERE ([Entity-ResourceLink].Entities = 'Machine') AND (Machines.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
         End If
-        If type = "Operation" Then
-            query = "Select AdditionalResources.Name, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] On AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN Operations On [Entity-ResourceLink].EntitiesID = Operations.Name) WHERE([Entity-ResourceLink].Entities = 'Operations') AND (OperationsZZ.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
+        If type = "Operations" Then
+            query = "Select AdditionalResources.Name, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] On AdditionalResources.Name = [Entity-ResourceLink].ResourceID) INNER JOIN Operations On [Entity-ResourceLink].EntitiesID = Operations.Name) WHERE([Entity-ResourceLink].Entities = 'Operations') AND (Operations.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
         End If
-        If type = "MachineTool" Then
-            query = "SELECT AdditionalResources.Name, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN MachineTools ON [Entity-ResourceLink].EntitiesID = MachineTools.Name) WHERE([Entity-ResourceLink].Entities = 'Machine Tool') AND (MachineTools.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
+        If type = "Machine Tool" Then
+            query = "SELECT AdditionalResources.Name, AdditionalResources.Hyperlink FROM((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.Name = [Entity-ResourceLink].ResourceID) INNER JOIN MachineTools ON [Entity-ResourceLink].EntitiesID = MachineTools.Name) WHERE([Entity-ResourceLink].Entities = 'Machine Tool') AND (MachineTools.Name = '" & targetID & "') ORDER BY AdditionalResources.Name;"
         End If
 
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
@@ -234,7 +239,7 @@ Public Class CustFunctions
         If Type = "Operation" Then
             query = "SELECT * from Operations Where Name = '" & TargetID & "';"
         End If
-        If Type = "MachineTool" Then
+        If Type = "Machine Tool" Then
             query = "SELECT * from MachineTools Where Name = '" & TargetID & "';"
         End If
 
@@ -257,7 +262,18 @@ Public Class CustFunctions
 
     End Sub
 
+    Shared Sub Get_feedback(EntityType As String, Entity As String)
+        'displays a messagebox to get user feedback on pages and stores it. 
 
+        GlobalVariables.FeedbackEntity = Entity
+        GlobalVariables.FeedbackEntityType = EntityType
+
+        Dim newform As Form = FormFeedback
+        newform.ShowDialog()
+
+
+
+    End Sub
 
 
 

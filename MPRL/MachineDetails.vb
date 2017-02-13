@@ -84,12 +84,15 @@ Public Class FormMachineDetails
         Global.MPRL.GlobalVariables.Click = Machine
         Dim newform
         newform = FormEditRequiredPPE
-
         newform.Show()
     End Sub
 
     Private Sub EBtnEditAdditionalResources_Click(sender As Object, e As EventArgs) Handles EBtnEditAdditionalResources.Click
-
+        Global.MPRL.GlobalVariables.Click = Machine
+        GlobalVariables.Clicked = "Machine"
+        Dim newform
+        newform = FormAddResourceLink
+        newform.Show()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -107,6 +110,8 @@ Public Class FormMachineDetails
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        CustFunctions.Get_feedback("Machine", Machine)
+
         Global.MPRL.GlobalVariables.Click = GlobalVariables.prevMachineTool
         Dim newform
         newform = FormMachineToolDetails

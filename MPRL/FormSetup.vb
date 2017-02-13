@@ -13,9 +13,14 @@ Public Class FormSetup
 
 
     Private Sub FormClampingMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If GlobalVariables.fromadd = True Then              'hides previous button if opend from add/edit page
+
+        If GlobalVariables.fromadd = True Then
             Button1.Hide()
         End If
+
+        LblTitle.Text = Setup
+
+
         Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
         Dim screenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
 
@@ -76,6 +81,8 @@ Public Class FormSetup
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Global.MPRL.GlobalVariables.Click = GlobalVariables.prevMachineTool
+
+        CustFunctions.Get_feedback("Setups", Setup)
 
         Dim newform
         newform = FormMachineToolDetails

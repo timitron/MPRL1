@@ -80,7 +80,7 @@ Partial Class FormSetup
         '
         'BtnEditResources
         '
-        Me.BtnEditResources.Location = New System.Drawing.Point(611, 493)
+        Me.BtnEditResources.Location = New System.Drawing.Point(614, 493)
         Me.BtnEditResources.Name = "BtnEditResources"
         Me.BtnEditResources.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditResources.TabIndex = 30

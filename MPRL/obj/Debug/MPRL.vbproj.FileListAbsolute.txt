@@ -12,7 +12,6 @@ C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormEditMachiningM
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormAdminPanel.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachiningMethodsDisplay.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachineDetails.resources
-C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachiningMethod.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachineToolDetails.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormHome.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormMachineToolsDisplay.resources
@@ -58,7 +57,43 @@ C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormAdd
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormSetup.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormSetupLink.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormResource.resources
-C:\Users\Matthew\Documents\My Documents\School\New folder\MPRL1\MPRL\bin\Debug\MPRL.exe.config
-C:\Users\Matthew\Documents\My Documents\School\New folder\MPRL1\MPRL\obj\Debug\MPRL.exe
-C:\Users\Matthew\Documents\My Documents\School\New folder\MPRL1\MPRL\obj\Debug\MPRL.xml
-C:\Users\Matthew\Documents\My Documents\School\New folder\MPRL1\MPRL\obj\Debug\MPRL.pdb
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.Edititems.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormResource.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormOperation.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FeatureView.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.EditFeatureOperationLink.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL\obj\Debug\MPRL.FormFeedback.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\bin\Debug\MPRL.exe.config
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\bin\Debug\MPRL.exe
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\bin\Debug\MPRL.pdb
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\bin\Debug\MPRL.xml
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.vbprojResolveAssemblyReference.cache
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormAbout.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.EditFeatureOperationLink.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.Edititems.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.EditForm.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FeatureView.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormAddResourceLink.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormFeedback.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormResource.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormSetup.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormEditRequiredPPE.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormEditOptPPE.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormEditMachineLink.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormEditMachiningMethodMachineToolLink.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.AddItem.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormAdminPanel.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormSetupLink.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormMachiningMethodsDisplay.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormMachineDetails.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormOperation.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormMachineToolDetails.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormHome.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormMachineToolsDisplay.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.Resources.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.vbproj.GenerateResource.Cache
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.exe
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.xml
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.pdb

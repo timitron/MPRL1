@@ -19,7 +19,7 @@ Public Class FormMachineToolDetails
         'make db connection
         connect()
 
-        CustFunctions.SetImage(cnn, "MachineTool", Machine, PictureMachineOverview, ds)
+        CustFunctions.SetImage(cnn, "Machine Tool", Machine, PictureMachineOverview, ds)
 
         'set name
         LblTitle.Text = Machine
@@ -31,7 +31,7 @@ Public Class FormMachineToolDetails
         fill_machines()
         fill_clamping()
 
-        CustFunctions.Resources(cnn, "MachineTool", Machine, LstResources, ds)
+        CustFunctions.Resources(cnn, "Machine Tool", Machine, LstResources, ds)
 
         cnn.Close()
 
@@ -209,7 +209,7 @@ Public Class FormMachineToolDetails
         Global.MPRL.GlobalVariables.Click = ds.Tables("Operations").Rows(index)("Name")
 
         Dim newform
-        newform = FormMachiningMethod
+        newform = FormOperation
         newform.Show()
 
         GlobalVariables.CloseAll = False
@@ -305,6 +305,8 @@ Public Class FormMachineToolDetails
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+
         Dim newform
         newform = FormMachineToolsDisplay
         newform.Show()
@@ -325,6 +327,14 @@ Public Class FormMachineToolDetails
     End Sub
 
     Private Sub BtnEditResourcesLink_Click(sender As Object, e As EventArgs) Handles BtnEditResourcesLink.Click
+        Global.MPRL.GlobalVariables.Click = Machine
+        GlobalVariables.Clicked = "Machine Tool"
+        Dim newform
+        newform = FormAddResourceLink
+        newform.Show()
+    End Sub
+
+    Private Sub LstMachines_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstMachines.SelectedIndexChanged
 
     End Sub
 End Class

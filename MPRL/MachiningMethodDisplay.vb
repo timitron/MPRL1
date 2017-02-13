@@ -10,21 +10,10 @@ Public Class FormMachiningMethodsDisplay
 
     Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
-    Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles LstViewMachiningMethods.DoubleClick
-        Dim Table_ As String = "MachiningMethod"   'defines table inside the dataset to store information recieved from data connections
-        Dim index As Integer = LstViewMachiningMethods.FocusedItem.Index
-        Global.MPRL.GlobalVariables.Click = ds.Tables(Table_).Rows(index)(0)
-        Dim newform
-        newform = FormMachiningMethod
-        newform.Show()
-        GlobalVariables.CloseAll = False
-        Me.Close()
-        GlobalVariables.CloseAll = True
-    End Sub
 
     Private Sub FormMachiningMethodsDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim Table_ As String = "MachiningMethod"   'defines table inside the dataset to store information recieved from data connections
-        Dim query As String = "SELECT Name, Description, ImageURL FROM MachiningMethods;"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
+        Dim Table_ As String = "Operations"   'defines table inside the dataset to store information recieved from data connections
+        Dim query As String = "SELECT Name, Description, ImageURL FROM Operations;"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                               'This inserts the returned data into the table name defined above in a useable matrix format
@@ -94,6 +83,17 @@ Public Class FormMachiningMethodsDisplay
         newform = FormHome
         newform.Show()
 
+        GlobalVariables.CloseAll = False
+        Me.Close()
+        GlobalVariables.CloseAll = True
+    End Sub
+    Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles LstViewMachiningMethods.DoubleClick
+        Dim Table_ As String = "Operations"   'defines table inside the dataset to store information recieved from data connections
+        Dim index As Integer = LstViewMachiningMethods.FocusedItem.Index
+        Global.MPRL.GlobalVariables.Click = ds.Tables(Table_).Rows(index)(0)
+        Dim newform
+        newform = FormOperation
+        newform.Show()
         GlobalVariables.CloseAll = False
         Me.Close()
         GlobalVariables.CloseAll = True

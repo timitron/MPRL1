@@ -84,6 +84,12 @@
     <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditFeatureOperationLink.Designer.vb">
+      <DependentUpon>EditFeatureOperationLink.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditFeatureOperationLink.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Edititems.Designer.vb">
       <DependentUpon>Edititems.vb</DependentUpon>
     </Compile>
@@ -94,6 +100,18 @@
       <DependentUpon>EditSelection.vb</DependentUpon>
     </Compile>
     <Compile Include="EditSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeatureView.Designer.vb">
+      <DependentUpon>FeatureView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFeedback.Designer.vb">
+      <DependentUpon>FormFeedback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormFeedback.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddResourceLink.Designer.vb">
@@ -126,10 +144,10 @@
     <Compile Include="EditOptionalPPE.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditMachineMachiningMethodLink.Designer.vb">
-      <DependentUpon>EditMachineMachiningMethodLink.vb</DependentUpon>
+    <Compile Include="EditMachineTollOperationLink.Designer.vb">
+      <DependentUpon>EditMachineTollOperationLink.vb</DependentUpon>
     </Compile>
-    <Compile Include="EditMachineMachiningMethodLink.vb">
+    <Compile Include="EditMachineTollOperationLink.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditOperationMachineLink.Designer.vb">
@@ -169,10 +187,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GlobalVariables.vb" />
-    <Compile Include="MachiningMethod.Designer.vb">
-      <DependentUpon>MachiningMethod.vb</DependentUpon>
+    <Compile Include="FormOperation.Designer.vb">
+      <DependentUpon>FormOperation.vb</DependentUpon>
     </Compile>
-    <Compile Include="MachiningMethod.vb">
+    <Compile Include="FormOperation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MachineToolDetails.Designer.vb">
@@ -199,9 +217,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MPRLDataSet1.vb">
-      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -222,14 +237,23 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditFeatureOperationLink.resx">
+      <DependentUpon>EditFeatureOperationLink.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edititems.resx">
       <DependentUpon>Edititems.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditSelection.resx">
       <DependentUpon>EditSelection.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FeatureView.resx">
+      <DependentUpon>FeatureView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddResourceLink.resx">
       <DependentUpon>FormAddResourceLink.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFeedback.resx">
+      <DependentUpon>FormFeedback.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormResource.resx">
       <DependentUpon>FormResource.vb</DependentUpon>
@@ -243,8 +267,8 @@
     <EmbeddedResource Include="EditOptionalPPE.resx">
       <DependentUpon>EditOptionalPPE.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditMachineMachiningMethodLink.resx">
-      <DependentUpon>EditMachineMachiningMethodLink.vb</DependentUpon>
+    <EmbeddedResource Include="EditMachineTollOperationLink.resx">
+      <DependentUpon>EditMachineTollOperationLink.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditOperationMachineLink.resx">
       <DependentUpon>EditOperationMachineLink.vb</DependentUpon>
@@ -264,8 +288,8 @@
     <EmbeddedResource Include="MachineDetails.resx">
       <DependentUpon>MachineDetails.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MachiningMethod.resx">
-      <DependentUpon>MachiningMethod.vb</DependentUpon>
+    <EmbeddedResource Include="FormOperation.resx">
+      <DependentUpon>FormOperation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MachineToolDetails.resx">
       <DependentUpon>MachineToolDetails.vb</DependentUpon>

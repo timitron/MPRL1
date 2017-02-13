@@ -11,7 +11,7 @@ Public Class FormEditRequiredPPE
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub FormEditRequiredPPE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LblTargetName.Text = "For: " & TargetID
+        LblTitle.Text = TargetID
 
         update_ppe_combobox()
         update_req_combobox()

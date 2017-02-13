@@ -3,51 +3,44 @@
 Imports System.Data.OleDb
 Imports System.IO
 Imports System.Net
-
 Public Class AddItem
     Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
     Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
-    Dim query As String
 
     Private Sub AddPPE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PictureBox1.ImageLocation = Application.StartupPath & "\Images\default\noimage.jpg" 'sets image box to default image
-        Label5.Text = "Add " & GlobalVariables.Click                                        'states what is being added
-        DescriptionTextBox.Text = "Description Goes Here"                                   'sets description to default
-        NameTextBox.Text = ""                                                               ' clears name
-    End Sub
 
-    Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click
-        '''opens file dialog to browse for image
-        OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"             'limits file types that are visiable
-        PictureBox1.ImageLocation = OpenFileDialog1.FileName
+        PictureBox1.ImageLocation = Application.StartupPath & "\Images\default\noimage.jpg"
+        Label5.Text = "Add " & GlobalVariables.Click
+        DescriptionTextBox.Text = "Description Goes Here"
+        NameTextBox.Text = ""
     End Sub
 
     Private Sub SubmitChanges_Click(sender As Object, e As EventArgs) Handles SubmitChanges.Click
-        ''' checks for correct info then updates databasewith added item
-        If NameTextBox.Text = "" Then                                                   'checks that a name has been created
+        If NameTextBox.Text = "" Then
             MessageBox.Show("You must enter a " & GlobalVariables.Click & " name.")
             Exit Sub
         End If
-
-        If DescriptionTextBox.Text = "" Then                        'sets description to default if none has been entered
+        If DescriptionTextBox.Text = "" Then
             DescriptionTextBox.Text = "Description Goes Here"
         End If
 
-        If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then '' check that imge comes from apllication start path
+        If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then
             MessageBox.Show("Image must be in ""Debug"" folder")
             Exit Sub
         End If
 
-        'checks to make sure item should be added
         Dim result As Integer = MessageBox.Show("Are you sure you want to add " & NameTextBox.Text & " to " & GlobalVariables.Click & "?", "Submit Changes?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
         ElseIf result = DialogResult.Yes Then
-            GlobalVariables.Clicked = NameTextBox.Text 'stores item added name so it can open after add
-            PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "") 'shortens image location to application startup path
+            GlobalVariables.Clicked = NameTextBox.Text
+            PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
 
-            ''adds the item to database based on item type
+
+
+
+            Dim query As String
+
             If GlobalVariables.Click = "PPE" Then
                 query = "insert into [PPE](Name, Description, Imageurl) values('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machines" Then
@@ -65,37 +58,54 @@ Public Class AddItem
 
             cnn.Open()
 
+
             response = cmd.ExecuteNonQuery()
 
             cnn.Close()
 
-            Me.Close()                                              'closes from
 
 
-            GlobalVariables.fromadd = True                          'sets form add to true to hide previous button in opened page
-
-            'open added item based on item type
+            Me.Close()
+            FormHome.Hide()
+            GlobalVariables.fromadd = True
             If GlobalVariables.Click = "Machines" Then
-                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked 'changes click from type of added item to items name so it can be opened
-                Dim newform = FormMachineDetails
-                FormHome.Hide()
-                newform.Show()
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormMachineDetails
+                newform.show()
             ElseIf GlobalVariables.Click = "Operations" Then
-                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked 'changes click from type of added item to items name so it can be opened
-                Dim newform = FormMachiningMethod
-                FormHome.Hide()
-                newform.Show()
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormOperation
+                newform.show()
+
             ElseIf GlobalVariables.Click = "Setups" Then
-                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked 'changes click from type of added item to items name so it can be opened
-                Dim newform = FormSetup
-                FormHome.Hide()
-                newform.Show()
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormSetup
+                newform.show()
             ElseIf GlobalVariables.Click = "Machine Tools" Then
-                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked 'changes click from type of added item to items name so it can be opened
-                Dim newform = FormMachineToolDetails
-                FormHome.Hide()
-                newform.Show()
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                Dim newform
+                newform = FormMachineToolDetails
+                newform.show()
             End If
+
         End If
     End Sub
+
+    Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click
+        OpenFileDialog1.ShowDialog()
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
+        PictureBox1.ImageLocation = OpenFileDialog1.FileName
+
+    End Sub
+
+
+
+
 End Class

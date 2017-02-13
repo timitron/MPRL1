@@ -6,27 +6,6 @@ MPRL
 </name>
 </assembly>
 <members>
-<member name="T:MPRL.My.Resources.Resources">
-<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member>
-<member name="P:MPRL.My.Resources.Resources.ResourceManager">
-<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member>
-<member name="P:MPRL.My.Resources.Resources.Culture">
-<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member>
-<member name="P:MPRL.My.Resources.Resources.engineering_graph_paper_10x1_inch_grid">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="T:MPRL.MPRLDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.
@@ -47,7 +26,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.HazardsDataTable">
+<member name="T:MPRL.MPRLDataSet.FeaturesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.FeedbackDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -87,6 +71,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:MPRL.MPRLDataSet._Operation_FeatureLinkDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:MPRL.MPRLDataSet.OperationsDataTable">
 <summary>
 Represents the strongly named DataTable class.
@@ -98,6 +87,11 @@ Represents the strongly named DataTable class.
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSet.SetupsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.TimesDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -117,7 +111,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.HazardsRow">
+<member name="T:MPRL.MPRLDataSet.FeaturesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.FeedbackRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -157,6 +156,11 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:MPRL.MPRLDataSet._Operation_FeatureLinkRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:MPRL.MPRLDataSet.OperationsRow">
 <summary>
 Represents strongly named DataRow class.
@@ -168,6 +172,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSet.SetupsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.TimesRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -187,7 +196,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSet.HazardsRowChangeEvent">
+<member name="T:MPRL.MPRLDataSet.FeaturesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.FeedbackRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -227,6 +241,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:MPRL.MPRLDataSet._Operation_FeatureLinkRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:MPRL.MPRLDataSet.OperationsRowChangeEvent">
 <summary>
 Row event argument class
@@ -238,6 +257,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSet.SetupsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSet.TimesRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -257,7 +281,12 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:MPRL.MPRLDataSetTableAdapters.HazardsTableAdapter">
+<member name="T:MPRL.MPRLDataSetTableAdapters.FeaturesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.FeedbackTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -297,6 +326,11 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.Operation_FeatureLinkTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
 <member name="T:MPRL.MPRLDataSetTableAdapters.OperationsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -308,6 +342,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:MPRL.MPRLDataSetTableAdapters.SetupsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MPRL.MPRLDataSetTableAdapters.TimesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -350,6 +389,27 @@ Update Order Option
 <member name="T:MPRL.MPRLDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
 <summary>
 Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:MPRL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:MPRL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:MPRL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:MPRL.My.Resources.Resources.engineering_graph_paper_10x1_inch_grid">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 </members>
