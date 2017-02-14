@@ -6,10 +6,7 @@ Imports System.Net
 Public Class FormMachineDetails
     'Get what to open from the global click variable
     Dim Machine As String = Global.MPRL.GlobalVariables.Click
-
     Dim ds As New DataSet                       'defines dataset for data table
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub FormMachineDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If GlobalVariables.fromadd = True Then
@@ -17,12 +14,12 @@ Public Class FormMachineDetails
         End If
         LblTitle.Text = Machine
 
-        CustFunctions.SetImage(cnn, "Machine", Machine, PictureOverview, ds)
+        CustFunctions.SetImage(GlobalVariables.cnn, "Machine", Machine, PictureOverview, ds)
 
-        CustFunctions.Resources(cnn, "Machine", Machine, LstResources, ds)
+        CustFunctions.Resources(GlobalVariables.cnn, "Machine", Machine, LstResources, ds)
 
-        CustFunctions.PPE(cnn, Machine, LstReqPPE, True, ds)
-        CustFunctions.PPE(cnn, Machine, LstOptPPE, False, ds)
+        CustFunctions.PPE(GlobalVariables.cnn, Machine, LstReqPPE, True, ds)
+        CustFunctions.PPE(GlobalVariables.cnn, Machine, LstOptPPE, False, ds)
 
         Dim startpoint = New Point(40, 900)
 
@@ -39,7 +36,7 @@ Public Class FormMachineDetails
         Dim Table_ As String = "Resources"   'defines table inside the dataset to store information recieved from data connections
         Dim query As String = "SELECT        AdditionalResources.Name, AdditionalResources.Type, AdditionalResources.Hyperlink FROM            ((AdditionalResources INNER JOIN                         [Entity-ResourceLink] ON AdditionalResources.ID = [Entity-ResourceLink].ResourceID) INNER JOIN                         Machines ON [Entity-ResourceLink].EntitiesID = Machines.Name) WHERE        ([Entity-ResourceLink].Entities = 'Machine') AND (Machines.Name = '" & Machine & "')"
 
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 

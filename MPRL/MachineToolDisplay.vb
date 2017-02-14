@@ -13,15 +13,11 @@ Public Class FormMachineToolsDisplay
 
     Public Sub FormMachineToolsDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'define connection string and create connection object 
-        Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-        Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
-
         'open connection to database and execute the query string
-        cnn.Open()
+        GlobalVariables.cnn.Open()
         Dim Table_ As String = "MachineToolsList"   'defines table inside the dataset to store information recieved from data connections
         Dim query As String = "SELECT Name, Description, ImageURL FROM MachineTools;"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                               'This inserts the returned data into the table name defined above in a useable matrix format
 
@@ -59,7 +55,7 @@ Public Class FormMachineToolsDisplay
         ListViewMachineToolDisplay.LargeImageList = ImgList
         ListViewMachineToolDisplay.Update()
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
     End Sub
 
     Public Sub ListViewMachineToolDisplay_DoubleClick(sender As Object, e As EventArgs) Handles ListViewMachineToolDisplay.DoubleClick

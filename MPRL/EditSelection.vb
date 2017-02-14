@@ -10,14 +10,13 @@ Public Class EditForm
     Dim ds As New DataSet                       'defines dataset for data table
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'define connection string and create connection object 
-        Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-        Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
+
         Dim Table_ As String
         Dim query As String
 
 
         'open connection to database and execute the query string
-        cnn.Open()
+        GlobalVariables.cnn.Open()
         Label2.Text = "Choose " & GlobalVariables.Click & " to edit."
         If GlobalVariables.Click = "PPE" Then
             Table_ = "PPE"   'defines table inside the dataset to store information recieved from data connections
@@ -36,7 +35,7 @@ Public Class EditForm
             query = "SELECT Name FROM Machines"
         End If
 
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                               'This inserts the returned data into the table name defined above in a useable matrix format
 
@@ -55,7 +54,7 @@ Public Class EditForm
         Next
         editList.Sorted = True
         editList.Update()
-        cnn.Close()
+        GlobalVariables.cnn.Close()
     End Sub
 
 

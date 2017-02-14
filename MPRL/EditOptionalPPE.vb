@@ -8,8 +8,6 @@ Public Class FormEditOptPPE
     Dim TargetID As String = GlobalVariables.Click
 
     Dim ds As New DataSet   'defines dataset for data table
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub FormEditRequiredPPE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LblTitle.Text = TargetID
@@ -32,9 +30,9 @@ Public Class FormEditOptPPE
         Dim Table_ As String = "RequiredSelected"
         query = "DELETE FROM [Machine-PPELink] WHERE(MachineID = '" & GlobalVariables.Click & "') AND (PPEID = '" & CmboboxRemove.SelectedItem & "') AND (Required = 0)"
         Dim response As Integer
-        Dim cmd As New OleDbCommand(query, cnn)
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
 
-        cnn.Open()
+        GlobalVariables.cnn.Open()
 
         Try
             response = cmd.ExecuteNonQuery()
@@ -42,7 +40,7 @@ Public Class FormEditOptPPE
             MsgBox("Duplicate Required PPE")
         End Try
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
 
         MsgBox(response & "Row(s) Modified")
 
@@ -62,10 +60,10 @@ Public Class FormEditOptPPE
         Dim Table_ As String = "RequiredSelected"
 
         query = "INSERT INTO [Machine-PPELink] (MachineID, PPEID, Required, Hidden) VALUES('" & GlobalVariables.Click & "', '" & CmboboxAdd.SelectedItem & "', 0, 0)"
-        Dim cmd As New OleDbCommand(query, cnn)
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
         Dim response As Integer
 
-        cnn.Open()
+        GlobalVariables.cnn.Open()
 
         Try
             response = cmd.ExecuteNonQuery()
@@ -73,7 +71,7 @@ Public Class FormEditOptPPE
             MsgBox("Duplicate Required PPE")
         End Try
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
 
         MsgBox(response & "Row(s) Modified")
 
@@ -88,7 +86,7 @@ Public Class FormEditOptPPE
         Dim query As String
         Dim Table_ As String = "RequiredSelected"
         query = "SELECT PPE.Name, PPE.Description, PPE.ImageURL FROM ((PPE INNER JOIN [Machine-PPELink] ON PPE.Name = [Machine-PPELink].PPEID) INNER JOIN Machines ON [Machine-PPELink].MachineID = Machines.Name) WHERE ([Machine-PPELink].Required = False) AND (Machines.Name = '" & TargetID & "')"
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
         Dim row As DataRow
@@ -107,7 +105,7 @@ Public Class FormEditOptPPE
         Dim Table_ As String = "PPE"
         Dim query As String = "SELECT        Name FROM            PPE"
 
-        Dim cmd2 As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd2 As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data2 As New OleDbDataAdapter(cmd2)                               'this executes the interpreted query on the connection object and returns it to the da object
         data2.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 

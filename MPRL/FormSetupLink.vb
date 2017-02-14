@@ -7,10 +7,7 @@ Imports System.Net
 
 Public Class FormSetupLink
     Dim TargetID As String = GlobalVariables.Click
-
     Dim ds As New DataSet   'defines dataset for data table
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub FormClampingLink_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LblTitle.Text = TargetID
@@ -29,9 +26,9 @@ Public Class FormSetupLink
 
         Dim query As String = "DELETE FROM `MachineTool-SetupLink` WHERE ((`MachineToolID` = '" & GlobalVariables.Click & "')) AND (`SetupID` = '" & CmboboxRemove.SelectedItem & "'))"
         Dim response As Integer
-        Dim cmd As New OleDbCommand(query, cnn)
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
 
-        cnn.Open()
+        GlobalVariables.cnn.Open()
 
         Try
             response = cmd.ExecuteNonQuery()
@@ -39,7 +36,7 @@ Public Class FormSetupLink
             MsgBox("Duplicate Required PPE")
         End Try
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
 
         MsgBox(response & "Row(s) Modified")
 
@@ -57,10 +54,10 @@ Public Class FormSetupLink
 
         Dim query As String = "INSERT INTO `MachineTool-SetupLink` (`MachineToolID`, `SetupID`) VALUES ('" & GlobalVariables.Click & "','" & CmboboxAdd.SelectedItem & "')"
 
-        Dim cmd As New OleDbCommand(query, cnn)
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
         Dim response As Integer
 
-        cnn.Open()
+        GlobalVariables.cnn.Open()
 
         Try
             response = cmd.ExecuteNonQuery()
@@ -68,7 +65,7 @@ Public Class FormSetupLink
             MsgBox("Duplicate Link")
         End Try
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
 
         MsgBox(response & "Row(s) Modified")
 
@@ -83,7 +80,7 @@ Public Class FormSetupLink
         Dim Table_ As String = "SetupsLinked"
         Dim query As String = "SELECT        Setups.Name, Setups.ImageURL FROM            ((Setups INNER JOIN                         [MachineTool-SetupLink] ON Setups.Name = [MachineTool-SetupLink].SetupID) INNER JOIN                        MachineTools ON [MachineTool-SetupLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & TargetID & "')"
 
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
         Dim row As DataRow
@@ -102,7 +99,7 @@ Public Class FormSetupLink
         Dim Table_ As String = "Setups"
         Dim query As String = "SELECT        Name FROM            Setups"
 
-        Dim cmd2 As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd2 As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data2 As New OleDbDataAdapter(cmd2)                               'this executes the interpreted query on the connection object and returns it to the da object
         data2.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 

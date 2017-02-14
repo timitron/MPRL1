@@ -8,13 +8,10 @@ Public Class FormMachiningMethodsDisplay
     Dim Machine As String = Global.MPRL.GlobalVariables.Click
     Dim ds As New DataSet                       'defines dataset for data table
 
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
-
     Private Sub FormMachiningMethodsDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim Table_ As String = "Operations"   'defines table inside the dataset to store information recieved from data connections
         Dim query As String = "SELECT Name, Description, ImageURL FROM Operations;"    'data connection querry this must be run through the oledb command interpreter before executing it on the connection
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                               'This inserts the returned data into the table name defined above in a useable matrix format
 

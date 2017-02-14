@@ -8,10 +8,6 @@ Public Class FormMachineToolDetails
     Dim Machine As String = Global.MPRL.GlobalVariables.Click
     Dim ds As New DataSet                       'defines dataset for data table
 
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
-
-
     Private Sub FormMachineToolDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If GlobalVariables.fromadd = True Then
             Button1.Hide()
@@ -19,7 +15,7 @@ Public Class FormMachineToolDetails
         'make db connection
         connect()
 
-        CustFunctions.SetImage(cnn, "Machine Tool", Machine, PictureMachineOverview, ds)
+        CustFunctions.SetImage(GlobalVariables.cnn, "Machine Tool", Machine, PictureMachineOverview, ds)
 
         'set name
         LblTitle.Text = Machine
@@ -31,9 +27,9 @@ Public Class FormMachineToolDetails
         fill_machines()
         fill_clamping()
 
-        CustFunctions.Resources(cnn, "Machine Tool", Machine, LstResources, ds)
+        CustFunctions.Resources(GlobalVariables.cnn, "Machine Tool", Machine, LstResources, ds)
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
 
         If MPRL.GlobalVariables.AdminBuild = False Then
             BtnEditClampingLinks.Visible = False
@@ -46,7 +42,7 @@ Public Class FormMachineToolDetails
     End Sub
     Public Sub connect()
         'open connection to database and execute the query string
-        cnn.Open()
+        GlobalVariables.cnn.Open()
     End Sub
     Sub fill_machining_methods()
 
@@ -54,7 +50,7 @@ Public Class FormMachineToolDetails
         Dim Table_ As String = "Operations"   'defines table inside the dataset to store information recieved from data connections
         Dim query As String = "SELECT        Operations.Name, Operations.ImageURL FROM            ((Operations INNER JOIN                         [MachineTool-OperationsLink] ON Operations.Name = [MachineTool-OperationsLink].OperationsID) INNER JOIN                         MachineTools ON [MachineTool-OperationsLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & Machine & "')"
 
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 
@@ -106,7 +102,7 @@ Public Class FormMachineToolDetails
         Dim Table_ As String = "Machines"   'defines table inside the dataset to store information recieved from data connections
         Dim query As String = "Select Machines.MachineRoom, Machines.Description, Machines.EntityType, Machines.ImageURL, Machines.Name FROM(([Machine-MachineToolLink] INNER JOIN Machines On [Machine-MachineToolLink].MachineID = Machines.Name) INNER JOIN MachineTools On [Machine-MachineToolLink].MachineToolID = MachineTools.Name) WHERE(MachineTools.Name = '" & Machine & "')"
 
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 
@@ -158,7 +154,7 @@ Public Class FormMachineToolDetails
         Dim Table_ As String = "Setups"   'defines table inside the dataset to store information recieved from data connections
         Dim query As String = "SELECT        Setups.Name, Setups.ImageURL FROM            ((Setups INNER JOIN                         [MachineTool-SetupLink] ON Setups.Name = [MachineTool-SetupLink].SetupID) INNER JOIN                        MachineTools ON [MachineTool-SetupLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & Machine & "')"
 
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 

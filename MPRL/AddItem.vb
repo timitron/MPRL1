@@ -114,5 +114,7 @@ Public Class AddItem
         responsetime = responsetime + 1
     End Sub
 
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
 
+    End Sub
 End Class

@@ -6,11 +6,7 @@ Imports System.Net
 Public Class FormSetup
     'Get what to open from the global click variable
     Dim Setup As String = Global.MPRL.GlobalVariables.Click
-
     Dim ds As New DataSet                       'defines dataset for data table
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
-
 
     Private Sub FormClampingMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -38,8 +34,8 @@ Public Class FormSetup
         LstResources.Width.Equals(GlobalVariables.FormWidth - GlobalVariables.FormBuffer * 2)
         LstResources.Location.X.Equals(GlobalVariables.FormBuffer)
 
-        CustFunctions.SetImage(cnn, "Setup", Setup, PictureOverview, ds)
-        CustFunctions.Resources(cnn, "Setup", Setup, LstResources, ds)
+        CustFunctions.SetImage(GlobalVariables.cnn, "Setup", Setup, PictureOverview, ds)
+        CustFunctions.Resources(GlobalVariables.cnn, "Setup", Setup, LstResources, ds)
 
     End Sub
 

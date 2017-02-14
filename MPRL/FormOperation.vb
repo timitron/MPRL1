@@ -11,9 +11,6 @@ Public Class FormOperation
     Dim Operation As String = Global.MPRL.GlobalVariables.Click
     Dim ds As New DataSet                       'defines dataset for data table
 
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
-
     Private Sub MachiningMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If GlobalVariables.fromadd = True Then
             Button1.Hide()
@@ -22,8 +19,8 @@ Public Class FormOperation
         LblTitle.Text = Operation
 
         Dim startpoint As New Point(40, 600)
-        CustFunctions.SetImage(cnn, "Operation", Operation, PictureOverview, ds)
-        CustFunctions.Resources(cnn, "Operations", Operation, LstResources, ds)
+        CustFunctions.SetImage(GlobalVariables.cnn, "Operation", Operation, PictureOverview, ds)
+        CustFunctions.Resources(GlobalVariables.cnn, "Operations", Operation, LstResources, ds)
 
         load_features()
 
@@ -40,7 +37,7 @@ Public Class FormOperation
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         FormHome.Show()
         GlobalVariables.CloseAll = False
-        Me.Close()
+        Me.close()
         GlobalVariables.CloseAll = True
 
     End Sub
@@ -70,7 +67,7 @@ Public Class FormOperation
             newform.Show()
 
             GlobalVariables.CloseAll = False
-            Me.Close()
+            Me.close()
             GlobalVariables.CloseAll = True
         End If
     End Sub
@@ -87,7 +84,7 @@ Public Class FormOperation
         'define connection string and create connection object 
         Dim Table_ As String = "Features"   'defines table inside the dataset to store information recieved from data connections
         Dim query As String = "SELECT        Features.Name, Features.Description, Features.ImageURL FROM            ((Features INNER JOIN                         [Operation-FeatureLink] ON Features.Name = [Operation-FeatureLink].FeatureID) INNER JOIN                         Operations ON [Operation-FeatureLink].OperationID = Operations.Name) WHERE        (Operations.Name = '" & Operation & "')"
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 

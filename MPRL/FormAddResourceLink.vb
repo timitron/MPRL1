@@ -12,15 +12,13 @@ Public Class FormAddResourceLink
     Dim EntityType As String = GlobalVariables.Clicked
 
     Dim ds As New DataSet   'defines dataset for data table
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
 
     Private Sub FormAddResourceLink_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         TxtBoxEntityType.Text = EntityType.ToString
         TxtBoxEntityName.Text = TargetID.ToString
 
-        CustFunctions.Resources(cnn, EntityType, TargetID, LstViewResources, ds)
+        CustFunctions.Resources(GlobalVariables.cnn, EntityType, TargetID, LstViewResources, ds)
 
         fill_resources()
 
@@ -32,7 +30,7 @@ Public Class FormAddResourceLink
 
         Dim Table_ As String = "AllResoureces"
         Dim query As String = "SELECT Name, Hyperlink FROM AdditionalResources WHERE (Name Like '%" & Txtboxfilter.Text & "%')"
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 
@@ -71,7 +69,7 @@ Public Class FormAddResourceLink
 
 
         Dim query As String = "SELECT Entities, EntitiesID, ResourceID FROM [Entity-ResourceLink] WHERE (Entities = '" & EntityType & "') AND (EntitiesID = '" & TargetID & "') AND (ResourceID = '" & CmboResourceName.SelectedItem.ToString & "')"
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)
 
@@ -109,10 +107,10 @@ Public Class FormAddResourceLink
 
         Dim query As String = "INSERT INTO `Entity-ResourceLink` (`Entities`, `EntitiesID`, `ResourceID`) VALUES ('" & EntityType & "', '" & TargetID & "', '" & CmboResourceName.SelectedItem.ToString & "')"
         Dim Table_ As String = "RequiredSelected"
-        Dim cmd As New OleDbCommand(query, cnn)
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
 
 
-        cnn.Open()
+        GlobalVariables.cnn.Open()
         Try
             Dim response As Integer = cmd.ExecuteNonQuery()
             NotifyIcon1.ShowBalloonTip(500, "Link Added", response & " Rows Changed", ToolTipIcon.Info)
@@ -124,9 +122,9 @@ Public Class FormAddResourceLink
 
         retest()
 
-        CustFunctions.Resources(cnn, EntityType, TargetID, LstViewResources, ds)
+        CustFunctions.Resources(GlobalVariables.cnn, EntityType, TargetID, LstViewResources, ds)
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
 
     End Sub
 
@@ -135,10 +133,10 @@ Public Class FormAddResourceLink
         Dim index As Integer = LstViewResources.FocusedItem.Index
 
         Dim query As String = "DELETE FROM `Entity-ResourceLink` WHERE (Entities = '" & EntityType & "') AND (EntitiesID = '" & TargetID & "') AND (ResourceID = '" & ds.Tables("Resources").Rows(index)("Name") & "')"
-        Dim cmd As New OleDbCommand(query, cnn)
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
 
 
-        cnn.Open()
+        GlobalVariables.cnn.Open()
         Try
             Dim response As Integer = cmd.ExecuteNonQuery()
             NotifyIcon1.ShowBalloonTip(500, "Link Removed", response & " Rows Changed", ToolTipIcon.Info)
@@ -150,13 +148,13 @@ Public Class FormAddResourceLink
         ds.Tables("Resources").Clear()
 
         'refill our linked resources pane with the new linked resources
-        CustFunctions.Resources(cnn, EntityType, TargetID, LstViewResources, ds)
+        CustFunctions.Resources(GlobalVariables.cnn, EntityType, TargetID, LstViewResources, ds)
 
         'change selected index to refresh the duplicate link label 
         CmboResourceName.SelectedIndex = 0
         retest()
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
 
     End Sub
 End Class

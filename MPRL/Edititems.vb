@@ -8,8 +8,6 @@ Public Class Edititems
     Dim ds As New DataSet                       'defines dataset for data table
     Dim query As String
 
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
     Dim originalText As String
 
 
@@ -19,21 +17,21 @@ Public Class Edititems
 
         Dim Table_ As String = "MachineTool"
 
-        cnn.Open()
+        GlobalVariables.cnn.Open()
 
         If GlobalVariables.Click = "PPE" Then
             query = "SELECT Name, Description, ImageURL From PPE Where (([Name] = '" & GlobalVariables.Clicked & "'));"
-        ElseIf GlobalVariables.click = "Machines" Then
+        ElseIf GlobalVariables.Click = "Machines" Then
             query = "SELECT Name,  Description, ImageURL From Machines Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Operations" Then
             query = "SELECT Name, Description, ImageURL From Operations Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Setups" Then
             query = "SELECT Name, Description, ImageURL From Setups Where (([Name] = '" & GlobalVariables.Clicked & "'));"
-        ElseIf GlobalVariables.click = "Machine Tools" Then
+        ElseIf GlobalVariables.Click = "Machine Tools" Then
             query = "SELECT Name, Description, ImageURL From MachineTools Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         End If
 
-        Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
         Label5.Text = "Edit " & ds.Tables(Table_).Rows(0)("Name")
@@ -41,7 +39,7 @@ Public Class Edititems
         DescriptionTextBox.Text = ds.Tables(Table_).Rows(0)("Description")
         NameTextBox.Text = ds.Tables(Table_).Rows(0)("Name")
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
         originalText = NameTextBox.Text
     End Sub
 
@@ -91,14 +89,14 @@ Public Class Edititems
                 query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
             End If
 
-            Dim cmd As New OleDbCommand(query, cnn)
+            Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
             Dim response As Integer
 
-            cnn.Open()
+            GlobalVariables.cnn.Open()
 
             response = cmd.ExecuteNonQuery()
 
-            cnn.Close()
+            GlobalVariables.cnn.Close()
 
 
             Me.Close()
@@ -146,7 +144,7 @@ Public Class Edititems
 
 
 
-        cnn.Close()
+        GlobalVariables.cnn.Close()
         Dim result As Integer = MessageBox.Show("Are you sure you want to edit " & GlobalVariables.Clicked & "?", "Submit Changes?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
@@ -165,13 +163,13 @@ Public Class Edititems
             query = "DELETE FROM `MachineTools` WHERE ((name = '" & GlobalVariables.Clicked & "'))"
         End If
 
-            Dim cmd As New OleDbCommand(query, cnn)
-            Dim response As Integer
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
+        Dim response As Integer
 
-            cnn.Open()
+        GlobalVariables.cnn.Open()
 
-            response = cmd.ExecuteNonQuery()
-            cnn.Close()
+        response = cmd.ExecuteNonQuery()
+        GlobalVariables.cnn.Close()
         Me.Close()
         FormHome.Show()
 
