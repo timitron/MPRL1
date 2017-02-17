@@ -37,7 +37,6 @@ C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormEdi
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormAdminPanel.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormMachiningMethodsDisplay.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormMachineDetails.resources
-C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormMachiningMethod.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormMachineToolDetails.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormHome.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormMachineToolsDisplay.resources
@@ -97,3 +96,7 @@ C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.vbproj.Gener
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.exe
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.xml
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.pdb
+C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.EditFeatureOperationLink.resources
+C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FeatureView.resources
+C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormFeedback.resources
+C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormOperation.resources

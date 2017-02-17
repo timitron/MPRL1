@@ -212,13 +212,13 @@ Partial Class FormHome
         'AddToolStripMenuItem5
         '
         Me.AddToolStripMenuItem5.Name = "AddToolStripMenuItem5"
-        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
+        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
         Me.AddToolStripMenuItem5.Text = "Add"
         '
         'EditToolStripMenuItem5
         '
         Me.EditToolStripMenuItem5.Name = "EditToolStripMenuItem5"
-        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
+        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
         Me.EditToolStripMenuItem5.Text = "Edit"
         '
         'PPE

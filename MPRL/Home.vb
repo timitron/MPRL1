@@ -184,5 +184,16 @@
         newform = FormAbout
         newform.show()
     End Sub
+
+    Private Sub AddToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem5.Click
+        If My.Application.OpenForms.Count = 2 Then
+            MessageBox.Show("Please close open add/edit tab before continuing.")
+            Exit Sub
+        End If
+        GlobalVariables.Click = "Resourcesadd"
+
+        Dim newform = FormResource
+        newform.Show()
+    End Sub
 End Class
 

@@ -43,6 +43,7 @@ Public Class FormOperation
     End Sub
 
     Private Sub Form1_Closing(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        CustFunctions.Get_feedback("Operations", Operation)
         If GlobalVariables.CloseAll = True Then
             FormHome.Close()
         End If
@@ -139,8 +140,4 @@ Public Class FormOperation
         newform.Show()
     End Sub
 
-    Public Sub close() Handles Me.FormClosed
-
-        CustFunctions.Get_feedback("Operations", Operation)
-    End Sub
 End Class

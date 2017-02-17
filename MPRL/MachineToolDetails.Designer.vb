@@ -40,6 +40,7 @@ Partial Class FormMachineToolDetails
         Me.BtnEditClampingLinks = New System.Windows.Forms.Button()
         Me.LstClampingMethods = New System.Windows.Forms.ListView()
         Me.TabResources = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.PictureMachineOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TabMachines.SuspendLayout()
@@ -137,9 +138,9 @@ Partial Class FormMachineToolDetails
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(724, 11)
+        Me.Panel1.Location = New System.Drawing.Point(714, 10)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(187, 53)
+        Me.Panel1.Size = New System.Drawing.Size(197, 53)
         Me.Panel1.TabIndex = 28
         '
         'Button2
@@ -243,12 +244,22 @@ Partial Class FormMachineToolDetails
         Me.TabResources.Text = "Resources"
         Me.TabResources.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(528, 25)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 30
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'FormMachineToolDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1017, 741)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TabMachines)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LblTitle)
@@ -288,4 +299,5 @@ Partial Class FormMachineToolDetails
     Friend WithEvents TabResources As TabPage
     Friend WithEvents LstClampingMethods As ListView
     Friend WithEvents BtnEditClampingLinks As Button
+    Friend WithEvents Button3 As Button
 End Class

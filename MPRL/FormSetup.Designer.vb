@@ -125,9 +125,9 @@ Partial Class FormSetup
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Home)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(490, 12)
+        Me.Panel1.Location = New System.Drawing.Point(492, 16)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(202, 53)
+        Me.Panel1.Size = New System.Drawing.Size(197, 53)
         Me.Panel1.TabIndex = 29
         '
         'Home

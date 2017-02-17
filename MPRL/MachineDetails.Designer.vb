@@ -135,6 +135,7 @@ Partial Class FormMachineDetails
         '
         'BtnEditReqPPE
         '
+        Me.BtnEditReqPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BtnEditReqPPE.Location = New System.Drawing.Point(368, 4)
         Me.BtnEditReqPPE.Name = "BtnEditReqPPE"
         Me.BtnEditReqPPE.Size = New System.Drawing.Size(75, 23)
@@ -144,6 +145,7 @@ Partial Class FormMachineDetails
         '
         'BtnEditOptionalPPE
         '
+        Me.BtnEditOptionalPPE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BtnEditOptionalPPE.Location = New System.Drawing.Point(819, 7)
         Me.BtnEditOptionalPPE.Name = "BtnEditOptionalPPE"
         Me.BtnEditOptionalPPE.Size = New System.Drawing.Size(75, 23)
@@ -153,6 +155,7 @@ Partial Class FormMachineDetails
         '
         'EBtnEditAdditionalResources
         '
+        Me.EBtnEditAdditionalResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.EBtnEditAdditionalResources.Location = New System.Drawing.Point(819, 6)
         Me.EBtnEditAdditionalResources.Name = "EBtnEditAdditionalResources"
         Me.EBtnEditAdditionalResources.Size = New System.Drawing.Size(75, 23)
@@ -165,9 +168,9 @@ Partial Class FormMachineDetails
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(691, 9)
+        Me.Panel1.Location = New System.Drawing.Point(707, 6)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(195, 53)
+        Me.Panel1.Size = New System.Drawing.Size(197, 53)
         Me.Panel1.TabIndex = 34
         '
         'Button2
@@ -194,6 +197,7 @@ Partial Class FormMachineDetails
         '
         Me.TabInfo.Controls.Add(Me.TabPPE)
         Me.TabInfo.Controls.Add(Me.TabResources)
+        Me.TabInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
         Me.TabInfo.Location = New System.Drawing.Point(23, 471)
         Me.TabInfo.Name = "TabInfo"
         Me.TabInfo.SelectedIndex = 0
@@ -208,10 +212,10 @@ Partial Class FormMachineDetails
         Me.TabPPE.Controls.Add(Me.BtnEditOptionalPPE)
         Me.TabPPE.Controls.Add(Me.LblOptionalPPE)
         Me.TabPPE.Controls.Add(Me.LstOptPPE)
-        Me.TabPPE.Location = New System.Drawing.Point(4, 22)
+        Me.TabPPE.Location = New System.Drawing.Point(4, 38)
         Me.TabPPE.Name = "TabPPE"
         Me.TabPPE.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPPE.Size = New System.Drawing.Size(900, 288)
+        Me.TabPPE.Size = New System.Drawing.Size(900, 272)
         Me.TabPPE.TabIndex = 0
         Me.TabPPE.Text = "PPE"
         Me.TabPPE.UseVisualStyleBackColor = True
@@ -220,10 +224,10 @@ Partial Class FormMachineDetails
         '
         Me.TabResources.Controls.Add(Me.EBtnEditAdditionalResources)
         Me.TabResources.Controls.Add(Me.LstResources)
-        Me.TabResources.Location = New System.Drawing.Point(4, 22)
+        Me.TabResources.Location = New System.Drawing.Point(4, 38)
         Me.TabResources.Name = "TabResources"
         Me.TabResources.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabResources.Size = New System.Drawing.Size(900, 288)
+        Me.TabResources.Size = New System.Drawing.Size(900, 272)
         Me.TabResources.TabIndex = 1
         Me.TabResources.Text = "Resources"
         Me.TabResources.UseVisualStyleBackColor = True

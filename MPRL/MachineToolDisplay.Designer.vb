@@ -27,7 +27,6 @@ Partial Class FormMachineToolsDisplay
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.BttnPrint = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,6 +51,7 @@ Partial Class FormMachineToolsDisplay
         Me.TxtBoxDescription.Location = New System.Drawing.Point(733, 78)
         Me.TxtBoxDescription.Margin = New System.Windows.Forms.Padding(15)
         Me.TxtBoxDescription.Name = "TxtBoxDescription"
+        Me.TxtBoxDescription.ReadOnly = True
         Me.TxtBoxDescription.Size = New System.Drawing.Size(346, 401)
         Me.TxtBoxDescription.TabIndex = 2
         Me.TxtBoxDescription.Text = ""
@@ -61,10 +61,9 @@ Partial Class FormMachineToolsDisplay
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.BttnPrint)
-        Me.Panel1.Location = New System.Drawing.Point(835, 12)
+        Me.Panel1.Location = New System.Drawing.Point(882, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(256, 53)
+        Me.Panel1.Size = New System.Drawing.Size(197, 53)
         Me.Panel1.TabIndex = 28
         '
         'Button2
@@ -86,16 +85,6 @@ Partial Class FormMachineToolsDisplay
         Me.Button1.TabIndex = 27
         Me.Button1.Text = "Previous"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'BttnPrint
-        '
-        Me.BttnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BttnPrint.Location = New System.Drawing.Point(186, 2)
-        Me.BttnPrint.Name = "BttnPrint"
-        Me.BttnPrint.Size = New System.Drawing.Size(57, 46)
-        Me.BttnPrint.TabIndex = 26
-        Me.BttnPrint.Text = "Print NA"
-        Me.BttnPrint.UseVisualStyleBackColor = True
         '
         'FormMachineToolsDisplay
         '
@@ -119,5 +108,4 @@ Partial Class FormMachineToolsDisplay
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents BttnPrint As Button
 End Class

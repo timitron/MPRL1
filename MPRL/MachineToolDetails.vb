@@ -330,7 +330,6 @@ Public Class FormMachineToolDetails
         newform.Show()
     End Sub
 
-    Private Sub LstMachines_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstMachines.SelectedIndexChanged
 
-    End Sub
+
 End Class
