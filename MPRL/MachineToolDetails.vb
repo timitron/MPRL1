@@ -331,5 +331,4 @@ Public Class FormMachineToolDetails
     End Sub
 
 
-
 End Class

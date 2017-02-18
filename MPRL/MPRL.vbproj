@@ -108,6 +108,12 @@
     <Compile Include="FeatureView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FeedbackForm.Designer.vb">
+      <DependentUpon>FeedbackForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormFeedback.Designer.vb">
       <DependentUpon>FormFeedback.vb</DependentUpon>
     </Compile>
@@ -217,6 +223,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MPRLDataSet1.vb">
+      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -248,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeatureView.resx">
       <DependentUpon>FeatureView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedbackForm.resx">
+      <DependentUpon>FeedbackForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddResourceLink.resx">
       <DependentUpon>FormAddResourceLink.vb</DependentUpon>

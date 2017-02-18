@@ -2,8 +2,14 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Activate()
 
+
+
         If GlobalVariables.AdminBuild = False Then
             MenuStrip1.Visible = False
+        Else
+            Dim newform
+            newform = FeedbackForm
+            newform.Show()
         End If
 
     End Sub
