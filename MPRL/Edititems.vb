@@ -150,28 +150,90 @@ Public Class Edititems
             Exit Sub
         End If
 
-        PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
-        If GlobalVariables.Click = "PPE" Then
-            query = "DELETE FROM `PPE` WHERE (name ='" & GlobalVariables.Clicked & "')"
-        ElseIf GlobalVariables.Click = "Machines" Then
-            query = "DELETE FROM `Machines` WHERE (( name ='" & GlobalVariables.Clicked & "'))"
-        ElseIf GlobalVariables.Click = "Operations" Then
-            query = "DELETE FROM `Operations` WHERE (( name = '" & GlobalVariables.Clicked & "'))"
-        ElseIf GlobalVariables.Click = "Setups" Then
-            query = "DELETE FROM `Setups` WHERE ((name ='" & GlobalVariables.Clicked & "'))"
-        ElseIf GlobalVariables.Click = "Machine Tools" Then
-            query = "DELETE FROM `MachineTools` WHERE ((name = '" & GlobalVariables.Clicked & "'))"
-        End If
+        Dim NumOfRelation As Integer = 1
 
-        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
-        Dim response As Integer
+        Do Until NumOfRelation = 0
+            PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
+            If GlobalVariables.Click = "PPE" Then
+                If NumOfRelation = 1 Then
+                    query = "DELETE FROM `PPE` WHERE (name ='" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 2
+                ElseIf NumOfRelation = 2 Then
+                    query = "DELETE FROM `Machine-PPELink` WHERE  (`PPEID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 0
+                End If
+            ElseIf GlobalVariables.Click = "Machines" Then
+                If NumOfRelation = 1 Then
+                    query = "DELETE FROM `Machines` WHERE ( name ='" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 2
+                ElseIf NumOfRelation = 2 Then
+                    query = "DELETE FROM `Machine-PPELink` WHERE (`MachineID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 3
+                ElseIf NumOfRelation = 3 Then
+                    query = "DELETE FROM `Machine-MachineToolLink` WHERE (`MachineID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 4
+                ElseIf NumOfRelation = 4 Then
+                    query = "DELETE FROM `Entity-ResourceLink` WHERE (`EntitiesID` ='" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 0
+                End If
+            ElseIf GlobalVariables.Click = "Operations" Then
+                If NumOfRelation = 1 Then
+                    query = "DELETE FROM `Operations` WHERE (( name = '" & GlobalVariables.Clicked & "'))"
+                    NumOfRelation = 2
+                ElseIf NumOfRelation = 2 Then
+                    query = "DELETE FROM `MachineTool-OperationsLink` WHERE (`OperationsID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 3
+                ElseIf NumOfRelation = 3 Then
+                    query = "DELETE FROM `Operation-FeatureLink` WHERE (`OperationID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 4
+                ElseIf NumOfRelation = 4 Then
+                    query = "DELETE FROM `Entity-ResourceLink` WHERE (`EntitiesID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 0
+                End If
+            ElseIf GlobalVariables.Click = "Setups" Then
+                If NumOfRelation = 1 Then
+                    query = "DELETE FROM `Setups` WHERE (name ='" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 2
+                ElseIf NumOfRelation = 2 Then
+                    query = "DELETE FROM `MachineTool-SetupLink` WHERE (`SetupID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 3
+                ElseIf NumOfRelation = 3 Then
+                    query = "DELETE FROM `Entity-ResourceLink` WHERE (`EntitiesID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 0
+                End If
+            ElseIf GlobalVariables.Click = "Machine Tools" Then
+                If NumOfRelation = 1 Then
+                    query = "DELETE FROM `MachineTools` WHERE (name = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 2
+                ElseIf NumOfRelation = 2 Then
+                    query = "DELETE FROM `Machine-MachineToolLink` WHERE (`MachineToolID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 3
+                ElseIf NumOfRelation = 3 Then
+                    query = "DELETE FROM `MachineTool-OperationsLink` WHERE (`MachineToolID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 4
+                ElseIf NumOfRelation = 4 Then
+                    query = "DELETE FROM `MachineTool-SetupLink` WHERE (`MachineToolID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 5
+                ElseIf NumOfRelation = 5 Then
+                    query = "DELETE FROM `Entity-ResourceLink` WHERE (`EntitiesID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 0
+                End If
+            End If
 
-        GlobalVariables.cnn.Open()
 
-        response = cmd.ExecuteNonQuery()
-        GlobalVariables.cnn.Close()
+            Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
+            Dim response As Integer
+
+            GlobalVariables.cnn.Open()
+
+            response = cmd.ExecuteNonQuery()
+            GlobalVariables.cnn.Close()
+        Loop
+
         Me.Close()
         FormHome.Show()
+
+
 
 
     End Sub
