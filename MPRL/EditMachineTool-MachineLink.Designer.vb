@@ -101,9 +101,9 @@ Partial Class EditMachineTool_MachineLink
         Me.LblFilter.AutoSize = True
         Me.LblFilter.Location = New System.Drawing.Point(6, 16)
         Me.LblFilter.Name = "LblFilter"
-        Me.LblFilter.Size = New System.Drawing.Size(112, 13)
+        Me.LblFilter.Size = New System.Drawing.Size(32, 13)
         Me.LblFilter.TabIndex = 9
-        Me.LblFilter.Text = "Operation Name Filter:"
+        Me.LblFilter.Text = "Filter:"
         '
         'Txtboxfilter
         '
@@ -117,9 +117,9 @@ Partial Class EditMachineTool_MachineLink
         Me.LblResourceName.AutoSize = True
         Me.LblResourceName.Location = New System.Drawing.Point(6, 55)
         Me.LblResourceName.Name = "LblResourceName"
-        Me.LblResourceName.Size = New System.Drawing.Size(84, 13)
+        Me.LblResourceName.Size = New System.Drawing.Size(79, 13)
         Me.LblResourceName.TabIndex = 4
-        Me.LblResourceName.Text = "Operation Name"
+        Me.LblResourceName.Text = "Machine Name"
         '
         'CmboFeatureName
         '

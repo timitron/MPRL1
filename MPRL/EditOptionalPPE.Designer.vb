@@ -22,12 +22,16 @@ Partial Class FormEditOptPPE
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditOptPPE))
         Me.CmboboxAdd = New System.Windows.Forms.ComboBox()
         Me.CmboboxRemove = New System.Windows.Forms.ComboBox()
         Me.BtnAdd = New System.Windows.Forms.Button()
         Me.BtnRemove = New System.Windows.Forms.Button()
         Me.LblTargetName = New System.Windows.Forms.Label()
         Me.LblTitle = New System.Windows.Forms.Label()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SuspendLayout()
         '
         'CmboboxAdd
@@ -84,6 +88,18 @@ Partial Class FormEditOptPPE
         Me.LblTitle.TabIndex = 8
         Me.LblTitle.Text = "Edit Optional PPE"
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "MPRL"
+        Me.NotifyIcon1.Visible = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
         'FormEditOptPPE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -108,4 +124,6 @@ Partial Class FormEditOptPPE
     Friend WithEvents BtnRemove As Button
     Friend WithEvents LblTargetName As Label
     Friend WithEvents LblTitle As Label
+    Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class

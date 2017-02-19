@@ -37,12 +37,12 @@ Public Class FormEditOptPPE
         Try
             response = cmd.ExecuteNonQuery()
         Catch ex As Exception
-            MsgBox("Duplicate Required PPE")
+            NotifyIcon1.ShowBalloonTip(500, "No Change", "Uknown Error", ToolTipIcon.Info)
         End Try
 
         GlobalVariables.cnn.Close()
 
-        MsgBox(response & "Row(s) Modified")
+        NotifyIcon1.ShowBalloonTip(500, "Link Removed", response & "Row(s) Modified", ToolTipIcon.Info)
 
         update_req_combobox()
         update_ppe_combobox()
@@ -68,12 +68,13 @@ Public Class FormEditOptPPE
         Try
             response = cmd.ExecuteNonQuery()
         Catch ex As Exception
-            MsgBox("Duplicate Required PPE")
+            NotifyIcon1.ShowBalloonTip(500, "No Change", "Duplicate PPE", ToolTipIcon.Info)
         End Try
 
         GlobalVariables.cnn.Close()
 
-        MsgBox(response & "Row(s) Modified")
+        NotifyIcon1.ShowBalloonTip(500, "Recorded", response & "Row(s) Modified", ToolTipIcon.Info)
+
 
         update_req_combobox()
         update_ppe_combobox()

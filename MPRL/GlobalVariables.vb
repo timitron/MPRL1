@@ -8,21 +8,16 @@ Public Class GlobalVariables
     Public Shared FormWidth As Int32 = 800 'width in pixels of forms, generally 900 - 1600. 
     Public Shared FormBuffer As Int16 = 50 'distance in pixels between form obejects and groupbox walls. generallt 10 - 200 
 
-    Dim test As String = "testytest"
-
     Public Shared Click As String
     Public Shared Clicked As String
     Public Shared FeedbackEntity As String
     Public Shared FeedbackEntityType As String
-
 
     Public Shared prevMachineTool As String 'stores previously selected machine tool 
 
     Public Shared fromadd As Boolean
     Public Shared CloseAll As Boolean = True
     Public Shared MethodStart As String
-
-
 
     'define connection string and create connection object 
     Public Shared cnn As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb")
@@ -247,7 +242,7 @@ Public Class CustFunctions
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 
-        Dim picture As Image = Image.FromFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
+        Dim picture As Image = Image.FromFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
         returnPictureBox.Image = picture
     End Sub
     Shared Sub ResourceDoubleClickHandler(ListResource As ListView, ByRef ds As DataSet)

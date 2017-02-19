@@ -41,76 +41,85 @@ Partial Class AddItem
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LblDescriptionMax = New System.Windows.Forms.Label()
+        Me.LblTitleMax = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PctureboxIcon = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PctureboxIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 22)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label1.Location = New System.Drawing.Point(6, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 13)
+        Me.Label1.Size = New System.Drawing.Size(45, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Name"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 58)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label2.Location = New System.Drawing.Point(6, 59)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 13)
+        Me.Label2.Size = New System.Drawing.Size(79, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Description"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(407, 3)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label3.Location = New System.Drawing.Point(6, 228)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 13)
+        Me.Label3.Size = New System.Drawing.Size(86, 17)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Image"
+        Me.Label3.Text = "Detail Image"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(377, 19)
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 248)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 84)
+        Me.PictureBox1.Size = New System.Drawing.Size(301, 94)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
         'DescriptionTextBox
         '
-        Me.DescriptionTextBox.Location = New System.Drawing.Point(70, 58)
+        Me.DescriptionTextBox.Location = New System.Drawing.Point(9, 79)
         Me.DescriptionTextBox.Multiline = True
         Me.DescriptionTextBox.Name = "DescriptionTextBox"
-        Me.DescriptionTextBox.Size = New System.Drawing.Size(301, 74)
-        Me.DescriptionTextBox.TabIndex = 4
+        Me.DescriptionTextBox.Size = New System.Drawing.Size(301, 146)
+        Me.DescriptionTextBox.TabIndex = 2
         '
         'NameTextBox
         '
-        Me.NameTextBox.Location = New System.Drawing.Point(70, 19)
+        Me.NameTextBox.Location = New System.Drawing.Point(9, 36)
         Me.NameTextBox.Name = "NameTextBox"
         Me.NameTextBox.Size = New System.Drawing.Size(301, 20)
-        Me.NameTextBox.TabIndex = 5
+        Me.NameTextBox.TabIndex = 1
         '
         'SubmitChanges
         '
-        Me.SubmitChanges.Location = New System.Drawing.Point(353, 186)
+        Me.SubmitChanges.Location = New System.Drawing.Point(185, 529)
         Me.SubmitChanges.Name = "SubmitChanges"
         Me.SubmitChanges.Size = New System.Drawing.Size(153, 43)
-        Me.SubmitChanges.TabIndex = 7
+        Me.SubmitChanges.TabIndex = 5
         Me.SubmitChanges.Text = "Submit"
         Me.SubmitChanges.UseVisualStyleBackColor = True
         '
         'Browse
         '
-        Me.Browse.Location = New System.Drawing.Point(377, 109)
+        Me.Browse.Location = New System.Drawing.Point(234, 348)
         Me.Browse.Name = "Browse"
-        Me.Browse.Size = New System.Drawing.Size(100, 23)
-        Me.Browse.TabIndex = 8
+        Me.Browse.Size = New System.Drawing.Size(76, 25)
+        Me.Browse.TabIndex = 3
         Me.Browse.Text = "Browse"
         Me.Browse.UseVisualStyleBackColor = True
         '
@@ -147,7 +156,7 @@ Partial Class AddItem
         'LblDuplicate
         '
         Me.LblDuplicate.AutoSize = True
-        Me.LblDuplicate.Location = New System.Drawing.Point(76, 42)
+        Me.LblDuplicate.Location = New System.Drawing.Point(57, 20)
         Me.LblDuplicate.Name = "LblDuplicate"
         Me.LblDuplicate.Size = New System.Drawing.Size(72, 13)
         Me.LblDuplicate.TabIndex = 11
@@ -167,6 +176,11 @@ Partial Class AddItem
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.PctureboxIcon)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.LblDescriptionMax)
+        Me.GroupBox1.Controls.Add(Me.LblTitleMax)
         Me.GroupBox1.Controls.Add(Me.NameTextBox)
         Me.GroupBox1.Controls.Add(Me.LblDuplicate)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -177,15 +191,63 @@ Partial Class AddItem
         Me.GroupBox1.Controls.Add(Me.DescriptionTextBox)
         Me.GroupBox1.Location = New System.Drawing.Point(17, 37)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(489, 143)
+        Me.GroupBox1.Size = New System.Drawing.Size(321, 486)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
+        '
+        'LblDescriptionMax
+        '
+        Me.LblDescriptionMax.AutoSize = True
+        Me.LblDescriptionMax.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblDescriptionMax.Location = New System.Drawing.Point(248, 228)
+        Me.LblDescriptionMax.Name = "LblDescriptionMax"
+        Me.LblDescriptionMax.Size = New System.Drawing.Size(62, 13)
+        Me.LblDescriptionMax.TabIndex = 13
+        Me.LblDescriptionMax.Text = "(4,000 max)"
+        '
+        'LblTitleMax
+        '
+        Me.LblTitleMax.AutoSize = True
+        Me.LblTitleMax.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTitleMax.Location = New System.Drawing.Point(257, 59)
+        Me.LblTitleMax.Name = "LblTitleMax"
+        Me.LblTitleMax.Size = New System.Drawing.Size(53, 13)
+        Me.LblTitleMax.TabIndex = 12
+        Me.LblTitleMax.Text = "(254 max)"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(6, 447)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(76, 25)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Browse"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label6.Location = New System.Drawing.Point(6, 355)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 17)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "Icon Image"
+        '
+        'PctureboxIcon
+        '
+        Me.PctureboxIcon.Location = New System.Drawing.Point(9, 375)
+        Me.PctureboxIcon.Name = "PctureboxIcon"
+        Me.PctureboxIcon.Size = New System.Drawing.Size(71, 66)
+        Me.PctureboxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PctureboxIcon.TabIndex = 16
+        Me.PctureboxIcon.TabStop = False
         '
         'AddItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(519, 248)
+        Me.ClientSize = New System.Drawing.Size(350, 580)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.SubmitChanges)
@@ -197,6 +259,7 @@ Partial Class AddItem
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PctureboxIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -219,4 +282,9 @@ Partial Class AddItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents LblDescriptionMax As Label
+    Friend WithEvents LblTitleMax As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents PctureboxIcon As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

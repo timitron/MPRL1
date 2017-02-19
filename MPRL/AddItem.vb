@@ -16,9 +16,16 @@ Public Class AddItem
         Timer1.Start()
 
         PictureBox1.ImageLocation = Application.StartupPath & "\Images\default\noimage.jpg"
+        PctureboxIcon.ImageLocation = Application.StartupPath & "\Images\default\noimage.jpg"
         Label5.Text = "Add " & GlobalVariables.Click
         DescriptionTextBox.Text = "Description Goes Here"
         NameTextBox.Text = ""
+
+        If GlobalVariables.Click = "PPE" Or GlobalVariables.Click = "Features" Then
+            PictureBox1.Enabled = False
+            Browse.Enabled = False
+        End If
+
     End Sub
 
     Private Sub SubmitChanges_Click(sender As Object, e As EventArgs) Handles SubmitChanges.Click
@@ -31,6 +38,11 @@ Public Class AddItem
 
 
         If CustFunctions.IsValidImage(PictureBox1.ImageLocation) = False Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
+            Exit Sub
+        End If
+
+        If CustFunctions.IsValidImage(PctureboxIcon.ImageLocation) = False Then
             NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
             Exit Sub
         End If
@@ -59,7 +71,26 @@ Public Class AddItem
             PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
             PictureBox1.ImageLocation = FileToSaveAs
             PictureBox1.Refresh()
-            Exit Sub
+
+        End If
+
+        If PctureboxIcon.ImageLocation.StartsWith(Application.StartupPath) = False Then
+            'MessageBox.Show("Image must be in ""Debug"" folder")
+
+            Dim folder As String
+
+            If GlobalVariables.Click = "Machine Tools" Then
+                folder = "MachineTools"
+            Else
+                folder = GlobalVariables.Click
+            End If
+
+            'if this image already exists this will cause an error
+            Dim FileToSaveAs1 As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & "-icon" & ".Jpeg")
+            PctureboxIcon.Image.Save(FileToSaveAs1, System.Drawing.Imaging.ImageFormat.Jpeg)
+            PctureboxIcon.ImageLocation = FileToSaveAs1
+            PctureboxIcon.Refresh()
+
         End If
 
         Dim result As Integer = MessageBox.Show("Are you sure you want to add " & NameTextBox.Text & " to " & GlobalVariables.Click & "?", "Submit Changes?", MessageBoxButtons.YesNo)
@@ -68,22 +99,22 @@ Public Class AddItem
         ElseIf result = DialogResult.Yes Then
             GlobalVariables.Clicked = NameTextBox.Text
             PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
-
+            PctureboxIcon.ImageLocation = Replace(PctureboxIcon.ImageLocation, Application.StartupPath, "")
 
 
 
             Dim query As String
 
             If GlobalVariables.Click = "PPE" Then
-                query = "insert into [PPE](Name, Description, Imageurl) values('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
+                query = "insert into [PPE](Name, Description, Imageurl) values('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machines" Then
-                query = "INSERT INTO [Machines] (Name, MachineRoom, Description, EntityType, ImageURL) VALUES ('" & NameTextBox.Text & "', 'Rogers118', '" & DescriptionTextBox.Text & "', 'Machines', '" & PictureBox1.ImageLocation & "')"
+                query = "INSERT INTO [Machines] (Name, MachineRoom, Description, EntityType, ImageURL, DetailURL) VALUES ('" & NameTextBox.Text & "', 'Rogers118', '" & DescriptionTextBox.Text & "', 'Machines', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Operations" Then
-                query = "INSERT INTO [Operations] (`Name`, `Description`, `EntityType`,  `ImageURL`) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', 'Operations', '" & PictureBox1.ImageLocation & "')"
+                query = "INSERT INTO [Operations] (`Name`, `Description`, `EntityType`,  `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', 'Operations', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Setups" Then
-                query = "INSERT INTO [Setups] (`Name`, `Description`, `ImageURL`) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
+                query = "INSERT INTO [Setups] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
-                query = "INSERT INTO [MachineTools] (`Name`, `Description`, `ImageURL`) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PictureBox1.ImageLocation & "')"
+                query = "INSERT INTO [MachineTools] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             End If
 
             Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
@@ -100,41 +131,46 @@ Public Class AddItem
 
 
             Me.Close()
-            FormHome.Hide()
-            GlobalVariables.fromadd = True
-            If GlobalVariables.Click = "Machines" Then
-                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
 
-                Dim newform
-                newform = FormMachineDetails
-                newform.show()
-            ElseIf GlobalVariables.Click = "Operations" Then
-                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
-
-                Dim newform
-                newform = FormOperation
-                newform.show()
-
-            ElseIf GlobalVariables.Click = "Setups" Then
-                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
-
-                Dim newform
-                newform = FormSetup
-                newform.show()
-            ElseIf GlobalVariables.Click = "Machine Tools" Then
-                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
-
-                Dim newform
-                newform = FormMachineToolDetails
-                newform.show()
+            'don't hide the main form if there is no form to open
+            If (GlobalVariables.Click = "PPE" Or GlobalVariables.Click = "Feature") = False Then
+                FormHome.Hide()
             End If
 
-        End If
+            GlobalVariables.fromadd = True
+                If GlobalVariables.Click = "Machines" Then
+                    Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                    Dim newform
+                    newform = FormMachineDetails
+                    newform.show()
+                ElseIf GlobalVariables.Click = "Operations" Then
+                    Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                    Dim newform
+                    newform = FormOperation
+                    newform.show()
+
+                ElseIf GlobalVariables.Click = "Setups" Then
+                    Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                    Dim newform
+                    newform = FormSetup
+                    newform.show()
+                ElseIf GlobalVariables.Click = "Machine Tools" Then
+                    Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+
+                    Dim newform
+                    newform = FormMachineToolDetails
+                    newform.show()
+                End If
+
+            End If
     End Sub
 
     Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click
         OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp|PNG|*.png"
         PictureBox1.ImageLocation = OpenFileDialog1.FileName
 
     End Sub
@@ -185,5 +221,11 @@ Public Class AddItem
             ds.Tables(Table_).Clear()
         End If
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        OpenFileDialog1.ShowDialog()
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp|PNG|*.png"
+        PctureboxIcon.ImageLocation = OpenFileDialog1.FileName
     End Sub
 End Class

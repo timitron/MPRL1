@@ -119,6 +119,7 @@ Public Class EditMachineTool_MachineLink
         LstViewFeatures.Update()
 
 
+
     End Sub
 
     Sub update_filtered_operations()
@@ -178,5 +179,9 @@ Public Class EditMachineTool_MachineLink
     End Sub
     Private Sub CmboboxAdd_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmboFeatureName.SelectedIndexChanged
         retest()
+    End Sub
+
+    Private Sub Txtboxfilter_TextChanged(sender As Object, e As EventArgs) Handles Txtboxfilter.TextChanged
+        update_filtered_operations()
     End Sub
 End Class

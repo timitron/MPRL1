@@ -327,6 +327,7 @@ Public Class FormMachineToolDetails
         GlobalVariables.Clicked = "Machine Tool"
         Dim newform
         newform = FormAddResourceLink
+
         newform.Show()
     End Sub
 
