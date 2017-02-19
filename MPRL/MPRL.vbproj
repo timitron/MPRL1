@@ -96,6 +96,12 @@
     <Compile Include="Edititems.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditMachineTool-MachineLink.Designer.vb">
+      <DependentUpon>EditMachineTool-MachineLink.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditMachineTool-MachineLink.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EditSelection.Designer.vb">
       <DependentUpon>EditSelection.vb</DependentUpon>
     </Compile>
@@ -150,16 +156,10 @@
     <Compile Include="EditOptionalPPE.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditMachineTollOperationLink.Designer.vb">
-      <DependentUpon>EditMachineTollOperationLink.vb</DependentUpon>
+    <Compile Include="EditMachineToolOperationLink.Designer.vb">
+      <DependentUpon>EditMachineToolOperationLink.vb</DependentUpon>
     </Compile>
-    <Compile Include="EditMachineTollOperationLink.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditOperationMachineLink.Designer.vb">
-      <DependentUpon>EditOperationMachineLink.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EditOperationMachineLink.vb">
+    <Compile Include="EditMachineToolOperationLink.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddItem.Designer.vb">
@@ -252,6 +252,9 @@
     <EmbeddedResource Include="Edititems.resx">
       <DependentUpon>Edititems.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditMachineTool-MachineLink.resx">
+      <DependentUpon>EditMachineTool-MachineLink.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditSelection.resx">
       <DependentUpon>EditSelection.vb</DependentUpon>
     </EmbeddedResource>
@@ -279,11 +282,8 @@
     <EmbeddedResource Include="EditOptionalPPE.resx">
       <DependentUpon>EditOptionalPPE.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditMachineTollOperationLink.resx">
-      <DependentUpon>EditMachineTollOperationLink.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditOperationMachineLink.resx">
-      <DependentUpon>EditOperationMachineLink.vb</DependentUpon>
+    <EmbeddedResource Include="EditMachineToolOperationLink.resx">
+      <DependentUpon>EditMachineToolOperationLink.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.vb</DependentUpon>

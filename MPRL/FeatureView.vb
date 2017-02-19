@@ -59,7 +59,6 @@ Public Class FeatureView
 
     Private Sub LstViewFeatures_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstViewFeatures.SelectedIndexChanged
 
-
         update_tolerances()
 
     End Sub

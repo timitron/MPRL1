@@ -265,7 +265,7 @@ Public Class FormMachineToolDetails
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnEditMachineLinks.Click
         Global.MPRL.GlobalVariables.Click = Machine
         Dim newform
-        newform = FormEditMachineLink
+        newform = EditMachineTool_MachineLink
 
         newform.Show()
     End Sub
@@ -281,7 +281,7 @@ Public Class FormMachineToolDetails
     Private Sub BtnEditMachiningMethodsLink_Click(sender As Object, e As EventArgs) Handles BtnEditMachiningMethodsLink.Click
         Global.MPRL.GlobalVariables.Click = Machine
         Dim newform
-        newform = FormEditMachiningMethodMachineToolLink
+        newform = FormEditMachineLink
 
         newform.Show()
     End Sub
