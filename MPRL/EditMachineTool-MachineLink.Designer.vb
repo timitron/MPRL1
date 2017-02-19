@@ -48,7 +48,7 @@ Partial Class EditMachineTool_MachineLink
         Me.GrpBoxRemoveLink.Controls.Add(Me.BtnRemoveLink)
         Me.GrpBoxRemoveLink.Location = New System.Drawing.Point(245, 75)
         Me.GrpBoxRemoveLink.Name = "GrpBoxRemoveLink"
-        Me.GrpBoxRemoveLink.Size = New System.Drawing.Size(220, 208)
+        Me.GrpBoxRemoveLink.Size = New System.Drawing.Size(220, 176)
         Me.GrpBoxRemoveLink.TabIndex = 43
         Me.GrpBoxRemoveLink.TabStop = False
         Me.GrpBoxRemoveLink.Text = "Remove Link"
@@ -58,13 +58,13 @@ Partial Class EditMachineTool_MachineLink
         Me.LstViewFeatures.Location = New System.Drawing.Point(6, 19)
         Me.LstViewFeatures.MultiSelect = False
         Me.LstViewFeatures.Name = "LstViewFeatures"
-        Me.LstViewFeatures.Size = New System.Drawing.Size(208, 130)
+        Me.LstViewFeatures.Size = New System.Drawing.Size(208, 89)
         Me.LstViewFeatures.TabIndex = 7
         Me.LstViewFeatures.UseCompatibleStateImageBehavior = False
         '
         'BtnRemoveLink
         '
-        Me.BtnRemoveLink.Location = New System.Drawing.Point(6, 155)
+        Me.BtnRemoveLink.Location = New System.Drawing.Point(6, 114)
         Me.BtnRemoveLink.Name = "BtnRemoveLink"
         Me.BtnRemoveLink.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnRemoveLink.Size = New System.Drawing.Size(208, 47)
@@ -82,7 +82,7 @@ Partial Class EditMachineTool_MachineLink
         Me.GrpBoxAdd.Controls.Add(Me.btnAddLink)
         Me.GrpBoxAdd.Location = New System.Drawing.Point(19, 75)
         Me.GrpBoxAdd.Name = "GrpBoxAdd"
-        Me.GrpBoxAdd.Size = New System.Drawing.Size(220, 208)
+        Me.GrpBoxAdd.Size = New System.Drawing.Size(220, 176)
         Me.GrpBoxAdd.TabIndex = 42
         Me.GrpBoxAdd.TabStop = False
         Me.GrpBoxAdd.Text = "Add Link"
@@ -90,7 +90,7 @@ Partial Class EditMachineTool_MachineLink
         'LblDuplicate
         '
         Me.LblDuplicate.AutoSize = True
-        Me.LblDuplicate.Location = New System.Drawing.Point(6, 136)
+        Me.LblDuplicate.Location = New System.Drawing.Point(6, 98)
         Me.LblDuplicate.Name = "LblDuplicate"
         Me.LblDuplicate.Size = New System.Drawing.Size(39, 13)
         Me.LblDuplicate.TabIndex = 11
@@ -131,7 +131,7 @@ Partial Class EditMachineTool_MachineLink
         '
         'btnAddLink
         '
-        Me.btnAddLink.Location = New System.Drawing.Point(6, 155)
+        Me.btnAddLink.Location = New System.Drawing.Point(6, 114)
         Me.btnAddLink.Name = "btnAddLink"
         Me.btnAddLink.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnAddLink.Size = New System.Drawing.Size(208, 47)
@@ -175,7 +175,7 @@ Partial Class EditMachineTool_MachineLink
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(524, 328)
+        Me.ClientSize = New System.Drawing.Size(489, 271)
         Me.Controls.Add(Me.GrpBoxRemoveLink)
         Me.Controls.Add(Me.GrpBoxAdd)
         Me.Controls.Add(Me.LblTargetName)

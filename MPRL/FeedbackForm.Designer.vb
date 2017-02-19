@@ -22,6 +22,7 @@ Partial Class FeedbackForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FeedbackForm))
         Me.LblTitle = New System.Windows.Forms.Label()
         Me.LstviewFeedback = New System.Windows.Forms.ListView()
         Me.SuspendLayout()
@@ -38,6 +39,9 @@ Partial Class FeedbackForm
         '
         'LstviewFeedback
         '
+        Me.LstviewFeedback.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LstviewFeedback.Location = New System.Drawing.Point(12, 57)
         Me.LstviewFeedback.Name = "LstviewFeedback"
         Me.LstviewFeedback.Size = New System.Drawing.Size(761, 510)
@@ -52,6 +56,7 @@ Partial Class FeedbackForm
         Me.ClientSize = New System.Drawing.Size(785, 579)
         Me.Controls.Add(Me.LstviewFeedback)
         Me.Controls.Add(Me.LblTitle)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FeedbackForm"
         Me.Text = "FeedbackForm"
         Me.ResumeLayout(False)

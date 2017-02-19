@@ -80,7 +80,6 @@ C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormEditRequ
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormEditOptPPE.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormEditMachineLink.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.AddItem.resources
-C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormAdminPanel.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormSetupLink.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormMachiningMethodsDisplay.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormMachineDetails.resources
@@ -101,3 +100,5 @@ C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FeedbackForm
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.EditMachineTool_MachineLink.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.EditMachineTool_MachineLink.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FeedbackForm.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormAdmin.resources
+C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.Version.resources

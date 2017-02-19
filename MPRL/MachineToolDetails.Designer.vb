@@ -22,6 +22,7 @@ Partial Class FormMachineToolDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMachineToolDetails))
         Me.LblTitle = New System.Windows.Forms.Label()
         Me.PictureMachineOverview = New System.Windows.Forms.PictureBox()
         Me.LstMachineMethods = New System.Windows.Forms.ListView()
@@ -74,7 +75,7 @@ Partial Class FormMachineToolDetails
         Me.LstMachineMethods.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LstMachineMethods.Location = New System.Drawing.Point(6, 6)
         Me.LstMachineMethods.Name = "LstMachineMethods"
-        Me.LstMachineMethods.Size = New System.Drawing.Size(871, 310)
+        Me.LstMachineMethods.Size = New System.Drawing.Size(880, 310)
         Me.LstMachineMethods.TabIndex = 10
         Me.LstMachineMethods.TileSize = New System.Drawing.Size(100, 100)
         Me.LstMachineMethods.UseCompatibleStateImageBehavior = False
@@ -137,7 +138,7 @@ Partial Class FormMachineToolDetails
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(661, 0)
+        Me.Panel1.Location = New System.Drawing.Point(749, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(197, 53)
         Me.Panel1.TabIndex = 28
@@ -248,11 +249,12 @@ Partial Class FormMachineToolDetails
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(961, 261)
+        Me.ClientSize = New System.Drawing.Size(1049, 866)
         Me.Controls.Add(Me.TabMachines)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.PictureMachineOverview)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.Name = "FormMachineToolDetails"
         Me.Padding = New System.Windows.Forms.Padding(0, 0, 0, 200)

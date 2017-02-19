@@ -22,51 +22,25 @@ Partial Class FormSetupLink
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CmboboxAdd = New System.Windows.Forms.ComboBox()
-        Me.CmboboxRemove = New System.Windows.Forms.ComboBox()
-        Me.BtnAdd = New System.Windows.Forms.Button()
-        Me.BtnRemove = New System.Windows.Forms.Button()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSetupLink))
         Me.LblTargetName = New System.Windows.Forms.Label()
         Me.LblTitle = New System.Windows.Forms.Label()
+        Me.GrpBoxRemoveLink = New System.Windows.Forms.GroupBox()
+        Me.LstViewFeatures = New System.Windows.Forms.ListView()
+        Me.BtnRemoveLink = New System.Windows.Forms.Button()
+        Me.GrpBoxAdd = New System.Windows.Forms.GroupBox()
+        Me.LblDuplicate = New System.Windows.Forms.Label()
+        Me.LblFilter = New System.Windows.Forms.Label()
+        Me.Txtboxfilter = New System.Windows.Forms.TextBox()
+        Me.LblResourceName = New System.Windows.Forms.Label()
+        Me.CmboFeatureName = New System.Windows.Forms.ComboBox()
+        Me.btnAddLink = New System.Windows.Forms.Button()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.GrpBoxRemoveLink.SuspendLayout()
+        Me.GrpBoxAdd.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'CmboboxAdd
-        '
-        Me.CmboboxAdd.FormattingEnabled = True
-        Me.CmboboxAdd.Location = New System.Drawing.Point(36, 128)
-        Me.CmboboxAdd.Name = "CmboboxAdd"
-        Me.CmboboxAdd.Size = New System.Drawing.Size(358, 21)
-        Me.CmboboxAdd.TabIndex = 25
-        Me.CmboboxAdd.UseWaitCursor = True
-        '
-        'CmboboxRemove
-        '
-        Me.CmboboxRemove.FormattingEnabled = True
-        Me.CmboboxRemove.Location = New System.Drawing.Point(36, 101)
-        Me.CmboboxRemove.Name = "CmboboxRemove"
-        Me.CmboboxRemove.Size = New System.Drawing.Size(358, 21)
-        Me.CmboboxRemove.TabIndex = 24
-        Me.CmboboxRemove.UseWaitCursor = True
-        '
-        'BtnAdd
-        '
-        Me.BtnAdd.Location = New System.Drawing.Point(400, 130)
-        Me.BtnAdd.Name = "BtnAdd"
-        Me.BtnAdd.Size = New System.Drawing.Size(75, 23)
-        Me.BtnAdd.TabIndex = 23
-        Me.BtnAdd.Text = "Add"
-        Me.BtnAdd.UseVisualStyleBackColor = True
-        Me.BtnAdd.UseWaitCursor = True
-        '
-        'BtnRemove
-        '
-        Me.BtnRemove.Location = New System.Drawing.Point(400, 101)
-        Me.BtnRemove.Name = "BtnRemove"
-        Me.BtnRemove.Size = New System.Drawing.Size(75, 23)
-        Me.BtnRemove.TabIndex = 22
-        Me.BtnRemove.Text = "Remove"
-        Me.BtnRemove.UseVisualStyleBackColor = True
-        Me.BtnRemove.UseWaitCursor = True
         '
         'LblTargetName
         '
@@ -90,29 +64,148 @@ Partial Class FormSetupLink
         Me.LblTitle.Text = "Machine Tool - Setup Link"
         Me.LblTitle.UseWaitCursor = True
         '
+        'GrpBoxRemoveLink
+        '
+        Me.GrpBoxRemoveLink.Controls.Add(Me.LstViewFeatures)
+        Me.GrpBoxRemoveLink.Controls.Add(Me.BtnRemoveLink)
+        Me.GrpBoxRemoveLink.Location = New System.Drawing.Point(245, 83)
+        Me.GrpBoxRemoveLink.Name = "GrpBoxRemoveLink"
+        Me.GrpBoxRemoveLink.Size = New System.Drawing.Size(220, 174)
+        Me.GrpBoxRemoveLink.TabIndex = 39
+        Me.GrpBoxRemoveLink.TabStop = False
+        Me.GrpBoxRemoveLink.Text = "Remove Link"
+        '
+        'LstViewFeatures
+        '
+        Me.LstViewFeatures.Location = New System.Drawing.Point(6, 19)
+        Me.LstViewFeatures.MultiSelect = False
+        Me.LstViewFeatures.Name = "LstViewFeatures"
+        Me.LstViewFeatures.Size = New System.Drawing.Size(208, 97)
+        Me.LstViewFeatures.TabIndex = 7
+        Me.LstViewFeatures.UseCompatibleStateImageBehavior = False
+        '
+        'BtnRemoveLink
+        '
+        Me.BtnRemoveLink.Location = New System.Drawing.Point(6, 121)
+        Me.BtnRemoveLink.Name = "BtnRemoveLink"
+        Me.BtnRemoveLink.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BtnRemoveLink.Size = New System.Drawing.Size(208, 47)
+        Me.BtnRemoveLink.TabIndex = 6
+        Me.BtnRemoveLink.Text = "Remove Link"
+        Me.BtnRemoveLink.UseVisualStyleBackColor = True
+        '
+        'GrpBoxAdd
+        '
+        Me.GrpBoxAdd.Controls.Add(Me.LblDuplicate)
+        Me.GrpBoxAdd.Controls.Add(Me.LblFilter)
+        Me.GrpBoxAdd.Controls.Add(Me.Txtboxfilter)
+        Me.GrpBoxAdd.Controls.Add(Me.LblResourceName)
+        Me.GrpBoxAdd.Controls.Add(Me.CmboFeatureName)
+        Me.GrpBoxAdd.Controls.Add(Me.btnAddLink)
+        Me.GrpBoxAdd.Location = New System.Drawing.Point(19, 83)
+        Me.GrpBoxAdd.Name = "GrpBoxAdd"
+        Me.GrpBoxAdd.Size = New System.Drawing.Size(220, 174)
+        Me.GrpBoxAdd.TabIndex = 38
+        Me.GrpBoxAdd.TabStop = False
+        Me.GrpBoxAdd.Text = "Add Link"
+        '
+        'LblDuplicate
+        '
+        Me.LblDuplicate.AutoSize = True
+        Me.LblDuplicate.Location = New System.Drawing.Point(9, 99)
+        Me.LblDuplicate.Name = "LblDuplicate"
+        Me.LblDuplicate.Size = New System.Drawing.Size(39, 13)
+        Me.LblDuplicate.TabIndex = 11
+        Me.LblDuplicate.Text = "Label1"
+        '
+        'LblFilter
+        '
+        Me.LblFilter.AutoSize = True
+        Me.LblFilter.Location = New System.Drawing.Point(6, 16)
+        Me.LblFilter.Name = "LblFilter"
+        Me.LblFilter.Size = New System.Drawing.Size(102, 13)
+        Me.LblFilter.TabIndex = 9
+        Me.LblFilter.Text = "Feature Name Filter:"
+        '
+        'Txtboxfilter
+        '
+        Me.Txtboxfilter.Location = New System.Drawing.Point(6, 32)
+        Me.Txtboxfilter.Name = "Txtboxfilter"
+        Me.Txtboxfilter.Size = New System.Drawing.Size(208, 20)
+        Me.Txtboxfilter.TabIndex = 10
+        '
+        'LblResourceName
+        '
+        Me.LblResourceName.AutoSize = True
+        Me.LblResourceName.Location = New System.Drawing.Point(6, 55)
+        Me.LblResourceName.Name = "LblResourceName"
+        Me.LblResourceName.Size = New System.Drawing.Size(74, 13)
+        Me.LblResourceName.TabIndex = 4
+        Me.LblResourceName.Text = "Feature Name"
+        '
+        'CmboFeatureName
+        '
+        Me.CmboFeatureName.FormattingEnabled = True
+        Me.CmboFeatureName.Location = New System.Drawing.Point(6, 71)
+        Me.CmboFeatureName.Name = "CmboFeatureName"
+        Me.CmboFeatureName.Size = New System.Drawing.Size(208, 21)
+        Me.CmboFeatureName.TabIndex = 5
+        '
+        'btnAddLink
+        '
+        Me.btnAddLink.Location = New System.Drawing.Point(6, 121)
+        Me.btnAddLink.Name = "btnAddLink"
+        Me.btnAddLink.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnAddLink.Size = New System.Drawing.Size(208, 47)
+        Me.btnAddLink.TabIndex = 6
+        Me.btnAddLink.Text = "Add Link"
+        Me.btnAddLink.UseVisualStyleBackColor = True
+        '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "MPRL"
+        Me.NotifyIcon1.Visible = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
         'FormSetupLink
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(546, 185)
-        Me.Controls.Add(Me.CmboboxAdd)
-        Me.Controls.Add(Me.CmboboxRemove)
-        Me.Controls.Add(Me.BtnAdd)
-        Me.Controls.Add(Me.BtnRemove)
+        Me.ClientSize = New System.Drawing.Size(498, 288)
+        Me.Controls.Add(Me.GrpBoxRemoveLink)
+        Me.Controls.Add(Me.GrpBoxAdd)
         Me.Controls.Add(Me.LblTargetName)
         Me.Controls.Add(Me.LblTitle)
+        Me.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormSetupLink"
         Me.Text = "Machine Tool Setup Link"
-        Me.UseWaitCursor = True
+        Me.GrpBoxRemoveLink.ResumeLayout(False)
+        Me.GrpBoxAdd.ResumeLayout(False)
+        Me.GrpBoxAdd.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents CmboboxAdd As ComboBox
-    Friend WithEvents CmboboxRemove As ComboBox
-    Friend WithEvents BtnAdd As Button
-    Friend WithEvents BtnRemove As Button
     Friend WithEvents LblTargetName As Label
     Friend WithEvents LblTitle As Label
+    Friend WithEvents GrpBoxRemoveLink As GroupBox
+    Friend WithEvents LstViewFeatures As ListView
+    Friend WithEvents BtnRemoveLink As Button
+    Friend WithEvents GrpBoxAdd As GroupBox
+    Friend WithEvents LblDuplicate As Label
+    Friend WithEvents LblFilter As Label
+    Friend WithEvents Txtboxfilter As TextBox
+    Friend WithEvents LblResourceName As Label
+    Friend WithEvents CmboFeatureName As ComboBox
+    Friend WithEvents btnAddLink As Button
+    Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class

@@ -149,4 +149,7 @@ Public Class FormOperation
         newform.Show()
     End Sub
 
+    Private Sub LstResources_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstResources.DoubleClick
+        CustFunctions.ResourceDoubleClickHandler(LstResources, ds)
+    End Sub
 End Class

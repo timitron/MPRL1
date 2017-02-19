@@ -12,106 +12,187 @@ Public Class FormSetupLink
     Private Sub FormClampingLink_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LblTitle.Text = TargetID
 
-        update_Clamping_combobox()
-        update_allClamps_combobox()
+        update_linked_setups()
+
+        update_filtered_setups()
+
+        Txtboxfilter.Focus()
+
+        retest()
 
     End Sub
 
-    Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click
+    Sub update_linked_setups()
 
-        If CmboboxRemove.SelectedItem = "" Then
-            MsgBox("Select something to remove")
-            Exit Sub
+        LstViewFeatures.Items.Clear()
+        Dim Table_ As String = "LinkedSetups"
+
+        If IsNothing(ds.Tables(Table_)) Then
+
+        Else
+            ds.Tables(Table_).Clear()
         End If
 
-        Dim query As String = "DELETE FROM `MachineTool-SetupLink` WHERE ((`MachineToolID` = '" & GlobalVariables.Click & "')) AND (`SetupID` = '" & CmboboxRemove.SelectedItem & "'))"
-        Dim response As Integer
-        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
 
-        GlobalVariables.cnn.Open()
-
-        Try
-            response = cmd.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox("Duplicate Required PPE")
-        End Try
-
-        GlobalVariables.cnn.Close()
-
-        MsgBox(response & "Row(s) Modified")
-
-        update_Clamping_combobox()
-        update_allClamps_combobox()
-        CmboboxRemove.ResetText()
-
-    End Sub
-
-    Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
-        If CmboboxAdd.SelectedItem = "" Then
-            MsgBox("Select something to remove")
-            Exit Sub
-        End If
-
-        Dim query As String = "INSERT INTO `MachineTool-SetupLink` (`MachineToolID`, `SetupID`) VALUES ('" & GlobalVariables.Click & "','" & CmboboxAdd.SelectedItem & "')"
-
-        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
-        Dim response As Integer
-
-        GlobalVariables.cnn.Open()
-
-        Try
-            response = cmd.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox("Duplicate Link")
-        End Try
-
-        GlobalVariables.cnn.Close()
-
-        MsgBox(response & "Row(s) Modified")
-
-        update_Clamping_combobox()
-        update_allClamps_combobox()
-        CmboboxAdd.ResetText()
-
-    End Sub
-
-    Sub update_Clamping_combobox()
-        CmboboxRemove.Items.Clear()
-        Dim Table_ As String = "SetupsLinked"
-        Dim query As String = "SELECT        Setups.Name, Setups.ImageURL FROM            ((Setups INNER JOIN                         [MachineTool-SetupLink] ON Setups.Name = [MachineTool-SetupLink].SetupID) INNER JOIN                        MachineTools ON [MachineTool-SetupLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & TargetID & "')"
-
+        Dim query = "SELECT        Setups.Name, Setups.ImageURL FROM            ((Setups INNER JOIN                         [MachineTool-SetupLink] ON Setups.Name = [MachineTool-SetupLink].SetupID) INNER JOIN                        MachineTools ON [MachineTool-SetupLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & TargetID & "')"
         Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
+
+        LstViewFeatures.View = View.List ' defines the format of the listview
+
         Dim row As DataRow
         Dim count As Integer = 0        'counter for indexing images
+
         'for each result in the query creat a new list view item, get the picture from a website and then put 
         'it into a image list And apply the correct image index to the list view item. Finally add the list view item to the list view. 
         For Each row In ds.Tables(Table_).Rows
-            CmboboxRemove.Items.Add(row(0).ToString)
+            Dim NextListItem As New ListViewItem(row(0).ToString) 'create a new list view object to add to the list view window after informatoin has been added to it
+
+            'need to write code to make or apply pre made thumbnails to resources
+
+            'add the new item to the list view
+            LstViewFeatures.Items.Add(NextListItem)
+
         Next
+        LstViewFeatures.Update()
+
+    End Sub
+
+    Sub update_filtered_setups()
+
+        Dim Table_ As String = "AllSetups"
+
+        If IsNothing(ds.Tables(Table_)) Then
+
+        Else
+            ds.Tables(Table_).Clear()
+        End If
+
+        CmboFeatureName.Items.Clear()
+
+
+        Dim query As String = "SELECT Name FROM Setups WHERE (Name Like '%" & Txtboxfilter.Text & "%')"
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
+        Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
+        data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
+
+        Dim row As DataRow
+        Dim count As Integer = 0
+        'for each result in the query creat a new list view item, get the picture from a website and then put 
+        'it into a image list And apply the correct image index to the list view item. Finally add the list view item to the list view. 
+        For Each row In ds.Tables(Table_).Rows
+            CmboFeatureName.Items.Add(row(0).ToString)
+            count = count + 1
+        Next
+
+        If count = 0 Then
+            CmboFeatureName.Items.Add("No Resource Found")
+        End If
+
+        CmboFeatureName.SelectedIndex = 0
+
         ds.Tables(Table_).Clear()
     End Sub
 
-    Sub update_allClamps_combobox()
-        CmboboxAdd.Items.Clear()
+    Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemoveLink.Click
 
-        Dim Table_ As String = "Setups"
-        Dim query As String = "SELECT        Name FROM            Setups"
 
-        Dim cmd2 As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
-        Dim data2 As New OleDbDataAdapter(cmd2)                               'this executes the interpreted query on the connection object and returns it to the da object
-        data2.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
+        Dim index As Integer = LstViewFeatures.FocusedItem.Index
+        Dim query As String = "DELETE FROM `MachineTool-SetupLink` WHERE ((`MachineToolID` = '" & GlobalVariables.Click & "')) AND (`SetupID` = '" & ds.Tables("LinkedFeatures").Rows(index)("Name") & "'))"
 
-        Dim add = 0
-        'for each result in the query creat a new list view item, get the picture from a website and then put 
-        'it into a image list And apply the correct image index to the list view item. Finally add the list view item to the list view. 
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
 
-        For Each row In (ds.Tables(Table_).Rows)
-            CmboboxAdd.Items.Add(row(0).ToString)
-        Next
 
-        ds.Tables(Table_).Clear()
+        GlobalVariables.cnn.Open()
+        Try
+            Dim response As Integer = cmd.ExecuteNonQuery()
+            NotifyIcon1.ShowBalloonTip(500, "Link Removed", response & " Rows Changed", ToolTipIcon.Info)
+        Catch
+            MsgBox("There was an unanticipated error removing this link from the database")
+        End Try
 
+        update_linked_setups()
+
+        retest()
+
+        GlobalVariables.cnn.Close()
+
+
+
+
+    End Sub
+
+    Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAddLink.Click
+
+        'check to see if no resource is selected or an overly tight filter has been used
+        If CmboFeatureName.SelectedItem = "" Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "No resource selected", ToolTipIcon.Info)
+            Exit Sub
+        End If
+
+        If CmboFeatureName.SelectedItem = "No Resource Found" Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "No resource selected", ToolTipIcon.Info)
+            Exit Sub
+        End If
+
+        'check to see if it is a duplicate link
+        If LblDuplicate.Text.Equals("DUPLICATE LINK") Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "DUPLICATE LINK", ToolTipIcon.Info)
+            Exit Sub
+        End If
+
+        'If it passess all of the other tests then add the link
+
+        Dim query As String = "INSERT INTO `MachineTool-SetupLink` (`MachineToolID`, `SetupID`) VALUES ('" & GlobalVariables.Click & "','" & CmboFeatureName.SelectedItem & "')"
+        Dim Table_ As String = "RequiredSelected"
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
+
+
+        GlobalVariables.cnn.Open()
+        Try
+            Dim response As Integer = cmd.ExecuteNonQuery()
+            NotifyIcon1.ShowBalloonTip(500, "Link Added", response & " Rows Changed", ToolTipIcon.Info)
+        Catch
+            MsgBox("There was an unanticipated error adding this link to the database ")
+        End Try
+
+        update_linked_setups()
+
+        retest()
+
+        GlobalVariables.cnn.Close()
+
+    End Sub
+
+    Sub retest()
+
+        Dim Table_ As String = "SelectedSetups"
+
+        Dim query As String = "SELECT        MachineToolID, SetupID FROM            [MachineTool-SetupLink] WHERE        (MachineToolID = '" & GlobalVariables.Click & "') AND (SetupID = '" & CmboFeatureName.SelectedItem & "')"
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
+        Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
+        data.Fill(ds, Table_)
+
+        If ds.Tables(Table_).Rows.Count = 0 Then
+            LblDuplicate.Text = "New Link"
+            LblDuplicate.BackColor = Color.Green
+        End If
+        If ds.Tables(Table_).Rows.Count = 1 Then
+            LblDuplicate.Text = "DUPLICATE LINK"
+            LblDuplicate.BackColor = Color.Red
+            ds.Tables(Table_).Clear()
+        End If
+
+
+
+    End Sub
+
+    Private Sub Txtboxfilter_TextChanged(sender As Object, e As EventArgs) Handles Txtboxfilter.TextChanged
+        update_filtered_setups()
+    End Sub
+
+    Private Sub CmboFeatureName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmboFeatureName.SelectedIndexChanged
+        retest()
     End Sub
 End Class

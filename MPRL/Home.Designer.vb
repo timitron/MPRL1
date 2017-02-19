@@ -50,6 +50,7 @@ Partial Class FormHome
         Me.TxtboxTitle = New System.Windows.Forms.TextBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
         Me.LnkAbout = New System.Windows.Forms.LinkLabel()
+        Me.StatisticsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,7 +66,7 @@ Partial Class FormHome
         Me.ButtonMachineToolFlow.Name = "ButtonMachineToolFlow"
         Me.ButtonMachineToolFlow.Size = New System.Drawing.Size(721, 75)
         Me.ButtonMachineToolFlow.TabIndex = 1
-        Me.ButtonMachineToolFlow.Text = "Browse Machine Tools"
+        Me.ButtonMachineToolFlow.Text = "MPRL Machine Tools"
         Me.ButtonMachineToolFlow.UseVisualStyleBackColor = True
         '
         'ButtonMethodSuggestorFlow
@@ -91,7 +92,7 @@ Partial Class FormHome
         Me.ButtonOperationsFlow.Name = "ButtonOperationsFlow"
         Me.ButtonOperationsFlow.Size = New System.Drawing.Size(721, 75)
         Me.ButtonOperationsFlow.TabIndex = 3
-        Me.ButtonOperationsFlow.Text = "Browse Machining Methods"
+        Me.ButtonOperationsFlow.Text = "Operations"
         Me.ButtonOperationsFlow.UseVisualStyleBackColor = True
         '
         'MenuStrip1
@@ -99,7 +100,7 @@ Partial Class FormHome
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MachineToolsToolStripMenuItem, Me.MachinesToolStripMenuItem, Me.OperationsToolStripMenuItem, Me.SetupsToolStripMenuItem, Me.FeaturesToolStripMenuItem, Me.ResourcesToolStripMenuItem, Me.PPE})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MachineToolsToolStripMenuItem, Me.MachinesToolStripMenuItem, Me.OperationsToolStripMenuItem, Me.SetupsToolStripMenuItem, Me.FeaturesToolStripMenuItem, Me.ResourcesToolStripMenuItem, Me.PPE, Me.StatisticsToolStripMenuItem})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 299)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -212,13 +213,13 @@ Partial Class FormHome
         'AddToolStripMenuItem5
         '
         Me.AddToolStripMenuItem5.Name = "AddToolStripMenuItem5"
-        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
         Me.AddToolStripMenuItem5.Text = "Add"
         '
         'EditToolStripMenuItem5
         '
         Me.EditToolStripMenuItem5.Name = "EditToolStripMenuItem5"
-        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem5.Size = New System.Drawing.Size(103, 24)
         Me.EditToolStripMenuItem5.Text = "Edit"
         '
         'PPE
@@ -264,12 +265,18 @@ Partial Class FormHome
         'LnkAbout
         '
         Me.LnkAbout.AutoSize = True
-        Me.LnkAbout.Location = New System.Drawing.Point(671, 10)
+        Me.LnkAbout.Location = New System.Drawing.Point(683, 10)
         Me.LnkAbout.Name = "LnkAbout"
         Me.LnkAbout.Size = New System.Drawing.Size(35, 13)
         Me.LnkAbout.TabIndex = 10
         Me.LnkAbout.TabStop = True
         Me.LnkAbout.Text = "About"
+        '
+        'StatisticsToolStripMenuItem
+        '
+        Me.StatisticsToolStripMenuItem.Name = "StatisticsToolStripMenuItem"
+        Me.StatisticsToolStripMenuItem.Size = New System.Drawing.Size(74, 23)
+        Me.StatisticsToolStripMenuItem.Text = "Statistics"
         '
         'FormHome
         '
@@ -328,4 +335,5 @@ Partial Class FormHome
     Friend WithEvents AddToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents LnkAbout As LinkLabel
+    Friend WithEvents StatisticsToolStripMenuItem As ToolStripMenuItem
 End Class

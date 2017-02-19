@@ -62,6 +62,11 @@ Public Class FormEditMachineLink
             Exit Sub
         End If
 
+        If NumTolerance.Value = 0 Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Tolerance too small", ToolTipIcon.Info)
+            Exit Sub
+        End If
+
         'If it passess all of the other tests then add the link
 
         Dim query As String = "INSERT INTO `MachineTool-OperationsLink` (`MachineToolID`, `OperationsID`, `Accuracy`) VALUES ('" & TargetID & "','" & CmboFeatureName.SelectedItem & "', '" & NumTolerance.Value & "')"

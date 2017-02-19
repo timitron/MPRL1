@@ -201,7 +201,7 @@ Partial Class FormEditMachineLink
         'FormEditMachineLink
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(513, 322)
+        Me.ClientSize = New System.Drawing.Size(488, 303)
         Me.Controls.Add(Me.GrpBoxRemoveLink)
         Me.Controls.Add(Me.GrpBoxAdd)
         Me.Controls.Add(Me.LblTargetName)

@@ -180,6 +180,8 @@ Partial Class EditFeatureOperationLink
         Me.Controls.Add(Me.GrpBoxAdd)
         Me.Controls.Add(Me.LblTargetName)
         Me.Controls.Add(Me.LblTitle)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EditFeatureOperationLink"
         Me.Text = "Edit Operation Feature Link"
         Me.GrpBoxRemoveLink.ResumeLayout(False)

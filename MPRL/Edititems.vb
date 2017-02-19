@@ -46,6 +46,7 @@ Public Class Edititems
     Private Sub SubmitChanges_Click(sender As Object, e As EventArgs) Handles SubmitChanges.Click
         If NameTextBox.Text = "" Then
             MessageBox.Show("You must enter a " & GlobalVariables.Click & " name.")
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "No resource selected", ToolTipIcon.Info)
             Exit Sub
         End If
 
@@ -60,6 +61,7 @@ Public Class Edititems
         End If
 
         If originalText <> NameTextBox.Text Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "No resource selected", ToolTipIcon.Info)
             MessageBox.Show("Currently the name can not be edited. If it must be changed then delete thie item and add a new one with the correct name * note any relationships will have to be added again")
             NameTextBox.Text = originalText
             Exit Sub

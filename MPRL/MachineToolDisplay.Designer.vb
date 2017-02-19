@@ -22,11 +22,13 @@ Partial Class FormMachineToolsDisplay
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMachineToolsDisplay))
         Me.ListViewMachineToolDisplay = New System.Windows.Forms.ListView()
         Me.TxtBoxDescription = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.LblTitle = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,10 +38,10 @@ Partial Class FormMachineToolsDisplay
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListViewMachineToolDisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListViewMachineToolDisplay.Location = New System.Drawing.Point(33, 78)
+        Me.ListViewMachineToolDisplay.Location = New System.Drawing.Point(18, 73)
         Me.ListViewMachineToolDisplay.MultiSelect = False
         Me.ListViewMachineToolDisplay.Name = "ListViewMachineToolDisplay"
-        Me.ListViewMachineToolDisplay.Size = New System.Drawing.Size(682, 401)
+        Me.ListViewMachineToolDisplay.Size = New System.Drawing.Size(763, 421)
         Me.ListViewMachineToolDisplay.TabIndex = 0
         Me.ListViewMachineToolDisplay.UseCompatibleStateImageBehavior = False
         '
@@ -48,11 +50,11 @@ Partial Class FormMachineToolsDisplay
         Me.TxtBoxDescription.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TxtBoxDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBoxDescription.Location = New System.Drawing.Point(733, 78)
+        Me.TxtBoxDescription.Location = New System.Drawing.Point(799, 73)
         Me.TxtBoxDescription.Margin = New System.Windows.Forms.Padding(15)
         Me.TxtBoxDescription.Name = "TxtBoxDescription"
         Me.TxtBoxDescription.ReadOnly = True
-        Me.TxtBoxDescription.Size = New System.Drawing.Size(346, 401)
+        Me.TxtBoxDescription.Size = New System.Drawing.Size(280, 421)
         Me.TxtBoxDescription.TabIndex = 2
         Me.TxtBoxDescription.Text = ""
         '
@@ -86,20 +88,33 @@ Partial Class FormMachineToolsDisplay
         Me.Button1.Text = "Previous"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'LblTitle
+        '
+        Me.LblTitle.AutoSize = True
+        Me.LblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTitle.Location = New System.Drawing.Point(12, 39)
+        Me.LblTitle.Name = "LblTitle"
+        Me.LblTitle.Size = New System.Drawing.Size(520, 31)
+        Me.LblTitle.TabIndex = 29
+        Me.LblTitle.Text = "Select a machine tool for more information"
+        '
         'FormMachineToolsDisplay
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1103, 518)
+        Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TxtBoxDescription)
         Me.Controls.Add(Me.ListViewMachineToolDisplay)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormMachineToolsDisplay"
         Me.Text = "Machine Tools"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -108,4 +123,5 @@ Partial Class FormMachineToolsDisplay
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents LblTitle As Label
 End Class

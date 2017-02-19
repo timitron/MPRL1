@@ -40,13 +40,15 @@ Partial Class AddItem
         Me.LblDuplicate = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 63)
+        Me.Label1.Location = New System.Drawing.Point(4, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(35, 13)
         Me.Label1.TabIndex = 0
@@ -55,7 +57,7 @@ Partial Class AddItem
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 99)
+        Me.Label2.Location = New System.Drawing.Point(4, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 1
@@ -64,7 +66,7 @@ Partial Class AddItem
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(415, 44)
+        Me.Label3.Location = New System.Drawing.Point(407, 3)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 13)
         Me.Label3.TabIndex = 2
@@ -72,7 +74,7 @@ Partial Class AddItem
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(385, 60)
+        Me.PictureBox1.Location = New System.Drawing.Point(377, 19)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 84)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -81,7 +83,7 @@ Partial Class AddItem
         '
         'DescriptionTextBox
         '
-        Me.DescriptionTextBox.Location = New System.Drawing.Point(78, 99)
+        Me.DescriptionTextBox.Location = New System.Drawing.Point(70, 58)
         Me.DescriptionTextBox.Multiline = True
         Me.DescriptionTextBox.Name = "DescriptionTextBox"
         Me.DescriptionTextBox.Size = New System.Drawing.Size(301, 74)
@@ -89,14 +91,14 @@ Partial Class AddItem
         '
         'NameTextBox
         '
-        Me.NameTextBox.Location = New System.Drawing.Point(78, 60)
+        Me.NameTextBox.Location = New System.Drawing.Point(70, 19)
         Me.NameTextBox.Name = "NameTextBox"
         Me.NameTextBox.Size = New System.Drawing.Size(301, 20)
         Me.NameTextBox.TabIndex = 5
         '
         'SubmitChanges
         '
-        Me.SubmitChanges.Location = New System.Drawing.Point(332, 179)
+        Me.SubmitChanges.Location = New System.Drawing.Point(353, 186)
         Me.SubmitChanges.Name = "SubmitChanges"
         Me.SubmitChanges.Size = New System.Drawing.Size(153, 43)
         Me.SubmitChanges.TabIndex = 7
@@ -105,7 +107,7 @@ Partial Class AddItem
         '
         'Browse
         '
-        Me.Browse.Location = New System.Drawing.Point(385, 150)
+        Me.Browse.Location = New System.Drawing.Point(377, 109)
         Me.Browse.Name = "Browse"
         Me.Browse.Size = New System.Drawing.Size(100, 23)
         Me.Browse.TabIndex = 8
@@ -145,7 +147,7 @@ Partial Class AddItem
         'LblDuplicate
         '
         Me.LblDuplicate.AutoSize = True
-        Me.LblDuplicate.Location = New System.Drawing.Point(84, 83)
+        Me.LblDuplicate.Location = New System.Drawing.Point(76, 42)
         Me.LblDuplicate.Name = "LblDuplicate"
         Me.LblDuplicate.Size = New System.Drawing.Size(72, 13)
         Me.LblDuplicate.TabIndex = 11
@@ -163,25 +165,38 @@ Partial Class AddItem
         Me.NotifyIcon1.Text = "Add Entity"
         Me.NotifyIcon1.Visible = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.NameTextBox)
+        Me.GroupBox1.Controls.Add(Me.LblDuplicate)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Browse)
+        Me.GroupBox1.Controls.Add(Me.PictureBox1)
+        Me.GroupBox1.Controls.Add(Me.DescriptionTextBox)
+        Me.GroupBox1.Location = New System.Drawing.Point(17, 37)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(489, 143)
+        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabStop = False
+        '
         'AddItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(515, 248)
-        Me.Controls.Add(Me.LblDuplicate)
+        Me.ClientSize = New System.Drawing.Size(519, 248)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Browse)
         Me.Controls.Add(Me.SubmitChanges)
-        Me.Controls.Add(Me.NameTextBox)
-        Me.Controls.Add(Me.DescriptionTextBox)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AddItem"
         Me.Text = " "
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -203,4 +218,5 @@ Partial Class AddItem
     Friend WithEvents LblDuplicate As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

@@ -180,10 +180,10 @@
     <Compile Include="FormSetupLink.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MachiningMethodDisplay.Designer.vb">
-      <DependentUpon>MachiningMethodDisplay.vb</DependentUpon>
+    <Compile Include="Operation Display.Designer.vb">
+      <DependentUpon>Operation Display.vb</DependentUpon>
     </Compile>
-    <Compile Include="MachiningMethodDisplay.vb">
+    <Compile Include="Operation Display.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MachineDetails.Designer.vb">
@@ -300,8 +300,8 @@
     <EmbeddedResource Include="FormSetupLink.resx">
       <DependentUpon>FormSetupLink.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MachiningMethodDisplay.resx">
-      <DependentUpon>MachiningMethodDisplay.vb</DependentUpon>
+    <EmbeddedResource Include="Operation Display.resx">
+      <DependentUpon>Operation Display.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MachineDetails.resx">
       <DependentUpon>MachineDetails.vb</DependentUpon>

@@ -71,10 +71,10 @@ Partial Class FormSetup
         Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Controls.Add(Me.LblTitle)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Location = New System.Drawing.Point(300, 60)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(60)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(692, 621)
+        Me.GroupBox1.Size = New System.Drawing.Size(1292, 741)
         Me.GroupBox1.TabIndex = 28
         Me.GroupBox1.TabStop = False
         '
@@ -90,18 +90,16 @@ Partial Class FormSetup
         'LstResources
         '
         Me.LstResources.BackColor = System.Drawing.SystemColors.Control
-        Me.LstResources.Dock = System.Windows.Forms.DockStyle.Top
         Me.LstResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LstResources.Location = New System.Drawing.Point(3, 493)
         Me.LstResources.Name = "LstResources"
-        Me.LstResources.Size = New System.Drawing.Size(686, 163)
+        Me.LstResources.Size = New System.Drawing.Size(686, 188)
         Me.LstResources.TabIndex = 28
         Me.LstResources.UseCompatibleStateImageBehavior = False
         '
         'LblAdditionalResources
         '
         Me.LblAdditionalResources.AutoSize = True
-        Me.LblAdditionalResources.Dock = System.Windows.Forms.DockStyle.Top
         Me.LblAdditionalResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblAdditionalResources.Location = New System.Drawing.Point(3, 469)
         Me.LblAdditionalResources.Name = "LblAdditionalResources"
@@ -111,7 +109,6 @@ Partial Class FormSetup
         '
         'PictureOverview
         '
-        Me.PictureOverview.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureOverview.Location = New System.Drawing.Point(3, 69)
         Me.PictureOverview.Margin = New System.Windows.Forms.Padding(60)
         Me.PictureOverview.Name = "PictureOverview"
@@ -125,7 +122,7 @@ Partial Class FormSetup
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Home)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(492, 16)
+        Me.Panel1.Location = New System.Drawing.Point(1092, 16)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(197, 53)
         Me.Panel1.TabIndex = 29
@@ -153,7 +150,6 @@ Partial Class FormSetup
         'LblTitle
         '
         Me.LblTitle.AutoSize = True
-        Me.LblTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.LblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 34.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblTitle.Location = New System.Drawing.Point(3, 16)
         Me.LblTitle.Name = "LblTitle"
@@ -169,10 +165,9 @@ Partial Class FormSetup
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1292, 741)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(900, 726)
         Me.Name = "FormSetup"
-        Me.Padding = New System.Windows.Forms.Padding(300, 60, 300, 60)
         Me.Text = "Machine Setup"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()

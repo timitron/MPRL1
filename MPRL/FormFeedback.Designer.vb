@@ -85,7 +85,7 @@ Partial Class FormFeedback
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(483, 179)
+        Me.ClientSize = New System.Drawing.Size(484, 157)
         Me.Controls.Add(Me.BtnNo)
         Me.Controls.Add(Me.BtnNoFeedback)
         Me.Controls.Add(Me.BtnYes)

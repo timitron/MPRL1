@@ -22,14 +22,11 @@ Partial Class FormOperation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormOperation))
         Me.LstResources = New System.Windows.Forms.ListView()
         Me.LblTitle = New System.Windows.Forms.Label()
         Me.PictureOverview = New System.Windows.Forms.PictureBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
-        Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -71,7 +68,7 @@ Partial Class FormOperation
         '
         Me.PictureOverview.Location = New System.Drawing.Point(41, 69)
         Me.PictureOverview.Name = "PictureOverview"
-        Me.PictureOverview.Size = New System.Drawing.Size(900, 376)
+        Me.PictureOverview.Size = New System.Drawing.Size(927, 376)
         Me.PictureOverview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureOverview.TabIndex = 13
         Me.PictureOverview.TabStop = False
@@ -81,20 +78,12 @@ Partial Class FormOperation
         Me.MprlDataSet1.DataSetName = "MPRLDataSet"
         Me.MprlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'PrintForm1
-        '
-        Me.PrintForm1.DocumentName = "document"
-        Me.PrintForm1.Form = Me
-        Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
-        Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
-        Me.PrintForm1.PrintFileName = Nothing
-        '
         'Panel1
         '
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(727, 9)
+        Me.Panel1.Location = New System.Drawing.Point(764, 9)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(197, 53)
         Me.Panel1.TabIndex = 28
@@ -122,9 +111,9 @@ Partial Class FormOperation
         'BtnEditResources
         '
         Me.BtnEditResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.BtnEditResources.Location = New System.Drawing.Point(830, 6)
+        Me.BtnEditResources.Location = New System.Drawing.Point(856, 6)
         Me.BtnEditResources.Name = "BtnEditResources"
-        Me.BtnEditResources.Size = New System.Drawing.Size(97, 36)
+        Me.BtnEditResources.Size = New System.Drawing.Size(71, 26)
         Me.BtnEditResources.TabIndex = 29
         Me.BtnEditResources.Text = "Edit"
         Me.BtnEditResources.UseVisualStyleBackColor = True
@@ -167,9 +156,10 @@ Partial Class FormOperation
         '
         'BtnEditFeatureLink
         '
-        Me.BtnEditFeatureLink.Location = New System.Drawing.Point(830, 6)
+        Me.BtnEditFeatureLink.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnEditFeatureLink.Location = New System.Drawing.Point(859, 6)
         Me.BtnEditFeatureLink.Name = "BtnEditFeatureLink"
-        Me.BtnEditFeatureLink.Size = New System.Drawing.Size(97, 36)
+        Me.BtnEditFeatureLink.Size = New System.Drawing.Size(68, 30)
         Me.BtnEditFeatureLink.TabIndex = 30
         Me.BtnEditFeatureLink.Text = "Edit"
         Me.BtnEditFeatureLink.UseVisualStyleBackColor = True
@@ -187,13 +177,15 @@ Partial Class FormOperation
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(994, 741)
+        Me.ClientSize = New System.Drawing.Size(1019, 818)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.PictureOverview)
         Me.Controls.Add(Me.TbControlContent)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormOperation"
         Me.Text = "Operation"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -208,8 +200,6 @@ Partial Class FormOperation
     Friend WithEvents LblTitle As Label
     Friend WithEvents PictureOverview As PictureBox
     Friend WithEvents MprlDataSet1 As MPRLDataSet
-    Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
-    Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button

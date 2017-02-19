@@ -48,12 +48,13 @@ Public Class FormResource
     Private Sub SubmitChanges_Click(sender As Object, e As EventArgs) Handles SubmitChanges.Click
         ''' checks for correct info then updates databasewith added item
         If NameTextBox.Text = "" Then                                                   'checks that a name has been created
-            MessageBox.Show("You must enter a resource name.")
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "You must enter a resource name.", ToolTipIcon.Info)
             Exit Sub
         End If
 
         If AddressTextBox.Text = "" Then                                                   'checks that a name has been created
             MessageBox.Show("You must enter a resource Address.")
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "You must enter a resource name.", ToolTipIcon.Info)
             Exit Sub
         End If
 
@@ -145,4 +146,6 @@ Public Class FormResource
         Me.Close()
         FormHome.Show()
     End Sub
+
+
 End Class

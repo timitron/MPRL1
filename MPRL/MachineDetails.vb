@@ -62,12 +62,6 @@ Public Class FormMachineDetails
         LstResources.Update()
     End Sub
 
-    Private Sub BttnPrint_Click(sender As Object, e As EventArgs)
-
-        Dim webAddress As String = Application.StartupPath & "\printfile.html"
-        Process.Start(webAddress)
-
-    End Sub
 
     Private Sub BtnEditOptionalPPE_Click(sender As Object, e As EventArgs) Handles BtnEditOptionalPPE.Click
         Global.MPRL.GlobalVariables.Click = Machine
@@ -117,5 +111,9 @@ Public Class FormMachineDetails
         GlobalVariables.CloseAll = False
         Me.Close()
         GlobalVariables.CloseAll = True
+    End Sub
+
+    Private Sub LstResources_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstResources.DoubleClick
+        CustFunctions.ResourceDoubleClickHandler(LstResources, ds)
     End Sub
 End Class

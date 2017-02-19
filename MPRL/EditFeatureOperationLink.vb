@@ -23,14 +23,14 @@ Public Class EditFeatureOperationLink
     Sub update_linked_features()
 
         LstViewFeatures.Items.Clear()
+        Dim Table_ As String = "LinkedFeatures"
 
-        If IsNothing(ds.Tables("LinkedFeatures")) Then
+        If IsNothing(ds.Tables(Table_)) Then
 
         Else
-            ds.Tables("LinkedFeatures").Clear()
+            ds.Tables(Table_).Clear()
         End If
 
-        Dim Table_ As String = "LinkedFeatures"
         Dim query = "Select        Features.Name, Features.Description, Features.ImageURL FROM            ((Features INNER JOIN                         [Operation-FeatureLink] On Features.Name = [Operation-FeatureLink].FeatureID) INNER JOIN                         Operations On [Operation-FeatureLink].OperationID = Operations.Name) WHERE        (Operations.Name = '" & TargetID & "')"
         Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
@@ -156,15 +156,17 @@ Public Class EditFeatureOperationLink
 
     Sub update_filtered_features()
 
-        If IsNothing(ds.Tables("AllFeatures")) Then
+        Dim Table_ As String = "AllFeatures"
+
+        If IsNothing(ds.Tables(Table_)) Then
 
         Else
-            ds.Tables("AllFeatures").Clear()
+            ds.Tables(Table_).Clear()
         End If
 
         CmboFeatureName.Items.Clear()
 
-        Dim Table_ As String = "AllFeatures"
+
         Dim query As String = "SELECT Name FROM Features WHERE (Name Like '%" & Txtboxfilter.Text & "%')"
         Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object

@@ -168,7 +168,7 @@ Partial Class FormMachineDetails
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(707, 6)
+        Me.Panel1.Location = New System.Drawing.Point(724, 6)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(197, 53)
         Me.Panel1.TabIndex = 34
@@ -201,7 +201,7 @@ Partial Class FormMachineDetails
         Me.TabInfo.Location = New System.Drawing.Point(23, 471)
         Me.TabInfo.Name = "TabInfo"
         Me.TabInfo.SelectedIndex = 0
-        Me.TabInfo.Size = New System.Drawing.Size(908, 314)
+        Me.TabInfo.Size = New System.Drawing.Size(908, 343)
         Me.TabInfo.TabIndex = 35
         '
         'TabPPE
@@ -215,7 +215,7 @@ Partial Class FormMachineDetails
         Me.TabPPE.Location = New System.Drawing.Point(4, 38)
         Me.TabPPE.Name = "TabPPE"
         Me.TabPPE.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPPE.Size = New System.Drawing.Size(900, 272)
+        Me.TabPPE.Size = New System.Drawing.Size(900, 301)
         Me.TabPPE.TabIndex = 0
         Me.TabPPE.Text = "PPE"
         Me.TabPPE.UseVisualStyleBackColor = True
@@ -227,7 +227,7 @@ Partial Class FormMachineDetails
         Me.TabResources.Location = New System.Drawing.Point(4, 38)
         Me.TabResources.Name = "TabResources"
         Me.TabResources.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabResources.Size = New System.Drawing.Size(900, 272)
+        Me.TabResources.Size = New System.Drawing.Size(900, 301)
         Me.TabResources.TabIndex = 1
         Me.TabResources.Text = "Resources"
         Me.TabResources.UseVisualStyleBackColor = True
@@ -238,11 +238,12 @@ Partial Class FormMachineDetails
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(966, 741)
+        Me.ClientSize = New System.Drawing.Size(1067, 1001)
         Me.Controls.Add(Me.TabInfo)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.PictureOverview)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormMachineDetails"
         Me.Text = "Machine Details "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

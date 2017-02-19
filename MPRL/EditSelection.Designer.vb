@@ -24,14 +24,16 @@ Partial Class EditForm
     Private Sub InitializeComponent()
         Me.editList = New System.Windows.Forms.ListBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.LblFilter = New System.Windows.Forms.Label()
+        Me.Txtboxfilter = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'editList
         '
         Me.editList.FormattingEnabled = True
-        Me.editList.Location = New System.Drawing.Point(33, 68)
+        Me.editList.Location = New System.Drawing.Point(9, 92)
         Me.editList.Name = "editList"
-        Me.editList.Size = New System.Drawing.Size(196, 225)
+        Me.editList.Size = New System.Drawing.Size(263, 225)
         Me.editList.TabIndex = 0
         '
         'Label2
@@ -43,12 +45,32 @@ Partial Class EditForm
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Label1"
         '
+        'LblFilter
+        '
+        Me.LblFilter.AutoSize = True
+        Me.LblFilter.Location = New System.Drawing.Point(9, 50)
+        Me.LblFilter.Name = "LblFilter"
+        Me.LblFilter.Size = New System.Drawing.Size(63, 13)
+        Me.LblFilter.TabIndex = 11
+        Me.LblFilter.Text = "Name Filter:"
+        '
+        'Txtboxfilter
+        '
+        Me.Txtboxfilter.Location = New System.Drawing.Point(9, 66)
+        Me.Txtboxfilter.Name = "Txtboxfilter"
+        Me.Txtboxfilter.Size = New System.Drawing.Size(263, 20)
+        Me.Txtboxfilter.TabIndex = 12
+        '
         'EditForm
         '
-        Me.ClientSize = New System.Drawing.Size(284, 315)
+        Me.ClientSize = New System.Drawing.Size(284, 332)
+        Me.Controls.Add(Me.LblFilter)
+        Me.Controls.Add(Me.Txtboxfilter)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.editList)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "EditForm"
+        Me.Text = "Select Entity To Edit"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -58,4 +80,6 @@ Partial Class EditForm
     Friend WithEvents Label1 As Label
     Friend WithEvents editList As ListBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents LblFilter As Label
+    Friend WithEvents Txtboxfilter As TextBox
 End Class

@@ -7,9 +7,7 @@
         If GlobalVariables.AdminBuild = False Then
             MenuStrip1.Visible = False
         Else
-            Dim newform
-            newform = FeedbackForm
-            newform.Show()
+
         End If
 
     End Sub
@@ -215,6 +213,12 @@
         Dim newform
         newform = EditForm
         newform.show()
+    End Sub
+
+    Private Sub StatisticsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatisticsToolStripMenuItem.Click
+        Dim newform
+        newform = FeedbackForm
+        newform.Show()
     End Sub
 End Class
 

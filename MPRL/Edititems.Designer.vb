@@ -22,6 +22,8 @@ Partial Class Edititems
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Edititems))
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Browse = New System.Windows.Forms.Button()
@@ -34,7 +36,11 @@ Partial Class Edititems
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label5
@@ -57,7 +63,7 @@ Partial Class Edititems
         '
         'Browse
         '
-        Me.Browse.Location = New System.Drawing.Point(433, 162)
+        Me.Browse.Location = New System.Drawing.Point(411, 123)
         Me.Browse.Name = "Browse"
         Me.Browse.Size = New System.Drawing.Size(100, 23)
         Me.Browse.TabIndex = 18
@@ -66,7 +72,7 @@ Partial Class Edititems
         '
         'SubmitChanges
         '
-        Me.SubmitChanges.Location = New System.Drawing.Point(380, 196)
+        Me.SubmitChanges.Location = New System.Drawing.Point(387, 199)
         Me.SubmitChanges.Name = "SubmitChanges"
         Me.SubmitChanges.Size = New System.Drawing.Size(153, 43)
         Me.SubmitChanges.TabIndex = 17
@@ -75,14 +81,14 @@ Partial Class Edititems
         '
         'NameTextBox
         '
-        Me.NameTextBox.Location = New System.Drawing.Point(99, 59)
+        Me.NameTextBox.Location = New System.Drawing.Point(77, 20)
         Me.NameTextBox.Name = "NameTextBox"
         Me.NameTextBox.Size = New System.Drawing.Size(325, 20)
         Me.NameTextBox.TabIndex = 16
         '
         'DescriptionTextBox
         '
-        Me.DescriptionTextBox.Location = New System.Drawing.Point(99, 97)
+        Me.DescriptionTextBox.Location = New System.Drawing.Point(77, 58)
         Me.DescriptionTextBox.Multiline = True
         Me.DescriptionTextBox.Name = "DescriptionTextBox"
         Me.DescriptionTextBox.Size = New System.Drawing.Size(328, 88)
@@ -90,7 +96,7 @@ Partial Class Edititems
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(433, 80)
+        Me.PictureBox1.Location = New System.Drawing.Point(411, 41)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 76)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -100,7 +106,7 @@ Partial Class Edititems
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(430, 59)
+        Me.Label3.Location = New System.Drawing.Point(408, 20)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 13)
         Me.Label3.TabIndex = 13
@@ -109,7 +115,7 @@ Partial Class Edititems
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(33, 97)
+        Me.Label2.Location = New System.Drawing.Point(11, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 12
@@ -118,7 +124,7 @@ Partial Class Edititems
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(33, 59)
+        Me.Label1.Location = New System.Drawing.Point(11, 20)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(35, 13)
         Me.Label1.TabIndex = 11
@@ -127,7 +133,7 @@ Partial Class Edititems
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Red
-        Me.Button1.Location = New System.Drawing.Point(221, 196)
+        Me.Button1.Location = New System.Drawing.Point(228, 199)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(153, 43)
         Me.Button1.TabIndex = 21
@@ -138,25 +144,49 @@ Partial Class Edititems
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Browse)
+        Me.GroupBox1.Controls.Add(Me.NameTextBox)
+        Me.GroupBox1.Controls.Add(Me.DescriptionTextBox)
+        Me.GroupBox1.Controls.Add(Me.PictureBox1)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Location = New System.Drawing.Point(20, 36)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(520, 157)
+        Me.GroupBox1.TabIndex = 22
+        Me.GroupBox1.TabStop = False
+        '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "MPRL "
+        Me.NotifyIcon1.Visible = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
         'Edititems
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(558, 266)
+        Me.ClientSize = New System.Drawing.Size(563, 263)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Browse)
         Me.Controls.Add(Me.SubmitChanges)
-        Me.Controls.Add(Me.NameTextBox)
-        Me.Controls.Add(Me.DescriptionTextBox)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Edititems"
-        Me.Text = "Edititems"
+        Me.Text = "Edit items"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -174,4 +204,7 @@ Partial Class Edititems
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class
