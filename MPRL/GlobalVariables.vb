@@ -274,6 +274,18 @@ Public Class CustFunctions
 
     End Sub
 
+    Shared Function IsValidImage(filename As String) As Boolean
+        Try
+            Dim img As System.Drawing.Image = System.Drawing.Image.FromFile(filename)
+        Catch generatedExceptionName As OutOfMemoryException
+            ' Image.FromFile throws an OutOfMemoryException  
+            ' if the file does not have a valid image format or 
+            ' GDI+ does not support the pixel format of the file. 
+            ' 
+            Return False
+        End Try
+        Return True
+    End Function
 
 
 End Class

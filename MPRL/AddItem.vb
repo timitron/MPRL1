@@ -4,8 +4,11 @@ Imports System.Data.OleDb
 Imports System.IO
 Imports System.Net
 Imports System.Timers
+Imports System.Drawing
 
 Public Class AddItem
+
+    Dim ds As New DataSet   'defines dataset for data table
 
     Dim responsetime As Integer = 0
 
@@ -19,16 +22,43 @@ Public Class AddItem
     End Sub
 
     Private Sub SubmitChanges_Click(sender As Object, e As EventArgs) Handles SubmitChanges.Click
-        If NameTextBox.Text = "" Then
-            MessageBox.Show("You must enter a " & GlobalVariables.Click & " name.")
+
+        'check to see if it is a duplicate link
+        If LblDuplicate.Text.Equals("Duplicate Entity") Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Duplicate Entity", ToolTipIcon.Info)
             Exit Sub
         End If
+
+
+        If CustFunctions.IsValidImage(PictureBox1.ImageLocation) = False Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
+            Exit Sub
+        End If
+
+        If NameTextBox.Text = "" Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "You must enter a " & GlobalVariables.Click & " name.", ToolTipIcon.Info)
+            Exit Sub
+        End If
+
         If DescriptionTextBox.Text = "" Then
             DescriptionTextBox.Text = "Description Goes Here"
         End If
 
         If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then
-            MessageBox.Show("Image must be in ""Debug"" folder")
+            'MessageBox.Show("Image must be in ""Debug"" folder")
+
+            Dim folder As String
+
+            If GlobalVariables.Click = "Machine Tools" Then
+                folder = "MachineTools"
+            Else
+                folder = GlobalVariables.Click
+            End If
+
+            Dim FileToSaveAs As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & ".Jpeg")
+            PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
+            PictureBox1.ImageLocation = FileToSaveAs
+            PictureBox1.Refresh()
             Exit Sub
         End If
 
@@ -115,6 +145,45 @@ Public Class AddItem
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+
+    End Sub
+
+    Private Sub NameTextBox_TextChanged(sender As Object, e As EventArgs) Handles NameTextBox.TextChanged
+        retest()
+    End Sub
+
+    Sub retest()
+
+        Dim Table_ As String = "ExistingEntities"
+
+        Dim query As String
+
+        If GlobalVariables.Click = "PPE" Then
+            query = "SELECT Name from [PPE] WHERE (Name = '" & NameTextBox.Text & "');"
+        ElseIf GlobalVariables.Click = "Machines" Then
+            query = "SELECT Name from [Machines] WHERE (Name = '" & NameTextBox.Text & "');"
+        ElseIf GlobalVariables.Click = "Operations" Then
+            query = "SELECT Name from [Operations] WHERE (Name = '" & NameTextBox.Text & "');"
+        ElseIf GlobalVariables.Click = "Setups" Then
+            query = "SELECT Name from [Setups] WHERE (Name = '" & NameTextBox.Text & "');"
+        ElseIf GlobalVariables.Click = "Machine Tools" Then
+            query = "SELECT Name from [MachineTools] WHERE (Name = '" & NameTextBox.Text & "');"
+        End If
+
+
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
+        Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
+        data.Fill(ds, Table_)
+
+        If ds.Tables(Table_).Rows.Count = 0 Then
+            LblDuplicate.Text = "New Entity"
+            LblDuplicate.BackColor = Color.LightGreen
+        End If
+        If ds.Tables(Table_).Rows.Count = 1 Then
+            LblDuplicate.Text = "Duplicate Entity"
+            LblDuplicate.BackColor = Color.Red
+            ds.Tables(Table_).Clear()
+        End If
 
     End Sub
 End Class

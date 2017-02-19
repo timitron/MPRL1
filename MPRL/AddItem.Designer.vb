@@ -23,6 +23,7 @@ Partial Class AddItem
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddItem))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -36,6 +37,9 @@ Partial Class AddItem
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.LblDuplicate = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -51,7 +55,7 @@ Partial Class AddItem
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 105)
+        Me.Label2.Location = New System.Drawing.Point(12, 99)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 1
@@ -60,7 +64,7 @@ Partial Class AddItem
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 132)
+        Me.Label3.Location = New System.Drawing.Point(415, 44)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 13)
         Me.Label3.TabIndex = 2
@@ -68,18 +72,19 @@ Partial Class AddItem
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(15, 148)
+        Me.PictureBox1.Location = New System.Drawing.Point(385, 60)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 76)
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 84)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
         'DescriptionTextBox
         '
-        Me.DescriptionTextBox.Location = New System.Drawing.Point(78, 98)
+        Me.DescriptionTextBox.Location = New System.Drawing.Point(78, 99)
+        Me.DescriptionTextBox.Multiline = True
         Me.DescriptionTextBox.Name = "DescriptionTextBox"
-        Me.DescriptionTextBox.Size = New System.Drawing.Size(301, 20)
+        Me.DescriptionTextBox.Size = New System.Drawing.Size(301, 74)
         Me.DescriptionTextBox.TabIndex = 4
         '
         'NameTextBox
@@ -91,7 +96,7 @@ Partial Class AddItem
         '
         'SubmitChanges
         '
-        Me.SubmitChanges.Location = New System.Drawing.Point(226, 206)
+        Me.SubmitChanges.Location = New System.Drawing.Point(332, 179)
         Me.SubmitChanges.Name = "SubmitChanges"
         Me.SubmitChanges.Size = New System.Drawing.Size(153, 43)
         Me.SubmitChanges.TabIndex = 7
@@ -100,7 +105,7 @@ Partial Class AddItem
         '
         'Browse
         '
-        Me.Browse.Location = New System.Drawing.Point(15, 230)
+        Me.Browse.Location = New System.Drawing.Point(385, 150)
         Me.Browse.Name = "Browse"
         Me.Browse.Size = New System.Drawing.Size(100, 23)
         Me.Browse.TabIndex = 8
@@ -137,11 +142,33 @@ Partial Class AddItem
         'Timer2
         '
         '
+        'LblDuplicate
+        '
+        Me.LblDuplicate.AutoSize = True
+        Me.LblDuplicate.Location = New System.Drawing.Point(84, 83)
+        Me.LblDuplicate.Name = "LblDuplicate"
+        Me.LblDuplicate.Size = New System.Drawing.Size(72, 13)
+        Me.LblDuplicate.TabIndex = 11
+        Me.LblDuplicate.Text = "Unique Name"
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "Add Entity"
+        Me.NotifyIcon1.Visible = True
+        '
         'AddItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(432, 261)
+        Me.ClientSize = New System.Drawing.Size(515, 248)
+        Me.Controls.Add(Me.LblDuplicate)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Browse)
@@ -173,4 +200,7 @@ Partial Class AddItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents LblDuplicate As Label
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents NotifyIcon1 As NotifyIcon
 End Class

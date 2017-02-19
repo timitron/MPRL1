@@ -28,6 +28,9 @@ Partial Class FormEditMachiningMethodMachineToolLink
         Me.BtnRemove = New System.Windows.Forms.Button()
         Me.LblTargetName = New System.Windows.Forms.Label()
         Me.LblTitle = New System.Windows.Forms.Label()
+        Me.LblTolerance = New System.Windows.Forms.Label()
+        Me.NumTolerance = New System.Windows.Forms.NumericUpDown()
+        CType(Me.NumTolerance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CmboboxAdd
@@ -50,7 +53,7 @@ Partial Class FormEditMachiningMethodMachineToolLink
         '
         Me.BtnAdd.Location = New System.Drawing.Point(400, 130)
         Me.BtnAdd.Name = "BtnAdd"
-        Me.BtnAdd.Size = New System.Drawing.Size(75, 23)
+        Me.BtnAdd.Size = New System.Drawing.Size(75, 46)
         Me.BtnAdd.TabIndex = 29
         Me.BtnAdd.Text = "Add"
         Me.BtnAdd.UseVisualStyleBackColor = True
@@ -84,11 +87,33 @@ Partial Class FormEditMachiningMethodMachineToolLink
         Me.LblTitle.TabIndex = 26
         Me.LblTitle.Text = "Machine Operation Link"
         '
+        'LblTolerance
+        '
+        Me.LblTolerance.AutoSize = True
+        Me.LblTolerance.Location = New System.Drawing.Point(212, 159)
+        Me.LblTolerance.Name = "LblTolerance"
+        Me.LblTolerance.Size = New System.Drawing.Size(58, 13)
+        Me.LblTolerance.TabIndex = 33
+        Me.LblTolerance.Text = "Tolerance:"
+        '
+        'NumTolerance
+        '
+        Me.NumTolerance.AllowDrop = True
+        Me.NumTolerance.DecimalPlaces = 4
+        Me.NumTolerance.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
+        Me.NumTolerance.Location = New System.Drawing.Point(276, 152)
+        Me.NumTolerance.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumTolerance.Name = "NumTolerance"
+        Me.NumTolerance.Size = New System.Drawing.Size(120, 20)
+        Me.NumTolerance.TabIndex = 34
+        '
         'FormEditMachiningMethodMachineToolLink
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(580, 174)
+        Me.ClientSize = New System.Drawing.Size(490, 194)
+        Me.Controls.Add(Me.NumTolerance)
+        Me.Controls.Add(Me.LblTolerance)
         Me.Controls.Add(Me.CmboboxAdd)
         Me.Controls.Add(Me.CmboboxRemove)
         Me.Controls.Add(Me.BtnAdd)
@@ -97,6 +122,7 @@ Partial Class FormEditMachiningMethodMachineToolLink
         Me.Controls.Add(Me.LblTitle)
         Me.Name = "FormEditMachiningMethodMachineToolLink"
         Me.Text = "Edit Machine-Tool Machining Method Link"
+        CType(Me.NumTolerance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -108,4 +134,6 @@ Partial Class FormEditMachiningMethodMachineToolLink
     Friend WithEvents BtnRemove As Button
     Friend WithEvents LblTargetName As Label
     Friend WithEvents LblTitle As Label
+    Friend WithEvents LblTolerance As Label
+    Friend WithEvents NumTolerance As NumericUpDown
 End Class

@@ -4,6 +4,7 @@ Imports System.Data.OleDb
 Imports System.IO
 Imports System.Net
 
+
 Public Class FormEditMachiningMethodMachineToolLink
 
     Dim TargetID As String = GlobalVariables.Click
@@ -53,7 +54,7 @@ Public Class FormEditMachiningMethodMachineToolLink
             Exit Sub
         End If
 
-        Dim query As String = "INSERT INTO `MachineTool-OperationsLink` (`MachineToolID`, `OperationsID`) VALUES ('" & GlobalVariables.Click & "','" & CmboboxAdd.SelectedItem & "')"
+        Dim query As String = "INSERT INTO `MachineTool-OperationsLink` (`MachineToolID`, `OperationsID`, `Accuracy`) VALUES ('" & GlobalVariables.Click & "','" & CmboboxAdd.SelectedItem & "' , '" & NumTolerance.Value & "')"
 
         Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
         Dim response As Integer
@@ -79,7 +80,7 @@ Public Class FormEditMachiningMethodMachineToolLink
     Sub update_linkedmethods_combobox()
         CmboboxRemove.Items.Clear()
         Dim Table_ As String = "LinkedOperations"
-        Dim query As String = "SELECT        Operations.Name, Operations.ImageURL FROM            ((Operations INNER JOIN                         [MachineTool-OperationsLink] ON Operations.Name = [MachineTool-OperationsLink].OperationsID) INNER JOIN                         MachineTools ON [MachineTool-OperationsLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & GlobalVariables.Click & "')"
+        Dim query As String = "SELECT        Operations.Name, Operations.ImageURL, FROM            ((Operations INNER JOIN                         [MachineTool-OperationsLink] On Operations.Name = [MachineTool-OperationsLink].OperationsID) INNER JOIN                         MachineTools On [MachineTool-OperationsLink].MachineToolID = MachineTools.Name) WHERE        (MachineTools.Name = '" & GlobalVariables.Click & "')"
         Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
@@ -96,7 +97,7 @@ Public Class FormEditMachiningMethodMachineToolLink
     Sub update_allMachiningMethods_combobox()
         CmboboxAdd.Items.Clear()
 
-        Dim Table_ As String = "ClampingMethod"
+        Dim Table_ As String = "Operations"
         Dim query As String = "SELECT        Name FROM            Operations"
 
         Dim cmd2 As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
