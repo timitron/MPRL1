@@ -33,7 +33,6 @@ C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.vbprojR
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormEditRequiredPPE.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormEditOptPPE.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormEditMachineLink.resources
-C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormAdminPanel.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormMachiningMethodsDisplay.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormMachineDetails.resources
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormMachineToolDetails.resources

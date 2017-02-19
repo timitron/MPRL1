@@ -13,7 +13,7 @@ Public Class Edititems
 
 
     Private Sub edititems_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Label5.Text = "Edit " & GlobalVariables.Clicked
+
 
         Dim Table_ As String = "MachineTool"
 
@@ -141,11 +141,8 @@ Public Class Edititems
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-
-
         GlobalVariables.cnn.Close()
-        Dim result As Integer = MessageBox.Show("Are you sure you want to edit " & GlobalVariables.Clicked & "?", "Submit Changes?", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Are you sure you want to delete " & GlobalVariables.Clicked & "?", "Delete?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
         End If
@@ -153,7 +150,6 @@ Public Class Edititems
         Dim NumOfRelation As Integer = 1
 
         Do Until NumOfRelation = 0
-            PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
             If GlobalVariables.Click = "PPE" Then
                 If NumOfRelation = 1 Then
                     query = "DELETE FROM `PPE` WHERE (name ='" & GlobalVariables.Clicked & "')"

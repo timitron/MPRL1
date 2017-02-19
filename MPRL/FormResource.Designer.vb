@@ -33,6 +33,7 @@ Partial Class FormResource
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AddressTextBox = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label5
@@ -123,11 +124,22 @@ Partial Class FormResource
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'DeleteButton
+        '
+        Me.DeleteButton.BackColor = System.Drawing.Color.Red
+        Me.DeleteButton.Location = New System.Drawing.Point(247, 165)
+        Me.DeleteButton.Name = "DeleteButton"
+        Me.DeleteButton.Size = New System.Drawing.Size(153, 43)
+        Me.DeleteButton.TabIndex = 22
+        Me.DeleteButton.Text = "Delete"
+        Me.DeleteButton.UseVisualStyleBackColor = False
+        '
         'FormResource
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(432, 261)
+        Me.Controls.Add(Me.DeleteButton)
         Me.Controls.Add(Me.AddressTextBox)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -156,4 +168,5 @@ Partial Class FormResource
     Friend WithEvents Label1 As Label
     Friend WithEvents AddressTextBox As TextBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents DeleteButton As Button
 End Class

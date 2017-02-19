@@ -33,7 +33,11 @@ Public Class EditForm
         ElseIf GlobalVariables.Click = "Machines" Then
             Table_ = "Machines"
             query = "SELECT Name FROM Machines"
+        ElseIf GlobalVariables.Click = "Resources" Then
+            Table_ = "Resources"
+            query = "SELECT Name FROM AdditionalResources"
         End If
+
 
         Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
@@ -60,10 +64,16 @@ Public Class EditForm
 
     Private Sub editList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles editList.DoubleClick
         GlobalVariables.Clicked = editList.SelectedItem
-        Dim newform
-        newform = Edititems
-        Edititems.Show()
+
+        If GlobalVariables.Click = "Resources" Then
+            Dim newform = FormResource
+            FormResource.Show()
+        Else
+            Dim newform = Edititems
+            Edititems.Show()
+        End If
         Me.Close()
+
 
 
     End Sub
