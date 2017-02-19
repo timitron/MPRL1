@@ -20,7 +20,8 @@ Public Class GlobalVariables
 
     Public Shared fromadd As Boolean
     Public Shared CloseAll As Boolean = True
-    Public Shared MethodStart As Boolean
+    Public Shared MethodStart As String
+
 
 
     'define connection string and create connection object 

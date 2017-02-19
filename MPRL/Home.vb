@@ -22,7 +22,7 @@
             Exit Sub
         End If
 
-        GlobalVariables.MethodStart = False
+        GlobalVariables.MethodStart = "machinetool"
         GlobalVariables.fromadd = False
         Dim newform
         newform = FormMachineToolsDisplay
@@ -37,7 +37,7 @@
             Exit Sub
         End If
 
-        GlobalVariables.MethodStart = True
+        GlobalVariables.MethodStart = "operations"
         GlobalVariables.fromadd = False
         Dim newform
         newform = FormMachiningMethodsDisplay
@@ -179,6 +179,8 @@
         End If
 
         GlobalVariables.Click = "Features"
+        GlobalVariables.MethodStart = "suggestor"
+        GlobalVariables.fromadd = False
 
         Dim newform
         newform = FeatureView

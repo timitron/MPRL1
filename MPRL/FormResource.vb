@@ -38,6 +38,10 @@ Public Class FormResource
             TypeTextBox.Text = "Description Goes Here"
         End If
 
+        If TypeTextBox.Text = "" Then
+            TypeTextBox.Text = "Type"
+        End If
+
         If AddressTextBox.Text.StartsWith(Application.StartupPath) = False Then '' check that imge comes from apllication start path
             If AddressTextBox.Text.StartsWith("www.") = False Then
                 MessageBox.Show("Address Must be a web address or a file address that is located in debug")

@@ -51,16 +51,16 @@ Public Class FormOperation
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        If GlobalVariables.MethodStart = True Then
+        If GlobalVariables.MethodStart = "operations" Then
             Dim newform
             newform = FormMachiningMethodsDisplay
 
             newform.Show()
 
             GlobalVariables.CloseAll = False
-            Me.close()
+            Me.Close()
             GlobalVariables.CloseAll = True
-        Else
+        ElseIf GlobalVariables.MethodStart = "machinetool" Then
             Global.MPRL.GlobalVariables.Click = GlobalVariables.prevMachineTool
 
             Dim newform
@@ -68,7 +68,16 @@ Public Class FormOperation
             newform.Show()
 
             GlobalVariables.CloseAll = False
-            Me.close()
+            Me.Close()
+            GlobalVariables.CloseAll = True
+        ElseIf GlobalVariables.MethodStart = "suggestor" Then
+            Dim newform
+            newform = FeatureView
+
+            newform.Show()
+
+            GlobalVariables.CloseAll = False
+            Me.Close()
             GlobalVariables.CloseAll = True
         End If
     End Sub
