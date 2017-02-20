@@ -25,13 +25,13 @@ Partial Class FormAdmin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAdmin))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -51,15 +51,6 @@ Partial Class FormAdmin
         Me.Label2.Size = New System.Drawing.Size(155, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Newest Version's Web Address"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(420, 102)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = " Increment"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'CheckBox1
         '
@@ -118,18 +109,27 @@ Partial Class FormAdmin
         Me.CheckBox2.Text = "Display On Startup"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(420, 102)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 9
+        Me.Button4.Text = " Increment"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'FormAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(721, 329)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -143,11 +143,11 @@ Partial Class FormAdmin
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents Button4 As Button
 End Class
