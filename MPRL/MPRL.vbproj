@@ -180,6 +180,11 @@
     <Compile Include="FormSetupLink.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MPRLDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Operation Display.Designer.vb">
       <DependentUpon>Operation Display.vb</DependentUpon>
     </Compile>
@@ -217,14 +222,6 @@
     </Compile>
     <Compile Include="MachineToolDisplay.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MPRLDataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MPRLDataSet1.vb">
-      <DependentUpon>MPRLDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

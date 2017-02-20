@@ -1,15 +1,14 @@
 ﻿Public Class FormHome
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Activate()
-
 
 
         If GlobalVariables.AdminBuild = False Then
             MenuStrip1.Visible = False
-        Else
-
         End If
 
+        Dim newform = Version
+        newform.Show()
+        newform.BringToFront()
     End Sub
 
 
@@ -244,6 +243,14 @@
         Dim newform
         newform = EditForm
         newform.show()
+    End Sub
+
+    Private Sub AdminToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdminToolStripMenuItem.Click
+
+        Dim newform
+        newform = FormAdmin
+        newform.show()
+
     End Sub
 End Class
 

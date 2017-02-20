@@ -27,6 +27,8 @@ Partial Public Class MPRLDataSet
     
     Private tableAdditionalResources As AdditionalResourcesDataTable
     
+    Private tableAdmin As AdminDataTable
+    
     Private tableEntities As EntitiesDataTable
     
     Private _tableEntity_ResourceLink As _Entity_ResourceLinkDataTable
@@ -40,6 +42,8 @@ Partial Public Class MPRLDataSet
     Private _tableMachine_PPELink As _Machine_PPELinkDataTable
     
     Private tableMachines As MachinesDataTable
+    
+    Private tableMachineTool As MachineToolDataTable
     
     Private _tableMachineTool_OperationsLink As _MachineTool_OperationsLinkDataTable
     
@@ -121,6 +125,9 @@ Partial Public Class MPRLDataSet
             If (Not (ds.Tables("AdditionalResources")) Is Nothing) Then
                 MyBase.Tables.Add(New AdditionalResourcesDataTable(ds.Tables("AdditionalResources")))
             End If
+            If (Not (ds.Tables("Admin")) Is Nothing) Then
+                MyBase.Tables.Add(New AdminDataTable(ds.Tables("Admin")))
+            End If
             If (Not (ds.Tables("Entities")) Is Nothing) Then
                 MyBase.Tables.Add(New EntitiesDataTable(ds.Tables("Entities")))
             End If
@@ -141,6 +148,9 @@ Partial Public Class MPRLDataSet
             End If
             If (Not (ds.Tables("Machines")) Is Nothing) Then
                 MyBase.Tables.Add(New MachinesDataTable(ds.Tables("Machines")))
+            End If
+            If (Not (ds.Tables("MachineTool")) Is Nothing) Then
+                MyBase.Tables.Add(New MachineToolDataTable(ds.Tables("MachineTool")))
             End If
             If (Not (ds.Tables("MachineTool-OperationsLink")) Is Nothing) Then
                 MyBase.Tables.Add(New _MachineTool_OperationsLinkDataTable(ds.Tables("MachineTool-OperationsLink")))
@@ -193,6 +203,16 @@ Partial Public Class MPRLDataSet
     Public ReadOnly Property AdditionalResources() As AdditionalResourcesDataTable
         Get
             Return Me.tableAdditionalResources
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property Admin() As AdminDataTable
+        Get
+            Return Me.tableAdmin
         End Get
     End Property
     
@@ -263,6 +283,16 @@ Partial Public Class MPRLDataSet
     Public ReadOnly Property Machines() As MachinesDataTable
         Get
             Return Me.tableMachines
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property MachineTool() As MachineToolDataTable
+        Get
+            Return Me.tableMachineTool
         End Get
     End Property
     
@@ -426,6 +456,9 @@ Partial Public Class MPRLDataSet
             If (Not (ds.Tables("AdditionalResources")) Is Nothing) Then
                 MyBase.Tables.Add(New AdditionalResourcesDataTable(ds.Tables("AdditionalResources")))
             End If
+            If (Not (ds.Tables("Admin")) Is Nothing) Then
+                MyBase.Tables.Add(New AdminDataTable(ds.Tables("Admin")))
+            End If
             If (Not (ds.Tables("Entities")) Is Nothing) Then
                 MyBase.Tables.Add(New EntitiesDataTable(ds.Tables("Entities")))
             End If
@@ -446,6 +479,9 @@ Partial Public Class MPRLDataSet
             End If
             If (Not (ds.Tables("Machines")) Is Nothing) Then
                 MyBase.Tables.Add(New MachinesDataTable(ds.Tables("Machines")))
+            End If
+            If (Not (ds.Tables("MachineTool")) Is Nothing) Then
+                MyBase.Tables.Add(New MachineToolDataTable(ds.Tables("MachineTool")))
             End If
             If (Not (ds.Tables("MachineTool-OperationsLink")) Is Nothing) Then
                 MyBase.Tables.Add(New _MachineTool_OperationsLinkDataTable(ds.Tables("MachineTool-OperationsLink")))
@@ -512,6 +548,12 @@ Partial Public Class MPRLDataSet
                 Me.tableAdditionalResources.InitVars
             End If
         End If
+        Me.tableAdmin = CType(MyBase.Tables("Admin"),AdminDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableAdmin) Is Nothing) Then
+                Me.tableAdmin.InitVars
+            End If
+        End If
         Me.tableEntities = CType(MyBase.Tables("Entities"),EntitiesDataTable)
         If (initTable = true) Then
             If (Not (Me.tableEntities) Is Nothing) Then
@@ -552,6 +594,12 @@ Partial Public Class MPRLDataSet
         If (initTable = true) Then
             If (Not (Me.tableMachines) Is Nothing) Then
                 Me.tableMachines.InitVars
+            End If
+        End If
+        Me.tableMachineTool = CType(MyBase.Tables("MachineTool"),MachineToolDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableMachineTool) Is Nothing) Then
+                Me.tableMachineTool.InitVars
             End If
         End If
         Me._tableMachineTool_OperationsLink = CType(MyBase.Tables("MachineTool-OperationsLink"),_MachineTool_OperationsLinkDataTable)
@@ -635,6 +683,8 @@ Partial Public Class MPRLDataSet
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableAdditionalResources = New AdditionalResourcesDataTable()
         MyBase.Tables.Add(Me.tableAdditionalResources)
+        Me.tableAdmin = New AdminDataTable()
+        MyBase.Tables.Add(Me.tableAdmin)
         Me.tableEntities = New EntitiesDataTable()
         MyBase.Tables.Add(Me.tableEntities)
         Me._tableEntity_ResourceLink = New _Entity_ResourceLinkDataTable()
@@ -649,6 +699,8 @@ Partial Public Class MPRLDataSet
         MyBase.Tables.Add(Me._tableMachine_PPELink)
         Me.tableMachines = New MachinesDataTable()
         MyBase.Tables.Add(Me.tableMachines)
+        Me.tableMachineTool = New MachineToolDataTable()
+        MyBase.Tables.Add(Me.tableMachineTool)
         Me._tableMachineTool_OperationsLink = New _MachineTool_OperationsLinkDataTable()
         MyBase.Tables.Add(Me._tableMachineTool_OperationsLink)
         Me.tableMachineTools = New MachineToolsDataTable()
@@ -707,6 +759,12 @@ Partial Public Class MPRLDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeAdmin() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeEntities() As Boolean
         Return false
     End Function
@@ -744,6 +802,12 @@ Partial Public Class MPRLDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeMachines() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeMachineTool() As Boolean
         Return false
     End Function
     
@@ -863,6 +927,9 @@ Partial Public Class MPRLDataSet
     Public Delegate Sub AdditionalResourcesRowChangeEventHandler(ByVal sender As Object, ByVal e As AdditionalResourcesRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub AdminRowChangeEventHandler(ByVal sender As Object, ByVal e As AdminRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub EntitiesRowChangeEventHandler(ByVal sender As Object, ByVal e As EntitiesRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -882,6 +949,9 @@ Partial Public Class MPRLDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub MachinesRowChangeEventHandler(ByVal sender As Object, ByVal e As MachinesRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub MachineToolRowChangeEventHandler(ByVal sender As Object, ByVal e As MachineToolRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub _MachineTool_OperationsLinkRowChangeEventHandler(ByVal sender As Object, ByVal e As _MachineTool_OperationsLinkRowChangeEvent)
@@ -1157,6 +1227,298 @@ Partial Public Class MPRLDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "AdditionalResourcesDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class AdminDataTable
+        Inherits Global.System.Data.TypedTableBase(Of AdminRow)
+        
+        Private columnVersion As Global.System.Data.DataColumn
+        
+        Private columnWebAddress As Global.System.Data.DataColumn
+        
+        Private columnDisplayONStart As Global.System.Data.DataColumn
+        
+        Private columnRequestFeedBack As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "Admin"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property VersionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVersion
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property WebAddressColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnWebAddress
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DisplayONStartColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDisplayONStart
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property RequestFeedBackColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRequestFeedBack
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As AdminRow
+            Get
+                Return CType(Me.Rows(index),AdminRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AdminRowChanging As AdminRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AdminRowChanged As AdminRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AdminRowDeleting As AdminRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AdminRowDeleted As AdminRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddAdminRow(ByVal row As AdminRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddAdminRow(ByVal Version As Integer, ByVal WebAddress As String, ByVal DisplayONStart As Boolean, ByVal RequestFeedBack As Boolean) As AdminRow
+            Dim rowAdminRow As AdminRow = CType(Me.NewRow,AdminRow)
+            Dim columnValuesArray() As Object = New Object() {Version, WebAddress, DisplayONStart, RequestFeedBack}
+            rowAdminRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowAdminRow)
+            Return rowAdminRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As AdminDataTable = CType(MyBase.Clone,AdminDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New AdminDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnVersion = MyBase.Columns("Version")
+            Me.columnWebAddress = MyBase.Columns("WebAddress")
+            Me.columnDisplayONStart = MyBase.Columns("DisplayONStart")
+            Me.columnRequestFeedBack = MyBase.Columns("RequestFeedBack")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnVersion = New Global.System.Data.DataColumn("Version", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVersion)
+            Me.columnWebAddress = New Global.System.Data.DataColumn("WebAddress", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnWebAddress)
+            Me.columnDisplayONStart = New Global.System.Data.DataColumn("DisplayONStart", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDisplayONStart)
+            Me.columnRequestFeedBack = New Global.System.Data.DataColumn("RequestFeedBack", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRequestFeedBack)
+            Me.columnWebAddress.MaxLength = 536870910
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewAdminRow() As AdminRow
+            Return CType(Me.NewRow,AdminRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New AdminRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(AdminRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.AdminRowChangedEvent) Is Nothing) Then
+                RaiseEvent AdminRowChanged(Me, New AdminRowChangeEvent(CType(e.Row,AdminRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.AdminRowChangingEvent) Is Nothing) Then
+                RaiseEvent AdminRowChanging(Me, New AdminRowChangeEvent(CType(e.Row,AdminRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.AdminRowDeletedEvent) Is Nothing) Then
+                RaiseEvent AdminRowDeleted(Me, New AdminRowChangeEvent(CType(e.Row,AdminRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.AdminRowDeletingEvent) Is Nothing) Then
+                RaiseEvent AdminRowDeleting(Me, New AdminRowChangeEvent(CType(e.Row,AdminRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveAdminRow(ByVal row As AdminRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As MPRLDataSet = New MPRLDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "AdminDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -3003,6 +3365,8 @@ Partial Public Class MPRLDataSet
         
         Private columnImageURL As Global.System.Data.DataColumn
         
+        Private columnDetailURL As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -3079,6 +3443,14 @@ Partial Public Class MPRLDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DetailURLColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDetailURL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3115,9 +3487,9 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddMachinesRow(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String) As MachinesRow
+        Public Overloads Function AddMachinesRow(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal DetailURL As String) As MachinesRow
             Dim rowMachinesRow As MachinesRow = CType(Me.NewRow,MachinesRow)
-            Dim columnValuesArray() As Object = New Object() {Name, MachineRoom, Description, EntityType, ImageURL}
+            Dim columnValuesArray() As Object = New Object() {Name, MachineRoom, Description, EntityType, ImageURL, DetailURL}
             rowMachinesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMachinesRow)
             Return rowMachinesRow
@@ -3151,6 +3523,7 @@ Partial Public Class MPRLDataSet
             Me.columnDescription = MyBase.Columns("Description")
             Me.columnEntityType = MyBase.Columns("EntityType")
             Me.columnImageURL = MyBase.Columns("ImageURL")
+            Me.columnDetailURL = MyBase.Columns("DetailURL")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3166,6 +3539,8 @@ Partial Public Class MPRLDataSet
             MyBase.Columns.Add(Me.columnEntityType)
             Me.columnImageURL = New Global.System.Data.DataColumn("ImageURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnImageURL)
+            Me.columnDetailURL = New Global.System.Data.DataColumn("DetailURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDetailURL)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnName}, true))
             Me.columnName.AllowDBNull = false
             Me.columnName.Unique = true
@@ -3174,6 +3549,7 @@ Partial Public Class MPRLDataSet
             Me.columnDescription.MaxLength = 536870910
             Me.columnEntityType.MaxLength = 255
             Me.columnImageURL.MaxLength = 536870910
+            Me.columnDetailURL.MaxLength = 536870910
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3308,12 +3684,278 @@ Partial Public Class MPRLDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class MachineToolDataTable
+        Inherits Global.System.Data.TypedTableBase(Of MachineToolRow)
+        
+        Private columnID As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "MachineTool"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As MachineToolRow
+            Get
+                Return CType(Me.Rows(index),MachineToolRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event MachineToolRowChanging As MachineToolRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event MachineToolRowChanged As MachineToolRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event MachineToolRowDeleting As MachineToolRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event MachineToolRowDeleted As MachineToolRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddMachineToolRow(ByVal row As MachineToolRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddMachineToolRow() As MachineToolRow
+            Dim rowMachineToolRow As MachineToolRow = CType(Me.NewRow,MachineToolRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing}
+            rowMachineToolRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowMachineToolRow)
+            Return rowMachineToolRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByID(ByVal ID As Integer) As MachineToolRow
+            Return CType(Me.Rows.Find(New Object() {ID}),MachineToolRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As MachineToolDataTable = CType(MyBase.Clone,MachineToolDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New MachineToolDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnID = MyBase.Columns("ID")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
+            Me.columnID.AutoIncrement = true
+            Me.columnID.AutoIncrementSeed = -1
+            Me.columnID.AutoIncrementStep = -1
+            Me.columnID.AllowDBNull = false
+            Me.columnID.Unique = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewMachineToolRow() As MachineToolRow
+            Return CType(Me.NewRow,MachineToolRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New MachineToolRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(MachineToolRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.MachineToolRowChangedEvent) Is Nothing) Then
+                RaiseEvent MachineToolRowChanged(Me, New MachineToolRowChangeEvent(CType(e.Row,MachineToolRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.MachineToolRowChangingEvent) Is Nothing) Then
+                RaiseEvent MachineToolRowChanging(Me, New MachineToolRowChangeEvent(CType(e.Row,MachineToolRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.MachineToolRowDeletedEvent) Is Nothing) Then
+                RaiseEvent MachineToolRowDeleted(Me, New MachineToolRowChangeEvent(CType(e.Row,MachineToolRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.MachineToolRowDeletingEvent) Is Nothing) Then
+                RaiseEvent MachineToolRowDeleting(Me, New MachineToolRowChangeEvent(CType(e.Row,MachineToolRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveMachineToolRow(ByVal row As MachineToolRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As MPRLDataSet = New MPRLDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "MachineToolDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class _MachineTool_OperationsLinkDataTable
         Inherits Global.System.Data.TypedTableBase(Of _MachineTool_OperationsLinkRow)
         
         Private columnMachineToolID As Global.System.Data.DataColumn
         
         Private columnOperationsID As Global.System.Data.DataColumn
+        
+        Private columnAccuracy As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -3367,6 +4009,14 @@ Partial Public Class MPRLDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property AccuracyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAccuracy
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3403,9 +4053,9 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Add_MachineTool_OperationsLinkRow(ByVal _parentMachineToolsRowByMachineToolsMachineTool_OperationsLink As MachineToolsRow, ByVal _parentOperationsRowByOperationsMachineTool_OperationsLink As OperationsRow) As _MachineTool_OperationsLinkRow
+        Public Overloads Function Add_MachineTool_OperationsLinkRow(ByVal _parentMachineToolsRowByMachineToolsMachineTool_OperationsLink As MachineToolsRow, ByVal _parentOperationsRowByOperationsMachineTool_OperationsLink As OperationsRow, ByVal Accuracy As Decimal) As _MachineTool_OperationsLinkRow
             Dim row_MachineTool_OperationsLinkRow As _MachineTool_OperationsLinkRow = CType(Me.NewRow,_MachineTool_OperationsLinkRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Accuracy}
             If (Not (_parentMachineToolsRowByMachineToolsMachineTool_OperationsLink) Is Nothing) Then
                 columnValuesArray(0) = _parentMachineToolsRowByMachineToolsMachineTool_OperationsLink(0)
             End If
@@ -3442,6 +4092,7 @@ Partial Public Class MPRLDataSet
         Friend Sub InitVars()
             Me.columnMachineToolID = MyBase.Columns("MachineToolID")
             Me.columnOperationsID = MyBase.Columns("OperationsID")
+            Me.columnAccuracy = MyBase.Columns("Accuracy")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3451,6 +4102,8 @@ Partial Public Class MPRLDataSet
             MyBase.Columns.Add(Me.columnMachineToolID)
             Me.columnOperationsID = New Global.System.Data.DataColumn("OperationsID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnOperationsID)
+            Me.columnAccuracy = New Global.System.Data.DataColumn("Accuracy", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAccuracy)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnMachineToolID, Me.columnOperationsID}, true))
             Me.columnMachineToolID.AllowDBNull = false
             Me.columnMachineToolID.MaxLength = 255
@@ -3601,6 +4254,8 @@ Partial Public Class MPRLDataSet
         
         Private columnImageURL As Global.System.Data.DataColumn
         
+        Private columnDetailURL As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -3661,6 +4316,14 @@ Partial Public Class MPRLDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DetailURLColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDetailURL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3697,9 +4360,9 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddMachineToolsRow(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String) As MachineToolsRow
+        Public Overloads Function AddMachineToolsRow(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String) As MachineToolsRow
             Dim rowMachineToolsRow As MachineToolsRow = CType(Me.NewRow,MachineToolsRow)
-            Dim columnValuesArray() As Object = New Object() {Name, Description, ImageURL}
+            Dim columnValuesArray() As Object = New Object() {Name, Description, ImageURL, DetailURL}
             rowMachineToolsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMachineToolsRow)
             Return rowMachineToolsRow
@@ -3731,6 +4394,7 @@ Partial Public Class MPRLDataSet
             Me.columnName = MyBase.Columns("Name")
             Me.columnDescription = MyBase.Columns("Description")
             Me.columnImageURL = MyBase.Columns("ImageURL")
+            Me.columnDetailURL = MyBase.Columns("DetailURL")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3742,12 +4406,15 @@ Partial Public Class MPRLDataSet
             MyBase.Columns.Add(Me.columnDescription)
             Me.columnImageURL = New Global.System.Data.DataColumn("ImageURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnImageURL)
+            Me.columnDetailURL = New Global.System.Data.DataColumn("DetailURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDetailURL)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnName}, true))
             Me.columnName.AllowDBNull = false
             Me.columnName.Unique = true
             Me.columnName.MaxLength = 255
             Me.columnDescription.MaxLength = 536870910
             Me.columnImageURL.MaxLength = 536870910
+            Me.columnDetailURL.MaxLength = 536870910
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4457,9 +5124,9 @@ Partial Public Class MPRLDataSet
         
         Private columnDescription As Global.System.Data.DataColumn
         
-        Private columnEntityType As Global.System.Data.DataColumn
-        
         Private columnImageURL As Global.System.Data.DataColumn
+        
+        Private columnDetailURL As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -4514,17 +5181,17 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property EntityTypeColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ImageURLColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnEntityType
+                Return Me.columnImageURL
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ImageURLColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property DetailURLColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnImageURL
+                Return Me.columnDetailURL
             End Get
         End Property
         
@@ -4565,9 +5232,9 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddOperationsRow(ByVal Name As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String) As OperationsRow
+        Public Overloads Function AddOperationsRow(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String) As OperationsRow
             Dim rowOperationsRow As OperationsRow = CType(Me.NewRow,OperationsRow)
-            Dim columnValuesArray() As Object = New Object() {Name, Description, EntityType, ImageURL}
+            Dim columnValuesArray() As Object = New Object() {Name, Description, ImageURL, DetailURL}
             rowOperationsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowOperationsRow)
             Return rowOperationsRow
@@ -4598,8 +5265,8 @@ Partial Public Class MPRLDataSet
         Friend Sub InitVars()
             Me.columnName = MyBase.Columns("Name")
             Me.columnDescription = MyBase.Columns("Description")
-            Me.columnEntityType = MyBase.Columns("EntityType")
             Me.columnImageURL = MyBase.Columns("ImageURL")
+            Me.columnDetailURL = MyBase.Columns("DetailURL")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4609,17 +5276,17 @@ Partial Public Class MPRLDataSet
             MyBase.Columns.Add(Me.columnName)
             Me.columnDescription = New Global.System.Data.DataColumn("Description", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDescription)
-            Me.columnEntityType = New Global.System.Data.DataColumn("EntityType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEntityType)
             Me.columnImageURL = New Global.System.Data.DataColumn("ImageURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnImageURL)
+            Me.columnDetailURL = New Global.System.Data.DataColumn("DetailURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDetailURL)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnName}, true))
             Me.columnName.AllowDBNull = false
             Me.columnName.Unique = true
             Me.columnName.MaxLength = 255
             Me.columnDescription.MaxLength = 536870910
-            Me.columnEntityType.MaxLength = 255
             Me.columnImageURL.MaxLength = 536870910
+            Me.columnDetailURL.MaxLength = 536870910
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5053,6 +5720,8 @@ Partial Public Class MPRLDataSet
         
         Private columnImageURL As Global.System.Data.DataColumn
         
+        Private columnDetailURL As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -5113,6 +5782,14 @@ Partial Public Class MPRLDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DetailURLColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDetailURL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -5149,9 +5826,9 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddSetupsRow(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String) As SetupsRow
+        Public Overloads Function AddSetupsRow(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String) As SetupsRow
             Dim rowSetupsRow As SetupsRow = CType(Me.NewRow,SetupsRow)
-            Dim columnValuesArray() As Object = New Object() {Name, Description, ImageURL}
+            Dim columnValuesArray() As Object = New Object() {Name, Description, ImageURL, DetailURL}
             rowSetupsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSetupsRow)
             Return rowSetupsRow
@@ -5183,6 +5860,7 @@ Partial Public Class MPRLDataSet
             Me.columnName = MyBase.Columns("Name")
             Me.columnDescription = MyBase.Columns("Description")
             Me.columnImageURL = MyBase.Columns("ImageURL")
+            Me.columnDetailURL = MyBase.Columns("DetailURL")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5194,12 +5872,15 @@ Partial Public Class MPRLDataSet
             MyBase.Columns.Add(Me.columnDescription)
             Me.columnImageURL = New Global.System.Data.DataColumn("ImageURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnImageURL)
+            Me.columnDetailURL = New Global.System.Data.DataColumn("DetailURL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDetailURL)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnName}, true))
             Me.columnName.AllowDBNull = false
             Me.columnName.Unique = true
             Me.columnName.MaxLength = 255
             Me.columnDescription.MaxLength = 536870910
             Me.columnImageURL.MaxLength = 536870910
+            Me.columnDetailURL.MaxLength = 536870910
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5449,7 +6130,7 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddTimesRow(ByVal EntityType As String, ByVal Entity As String, ByVal TimeElapsed As Date) As TimesRow
+        Public Overloads Function AddTimesRow(ByVal EntityType As String, ByVal Entity As String, ByVal TimeElapsed As Integer) As TimesRow
             Dim rowTimesRow As TimesRow = CType(Me.NewRow,TimesRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, EntityType, Entity, TimeElapsed}
             rowTimesRow.ItemArray = columnValuesArray
@@ -5495,7 +6176,7 @@ Partial Public Class MPRLDataSet
             MyBase.Columns.Add(Me.columnEntityType)
             Me.columnEntity = New Global.System.Data.DataColumn("Entity", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEntity)
-            Me.columnTimeElapsed = New Global.System.Data.DataColumn("TimeElapsed", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnTimeElapsed = New Global.System.Data.DataColumn("TimeElapsed", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTimeElapsed)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AutoIncrement = true
@@ -5644,6 +6325,12 @@ Partial Public Class MPRLDataSet
         
         Private columnID As Global.System.Data.DataColumn
         
+        Private columnEntityType As Global.System.Data.DataColumn
+        
+        Private columnNew_Entity_Name As Global.System.Data.DataColumn
+        
+        Private columnTimeElapsed As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -5688,6 +6375,30 @@ Partial Public Class MPRLDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property EntityTypeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEntityType
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property New_Entity_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNew_Entity_Name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property TimeElapsedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTimeElapsed
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -5724,9 +6435,9 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddTimingRecordsRow() As TimingRecordsRow
+        Public Overloads Function AddTimingRecordsRow(ByVal EntityType As String, ByVal New_Entity_Name As String, ByVal TimeElapsed As Integer) As TimingRecordsRow
             Dim rowTimingRecordsRow As TimingRecordsRow = CType(Me.NewRow,TimingRecordsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing}
+            Dim columnValuesArray() As Object = New Object() {Nothing, EntityType, New_Entity_Name, TimeElapsed}
             rowTimingRecordsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowTimingRecordsRow)
             Return rowTimingRecordsRow
@@ -5756,6 +6467,9 @@ Partial Public Class MPRLDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnID = MyBase.Columns("ID")
+            Me.columnEntityType = MyBase.Columns("EntityType")
+            Me.columnNew_Entity_Name = MyBase.Columns("New Entity Name")
+            Me.columnTimeElapsed = MyBase.Columns("TimeElapsed")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5763,12 +6477,20 @@ Partial Public Class MPRLDataSet
         Private Sub InitClass()
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
+            Me.columnEntityType = New Global.System.Data.DataColumn("EntityType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEntityType)
+            Me.columnNew_Entity_Name = New Global.System.Data.DataColumn("New Entity Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNew_Entity_Name)
+            Me.columnTimeElapsed = New Global.System.Data.DataColumn("TimeElapsed", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTimeElapsed)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AutoIncrement = true
             Me.columnID.AutoIncrementSeed = -1
             Me.columnID.AutoIncrementStep = -1
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
+            Me.columnEntityType.MaxLength = 255
+            Me.columnNew_Entity_Name.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5987,6 +6709,130 @@ Partial Public Class MPRLDataSet
                 Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("AdditionalResourcesEntity-ResourceLink")),_Entity_ResourceLinkRow())
             End If
         End Function
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class AdminRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableAdmin As AdminDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableAdmin = CType(Me.Table,AdminDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Version() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableAdmin.VersionColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Version' in table 'Admin' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAdmin.VersionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property WebAddress() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAdmin.WebAddressColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'WebAddress' in table 'Admin' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAdmin.WebAddressColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DisplayONStart() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableAdmin.DisplayONStartColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DisplayONStart' in table 'Admin' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAdmin.DisplayONStartColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property RequestFeedBack() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableAdmin.RequestFeedBackColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RequestFeedBack' in table 'Admin' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAdmin.RequestFeedBackColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsVersionNull() As Boolean
+            Return Me.IsNull(Me.tableAdmin.VersionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetVersionNull()
+            Me(Me.tableAdmin.VersionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsWebAddressNull() As Boolean
+            Return Me.IsNull(Me.tableAdmin.WebAddressColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetWebAddressNull()
+            Me(Me.tableAdmin.WebAddressColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDisplayONStartNull() As Boolean
+            Return Me.IsNull(Me.tableAdmin.DisplayONStartColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDisplayONStartNull()
+            Me(Me.tableAdmin.DisplayONStartColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsRequestFeedBackNull() As Boolean
+            Return Me.IsNull(Me.tableAdmin.RequestFeedBackColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetRequestFeedBackNull()
+            Me(Me.tableAdmin.RequestFeedBackColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -6613,6 +7459,21 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DetailURL() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableMachines.DetailURLColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DetailURL' in table 'Machines' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableMachines.DetailURLColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsMachineRoomNull() As Boolean
             Return Me.IsNull(Me.tableMachines.MachineRoomColumn)
         End Function
@@ -6661,6 +7522,18 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDetailURLNull() As Boolean
+            Return Me.IsNull(Me.tableMachines.DetailURLColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDetailURLNull()
+            Me(Me.tableMachines.DetailURLColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function _GetEntity_ResourceLinkRows() As _Entity_ResourceLinkRow()
             If (Me.Table.ChildRelations("MachinesEntity-ResourceLink") Is Nothing) Then
                 Return New _Entity_ResourceLinkRow(-1) {}
@@ -6688,6 +7561,33 @@ Partial Public Class MPRLDataSet
                 Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("MachinesMachine-PPELink")),_Machine_PPELinkRow())
             End If
         End Function
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class MachineToolRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableMachineTool As MachineToolDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableMachineTool = CType(Me.Table,MachineToolDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ID() As Integer
+            Get
+                Return CType(Me(Me.tableMachineTool.IDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableMachineTool.IDColumn) = value
+            End Set
+        End Property
     End Class
     
     '''<summary>
@@ -6729,6 +7629,21 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Accuracy() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me._tableMachineTool_OperationsLink.AccuracyColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Accuracy' in table 'MachineTool-OperationsLink' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me._tableMachineTool_OperationsLink.AccuracyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property MachineToolsRow() As MachineToolsRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("MachineToolsMachineTool-OperationsLink")),MachineToolsRow)
@@ -6748,6 +7663,18 @@ Partial Public Class MPRLDataSet
                 Me.SetParentRow(value, Me.Table.ParentRelations("OperationsMachineTool-OperationsLink"))
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAccuracyNull() As Boolean
+            Return Me.IsNull(Me._tableMachineTool_OperationsLink.AccuracyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAccuracyNull()
+            Me(Me._tableMachineTool_OperationsLink.AccuracyColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -6808,6 +7735,21 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DetailURL() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableMachineTools.DetailURLColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DetailURL' in table 'MachineTools' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableMachineTools.DetailURLColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsDescriptionNull() As Boolean
             Return Me.IsNull(Me.tableMachineTools.DescriptionColumn)
         End Function
@@ -6828,6 +7770,18 @@ Partial Public Class MPRLDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetImageURLNull()
             Me(Me.tableMachineTools.ImageURLColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDetailURLNull() As Boolean
+            Return Me.IsNull(Me.tableMachineTools.DetailURLColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDetailURLNull()
+            Me(Me.tableMachineTools.DetailURLColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7024,21 +7978,6 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property EntityType() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableOperations.EntityTypeColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'EntityType' in table 'Operations' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableOperations.EntityTypeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ImageURL() As String
             Get
                 Try 
@@ -7049,6 +7988,21 @@ Partial Public Class MPRLDataSet
             End Get
             Set
                 Me(Me.tableOperations.ImageURLColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DetailURL() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableOperations.DetailURLColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DetailURL' in table 'Operations' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableOperations.DetailURLColumn) = value
             End Set
         End Property
         
@@ -7066,18 +8020,6 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsEntityTypeNull() As Boolean
-            Return Me.IsNull(Me.tableOperations.EntityTypeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetEntityTypeNull()
-            Me(Me.tableOperations.EntityTypeColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsImageURLNull() As Boolean
             Return Me.IsNull(Me.tableOperations.ImageURLColumn)
         End Function
@@ -7086,6 +8028,18 @@ Partial Public Class MPRLDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetImageURLNull()
             Me(Me.tableOperations.ImageURLColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDetailURLNull() As Boolean
+            Return Me.IsNull(Me.tableOperations.DetailURLColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDetailURLNull()
+            Me(Me.tableOperations.DetailURLColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7268,6 +8222,21 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DetailURL() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSetups.DetailURLColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DetailURL' in table 'Setups' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSetups.DetailURLColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsDescriptionNull() As Boolean
             Return Me.IsNull(Me.tableSetups.DescriptionColumn)
         End Function
@@ -7288,6 +8257,18 @@ Partial Public Class MPRLDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetImageURLNull()
             Me(Me.tableSetups.ImageURLColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDetailURLNull() As Boolean
+            Return Me.IsNull(Me.tableSetups.DetailURLColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDetailURLNull()
+            Me(Me.tableSetups.DetailURLColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7369,10 +8350,10 @@ Partial Public Class MPRLDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property TimeElapsed() As Date
+        Public Property TimeElapsed() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableTimes.TimeElapsedColumn),Date)
+                    Return CType(Me(Me.tableTimes.TimeElapsedColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'TimeElapsed' in table 'Times' is DBNull.", e)
                 End Try
@@ -7444,6 +8425,87 @@ Partial Public Class MPRLDataSet
                 Me(Me.tableTimingRecords.IDColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property EntityType() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTimingRecords.EntityTypeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EntityType' in table 'TimingRecords' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTimingRecords.EntityTypeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property New_Entity_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTimingRecords.New_Entity_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'New Entity Name' in table 'TimingRecords' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTimingRecords.New_Entity_NameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property TimeElapsed() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableTimingRecords.TimeElapsedColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TimeElapsed' in table 'TimingRecords' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTimingRecords.TimeElapsedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsEntityTypeNull() As Boolean
+            Return Me.IsNull(Me.tableTimingRecords.EntityTypeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetEntityTypeNull()
+            Me(Me.tableTimingRecords.EntityTypeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNew_Entity_NameNull() As Boolean
+            Return Me.IsNull(Me.tableTimingRecords.New_Entity_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNew_Entity_NameNull()
+            Me(Me.tableTimingRecords.New_Entity_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsTimeElapsedNull() As Boolean
+            Return Me.IsNull(Me.tableTimingRecords.TimeElapsedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetTimeElapsedNull()
+            Me(Me.tableTimingRecords.TimeElapsedColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -7468,6 +8530,42 @@ Partial Public Class MPRLDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As AdditionalResourcesRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class AdminRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As AdminRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As AdminRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As AdminRow
             Get
                 Return Me.eventRow
             End Get
@@ -7720,6 +8818,42 @@ Partial Public Class MPRLDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As MachinesRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class MachineToolRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As MachineToolRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As MachineToolRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As MachineToolRow
             Get
                 Return Me.eventRow
             End Get
@@ -8409,6 +9543,251 @@ Namespace MPRLDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal Type As String, ByVal Hyperlink As String, ByVal Original_Name As String, ByVal Original_Type As String) As Integer
             Return Me.Update(Original_Name, Type, Hyperlink, Original_Name, Original_Type)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class AdminTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
+        
+        Private _connection As Global.System.Data.OleDb.OleDbConnection
+        
+        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
+        
+        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.OleDb.OleDbCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "Admin"
+            tableMapping.ColumnMappings.Add("Version", "Version")
+            tableMapping.ColumnMappings.Add("WebAddress", "WebAddress")
+            tableMapping.ColumnMappings.Add("DisplayONStart", "DisplayONStart")
+            tableMapping.ColumnMappings.Add("RequestFeedBack", "RequestFeedBack")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Admin` (`Version`, `WebAddress`, `DisplayONStart`, `RequestFeedBack`"& _ 
+                ") VALUES (?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Version", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Version", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("WebAddress", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "WebAddress", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DisplayONStart", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DisplayONStart", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RequestFeedBack", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestFeedBack", Global.System.Data.DataRowVersion.Current, false, Nothing))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
+            Me._connection.ConnectionString = Global.MPRL.My.MySettings.Default.MPRLConnectionString1
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT Version, WebAddress, DisplayONStart, RequestFeedBack FROM Admin"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As MPRLDataSet.AdminDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As MPRLDataSet.AdminDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As MPRLDataSet.AdminDataTable = New MPRLDataSet.AdminDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As MPRLDataSet.AdminDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As MPRLDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "Admin")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal Version As Global.System.Nullable(Of Integer), ByVal WebAddress As String, ByVal DisplayONStart As Boolean, ByVal RequestFeedBack As Boolean) As Integer
+            If (Version.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Version.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (WebAddress Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(WebAddress,String)
+            End If
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(DisplayONStart,Boolean)
+            Me.Adapter.InsertCommand.Parameters(3).Value = CType(RequestFeedBack,Boolean)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
         End Function
     End Class
     
@@ -10642,6 +12021,7 @@ Namespace MPRLDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Description", "Description")
             tableMapping.ColumnMappings.Add("EntityType", "EntityType")
             tableMapping.ColumnMappings.Add("ImageURL", "ImageURL")
+            tableMapping.ColumnMappings.Add("DetailURL", "DetailURL")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -10657,25 +12037,27 @@ Namespace MPRLDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Machines` (`Name`, `MachineRoom`, `Description`, `EntityType`, `Imag"& _ 
-                "eURL`) VALUES (?, ?, ?, ?, ?)"
+                "eURL`, `DetailURL`) VALUES (?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MachineRoom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineRoom", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DetailURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DetailURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Machines` SET `Name` = ?, `MachineRoom` = ?, `Description` = ?, `EntityTy"& _ 
-                "pe` = ?, `ImageURL` = ? WHERE ((`Name` = ?) AND ((? = 1 AND `MachineRoom` IS NUL"& _ 
-                "L) OR (`MachineRoom` = ?)) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType"& _ 
-                "` = ?)))"
+                "pe` = ?, `ImageURL` = ?, `DetailURL` = ? WHERE ((`Name` = ?) AND ((? = 1 AND `Ma"& _ 
+                "chineRoom` IS NULL) OR (`MachineRoom` = ?)) AND ((? = 1 AND `EntityType` IS NULL"& _ 
+                ") OR (`EntityType` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MachineRoom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineRoom", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DetailURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DetailURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MachineRoom", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineRoom", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MachineRoom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineRoom", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -10696,7 +12078,8 @@ Namespace MPRLDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Name, MachineRoom, Description, EntityType, ImageURL FROM Machines"
+            Me._commandCollection(0).CommandText = "SELECT Name, MachineRoom, Description, EntityType, ImageURL, DetailURL FROM Machi"& _ 
+                "nes"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -10795,7 +12178,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal DetailURL As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -10821,6 +12204,11 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(ImageURL,String)
             End If
+            If (DetailURL Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(DetailURL,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -10840,7 +12228,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal Original_Name As String, ByVal Original_MachineRoom As String, ByVal Original_EntityType As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Name As String, ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal DetailURL As String, ByVal Original_Name As String, ByVal Original_MachineRoom As String, ByVal Original_EntityType As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -10866,24 +12254,29 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ImageURL,String)
             End If
+            If (DetailURL Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(DetailURL,String)
+            End If
             If (Original_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Name")
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Name,String)
             End If
             If (Original_MachineRoom Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_MachineRoom,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_MachineRoom,String)
             End If
             If (Original_EntityType Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_EntityType,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_EntityType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -10904,8 +12297,285 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal Original_Name As String, ByVal Original_MachineRoom As String, ByVal Original_EntityType As String) As Integer
-            Return Me.Update(Original_Name, MachineRoom, Description, EntityType, ImageURL, Original_Name, Original_MachineRoom, Original_EntityType)
+        Public Overloads Overridable Function Update(ByVal MachineRoom As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal DetailURL As String, ByVal Original_Name As String, ByVal Original_MachineRoom As String, ByVal Original_EntityType As String) As Integer
+            Return Me.Update(Original_Name, MachineRoom, Description, EntityType, ImageURL, DetailURL, Original_Name, Original_MachineRoom, Original_EntityType)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class MachineToolTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
+        
+        Private _connection As Global.System.Data.OleDb.OleDbConnection
+        
+        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
+        
+        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.OleDb.OleDbCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "MachineTool"
+            tableMapping.ColumnMappings.Add("ID", "ID")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `MachineTool` WHERE ((`ID` = ?))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `MachineTool` DEFAULT VALUES"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `MachineTool` WHERE ((`ID` = ?))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
+            Me._connection.ConnectionString = Global.MPRL.My.MySettings.Default.MPRLConnectionString1
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT ID FROM MachineTool"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As MPRLDataSet.MachineToolDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As MPRLDataSet.MachineToolDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As MPRLDataSet.MachineToolDataTable = New MPRLDataSet.MachineToolDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As MPRLDataSet.MachineToolDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As MPRLDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "MachineTool")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert() As Integer
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal Original_ID As Integer) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Original_ID,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
         End Function
     End Class
     
@@ -11038,30 +12708,38 @@ Namespace MPRLDataSetTableAdapters
             tableMapping.DataSetTable = "MachineTool-OperationsLink"
             tableMapping.ColumnMappings.Add("MachineToolID", "MachineToolID")
             tableMapping.ColumnMappings.Add("OperationsID", "OperationsID")
+            tableMapping.ColumnMappings.Add("Accuracy", "Accuracy")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `MachineTool-OperationsLink` WHERE ((`MachineToolID` = ?) AND (`Opera"& _ 
-                "tionsID` = ?))"
+                "tionsID` = ?) AND ((? = 1 AND `Accuracy` IS NULL) OR (`Accuracy` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MachineToolID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineToolID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_OperationsID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OperationsID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Accuracy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Accuracy", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Accuracy", Global.System.Data.OleDb.OleDbType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(8,Byte), CType(4,Byte), "Accuracy", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `MachineTool-OperationsLink` (`MachineToolID`, `OperationsID`) VALUES"& _ 
-                " (?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `MachineTool-OperationsLink` (`MachineToolID`, `OperationsID`, `Accur"& _ 
+                "acy`) VALUES (?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MachineToolID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineToolID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("OperationsID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OperationsID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Accuracy", Global.System.Data.OleDb.OleDbType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(8,Byte), CType(4,Byte), "Accuracy", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `MachineTool-OperationsLink` SET `MachineToolID` = ?, `OperationsID` = ? W"& _ 
-                "HERE ((`MachineToolID` = ?) AND (`OperationsID` = ?))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `MachineTool-OperationsLink` SET `MachineToolID` = ?, `OperationsID` = ?, "& _ 
+                "`Accuracy` = ? WHERE ((`MachineToolID` = ?) AND (`OperationsID` = ?) AND ((? = 1"& _ 
+                " AND `Accuracy` IS NULL) OR (`Accuracy` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MachineToolID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineToolID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("OperationsID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OperationsID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Accuracy", Global.System.Data.OleDb.OleDbType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(8,Byte), CType(4,Byte), "Accuracy", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MachineToolID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MachineToolID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_OperationsID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OperationsID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Accuracy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Accuracy", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Accuracy", Global.System.Data.OleDb.OleDbType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(8,Byte), CType(4,Byte), "Accuracy", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11077,7 +12755,7 @@ Namespace MPRLDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT MachineToolID, OperationsID FROM [MachineTool-OperationsLink]"
+            Me._commandCollection(0).CommandText = "SELECT MachineToolID, OperationsID, Accuracy FROM [MachineTool-OperationsLink]"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -11137,7 +12815,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_MachineToolID As String, ByVal Original_OperationsID As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_MachineToolID As String, ByVal Original_OperationsID As String, ByVal Original_Accuracy As Decimal) As Integer
             If (Original_MachineToolID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_MachineToolID")
             Else
@@ -11148,6 +12826,8 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_OperationsID,String)
             End If
+            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Accuracy,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -11167,7 +12847,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal MachineToolID As String, ByVal OperationsID As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal MachineToolID As String, ByVal OperationsID As String, ByVal Accuracy As Decimal) As Integer
             If (MachineToolID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("MachineToolID")
             Else
@@ -11178,6 +12858,7 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(OperationsID,String)
             End If
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(Accuracy,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -11197,7 +12878,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal MachineToolID As String, ByVal OperationsID As String, ByVal Original_MachineToolID As String, ByVal Original_OperationsID As String) As Integer
+        Public Overloads Overridable Function Update(ByVal MachineToolID As String, ByVal OperationsID As String, ByVal Accuracy As Decimal, ByVal Original_MachineToolID As String, ByVal Original_OperationsID As String, ByVal Original_Accuracy As Decimal) As Integer
             If (MachineToolID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("MachineToolID")
             Else
@@ -11208,16 +12889,19 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(OperationsID,String)
             End If
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Accuracy,Decimal)
             If (Original_MachineToolID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_MachineToolID")
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_MachineToolID,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_MachineToolID,String)
             End If
             If (Original_OperationsID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_OperationsID")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_OperationsID,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_OperationsID,String)
             End If
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Accuracy,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -11237,8 +12921,8 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Original_MachineToolID As String, ByVal Original_OperationsID As String) As Integer
-            Return Me.Update(Original_MachineToolID, Original_OperationsID, Original_MachineToolID, Original_OperationsID)
+        Public Overloads Overridable Function Update(ByVal Accuracy As Decimal, ByVal Original_MachineToolID As String, ByVal Original_OperationsID As String, ByVal Original_Accuracy As Decimal) As Integer
+            Return Me.Update(Original_MachineToolID, Original_OperationsID, Accuracy, Original_MachineToolID, Original_OperationsID, Original_Accuracy)
         End Function
     End Class
     
@@ -11372,6 +13056,7 @@ Namespace MPRLDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Name", "Name")
             tableMapping.ColumnMappings.Add("Description", "Description")
             tableMapping.ColumnMappings.Add("ImageURL", "ImageURL")
+            tableMapping.ColumnMappings.Add("DetailURL", "DetailURL")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -11380,19 +13065,22 @@ Namespace MPRLDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `MachineTools` (`Name`, `Description`, `ImageURL`) VALUES (?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `MachineTools` (`Name`, `Description`, `ImageURL`, `DetailURL`) VALUE"& _ 
+                "S (?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DetailURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DetailURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `MachineTools` SET `Name` = ?, `Description` = ?, `ImageURL` = ? WHERE ((`"& _ 
-                "Name` = ?))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `MachineTools` SET `Name` = ?, `Description` = ?, `ImageURL` = ?, `DetailU"& _ 
+                "RL` = ? WHERE ((`Name` = ?))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DetailURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DetailURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
@@ -11409,7 +13097,7 @@ Namespace MPRLDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Name, Description, ImageURL FROM MachineTools"
+            Me._commandCollection(0).CommandText = "SELECT Name, Description, ImageURL, DetailURL FROM MachineTools"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -11494,7 +13182,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -11509,6 +13197,11 @@ Namespace MPRLDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(ImageURL,String)
+            End If
+            If (DetailURL Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(DetailURL,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -11529,7 +13222,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal Original_Name As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String, ByVal Original_Name As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -11545,10 +13238,15 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ImageURL,String)
             End If
+            If (DetailURL Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DetailURL,String)
+            End If
             If (Original_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Name")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Name,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -11569,8 +13267,8 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Description As String, ByVal ImageURL As String, ByVal Original_Name As String) As Integer
-            Return Me.Update(Original_Name, Description, ImageURL, Original_Name)
+        Public Overloads Overridable Function Update(ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String, ByVal Original_Name As String) As Integer
+            Return Me.Update(Original_Name, Description, ImageURL, DetailURL, Original_Name)
         End Function
     End Class
     
@@ -12367,39 +14065,33 @@ Namespace MPRLDataSetTableAdapters
             tableMapping.DataSetTable = "Operations"
             tableMapping.ColumnMappings.Add("Name", "Name")
             tableMapping.ColumnMappings.Add("Description", "Description")
-            tableMapping.ColumnMappings.Add("EntityType", "EntityType")
             tableMapping.ColumnMappings.Add("ImageURL", "ImageURL")
+            tableMapping.ColumnMappings.Add("DetailURL", "DetailURL")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Operations` WHERE ((`Name` = ?) AND ((? = 1 AND `EntityType` IS NULL"& _ 
-                ") OR (`EntityType` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Operations` WHERE ((`Name` = ?))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_EntityType", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Operations` (`Name`, `Description`, `EntityType`, `ImageURL`) VALUES"& _ 
-                " (?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Operations` (`Name`, `Description`, `ImageURL`, `DetailURL`) VALUES "& _ 
+                "(?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DetailURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DetailURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Operations` SET `Name` = ?, `Description` = ?, `EntityType` = ?, `ImageUR"& _ 
-                "L` = ? WHERE ((`Name` = ?) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType"& _ 
-                "` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Operations` SET `Name` = ?, `Description` = ?, `ImageURL` = ?, `DetailURL"& _ 
+                "` = ? WHERE ((`Name` = ?))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DetailURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DetailURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_EntityType", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12415,7 +14107,7 @@ Namespace MPRLDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Name, Description, EntityType, ImageURL FROM Operations"
+            Me._commandCollection(0).CommandText = "SELECT Name, Description, ImageURL, DetailURL FROM Operations"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -12475,18 +14167,11 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Name As String, ByVal Original_EntityType As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Name As String) As Integer
             If (Original_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Name")
             Else
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Name,String)
-            End If
-            If (Original_EntityType Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_EntityType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -12507,7 +14192,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -12518,15 +14203,15 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(Description,String)
             End If
-            If (EntityType Is Nothing) Then
+            If (ImageURL Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(EntityType,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(ImageURL,String)
             End If
-            If (ImageURL Is Nothing) Then
+            If (DetailURL Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(ImageURL,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(DetailURL,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -12547,7 +14232,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal Original_Name As String, ByVal Original_EntityType As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String, ByVal Original_Name As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -12558,27 +14243,20 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Description,String)
             End If
-            If (EntityType Is Nothing) Then
+            If (ImageURL Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(EntityType,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ImageURL,String)
             End If
-            If (ImageURL Is Nothing) Then
+            If (DetailURL Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ImageURL,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DetailURL,String)
             End If
             If (Original_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Name")
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Name,String)
-            End If
-            If (Original_EntityType Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_EntityType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -12599,8 +14277,8 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Description As String, ByVal EntityType As String, ByVal ImageURL As String, ByVal Original_Name As String, ByVal Original_EntityType As String) As Integer
-            Return Me.Update(Original_Name, Description, EntityType, ImageURL, Original_Name, Original_EntityType)
+        Public Overloads Overridable Function Update(ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String, ByVal Original_Name As String) As Integer
+            Return Me.Update(Original_Name, Description, ImageURL, DetailURL, Original_Name)
         End Function
     End Class
     
@@ -13085,6 +14763,7 @@ Namespace MPRLDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Name", "Name")
             tableMapping.ColumnMappings.Add("Description", "Description")
             tableMapping.ColumnMappings.Add("ImageURL", "ImageURL")
+            tableMapping.ColumnMappings.Add("DetailURL", "DetailURL")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -13093,19 +14772,22 @@ Namespace MPRLDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Setups` (`Name`, `Description`, `ImageURL`) VALUES (?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Setups` (`Name`, `Description`, `ImageURL`, `DetailURL`) VALUES (?, "& _ 
+                "?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DetailURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DetailURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Setups` SET `Name` = ?, `Description` = ?, `ImageURL` = ? WHERE ((`Name` "& _ 
-                "= ?))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Setups` SET `Name` = ?, `Description` = ?, `ImageURL` = ?, `DetailURL` = "& _ 
+                "? WHERE ((`Name` = ?))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ImageURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ImageURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DetailURL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DetailURL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
@@ -13122,7 +14804,7 @@ Namespace MPRLDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Name, Description, ImageURL FROM Setups"
+            Me._commandCollection(0).CommandText = "SELECT Name, Description, ImageURL, DetailURL FROM Setups"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -13207,7 +14889,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -13222,6 +14904,11 @@ Namespace MPRLDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(ImageURL,String)
+            End If
+            If (DetailURL Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(DetailURL,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -13242,7 +14929,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal Original_Name As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Name As String, ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String, ByVal Original_Name As String) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
@@ -13258,10 +14945,15 @@ Namespace MPRLDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ImageURL,String)
             End If
+            If (DetailURL Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DetailURL,String)
+            End If
             If (Original_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Name")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Name,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -13282,8 +14974,8 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Description As String, ByVal ImageURL As String, ByVal Original_Name As String) As Integer
-            Return Me.Update(Original_Name, Description, ImageURL, Original_Name)
+        Public Overloads Overridable Function Update(ByVal Description As String, ByVal ImageURL As String, ByVal DetailURL As String, ByVal Original_Name As String) As Integer
+            Return Me.Update(Original_Name, Description, ImageURL, DetailURL, Original_Name)
         End Function
     End Class
     
@@ -13431,14 +15123,14 @@ Namespace MPRLDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Entity", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Entity", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Entity", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Entity", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Times` (`EntityType`, `Entity`, `TimeElapsed`) VALUES (?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Entity", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Entity", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TimeElapsed", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Times` SET `EntityType` = ?, `Entity` = ?, `TimeElapsed` = ? WHERE ((`ID`"& _ 
@@ -13448,14 +15140,14 @@ Namespace MPRLDataSetTableAdapters
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Entity", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Entity", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TimeElapsed", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_EntityType", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Entity", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Entity", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Entity", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Entity", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13531,7 +15223,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_EntityType As String, ByVal Original_Entity As String, ByVal Original_TimeElapsed As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_EntityType As String, ByVal Original_Entity As String, ByVal Original_TimeElapsed As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
             If (Original_EntityType Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -13549,7 +15241,7 @@ Namespace MPRLDataSetTableAdapters
             End If
             If (Original_TimeElapsed.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_TimeElapsed.Value,Date)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_TimeElapsed.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -13573,7 +15265,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal EntityType As String, ByVal Entity As String, ByVal TimeElapsed As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Insert(ByVal EntityType As String, ByVal Entity As String, ByVal TimeElapsed As Global.System.Nullable(Of Integer)) As Integer
             If (EntityType Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -13585,7 +15277,7 @@ Namespace MPRLDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(Entity,String)
             End If
             If (TimeElapsed.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(TimeElapsed.Value,Date)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(TimeElapsed.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
@@ -13608,7 +15300,7 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal EntityType As String, ByVal Entity As String, ByVal TimeElapsed As Global.System.Nullable(Of Date), ByVal Original_ID As Integer, ByVal Original_EntityType As String, ByVal Original_Entity As String, ByVal Original_TimeElapsed As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Update(ByVal EntityType As String, ByVal Entity As String, ByVal TimeElapsed As Global.System.Nullable(Of Integer), ByVal Original_ID As Integer, ByVal Original_EntityType As String, ByVal Original_Entity As String, ByVal Original_TimeElapsed As Global.System.Nullable(Of Integer)) As Integer
             If (EntityType Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -13620,7 +15312,7 @@ Namespace MPRLDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Entity,String)
             End If
             If (TimeElapsed.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(TimeElapsed.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(TimeElapsed.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
@@ -13641,7 +15333,7 @@ Namespace MPRLDataSetTableAdapters
             End If
             If (Original_TimeElapsed.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_TimeElapsed.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_TimeElapsed.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
@@ -13790,21 +15482,49 @@ Namespace MPRLDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "TimingRecords"
             tableMapping.ColumnMappings.Add("ID", "ID")
+            tableMapping.ColumnMappings.Add("EntityType", "EntityType")
+            tableMapping.ColumnMappings.Add("New Entity Name", "New Entity Name")
+            tableMapping.ColumnMappings.Add("TimeElapsed", "TimeElapsed")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `TimingRecords` WHERE ((`ID` = ?))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `TimingRecords` WHERE ((`ID` = ?) AND ((? = 1 AND `EntityType` IS NUL"& _ 
+                "L) OR (`EntityType` = ?)) AND ((? = 1 AND `New Entity Name` IS NULL) OR (`New En"& _ 
+                "tity Name` = ?)) AND ((? = 1 AND `TimeElapsed` IS NULL) OR (`TimeElapsed` = ?)))"& _ 
+                ""
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_EntityType", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_New_Entity_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "New Entity Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_New_Entity_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "New Entity Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `TimingRecords` DEFAULT VALUES"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `TimingRecords` (`EntityType`, `New Entity Name`, `TimeElapsed`) VALU"& _ 
+                "ES (?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("New_Entity_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "New Entity Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `TimingRecords` WHERE ((`ID` = ?))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `TimingRecords` SET `EntityType` = ?, `New Entity Name` = ?, `TimeElapsed`"& _ 
+                " = ? WHERE ((`ID` = ?) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType` = "& _ 
+                "?)) AND ((? = 1 AND `New Entity Name` IS NULL) OR (`New Entity Name` = ?)) AND ("& _ 
+                "(? = 1 AND `TimeElapsed` IS NULL) OR (`TimeElapsed` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("New_Entity_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "New Entity Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_EntityType", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_EntityType", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EntityType", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_New_Entity_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "New Entity Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_New_Entity_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "New Entity Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TimeElapsed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TimeElapsed", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13820,7 +15540,7 @@ Namespace MPRLDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID FROM TimingRecords"
+            Me._commandCollection(0).CommandText = "SELECT ID, EntityType, [New Entity Name], TimeElapsed FROM TimingRecords"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -13880,8 +15600,29 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_EntityType As String, ByVal Original_New_Entity_Name As String, ByVal Original_TimeElapsed As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
+            If (Original_EntityType Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_EntityType,String)
+            End If
+            If (Original_New_Entity_Name Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_New_Entity_Name,String)
+            End If
+            If (Original_TimeElapsed.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_TimeElapsed.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -13901,7 +15642,22 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert() As Integer
+        Public Overloads Overridable Function Insert(ByVal EntityType As String, ByVal New_Entity_Name As String, ByVal TimeElapsed As Global.System.Nullable(Of Integer)) As Integer
+            If (EntityType Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(EntityType,String)
+            End If
+            If (New_Entity_Name Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(New_Entity_Name,String)
+            End If
+            If (TimeElapsed.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(TimeElapsed.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -13921,8 +15677,44 @@ Namespace MPRLDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Original_ID As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Original_ID,Integer)
+        Public Overloads Overridable Function Update(ByVal EntityType As String, ByVal New_Entity_Name As String, ByVal TimeElapsed As Global.System.Nullable(Of Integer), ByVal Original_ID As Integer, ByVal Original_EntityType As String, ByVal Original_New_Entity_Name As String, ByVal Original_TimeElapsed As Global.System.Nullable(Of Integer)) As Integer
+            If (EntityType Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(EntityType,String)
+            End If
+            If (New_Entity_Name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(New_Entity_Name,String)
+            End If
+            If (TimeElapsed.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(TimeElapsed.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_ID,Integer)
+            If (Original_EntityType Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_EntityType,String)
+            End If
+            If (Original_New_Entity_Name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_New_Entity_Name,String)
+            End If
+            If (Original_TimeElapsed.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_TimeElapsed.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -13954,6 +15746,8 @@ Namespace MPRLDataSetTableAdapters
         
         Private _additionalResourcesTableAdapter As AdditionalResourcesTableAdapter
         
+        Private _adminTableAdapter As AdminTableAdapter
+        
         Private _entitiesTableAdapter As EntitiesTableAdapter
         
         Private _entity_ResourceLinkTableAdapter As Entity_ResourceLinkTableAdapter
@@ -13967,6 +15761,8 @@ Namespace MPRLDataSetTableAdapters
         Private _machine_PPELinkTableAdapter As Machine_PPELinkTableAdapter
         
         Private _machinesTableAdapter As MachinesTableAdapter
+        
+        Private _machineToolTableAdapter As MachineToolTableAdapter
         
         Private _machineTool_OperationsLinkTableAdapter As MachineTool_OperationsLinkTableAdapter
         
@@ -14012,6 +15808,20 @@ Namespace MPRLDataSetTableAdapters
             End Get
             Set
                 Me._additionalResourcesTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property AdminTableAdapter() As AdminTableAdapter
+            Get
+                Return Me._adminTableAdapter
+            End Get
+            Set
+                Me._adminTableAdapter = value
             End Set
         End Property
         
@@ -14110,6 +15920,20 @@ Namespace MPRLDataSetTableAdapters
             End Get
             Set
                 Me._machinesTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property MachineToolTableAdapter() As MachineToolTableAdapter
+            Get
+                Return Me._machineToolTableAdapter
+            End Get
+            Set
+                Me._machineToolTableAdapter = value
             End Set
         End Property
         
@@ -14262,6 +16086,10 @@ Namespace MPRLDataSetTableAdapters
                             AndAlso (Not (Me._additionalResourcesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._additionalResourcesTableAdapter.Connection
                 End If
+                If ((Not (Me._adminTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._adminTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._adminTableAdapter.Connection
+                End If
                 If ((Not (Me._entitiesTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._entitiesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._entitiesTableAdapter.Connection
@@ -14289,6 +16117,10 @@ Namespace MPRLDataSetTableAdapters
                 If ((Not (Me._machinesTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._machinesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._machinesTableAdapter.Connection
+                End If
+                If ((Not (Me._machineToolTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._machineToolTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._machineToolTableAdapter.Connection
                 End If
                 If ((Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._machineTool_OperationsLinkTableAdapter.Connection) Is Nothing)) Then
@@ -14342,6 +16174,9 @@ Namespace MPRLDataSetTableAdapters
                 If (Not (Me._additionalResourcesTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
+                If (Not (Me._adminTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 If (Not (Me._entitiesTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
@@ -14361,6 +16196,9 @@ Namespace MPRLDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._machinesTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._machineToolTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
@@ -14410,15 +16248,6 @@ Namespace MPRLDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._entitiesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Entities.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._entitiesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._setupsTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Setups.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -14428,12 +16257,12 @@ Namespace MPRLDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._featuresTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Features.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._entitiesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Entities.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._featuresTableAdapter.Update(updatedRows))
+                    result = (result + Me._entitiesTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -14443,6 +16272,15 @@ Namespace MPRLDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._pPETableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._featuresTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Features.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._featuresTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -14491,12 +16329,21 @@ Namespace MPRLDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet._MachineTool_OperationsLink.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._machineToolTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.MachineTool.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._machineTool_OperationsLinkTableAdapter.Update(updatedRows))
+                    result = (result + Me._machineToolTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._timesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Times.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._timesTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -14536,12 +16383,21 @@ Namespace MPRLDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._timesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Times.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._adminTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._timesTableAdapter.Update(updatedRows))
+                    result = (result + Me._adminTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet._MachineTool_OperationsLink.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._machineTool_OperationsLinkTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -14572,14 +16428,6 @@ Namespace MPRLDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._entitiesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Entities.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._entitiesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._setupsTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Setups.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -14588,11 +16436,11 @@ Namespace MPRLDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._featuresTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Features.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._entitiesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Entities.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._featuresTableAdapter.Update(addedRows))
+                    result = (result + Me._entitiesTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -14601,6 +16449,14 @@ Namespace MPRLDataSetTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._pPETableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._featuresTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Features.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._featuresTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -14644,11 +16500,19 @@ Namespace MPRLDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet._MachineTool_OperationsLink.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._machineToolTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.MachineTool.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._machineTool_OperationsLinkTableAdapter.Update(addedRows))
+                    result = (result + Me._machineToolTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._timesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Times.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._timesTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -14684,11 +16548,19 @@ Namespace MPRLDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._timesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Times.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._adminTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._timesTableAdapter.Update(addedRows))
+                    result = (result + Me._adminTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet._MachineTool_OperationsLink.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._machineTool_OperationsLinkTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -14718,11 +16590,19 @@ Namespace MPRLDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._timesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Times.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet._MachineTool_OperationsLink.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._timesTableAdapter.Update(deletedRows))
+                    result = (result + Me._machineTool_OperationsLinkTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._adminTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._adminTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -14758,11 +16638,19 @@ Namespace MPRLDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet._MachineTool_OperationsLink.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._timesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Times.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._machineTool_OperationsLinkTableAdapter.Update(deletedRows))
+                    result = (result + Me._timesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._machineToolTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.MachineTool.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._machineToolTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -14806,14 +16694,6 @@ Namespace MPRLDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._pPETableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PPE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._pPETableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._featuresTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.Features.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -14822,11 +16702,11 @@ Namespace MPRLDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._setupsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Setups.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._pPETableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PPE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._setupsTableAdapter.Update(deletedRows))
+                    result = (result + Me._pPETableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -14835,6 +16715,14 @@ Namespace MPRLDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._entitiesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._setupsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Setups.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._setupsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -14892,6 +16780,11 @@ Namespace MPRLDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._adminTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._adminTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             If ((Not (Me._entitiesTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._entitiesTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
@@ -14924,6 +16817,11 @@ Namespace MPRLDataSetTableAdapters
             End If
             If ((Not (Me._machinesTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._machinesTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._machineToolTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._machineToolTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -15013,6 +16911,15 @@ Namespace MPRLDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._additionalResourcesTableAdapter.Adapter)
                     End If
                 End If
+                If (Not (Me._adminTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._adminTableAdapter, Me._adminTableAdapter.Connection)
+                    Me._adminTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._adminTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._adminTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._adminTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._adminTableAdapter.Adapter)
+                    End If
+                End If
                 If (Not (Me._entitiesTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._entitiesTableAdapter, Me._entitiesTableAdapter.Connection)
                     Me._entitiesTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
@@ -15074,6 +16981,15 @@ Namespace MPRLDataSetTableAdapters
                     If Me._machinesTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._machinesTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._machinesTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._machineToolTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._machineToolTableAdapter, Me._machineToolTableAdapter.Connection)
+                    Me._machineToolTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._machineToolTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._machineToolTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._machineToolTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._machineToolTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
@@ -15221,6 +17137,10 @@ Namespace MPRLDataSetTableAdapters
                     Me._additionalResourcesTableAdapter.Connection = CType(revertConnections(Me._additionalResourcesTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._additionalResourcesTableAdapter.Transaction = Nothing
                 End If
+                If (Not (Me._adminTableAdapter) Is Nothing) Then
+                    Me._adminTableAdapter.Connection = CType(revertConnections(Me._adminTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._adminTableAdapter.Transaction = Nothing
+                End If
                 If (Not (Me._entitiesTableAdapter) Is Nothing) Then
                     Me._entitiesTableAdapter.Connection = CType(revertConnections(Me._entitiesTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._entitiesTableAdapter.Transaction = Nothing
@@ -15248,6 +17168,10 @@ Namespace MPRLDataSetTableAdapters
                 If (Not (Me._machinesTableAdapter) Is Nothing) Then
                     Me._machinesTableAdapter.Connection = CType(revertConnections(Me._machinesTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._machinesTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._machineToolTableAdapter) Is Nothing) Then
+                    Me._machineToolTableAdapter.Connection = CType(revertConnections(Me._machineToolTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._machineToolTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._machineTool_OperationsLinkTableAdapter) Is Nothing) Then
                     Me._machineTool_OperationsLinkTableAdapter.Connection = CType(revertConnections(Me._machineTool_OperationsLinkTableAdapter),Global.System.Data.OleDb.OleDbConnection)

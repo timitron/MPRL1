@@ -22,6 +22,7 @@ Partial Class FormHome
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ButtonMachineToolFlow = New System.Windows.Forms.Button()
         Me.ButtonMethodSuggestorFlow = New System.Windows.Forms.Button()
         Me.ButtonOperationsFlow = New System.Windows.Forms.Button()
@@ -48,15 +49,18 @@ Partial Class FormHome
         Me.AddToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatisticsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdminToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TxtboxTitle = New System.Windows.Forms.TextBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
         Me.LnkAbout = New System.Windows.Forms.LinkLabel()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonMachineToolFlow
         '
+        Me.ButtonMachineToolFlow.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.ButtonMachineToolFlow.AutoSize = True
         Me.ButtonMachineToolFlow.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ButtonMachineToolFlow.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -80,6 +84,8 @@ Partial Class FormHome
         Me.ButtonMethodSuggestorFlow.Size = New System.Drawing.Size(721, 75)
         Me.ButtonMethodSuggestorFlow.TabIndex = 2
         Me.ButtonMethodSuggestorFlow.Text = "Machining Method Suggestor"
+        Me.ToolTip1.SetToolTip(Me.ButtonMethodSuggestorFlow, "Suggests what operationst to use based on the feature being created and the desir" &
+        "ed tolerance")
         Me.ButtonMethodSuggestorFlow.UseVisualStyleBackColor = True
         '
         'ButtonOperationsFlow
@@ -93,6 +99,7 @@ Partial Class FormHome
         Me.ButtonOperationsFlow.Size = New System.Drawing.Size(721, 75)
         Me.ButtonOperationsFlow.TabIndex = 3
         Me.ButtonOperationsFlow.Text = "Operations"
+        Me.ToolTip1.SetToolTip(Me.ButtonOperationsFlow, "Look up all available Operations")
         Me.ButtonOperationsFlow.UseVisualStyleBackColor = True
         '
         'MenuStrip1
@@ -100,7 +107,7 @@ Partial Class FormHome
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MachineToolsToolStripMenuItem, Me.MachinesToolStripMenuItem, Me.OperationsToolStripMenuItem, Me.SetupsToolStripMenuItem, Me.FeaturesToolStripMenuItem, Me.ResourcesToolStripMenuItem, Me.PPE, Me.StatisticsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MachineToolsToolStripMenuItem, Me.MachinesToolStripMenuItem, Me.OperationsToolStripMenuItem, Me.SetupsToolStripMenuItem, Me.FeaturesToolStripMenuItem, Me.ResourcesToolStripMenuItem, Me.PPE, Me.StatisticsToolStripMenuItem, Me.AdminToolStripMenuItem})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 299)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -194,13 +201,13 @@ Partial Class FormHome
         'AddToolStripMenuItem4
         '
         Me.AddToolStripMenuItem4.Name = "AddToolStripMenuItem4"
-        Me.AddToolStripMenuItem4.Size = New System.Drawing.Size(152, 24)
+        Me.AddToolStripMenuItem4.Size = New System.Drawing.Size(103, 24)
         Me.AddToolStripMenuItem4.Text = "Add"
         '
         'EditToolStripMenuItem4
         '
         Me.EditToolStripMenuItem4.Name = "EditToolStripMenuItem4"
-        Me.EditToolStripMenuItem4.Size = New System.Drawing.Size(152, 24)
+        Me.EditToolStripMenuItem4.Size = New System.Drawing.Size(103, 24)
         Me.EditToolStripMenuItem4.Text = "Edit"
         '
         'ResourcesToolStripMenuItem
@@ -246,6 +253,12 @@ Partial Class FormHome
         Me.StatisticsToolStripMenuItem.Name = "StatisticsToolStripMenuItem"
         Me.StatisticsToolStripMenuItem.Size = New System.Drawing.Size(74, 23)
         Me.StatisticsToolStripMenuItem.Text = "Statistics"
+        '
+        'AdminToolStripMenuItem
+        '
+        Me.AdminToolStripMenuItem.Name = "AdminToolStripMenuItem"
+        Me.AdminToolStripMenuItem.Size = New System.Drawing.Size(61, 23)
+        Me.AdminToolStripMenuItem.Text = "Admin"
         '
         'TxtboxTitle
         '
@@ -300,6 +313,7 @@ Partial Class FormHome
         Me.Name = "FormHome"
         Me.Padding = New System.Windows.Forms.Padding(0, 10, 0, 3)
         Me.Text = "Home"
+        Me.ToolTip1.SetToolTip(Me, "Lookup information on machines ")
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -336,4 +350,6 @@ Partial Class FormHome
     Friend WithEvents EditToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents LnkAbout As LinkLabel
     Friend WithEvents StatisticsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AdminToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

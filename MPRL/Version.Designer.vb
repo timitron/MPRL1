@@ -41,7 +41,7 @@ Partial Class Version
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(66, 148)
+        Me.Button1.Location = New System.Drawing.Point(64, 136)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 23)
         Me.Button1.TabIndex = 1
@@ -51,7 +51,7 @@ Partial Class Version
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(44, 106)
+        Me.Label2.Location = New System.Drawing.Point(51, 105)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(154, 13)
         Me.Label2.TabIndex = 2
@@ -86,6 +86,9 @@ Partial Class Version
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
+        Me.Location = New System.Drawing.Point(0, 300)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Version"
         Me.Text = "Version."
         Me.ResumeLayout(False)
