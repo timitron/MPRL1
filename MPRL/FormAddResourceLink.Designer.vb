@@ -200,6 +200,7 @@ Partial Class FormAddResourceLink
         Me.Controls.Add(Me.LblEntityname)
         Me.Controls.Add(Me.LblEntityType)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormAddResourceLink"
         Me.Text = "Edit Resource Link"
         Me.GrpBoxAdd.ResumeLayout(False)

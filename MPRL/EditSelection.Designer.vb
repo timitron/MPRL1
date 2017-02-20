@@ -22,6 +22,7 @@ Partial Class EditForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditForm))
         Me.editList = New System.Windows.Forms.ListBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LblFilter = New System.Windows.Forms.Label()
@@ -69,6 +70,7 @@ Partial Class EditForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.editList)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EditForm"
         Me.Text = "Select Entity To Edit"
         Me.ResumeLayout(False)

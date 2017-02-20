@@ -111,6 +111,7 @@ Partial Class FormEditRequiredPPE
         Me.Controls.Add(Me.BtnRemove)
         Me.Controls.Add(Me.LblTargetName)
         Me.Controls.Add(Me.LblTitle)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormEditRequiredPPE"
         Me.Text = "Edit Required PPE"
         Me.ResumeLayout(False)

@@ -207,6 +207,7 @@ Partial Class FormEditMachineLink
         Me.Controls.Add(Me.LblTargetName)
         Me.Controls.Add(Me.LblTitle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormEditMachineLink"
         Me.Text = "Machine Tool - Operation Link"
         Me.GrpBoxRemoveLink.ResumeLayout(False)

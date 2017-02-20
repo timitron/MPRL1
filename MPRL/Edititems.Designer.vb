@@ -182,6 +182,7 @@ Partial Class Edititems
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.SubmitChanges)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Edititems"
         Me.Text = "Edit items"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

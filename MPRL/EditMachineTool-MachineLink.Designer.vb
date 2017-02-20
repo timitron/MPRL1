@@ -181,6 +181,7 @@ Partial Class EditMachineTool_MachineLink
         Me.Controls.Add(Me.LblTargetName)
         Me.Controls.Add(Me.LblTitle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EditMachineTool_MachineLink"
         Me.Text = "EditMachineTool-MachineLink"
         Me.GrpBoxRemoveLink.ResumeLayout(False)

@@ -23,6 +23,7 @@ Partial Class FormMachiningMethodsDisplay
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMachiningMethodsDisplay))
         Me.LstViewMachiningMethods = New System.Windows.Forms.ListView()
         Me.TxtBoxDescription = New System.Windows.Forms.RichTextBox()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
@@ -98,6 +99,7 @@ Partial Class FormMachiningMethodsDisplay
         Me.Controls.Add(Me.TxtBoxDescription)
         Me.Controls.Add(Me.LstViewMachiningMethods)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormMachiningMethodsDisplay"
         Me.Text = "Operations"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

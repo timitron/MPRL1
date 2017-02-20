@@ -23,6 +23,7 @@ Partial Class FormHome
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormHome))
         Me.ButtonMachineToolFlow = New System.Windows.Forms.Button()
         Me.ButtonMethodSuggestorFlow = New System.Windows.Forms.Button()
         Me.ButtonOperationsFlow = New System.Windows.Forms.Button()
@@ -308,6 +309,7 @@ Partial Class FormHome
         Me.Controls.Add(Me.TxtboxTitle)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MinimumSize = New System.Drawing.Size(700, 300)
         Me.Name = "FormHome"
