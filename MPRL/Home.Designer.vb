@@ -47,10 +47,10 @@ Partial Class FormHome
         Me.PPE = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatisticsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TxtboxTitle = New System.Windows.Forms.TextBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
         Me.LnkAbout = New System.Windows.Forms.LinkLabel()
-        Me.StatisticsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -194,13 +194,13 @@ Partial Class FormHome
         'AddToolStripMenuItem4
         '
         Me.AddToolStripMenuItem4.Name = "AddToolStripMenuItem4"
-        Me.AddToolStripMenuItem4.Size = New System.Drawing.Size(103, 24)
+        Me.AddToolStripMenuItem4.Size = New System.Drawing.Size(152, 24)
         Me.AddToolStripMenuItem4.Text = "Add"
         '
         'EditToolStripMenuItem4
         '
         Me.EditToolStripMenuItem4.Name = "EditToolStripMenuItem4"
-        Me.EditToolStripMenuItem4.Size = New System.Drawing.Size(103, 24)
+        Me.EditToolStripMenuItem4.Size = New System.Drawing.Size(152, 24)
         Me.EditToolStripMenuItem4.Text = "Edit"
         '
         'ResourcesToolStripMenuItem
@@ -241,6 +241,12 @@ Partial Class FormHome
         Me.EditToolStripMenuItem6.Size = New System.Drawing.Size(103, 24)
         Me.EditToolStripMenuItem6.Text = "Edit"
         '
+        'StatisticsToolStripMenuItem
+        '
+        Me.StatisticsToolStripMenuItem.Name = "StatisticsToolStripMenuItem"
+        Me.StatisticsToolStripMenuItem.Size = New System.Drawing.Size(74, 23)
+        Me.StatisticsToolStripMenuItem.Text = "Statistics"
+        '
         'TxtboxTitle
         '
         Me.TxtboxTitle.BackColor = System.Drawing.SystemColors.Control
@@ -271,12 +277,6 @@ Partial Class FormHome
         Me.LnkAbout.TabIndex = 10
         Me.LnkAbout.TabStop = True
         Me.LnkAbout.Text = "About"
-        '
-        'StatisticsToolStripMenuItem
-        '
-        Me.StatisticsToolStripMenuItem.Name = "StatisticsToolStripMenuItem"
-        Me.StatisticsToolStripMenuItem.Size = New System.Drawing.Size(74, 23)
-        Me.StatisticsToolStripMenuItem.Text = "Statistics"
         '
         'FormHome
         '

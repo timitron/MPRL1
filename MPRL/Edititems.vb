@@ -29,6 +29,8 @@ Public Class Edititems
             query = "SELECT Name, Description, ImageURL From Setups Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Machine Tools" Then
             query = "SELECT Name, Description, ImageURL From MachineTools Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+        ElseIf GlobalVariables.Click = "Features" Then
+            query = "SELECT Name, Description, ImageURL From Features Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         End If
 
         Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
@@ -89,6 +91,8 @@ Public Class Edititems
                 query = "Update `Setups` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
                 query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
+            ElseIf GlobalVariables.Click = "Features" Then
+                query = "Update `Features` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
             End If
 
             Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
@@ -129,6 +133,8 @@ Public Class Edititems
                 Dim newform
                 newform = FormMachineToolDetails
                 newform.show()
+            Else
+                FormHome.Show()
             End If
 
 
@@ -214,6 +220,14 @@ Public Class Edititems
                     NumOfRelation = 5
                 ElseIf NumOfRelation = 5 Then
                     query = "DELETE FROM `Entity-ResourceLink` WHERE (`EntitiesID` = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 0
+                End If
+            ElseIf GlobalVariables.Click = "Features" Then
+                If NumOfRelation = 1 Then
+                    query = "DELETE FROM `Features` WHERE (name = '" & GlobalVariables.Clicked & "')"
+                    NumOfRelation = 2
+                ElseIf NumOfRelation = 2 Then
+                    query = "DELETE FROM `Operation-FeatureLink` WHERE ((`FeatureID` = '" & GlobalVariables.Clicked & "'))"
                     NumOfRelation = 0
                 End If
             End If

@@ -59,6 +59,9 @@ Public Class EditForm
         ElseIf GlobalVariables.Click = "Resources" Then
             Table_ = "Resources"
             query = "SELECT Name FROM AdditionalResources WHERE (Name Like '%" & Txtboxfilter.Text & "%');"
+        ElseIf GlobalVariables.Click = "Features" Then
+            Table_ = "Features"
+            query = "SELECT Name FROM Features WHERE (Name Like '%" & Txtboxfilter.Text & "%');"
         End If
 
         If IsNothing(ds.Tables(Table_)) Then

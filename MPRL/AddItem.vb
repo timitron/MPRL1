@@ -115,6 +115,8 @@ Public Class AddItem
                 query = "INSERT INTO [Setups] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
                 query = "INSERT INTO [MachineTools] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
+            ElseIf GlobalVariables.Click = "Features" Then
+                query = "INSERT INTO [Features] (`Name`, `Description`, `ImageURL`) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "')"
             End If
 
             Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
@@ -138,34 +140,35 @@ Public Class AddItem
             End If
 
             GlobalVariables.fromadd = True
-                If GlobalVariables.Click = "Machines" Then
-                    Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+            If GlobalVariables.Click = "Machines" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
 
-                    Dim newform
-                    newform = FormMachineDetails
-                    newform.show()
-                ElseIf GlobalVariables.Click = "Operations" Then
-                    Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+                Dim newform
+                newform = FormMachineDetails
+                newform.show()
+            ElseIf GlobalVariables.Click = "Operations" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
 
-                    Dim newform
-                    newform = FormOperation
-                    newform.show()
+                Dim newform
+                newform = FormOperation
+                newform.show()
 
-                ElseIf GlobalVariables.Click = "Setups" Then
-                    Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+            ElseIf GlobalVariables.Click = "Setups" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
 
-                    Dim newform
-                    newform = FormSetup
-                    newform.show()
-                ElseIf GlobalVariables.Click = "Machine Tools" Then
-                    Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
+                Dim newform
+                newform = FormSetup
+                newform.show()
+            ElseIf GlobalVariables.Click = "Machine Tools" Then
+                Global.MPRL.GlobalVariables.Click = GlobalVariables.Clicked
 
-                    Dim newform
-                    newform = FormMachineToolDetails
-                    newform.show()
-                End If
-
+                Dim newform
+                newform = FormMachineToolDetails
+                newform.show()
+            Else
+                FormHome.Show()
             End If
+        End If
     End Sub
 
     Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click
@@ -204,6 +207,8 @@ Public Class AddItem
             query = "SELECT Name from [Setups] WHERE (Name = '" & NameTextBox.Text & "');"
         ElseIf GlobalVariables.Click = "Machine Tools" Then
             query = "SELECT Name from [MachineTools] WHERE (Name = '" & NameTextBox.Text & "');"
+        ElseIf GlobalVariables.Click = "Features" Then
+            query = "SELECT Name from [Features] WHERE (Name = '" & NameTextBox.Text & "');"
         End If
 
 

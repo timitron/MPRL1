@@ -220,5 +220,30 @@
         newform = FeedbackForm
         newform.Show()
     End Sub
+
+    Private Sub AddToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem4.Click
+        If My.Application.OpenForms.Count = 2 Then
+            MessageBox.Show("Please close open add/edit tab before continuing.")
+            Exit Sub
+        End If
+        GlobalVariables.Click = "Features"
+
+        Dim newform = AddItem
+        newform.Show()
+
+    End Sub
+
+    Private Sub EditToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem4.Click
+        If My.Application.OpenForms.Count = 2 Then
+            MessageBox.Show("Please close open add/edit tab before continuing.")
+            Exit Sub
+        End If
+
+        GlobalVariables.Click = "Features"
+
+        Dim newform
+        newform = EditForm
+        newform.show()
+    End Sub
 End Class
 

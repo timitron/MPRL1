@@ -102,3 +102,5 @@ C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.EditMac
 C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FeedbackForm.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.FormAdmin.resources
 C:\Users\Tim Lykins\Documents\GitHub\MPRL\MPRL1\MPRL\obj\Debug\MPRL.Version.resources
+C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.FormAdmin.resources
+C:\Users\Matthew\Documents\My Documents\School\MPRL1\MPRL\obj\Debug\MPRL.Version.resources
