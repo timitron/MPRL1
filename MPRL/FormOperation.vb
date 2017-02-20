@@ -16,6 +16,12 @@ Public Class FormOperation
             Button1.Hide()
         End If
 
+        If GlobalVariables.AdminBuild = False Then
+            BtnEditFeatureLink.Visible = False
+            BtnEditResources.Visible = False
+        End If
+
+
         LblTitle.Text = Operation
 
         Dim startpoint As New Point(40, 600)

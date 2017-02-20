@@ -2,7 +2,7 @@
 Imports System.IO
 Imports System.Net
 Public Class GlobalVariables
-    Public Shared AdminBuild As Boolean = True 'Set to true and build the application for an admin .exe, set to false for a client exe. 
+    Public Shared AdminBuild As Boolean = False 'Set to true and build the application for an admin .exe, set to false for a client exe. 
     Public Shared IconSizeWidth As Int16 = 90 '1-128 
     Public Shared IconSizeHeight As Int16 = 90 '1-128
     Public Shared FormWidth As Int32 = 800 'width in pixels of forms, generally 900 - 1600. 

@@ -10,6 +10,10 @@ Public Class FormSetup
 
     Private Sub FormClampingMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        If GlobalVariables.AdminBuild = False Then
+            BtnEditResources.Visible = True
+        End If
+
         If GlobalVariables.fromadd = True Then
             Button1.Hide()
         End If

@@ -12,6 +12,12 @@ Public Class FormMachineDetails
         If GlobalVariables.fromadd = True Then
             Button1.Hide()
         End If
+
+        If GlobalVariables.AdminBuild = True Then
+            BtnEditOptionalPPE.Visible = False
+            BtnEditReqPPE.Visible = False
+            EBtnEditAdditionalResources.Visible = False
+        End If
         LblTitle.Text = Machine
 
         CustFunctions.SetImage(GlobalVariables.cnn, "Machine", Machine, PictureOverview, ds)
