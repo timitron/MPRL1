@@ -22,14 +22,11 @@ Partial Class FormMachineDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMachineDetails))
         Me.LstResources = New System.Windows.Forms.ListView()
         Me.LblTitle = New System.Windows.Forms.Label()
         Me.PictureOverview = New System.Windows.Forms.PictureBox()
         Me.MprlDataSet1 = New MPRL.MPRLDataSet()
-        Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.LstOptPPE = New System.Windows.Forms.ListView()
         Me.LstReqPPE = New System.Windows.Forms.ListView()
         Me.LblOptionalPPE = New System.Windows.Forms.Label()
@@ -84,14 +81,6 @@ Partial Class FormMachineDetails
         '
         Me.MprlDataSet1.DataSetName = "MPRLDataSet"
         Me.MprlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PrintForm1
-        '
-        Me.PrintForm1.DocumentName = "document"
-        Me.PrintForm1.Form = Me
-        Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
-        Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
-        Me.PrintForm1.PrintFileName = Nothing
         '
         'LstOptPPE
         '
@@ -263,8 +252,6 @@ Partial Class FormMachineDetails
     Friend WithEvents LblTitle As Label
     Friend WithEvents PictureOverview As PictureBox
     Friend WithEvents MprlDataSet1 As MPRLDataSet
-    Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
-    Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents LstOptPPE As ListView
     Friend WithEvents LblOptionalPPE As Label
     Friend WithEvents LblRequiredPPE As Label

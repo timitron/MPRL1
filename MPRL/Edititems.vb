@@ -155,6 +155,7 @@ Public Class Edititems
             Exit Sub
         End If
 
+        Dim imagequery As String = ""
         Dim NumOfRelation As Integer = 1
 
         Do Until NumOfRelation = 0
