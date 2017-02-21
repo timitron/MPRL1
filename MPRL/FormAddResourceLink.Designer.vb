@@ -158,6 +158,7 @@ Partial Class FormAddResourceLink
         '
         'LstViewResources
         '
+        Me.LstViewResources.FullRowSelect = True
         Me.LstViewResources.Location = New System.Drawing.Point(6, 19)
         Me.LstViewResources.MultiSelect = False
         Me.LstViewResources.Name = "LstViewResources"

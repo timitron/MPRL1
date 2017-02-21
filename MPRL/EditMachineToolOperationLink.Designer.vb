@@ -92,6 +92,7 @@ Partial Class FormEditMachineLink
         '
         'LstViewFeatures
         '
+        Me.LstViewFeatures.FullRowSelect = True
         Me.LstViewFeatures.Location = New System.Drawing.Point(6, 19)
         Me.LstViewFeatures.MultiSelect = False
         Me.LstViewFeatures.Name = "LstViewFeatures"

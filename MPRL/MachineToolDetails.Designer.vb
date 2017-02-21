@@ -94,6 +94,7 @@ Partial Class FormMachineToolDetails
         '
         Me.LstResources.BackColor = System.Drawing.SystemColors.Control
         Me.LstResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LstResources.FullRowSelect = True
         Me.LstResources.Location = New System.Drawing.Point(6, 6)
         Me.LstResources.Margin = New System.Windows.Forms.Padding(3, 3, 3, 200)
         Me.LstResources.MinimumSize = New System.Drawing.Size(500, 100)

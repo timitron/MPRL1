@@ -63,6 +63,7 @@ Partial Class FeatureView
         Me.LstviewTolerances.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LstviewTolerances.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LstviewTolerances.FullRowSelect = True
         Me.LstviewTolerances.Location = New System.Drawing.Point(796, 85)
         Me.LstviewTolerances.MultiSelect = False
         Me.LstviewTolerances.Name = "LstviewTolerances"
