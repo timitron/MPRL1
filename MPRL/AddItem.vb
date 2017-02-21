@@ -57,8 +57,8 @@ Public Class AddItem
         End If
 
         'save picture if it is not inside the folder alread
-        If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then
-            Dim folder As String
+
+        Dim folder As String
 
             If GlobalVariables.Click = "Machine Tools" Then
                 folder = "MachineTools"
@@ -70,26 +70,12 @@ Public Class AddItem
             PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
             PictureBox1.ImageLocation = FileToSaveAs
             PictureBox1.Refresh()
-        End If
 
-        If PctureboxIcon.ImageLocation.StartsWith(Application.StartupPath) = False Then
-            'MessageBox.Show("Image must be in ""Debug"" folder")
-
-            Dim folder As String
-
-            If GlobalVariables.Click = "Machine Tools" Then
-                folder = "MachineTools"
-            Else
-                folder = GlobalVariables.Click
-            End If
-
-            'if this image already exists this will cause an error
-            Dim FileToSaveAs1 As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & "-icon" & ".Jpeg")
-            PctureboxIcon.Image.Save(FileToSaveAs1, System.Drawing.Imaging.ImageFormat.Jpeg)
+        'if this image already exists this will cause an error
+        Dim FileToSaveAs1 As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & "-icon" & ".Jpeg")
+        PctureboxIcon.Image.Save(FileToSaveAs1, System.Drawing.Imaging.ImageFormat.Jpeg)
             PctureboxIcon.ImageLocation = FileToSaveAs1
             PctureboxIcon.Refresh()
-
-        End If
 
         Dim result As Integer = MessageBox.Show("Are you sure you want to add " & NameTextBox.Text & " to " & GlobalVariables.Click & "?", "Submit Changes?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then

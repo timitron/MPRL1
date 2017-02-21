@@ -81,7 +81,7 @@ Public Class Edititems
 
 
         'if the icon has changed and it's not in the start up folder 
-        If PctureboxIcon.ImageLocation.StartsWith(Application.StartupPath) = False And PctureboxIcon.ImageLocation <> Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL") Then
+        If PctureboxIcon.ImageLocation <> Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL") Then
 
             'delete old picture
             Try
@@ -107,7 +107,7 @@ Public Class Edititems
         'if the detailed image has changed and it's not in the start up folder 
         If GlobalVariables.Click <> "PPE" And GlobalVariables.Click <> "Features" Then
             'if this picture has changed and it's not in the start up folder 
-            If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False And PictureBox1.ImageLocation <> Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL") Then
+            If PictureBox1.ImageLocation <> Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL") Then
 
                 Try
                     'delete old picture
@@ -144,17 +144,17 @@ Public Class Edititems
             Dim query As String
 
             If GlobalVariables.Click = "PPE" Then
-                query = "Update `PPE` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
+                query = "Update `PPE` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PctureboxIcon.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machines" Then
-                query = "Update `Machines` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "', `DetailURL` = '" & PctureboxIcon.ImageLocation & "' WHERE (( name ='" & GlobalVariables.Clicked & "'))"
+                query = "Update `Machines` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PctureboxIcon.ImageLocation & "', `DetailURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Operations" Then
-                query = "Update `Operations` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "', `DetailURL` = '" & PctureboxIcon.ImageLocation & "' WHERE (( name = '" & GlobalVariables.Clicked & "'))"
+                query = "Update `Operations` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PctureboxIcon.ImageLocation & "', `DetailURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name = '" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Setups" Then
-                query = "Update `Setups` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "', `DetailURL` = '" & PctureboxIcon.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
+                query = "Update `Setups` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PctureboxIcon.ImageLocation & "', `DetailURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
-                query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "', `DetailURL` = '" & PctureboxIcon.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
+                query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PctureboxIcon.ImageLocation & "', `DetailURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Features" Then
-                query = "Update `Features` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
+                query = "Update `Features` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PctureboxIcon.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
             End If
 
             Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
@@ -206,6 +206,9 @@ Public Class Edititems
 
     Private Sub Delete_Entity(sender As Object, e As EventArgs) Handles BtnDelete.Click
         GlobalVariables.cnn.Close()
+
+        Dim Table_ As String = "EntityInfo"
+
         Dim result As Integer = MessageBox.Show("Are you sure you want to delete " & GlobalVariables.Clicked & "?", "Delete?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
@@ -218,6 +221,12 @@ Public Class Edititems
             If GlobalVariables.Click = "PPE" Then
                 If NumOfRelation = 1 Then
                     query = "DELETE FROM `PPE` WHERE (name ='" & GlobalVariables.Clicked & "')"
+                    Try
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
+                    Catch ex As Exception
+
+                    End Try
+
                     NumOfRelation = 2
                 ElseIf NumOfRelation = 2 Then
                     query = "DELETE FROM `Machine-PPELink` WHERE  (`PPEID` = '" & GlobalVariables.Clicked & "')"
@@ -226,6 +235,13 @@ Public Class Edititems
             ElseIf GlobalVariables.Click = "Machines" Then
                 If NumOfRelation = 1 Then
                     query = "DELETE FROM `Machines` WHERE ( name ='" & GlobalVariables.Clicked & "')"
+                    Try
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
+                    Catch ex As Exception
+
+                    End Try
+
                     NumOfRelation = 2
                 ElseIf NumOfRelation = 2 Then
                     query = "DELETE FROM `Machine-PPELink` WHERE (`MachineID` = '" & GlobalVariables.Clicked & "')"
@@ -240,6 +256,12 @@ Public Class Edititems
             ElseIf GlobalVariables.Click = "Operations" Then
                 If NumOfRelation = 1 Then
                     query = "DELETE FROM `Operations` WHERE (( name = '" & GlobalVariables.Clicked & "'))"
+                    Try
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
+                    Catch ex As Exception
+
+                    End Try
                     NumOfRelation = 2
                 ElseIf NumOfRelation = 2 Then
                     query = "DELETE FROM `MachineTool-OperationsLink` WHERE (`OperationsID` = '" & GlobalVariables.Clicked & "')"
@@ -254,6 +276,12 @@ Public Class Edititems
             ElseIf GlobalVariables.Click = "Setups" Then
                 If NumOfRelation = 1 Then
                     query = "DELETE FROM `Setups` WHERE (name ='" & GlobalVariables.Clicked & "')"
+                    Try
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
+                    Catch ex As Exception
+
+                    End Try
                     NumOfRelation = 2
                 ElseIf NumOfRelation = 2 Then
                     query = "DELETE FROM `MachineTool-SetupLink` WHERE (`SetupID` = '" & GlobalVariables.Clicked & "')"
@@ -265,6 +293,12 @@ Public Class Edititems
             ElseIf GlobalVariables.Click = "Machine Tools" Then
                 If NumOfRelation = 1 Then
                     query = "DELETE FROM `MachineTools` WHERE (name = '" & GlobalVariables.Clicked & "')"
+                    Try
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
+                    Catch ex As Exception
+
+                    End Try
                     NumOfRelation = 2
                 ElseIf NumOfRelation = 2 Then
                     query = "DELETE FROM `Machine-MachineToolLink` WHERE (`MachineToolID` = '" & GlobalVariables.Clicked & "')"
@@ -282,6 +316,12 @@ Public Class Edititems
             ElseIf GlobalVariables.Click = "Features" Then
                 If NumOfRelation = 1 Then
                     query = "DELETE FROM `Features` WHERE (name = '" & GlobalVariables.Clicked & "')"
+                    Try
+
+                        My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
+                    Catch ex As Exception
+
+                    End Try
                     NumOfRelation = 2
                 ElseIf NumOfRelation = 2 Then
                     query = "DELETE FROM `Operation-FeatureLink` WHERE ((`FeatureID` = '" & GlobalVariables.Clicked & "'))"
