@@ -26,18 +26,15 @@ Partial Class FormResource
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormResource))
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Browse = New System.Windows.Forms.Button()
         Me.SubmitChanges = New System.Windows.Forms.Button()
         Me.NameTextBox = New System.Windows.Forms.TextBox()
-        Me.TypeTextBox = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AddressTextBox = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.BtnDelete = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label5
@@ -58,18 +55,9 @@ Partial Class FormResource
         Me.Label4.Size = New System.Drawing.Size(0, 13)
         Me.Label4.TabIndex = 19
         '
-        'Browse
-        '
-        Me.Browse.Location = New System.Drawing.Point(99, 159)
-        Me.Browse.Name = "Browse"
-        Me.Browse.Size = New System.Drawing.Size(100, 23)
-        Me.Browse.TabIndex = 18
-        Me.Browse.Text = "Browse"
-        Me.Browse.UseVisualStyleBackColor = True
-        '
         'SubmitChanges
         '
-        Me.SubmitChanges.Location = New System.Drawing.Point(247, 208)
+        Me.SubmitChanges.Location = New System.Drawing.Point(247, 111)
         Me.SubmitChanges.Name = "SubmitChanges"
         Me.SubmitChanges.Size = New System.Drawing.Size(153, 43)
         Me.SubmitChanges.TabIndex = 17
@@ -83,30 +71,14 @@ Partial Class FormResource
         Me.NameTextBox.Size = New System.Drawing.Size(301, 20)
         Me.NameTextBox.TabIndex = 16
         '
-        'TypeTextBox
-        '
-        Me.TypeTextBox.Location = New System.Drawing.Point(99, 94)
-        Me.TypeTextBox.Name = "TypeTextBox"
-        Me.TypeTextBox.Size = New System.Drawing.Size(301, 20)
-        Me.TypeTextBox.TabIndex = 15
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(33, 133)
+        Me.Label3.Location = New System.Drawing.Point(33, 85)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.Size = New System.Drawing.Size(29, 13)
         Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Adress"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(33, 97)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(31, 13)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Type"
+        Me.Label3.Text = "URL"
         '
         'Label1
         '
@@ -119,7 +91,7 @@ Partial Class FormResource
         '
         'AddressTextBox
         '
-        Me.AddressTextBox.Location = New System.Drawing.Point(99, 133)
+        Me.AddressTextBox.Location = New System.Drawing.Point(99, 85)
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(301, 20)
         Me.AddressTextBox.TabIndex = 21
@@ -127,16 +99,6 @@ Partial Class FormResource
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'DeleteButton
-        '
-        Me.DeleteButton.BackColor = System.Drawing.Color.Red
-        Me.DeleteButton.Location = New System.Drawing.Point(247, 159)
-        Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(153, 43)
-        Me.DeleteButton.TabIndex = 22
-        Me.DeleteButton.Text = "Delete"
-        Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'NotifyIcon1
         '
@@ -150,22 +112,30 @@ Partial Class FormResource
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
+        'BtnDelete
+        '
+        Me.BtnDelete.BackColor = System.Drawing.Color.Red
+        Me.BtnDelete.Location = New System.Drawing.Point(99, 111)
+        Me.BtnDelete.Name = "BtnDelete"
+        Me.BtnDelete.Size = New System.Drawing.Size(142, 43)
+        Me.BtnDelete.TabIndex = 22
+        Me.BtnDelete.Text = "Delete"
+        Me.BtnDelete.UseVisualStyleBackColor = False
+        '
         'FormResource
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(432, 261)
-        Me.Controls.Add(Me.DeleteButton)
+        Me.ClientSize = New System.Drawing.Size(432, 183)
+        Me.Controls.Add(Me.BtnDelete)
         Me.Controls.Add(Me.AddressTextBox)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Browse)
         Me.Controls.Add(Me.SubmitChanges)
         Me.Controls.Add(Me.NameTextBox)
-        Me.Controls.Add(Me.TypeTextBox)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormResource"
         Me.Text = "Resources"
@@ -176,16 +146,13 @@ Partial Class FormResource
 
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Browse As Button
     Friend WithEvents SubmitChanges As Button
     Friend WithEvents NameTextBox As TextBox
-    Friend WithEvents TypeTextBox As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents AddressTextBox As TextBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents DeleteButton As Button
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents BtnDelete As Button
 End Class

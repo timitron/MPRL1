@@ -12,135 +12,136 @@ Public Class FormResource
     Dim originalText As String
 
     Private Sub FormResource_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'If adding a resource set all fields to blanks and hide the delete button. 
         If GlobalVariables.Click = "add" Then
             Label5.Text = "Add Resource"                                        'states what is being added
-            TypeTextBox.Text = "Type"                                   'sets description to default
+            'sets description to default
             NameTextBox.Text = ""
             AddressTextBox.Text = ""
-            DeleteButton.Hide()
+            BtnDelete.Hide()
 
-        Else
-            Dim Table_ As String = "MachineTool"
+        Else 'if editing a resource load the resource information
+
+            Dim Table_ As String = "Resource" 'table name for use in the ds dataset 
+
+            query = "SELECT Name, Hyperlink FROM AdditionalResources Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+
             GlobalVariables.cnn.Open()
-            query = "SELECT Name, Type, Hyperlink FROM AdditionalResources Where (([Name] = '" & GlobalVariables.Clicked & "'));"
-            Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
-            Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
-            data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
+            Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
+            Dim data As New OleDbDataAdapter(cmd)
+            data.Fill(ds, Table_)
 
+            'set the page title and text box information with the returned information 
             Label5.Text = "Edit " & ds.Tables(Table_).Rows(0)("Name")                                        '
-            TypeTextBox.Text = ds.Tables(Table_).Rows(0)("Type")
             NameTextBox.Text = ds.Tables(Table_).Rows(0)("Name")
             AddressTextBox.Text = ds.Tables(Table_).Rows(0)("Hyperlink")
 
             GlobalVariables.cnn.Close()
-            originalText = NameTextBox.Text
+
+            originalText = NameTextBox.Text 'used to track if the name of the resource has been edited
         End If
 
-    End Sub
-
-    Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click
-        '''opens file dialog to browse for image
-        OpenFileDialog1.ShowDialog()
-        AddressTextBox.Text = OpenFileDialog1.FileName
     End Sub
 
     Private Sub SubmitChanges_Click(sender As Object, e As EventArgs) Handles SubmitChanges.Click
-        ''' checks for correct info then updates databasewith added item
-        If NameTextBox.Text = "" Then                                                   'checks that a name has been created
+        'checks for correct info then updates database with modifications or adds item to database 
+
+        Dim updatelinks As Boolean = False 'tracks if linked resource names need to be changed as well. 
+
+        'check for name 
+        If NameTextBox.Text = "" Then
             NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "You must enter a resource name.", ToolTipIcon.Info)
             Exit Sub
         End If
 
-        If AddressTextBox.Text = "" Then                                                   'checks that a name has been created
-            MessageBox.Show("You must enter a resource Address.")
-            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "You must enter a resource name.", ToolTipIcon.Info)
+        'check for resource
+        If AddressTextBox.Text = "" Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "You must enter a resource URL.", ToolTipIcon.Info)
             Exit Sub
         End If
 
-        If TypeTextBox.Text = "" Then                        'sets description to default if none has been entered
-            TypeTextBox.Text = "Description Goes Here"
+        'check for valid URL format
+        If (AddressTextBox.Text.StartsWith("www.") = False) And (AddressTextBox.Text.StartsWith("http://") = False) And (AddressTextBox.Text.StartsWith("https://") = False) Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "URL not Recognized: Must start with www., http://, or https://", ToolTipIcon.Info)
+            Exit Sub
         End If
 
-        If TypeTextBox.Text = "" Then
-            TypeTextBox.Text = "Type"
-        End If
 
+        'if you did not click add (AKA you clicked edit) use these queries
         If GlobalVariables.Click <> "add" Then
+
+            'If the name has changed
             If originalText <> NameTextBox.Text Then
-                MessageBox.Show("Currently the name can Not be edited. If it must be changed Then delete thie item And add a New one With the correct name * note any relationships will have To be added again")
-                NameTextBox.Text = originalText
-                Exit Sub
-            End If
-        End If
+                updatelinks = True
+                query = "UPDATE `AdditionalResources` SET `Name` = '" & NameTextBox.Text & "', `Hyperlink` = '" & AddressTextBox.Text & "' WHERE (name= '" & originalText & "')"
 
-
-        If AddressTextBox.Text.StartsWith(Application.StartupPath) = False Then '' check that imge comes from apllication start path
-            If AddressTextBox.Text.StartsWith("www.") = False Then
-                MessageBox.Show("Address Must be a web address Or a file address that Is located In debug")
-                Exit Sub
+            Else 'if the name didn't change update the URL 
+                query = "UPDATE `AdditionalResources` SET `Hyperlink` = '" & AddressTextBox.Text & "' WHERE (name= '" & NameTextBox.Text & "')"
             End If
+
+        Else 'if adding entity
+            query = " INSERT INTO `AdditionalResources` (`Name`, `Hyperlink`) VALUES ('" & NameTextBox.Text & "', '" & AddressTextBox.Text & "')"
         End If
 
         'checks to make sure item should be added
-        Dim result As Integer = MessageBox.Show("Are you sure you want to add " & NameTextBox.Text & " To resources?", "Submit Changes?", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Are you sure you want to add/edit " & NameTextBox.Text & "?", "Submit Changes?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
         ElseIf result = DialogResult.Yes Then
-            If AddressTextBox.Text.StartsWith(Application.StartupPath) = False Then
-                AddressTextBox.Text = Replace(AddressTextBox.Text, Application.StartupPath, "")
+
+            'I don't know what this is for now... 
+            'If AddressTextBox.Text.StartsWith(Application.StartupPath) = False Then
+            'AddressTextBox.Text = Replace(AddressTextBox.Text, Application.StartupPath, "")
+            'End If
+
+            'if links need to be updated then run this update prior to changing the entity name. 
+            If updatelinks = True Then
+                Dim updatequery = "UPDATE `Entity-ResourceLink` SET `ResourceID` = '" & NameTextBox.Text & "' WHERE (ResourceID = '" & originalText & "')"
+                Dim updatecmd As New OleDbCommand(query, GlobalVariables.cnn)
+                Dim updateresponse As Integer
+
+                GlobalVariables.cnn.Open()
+                updateresponse = updatecmd.ExecuteNonQuery()
+                GlobalVariables.cnn.Close()
+
+                NotifyIcon1.ShowBalloonTip(500, "Links Modified", updateresponse & " Links modified upon edit", ToolTipIcon.Info)
             End If
 
-            If GlobalVariables.Click = "add" Then
-                query = " INSERT INTO `AdditionalResources` (`Name`, `Type`, `Hyperlink`) VALUES ('" & NameTextBox.Text & "', '" & TypeTextBox.Text & "', '" & AddressTextBox.Text & "')"
-            Else
-                query = "UPDATE `AdditionalResources` SET `Name` = '" & NameTextBox.Text & "', `Type` = '" & TypeTextBox.Text & "', `Hyperlink` = '" & AddressTextBox.Text & "' WHERE (name= '" & NameTextBox.Text & "')"
-            End If
-
+            'execute the edit / add query
             Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
             Dim response As Integer
 
             GlobalVariables.cnn.Open()
-
             response = cmd.ExecuteNonQuery()
-
             GlobalVariables.cnn.Close()
 
             Me.Close()                                              'closes from
 
-            GlobalVariables.fromadd = True                          'sets form add to true to hide previous button in opened page
-
         End If
     End Sub
 
-    Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
+    Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+
         GlobalVariables.cnn.Close()
+
         Dim result As Integer = MessageBox.Show("Are you sure you want to delete " & GlobalVariables.Clicked & "?", "Delete ", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
         End If
 
-        Dim NumOfRelation As Integer = 1
+        query = "DELETE FROM `AdditionalResources` WHERE (`Name` = '" & GlobalVariables.Clicked & "')"
+        Dim resourcecmd As New OleDbCommand(query, GlobalVariables.cnn)
+        query = "DELETE FROM `Entity-ResourceLink` WHERE (`ResourceID` ='" & GlobalVariables.Clicked & "' )"
+        Dim linkingcmd As New OleDbCommand(query, GlobalVariables.cnn)
 
-        Do Until NumOfRelation = 0
+        Dim response As Integer
+        GlobalVariables.cnn.Open()
+        Dim linkresponse = linkingcmd.ExecuteNonQuery()
+        response = resourcecmd.ExecuteNonQuery
+        GlobalVariables.cnn.Close()
 
-            If NumOfRelation = 1 Then
-                query = "DELETE FROM `AdditionalResources` WHERE (`Name` = '" & GlobalVariables.Clicked & "')"
-                NumOfRelation = 2
-            ElseIf NumOfRelation = 2 Then
-                query = "DELETE FROM `Entity-ResourceLink` WHERE (`ResourceID` ='" & GlobalVariables.Clicked & "' )"
-                NumOfRelation = 0
-            End If
-
-
-
-            Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
-            Dim response As Integer
-
-            GlobalVariables.cnn.Open()
-
-            response = cmd.ExecuteNonQuery()
-            GlobalVariables.cnn.Close()
-        Loop
+        NotifyIcon1.ShowBalloonTip(500, "Deleted", response & " Entities and " & linkresponse & " links Deleted", ToolTipIcon.Info)
 
         Me.Close()
         FormHome.Show()

@@ -22,12 +22,7 @@ Partial Class FormSetup
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSetup))
-        Me.MprlDataSet1 = New MPRL.MPRLDataSet()
-        Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.AdditionalResourcesTableAdapter1 = New MPRL.MPRLDataSetTableAdapters.AdditionalResourcesTableAdapter()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnEditResources = New System.Windows.Forms.Button()
         Me.LstResources = New System.Windows.Forms.ListView()
@@ -37,28 +32,10 @@ Partial Class FormSetup
         Me.Home = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LblTitle = New System.Windows.Forms.Label()
-        CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MprlDataSet1
-        '
-        Me.MprlDataSet1.DataSetName = "MPRLDataSet"
-        Me.MprlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PrintForm1
-        '
-        Me.PrintForm1.DocumentName = "document"
-        Me.PrintForm1.Form = Me
-        Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
-        Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
-        Me.PrintForm1.PrintFileName = Nothing
-        '
-        'AdditionalResourcesTableAdapter1
-        '
-        Me.AdditionalResourcesTableAdapter1.ClearBeforeFill = True
         '
         'GroupBox1
         '
@@ -170,7 +147,6 @@ Partial Class FormSetup
         Me.Name = "FormSetup"
         Me.Text = "Machine Setup"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.MprlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureOverview, System.ComponentModel.ISupportInitialize).EndInit()
@@ -179,11 +155,6 @@ Partial Class FormSetup
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents PrintDocument1 As Printing.PrintDocument
-    Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
-    Friend WithEvents MprlDataSet1 As MPRLDataSet
-    Friend WithEvents AdditionalResourcesTableAdapter1 As MPRLDataSetTableAdapters.AdditionalResourcesTableAdapter
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents PictureOverview As PictureBox
     Friend WithEvents LblTitle As Label
