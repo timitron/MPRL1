@@ -5,8 +5,7 @@ Imports System.IO
 Imports System.Net
 
 Public Class FormResource
-    Dim cnnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\MPRL.accdb"
-    Dim cnn As OleDbConnection = New OleDbConnection(cnnString)
+
     Dim query As String
     Dim ds As New DataSet                       'defines dataset for data table
 
@@ -97,14 +96,14 @@ Public Class FormResource
                 query = "UPDATE `AdditionalResources` SET `Name` = '" & NameTextBox.Text & "', `Type` = '" & TypeTextBox.Text & "', `Hyperlink` = '" & AddressTextBox.Text & "' WHERE (name= '" & NameTextBox.Text & "')"
             End If
 
-            Dim cmd As New OleDbCommand(query, cnn)
+            Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
             Dim response As Integer
 
-            cnn.Open()
+            GlobalVariables.cnn.Open()
 
             response = cmd.ExecuteNonQuery()
 
-            cnn.Close()
+            GlobalVariables.cnn.Close()
 
             Me.Close()                                              'closes from
 

@@ -110,7 +110,7 @@ Public Class AddItem
             ElseIf GlobalVariables.Click = "Machines" Then
                 query = "INSERT INTO [Machines] (Name, MachineRoom, Description, EntityType, ImageURL, DetailURL) VALUES ('" & NameTextBox.Text & "', 'Rogers118', '" & DescriptionTextBox.Text & "', 'Machines', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Operations" Then
-                query = "INSERT INTO [Operations] (`Name`, `Description`, `EntityType`,  `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', 'Operations', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
+                query = "INSERT INTO [Operations] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Setups" Then
                 query = "INSERT INTO [Setups] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machine Tools" Then

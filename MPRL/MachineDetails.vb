@@ -13,7 +13,7 @@ Public Class FormMachineDetails
             Button1.Hide()
         End If
 
-        If GlobalVariables.AdminBuild = True Then
+        If GlobalVariables.AdminBuild = False Then
             BtnEditOptionalPPE.Visible = False
             BtnEditReqPPE.Visible = False
             EBtnEditAdditionalResources.Visible = False
