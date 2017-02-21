@@ -13,39 +13,51 @@ Public Class Edititems
 
 
     Private Sub edititems_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim Table_ As String = "EntityInfo"
 
 
-        Dim Table_ As String = "MachineTool"
-
-        GlobalVariables.cnn.Open()
 
         If GlobalVariables.Click = "PPE" Then
             query = "SELECT Name, Description, ImageURL From PPE Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+            BtnBrowse.Enabled = False
         ElseIf GlobalVariables.Click = "Machines" Then
-            query = "SELECT Name,  Description, ImageURL From Machines Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+            query = "SELECT Name,  Description, ImageURL, DetailURL From Machines Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Operations" Then
-            query = "SELECT Name, Description, ImageURL From Operations Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+            query = "SELECT Name, Description, ImageURL, DetailURL From Operations Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Setups" Then
-            query = "SELECT Name, Description, ImageURL From Setups Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+            query = "SELECT Name, Description, ImageURL, DeatilURL From Setups Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Machine Tools" Then
-            query = "SELECT Name, Description, ImageURL From MachineTools Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+            query = "SELECT Name, Description, ImageURL, DetailURL From MachineTools Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Features" Then
+            BtnBrowse.Enabled = False
             query = "SELECT Name, Description, ImageURL From Features Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         End If
 
-        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
-        Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
-        data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
+        Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
+
+        GlobalVariables.cnn.Open()
+        Dim data As New OleDbDataAdapter(cmd)
+        data.Fill(ds, Table_)
+        GlobalVariables.cnn.Close()
+
         Label5.Text = "Edit " & ds.Tables(Table_).Rows(0)("Name")
-        PictureBox1.ImageLocation = Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL")
+        PctureboxIcon.ImageLocation = Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL")
         DescriptionTextBox.Text = ds.Tables(Table_).Rows(0)("Description")
         NameTextBox.Text = ds.Tables(Table_).Rows(0)("Name")
 
-        GlobalVariables.cnn.Close()
+        'no detail image for PPE or Features 
+        If GlobalVariables.Click <> "PPE" And GlobalVariables.Click <> "Features" Then
+            PictureBox1.ImageLocation = Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL")
+        End If
+
         originalText = NameTextBox.Text
     End Sub
 
     Private Sub SubmitChanges_Click(sender As Object, e As EventArgs) Handles SubmitChanges.Click
+        'locates changes and updates database 
+
+        Dim Table_ As String = "EntityInfo"
+
         If NameTextBox.Text = "" Then
             MessageBox.Show("You must enter a " & GlobalVariables.Click & " name.")
             NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "No resource selected", ToolTipIcon.Info)
@@ -57,40 +69,90 @@ Public Class Edititems
             Exit Sub
         End If
 
-        If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then
-            MessageBox.Show("Image must be in ""Debug"" folder")
+        If CustFunctions.IsValidImage(PictureBox1.ImageLocation) = False Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
             Exit Sub
         End If
 
-        If originalText <> NameTextBox.Text Then
-            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "No resource selected", ToolTipIcon.Info)
-            MessageBox.Show("Currently the name can not be edited. If it must be changed then delete thie item and add a new one with the correct name * note any relationships will have to be added again")
-            NameTextBox.Text = originalText
+        If CustFunctions.IsValidImage(PctureboxIcon.ImageLocation) = False Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
             Exit Sub
-
         End If
 
+
+        'if the icon has changed and it's not in the start up folder 
+        If PctureboxIcon.ImageLocation.StartsWith(Application.StartupPath) = False And PctureboxIcon.ImageLocation <> Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL") Then
+
+            'delete old picture
+            Try
+                My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("ImageURL"))
+            Catch ex As Exception
+
+            End Try
+
+
+            Dim folder As String
+            If GlobalVariables.Click = "Machine Tools" Then
+                folder = "MachineTools"
+            Else
+                folder = GlobalVariables.Click
+            End If
+
+            Dim FileToSaveAs As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & "-icon" & ".Jpeg")
+            PctureboxIcon.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
+            PctureboxIcon.ImageLocation = FileToSaveAs
+            PctureboxIcon.Refresh()
+        End If
+
+        'if the detailed image has changed and it's not in the start up folder 
+        If GlobalVariables.Click <> "PPE" And GlobalVariables.Click <> "Features" Then
+            'if this picture has changed and it's not in the start up folder 
+            If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False And PictureBox1.ImageLocation <> Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL") Then
+
+                Try
+                    'delete old picture
+                    My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
+                Catch ex As Exception
+
+                End Try
+
+
+                Dim folder As String
+                If GlobalVariables.Click = "Machine Tools" Then
+                    folder = "MachineTools"
+                Else
+                    folder = GlobalVariables.Click
+                End If
+
+                Dim FileToSaveAs As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & ".Jpeg")
+                PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
+                PictureBox1.ImageLocation = FileToSaveAs
+                PictureBox1.Refresh()
+            End If
+        End If
+
+        'confirm changes
         Dim result As Integer = MessageBox.Show("Are you sure you want to edit " & GlobalVariables.Clicked & "?", "Submit Changes?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
         ElseIf result = DialogResult.Yes Then
+
+            'cut off application startup path from the filename 
             PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
-
-
-
+            PctureboxIcon.ImageLocation = Replace(PctureboxIcon.ImageLocation, Application.StartupPath, "")
 
             Dim query As String
 
             If GlobalVariables.Click = "PPE" Then
                 query = "Update `PPE` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machines" Then
-                query = "Update `Machines' Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name ='" & GlobalVariables.Clicked & "'))"
+                query = "Update `Machines` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "', `DetailURL` = '" & PctureboxIcon.ImageLocation & "' WHERE (( name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Operations" Then
-                query = "Update `Operations` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE (( name = '" & GlobalVariables.Clicked & "'))"
+                query = "Update `Operations` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "', `DetailURL` = '" & PctureboxIcon.ImageLocation & "' WHERE (( name = '" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Setups" Then
-                query = "Update `Setups` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
+                query = "Update `Setups` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "', `DetailURL` = '" & PctureboxIcon.ImageLocation & "' WHERE ((name ='" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
-                query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
+                query = "Update `MachineTools` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "', `DetailURL` = '" & PctureboxIcon.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
             ElseIf GlobalVariables.Click = "Features" Then
                 query = "Update `Features` Set  `Description` = '" & DescriptionTextBox.Text & "', `ImageURL` = '" & PictureBox1.ImageLocation & "' WHERE ((name = '" & GlobalVariables.Clicked & "'))"
             End If
@@ -99,9 +161,7 @@ Public Class Edititems
             Dim response As Integer
 
             GlobalVariables.cnn.Open()
-
             response = cmd.ExecuteNonQuery()
-
             GlobalVariables.cnn.Close()
 
 
@@ -142,13 +202,9 @@ Public Class Edititems
 
     End Sub
 
-    Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click
-        OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
-        PictureBox1.ImageLocation = OpenFileDialog1.FileName
-    End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    Private Sub Delete_Entity(sender As Object, e As EventArgs) Handles BtnDelete.Click
         GlobalVariables.cnn.Close()
         Dim result As Integer = MessageBox.Show("Are you sure you want to delete " & GlobalVariables.Clicked & "?", "Delete?", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
@@ -246,8 +302,15 @@ Public Class Edititems
         Me.Close()
         FormHome.Show()
 
-
-
-
+    End Sub
+    Private Sub Browse_Click(sender As Object, e As EventArgs) Handles BtnBrowse.Click
+        OpenFileDialog1.ShowDialog()
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
+        PictureBox1.ImageLocation = OpenFileDialog1.FileName
+    End Sub
+    Private Sub BrowseIcon_click(sender As Object, e As EventArgs) Handles BtnBrowseIcon.Click
+        OpenFileDialog1.ShowDialog()
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
+        PctureboxIcon.ImageLocation = OpenFileDialog1.FileName
     End Sub
 End Class

@@ -40,6 +40,8 @@ Public Class FormResource
             GlobalVariables.cnn.Close()
 
             originalText = NameTextBox.Text 'used to track if the name of the resource has been edited
+
+            retest()
         End If
 
     End Sub
@@ -67,6 +69,10 @@ Public Class FormResource
             Exit Sub
         End If
 
+        If LblDuplicate.Text = "Duplicate Entity" Then
+            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Duplicate Resource Name", ToolTipIcon.Info)
+            Exit Sub
+        End If
 
         'if you did not click add (AKA you clicked edit) use these queries
         If GlobalVariables.Click <> "add" Then
@@ -125,6 +131,11 @@ Public Class FormResource
 
         GlobalVariables.cnn.Close()
 
+        If originalText <> NameTextBox.Text Then
+            MsgBox("You've changed the name of the entity, you can not delete an unknown entity")
+            Exit Sub
+        End If
+
         Dim result As Integer = MessageBox.Show("Are you sure you want to delete " & GlobalVariables.Clicked & "?", "Delete ", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             Exit Sub
@@ -147,5 +158,38 @@ Public Class FormResource
         FormHome.Show()
     End Sub
 
+    Sub retest()
 
+        If originalText <> NameTextBox.Text Then
+
+            Dim Table_ As String = "ExistingEntities"
+
+            Dim query As String
+
+            query = "SELECT Name from [AdditionalResources] WHERE (Name = '" & NameTextBox.Text & "');"
+
+            Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)                             'this is the line to interprete the query
+            Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
+            data.Fill(ds, Table_)
+
+            If ds.Tables(Table_).Rows.Count = 0 Then
+                LblDuplicate.Text = "New Entity"
+                LblDuplicate.BackColor = Color.LightGreen
+            End If
+            If ds.Tables(Table_).Rows.Count = 1 Then
+                LblDuplicate.Text = "Duplicate Entity"
+                LblDuplicate.BackColor = Color.Red
+                ds.Tables(Table_).Clear()
+            End If
+
+        Else
+            LblDuplicate.Text = "NO Change"
+            LblDuplicate.BackColor = Color.Yellow
+        End If
+
+    End Sub
+
+    Private Sub NameTextBox_TextChanged(sender As Object, e As EventArgs) Handles NameTextBox.TextChanged
+        retest()
+    End Sub
 End Class

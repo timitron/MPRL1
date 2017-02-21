@@ -56,9 +56,8 @@ Public Class AddItem
             DescriptionTextBox.Text = "Description Goes Here"
         End If
 
+        'save picture if it is not inside the folder alread
         If PictureBox1.ImageLocation.StartsWith(Application.StartupPath) = False Then
-            'MessageBox.Show("Image must be in ""Debug"" folder")
-
             Dim folder As String
 
             If GlobalVariables.Click = "Machine Tools" Then
@@ -71,7 +70,6 @@ Public Class AddItem
             PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
             PictureBox1.ImageLocation = FileToSaveAs
             PictureBox1.Refresh()
-
         End If
 
         If PctureboxIcon.ImageLocation.StartsWith(Application.StartupPath) = False Then

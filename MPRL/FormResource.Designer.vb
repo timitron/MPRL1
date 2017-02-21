@@ -35,6 +35,7 @@ Partial Class FormResource
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDelete = New System.Windows.Forms.Button()
+        Me.LblDuplicate = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label5
@@ -57,10 +58,10 @@ Partial Class FormResource
         '
         'SubmitChanges
         '
-        Me.SubmitChanges.Location = New System.Drawing.Point(247, 111)
+        Me.SubmitChanges.Location = New System.Drawing.Point(247, 129)
         Me.SubmitChanges.Name = "SubmitChanges"
         Me.SubmitChanges.Size = New System.Drawing.Size(153, 43)
-        Me.SubmitChanges.TabIndex = 17
+        Me.SubmitChanges.TabIndex = 3
         Me.SubmitChanges.Text = "Submit"
         Me.SubmitChanges.UseVisualStyleBackColor = True
         '
@@ -69,12 +70,12 @@ Partial Class FormResource
         Me.NameTextBox.Location = New System.Drawing.Point(99, 59)
         Me.NameTextBox.Name = "NameTextBox"
         Me.NameTextBox.Size = New System.Drawing.Size(301, 20)
-        Me.NameTextBox.TabIndex = 16
+        Me.NameTextBox.TabIndex = 1
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(33, 85)
+        Me.Label3.Location = New System.Drawing.Point(33, 103)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(29, 13)
         Me.Label3.TabIndex = 13
@@ -91,10 +92,10 @@ Partial Class FormResource
         '
         'AddressTextBox
         '
-        Me.AddressTextBox.Location = New System.Drawing.Point(99, 85)
+        Me.AddressTextBox.Location = New System.Drawing.Point(99, 103)
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(301, 20)
-        Me.AddressTextBox.TabIndex = 21
+        Me.AddressTextBox.TabIndex = 2
         '
         'OpenFileDialog1
         '
@@ -115,18 +116,28 @@ Partial Class FormResource
         'BtnDelete
         '
         Me.BtnDelete.BackColor = System.Drawing.Color.Red
-        Me.BtnDelete.Location = New System.Drawing.Point(99, 111)
+        Me.BtnDelete.Location = New System.Drawing.Point(99, 129)
         Me.BtnDelete.Name = "BtnDelete"
         Me.BtnDelete.Size = New System.Drawing.Size(142, 43)
         Me.BtnDelete.TabIndex = 22
         Me.BtnDelete.Text = "Delete"
         Me.BtnDelete.UseVisualStyleBackColor = False
         '
+        'LblDuplicate
+        '
+        Me.LblDuplicate.AutoSize = True
+        Me.LblDuplicate.Location = New System.Drawing.Point(96, 82)
+        Me.LblDuplicate.Name = "LblDuplicate"
+        Me.LblDuplicate.Size = New System.Drawing.Size(72, 13)
+        Me.LblDuplicate.TabIndex = 23
+        Me.LblDuplicate.Text = "Unique Name"
+        '
         'FormResource
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(432, 183)
+        Me.ClientSize = New System.Drawing.Size(432, 215)
+        Me.Controls.Add(Me.LblDuplicate)
         Me.Controls.Add(Me.BtnDelete)
         Me.Controls.Add(Me.AddressTextBox)
         Me.Controls.Add(Me.Label5)
@@ -155,4 +166,5 @@ Partial Class FormResource
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents BtnDelete As Button
+    Friend WithEvents LblDuplicate As Label
 End Class
