@@ -38,6 +38,7 @@ Partial Class FormMachiningMethodsDisplay
         Me.LstViewMachiningMethods.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LstViewMachiningMethods.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.LstViewMachiningMethods.Location = New System.Drawing.Point(42, 78)
         Me.LstViewMachiningMethods.Name = "LstViewMachiningMethods"
         Me.LstViewMachiningMethods.Size = New System.Drawing.Size(1033, 475)
@@ -48,6 +49,7 @@ Partial Class FormMachiningMethodsDisplay
         '
         Me.TxtBoxDescription.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtBoxDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.TxtBoxDescription.Location = New System.Drawing.Point(1088, 78)
         Me.TxtBoxDescription.Margin = New System.Windows.Forms.Padding(15)
         Me.TxtBoxDescription.Name = "TxtBoxDescription"

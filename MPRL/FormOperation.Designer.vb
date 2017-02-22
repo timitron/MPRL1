@@ -167,6 +167,7 @@ Partial Class FormOperation
         '
         'LstViewFeatures
         '
+        Me.LstViewFeatures.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.LstViewFeatures.Location = New System.Drawing.Point(6, 6)
         Me.LstViewFeatures.Name = "LstViewFeatures"
         Me.LstViewFeatures.Size = New System.Drawing.Size(921, 248)
