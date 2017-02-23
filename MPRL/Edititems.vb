@@ -25,7 +25,7 @@ Public Class Edititems
         ElseIf GlobalVariables.Click = "Operations" Then
             query = "SELECT Name, Description, ImageURL, DetailURL From Operations Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Setups" Then
-            query = "SELECT Name, Description, ImageURL, DeatilURL From Setups Where (([Name] = '" & GlobalVariables.Clicked & "'));"
+            query = "SELECT * From Setups Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Machine Tools" Then
             query = "SELECT Name, Description, ImageURL, DetailURL From MachineTools Where (([Name] = '" & GlobalVariables.Clicked & "'));"
         ElseIf GlobalVariables.Click = "Features" Then
@@ -69,15 +69,19 @@ Public Class Edititems
             Exit Sub
         End If
 
-        If CustFunctions.IsValidImage(PictureBox1.ImageLocation) = False Then
-            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
-            Exit Sub
+        If GlobalVariables.Click <> "PPE" And GlobalVariables.Click <> "Features" Then
+
+            If CustFunctions.IsValidImage(PictureBox1.ImageLocation) = False Then
+                NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
+                Exit Sub
+            End If
         End If
 
+
         If CustFunctions.IsValidImage(PctureboxIcon.ImageLocation) = False Then
-            NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
-            Exit Sub
-        End If
+                NotifyIcon1.ShowBalloonTip(500, "NO CHANGE", "Not a Valid Image", ToolTipIcon.Info)
+                Exit Sub
+            End If
 
 
         'if the icon has changed and it's not in the start up folder 
@@ -102,20 +106,15 @@ Public Class Edititems
             PctureboxIcon.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
             PctureboxIcon.ImageLocation = FileToSaveAs
             PctureboxIcon.Refresh()
+
         End If
 
         'if the detailed image has changed and it's not in the start up folder 
         If GlobalVariables.Click <> "PPE" And GlobalVariables.Click <> "Features" Then
             'if this picture has changed and it's not in the start up folder 
             If PictureBox1.ImageLocation <> Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL") Then
-
-                Try
-                    'delete old picture
-                    My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
-                Catch ex As Exception
-
-                End Try
-
+                'delete old picture
+                My.Computer.FileSystem.DeleteFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
 
                 Dim folder As String
                 If GlobalVariables.Click = "Machine Tools" Then
@@ -128,6 +127,7 @@ Public Class Edititems
                 PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
                 PictureBox1.ImageLocation = FileToSaveAs
                 PictureBox1.Refresh()
+
             End If
         End If
 
@@ -344,13 +344,15 @@ Public Class Edititems
 
     End Sub
     Private Sub Browse_Click(sender As Object, e As EventArgs) Handles BtnBrowse.Click
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp|All|*.*"
         OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
+
         PictureBox1.ImageLocation = OpenFileDialog1.FileName
     End Sub
     Private Sub BrowseIcon_click(sender As Object, e As EventArgs) Handles BtnBrowseIcon.Click
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp|All|*.*"
         OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp"
+
         PctureboxIcon.ImageLocation = OpenFileDialog1.FileName
     End Sub
 End Class

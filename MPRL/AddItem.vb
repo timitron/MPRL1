@@ -66,10 +66,12 @@ Public Class AddItem
                 folder = GlobalVariables.Click
             End If
 
+        If GlobalVariables.Click <> "PPE" And GlobalVariables.Click <> "Features" Then
             Dim FileToSaveAs As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & ".Jpeg")
             PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
             PictureBox1.ImageLocation = FileToSaveAs
             PictureBox1.Refresh()
+        End If
 
         'if this image already exists this will cause an error
         Dim FileToSaveAs1 As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & "-icon" & ".Jpeg")
@@ -92,7 +94,7 @@ Public Class AddItem
             If GlobalVariables.Click = "PPE" Then
                 query = "insert into [PPE](Name, Description, Imageurl) values('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machines" Then
-                query = "INSERT INTO [Machines] (Name, MachineRoom, Description, EntityType, ImageURL, DetailURL) VALUES ('" & NameTextBox.Text & "', 'Rogers118', '" & DescriptionTextBox.Text & "', 'Machines', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
+                query = "INSERT INTO [Machines] (Name, Description, ImageURL, DetailURL) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Operations" Then
                 query = "INSERT INTO [Operations] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Setups" Then
@@ -156,8 +158,9 @@ Public Class AddItem
     End Sub
 
     Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse.Click
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp|All|*.*"
         OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp|PNG|*.png"
+
         PictureBox1.ImageLocation = OpenFileDialog1.FileName
 
     End Sub
@@ -213,8 +216,9 @@ Public Class AddItem
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp|All|*.*"
         OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Filter = "JPEG|*.jpg|Bitmap|*.bmp|PNG|*.png"
+
         PctureboxIcon.ImageLocation = OpenFileDialog1.FileName
     End Sub
 End Class

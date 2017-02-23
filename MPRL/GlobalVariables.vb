@@ -1,6 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports System.IO
 Imports System.Net
+
 Public Class GlobalVariables
     Public Shared AdminBuild As Boolean = True 'Set to true and build the application for an admin .exe, set to false for a client exe. 
     Public Shared IconSizeWidth As Int16 = 90 '1-128 
@@ -245,9 +246,15 @@ Public Class CustFunctions
         Dim cmd As New OleDbCommand(query, cnn)                             'this is the line to interprete the query
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
+        Dim picture As Image
+        Using fs As New FileStream(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"), FileMode.Open, FileAccess.Read)
 
-        Dim picture As Image = Image.FromFile(Application.StartupPath & ds.Tables(Table_).Rows(0)("DetailURL"))
+            picture = Image.FromStream(fs)
+
+        End Using
+
         returnPictureBox.Image = picture
+
     End Sub
     Shared Sub ResourceDoubleClickHandler(ListResource As ListView, ByRef ds As DataSet)
         Dim index As Integer = ListResource.FocusedItem.Index

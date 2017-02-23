@@ -18,6 +18,12 @@ Public Class EditForm
 
 
     Private Sub editList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles editList.DoubleClick
+
+
+        If editList.SelectedItem = Nothing Then
+            Exit Sub
+        End If
+
         GlobalVariables.Clicked = editList.SelectedItem
 
         If GlobalVariables.Click = "Resources" Then
@@ -105,4 +111,6 @@ Public Class EditForm
         update_filtered_list()
 
     End Sub
+
+
 End Class
