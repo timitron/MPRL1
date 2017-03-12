@@ -64,6 +64,8 @@ Partial Class FormAddResourceLink
         '
         'CmboResourceName
         '
+        Me.CmboResourceName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CmboResourceName.FormattingEnabled = True
         Me.CmboResourceName.Location = New System.Drawing.Point(6, 71)
         Me.CmboResourceName.Name = "CmboResourceName"
@@ -81,6 +83,9 @@ Partial Class FormAddResourceLink
         '
         'btnAddLink
         '
+        Me.btnAddLink.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAddLink.Location = New System.Drawing.Point(6, 121)
         Me.btnAddLink.Name = "btnAddLink"
         Me.btnAddLink.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -116,6 +121,8 @@ Partial Class FormAddResourceLink
         '
         'Txtboxfilter
         '
+        Me.Txtboxfilter.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txtboxfilter.Location = New System.Drawing.Point(6, 32)
         Me.Txtboxfilter.Name = "Txtboxfilter"
         Me.Txtboxfilter.Size = New System.Drawing.Size(208, 20)
@@ -123,13 +130,15 @@ Partial Class FormAddResourceLink
         '
         'GrpBoxAdd
         '
+        Me.GrpBoxAdd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GrpBoxAdd.Controls.Add(Me.LblDuplicate)
         Me.GrpBoxAdd.Controls.Add(Me.LblFilter)
         Me.GrpBoxAdd.Controls.Add(Me.Txtboxfilter)
         Me.GrpBoxAdd.Controls.Add(Me.LblResourceName)
         Me.GrpBoxAdd.Controls.Add(Me.CmboResourceName)
         Me.GrpBoxAdd.Controls.Add(Me.btnAddLink)
-        Me.GrpBoxAdd.Location = New System.Drawing.Point(15, 51)
+        Me.GrpBoxAdd.Location = New System.Drawing.Point(12, 51)
         Me.GrpBoxAdd.Name = "GrpBoxAdd"
         Me.GrpBoxAdd.Size = New System.Drawing.Size(220, 174)
         Me.GrpBoxAdd.TabIndex = 11
@@ -147,9 +156,12 @@ Partial Class FormAddResourceLink
         '
         'GrpBoxRemoveLink
         '
+        Me.GrpBoxRemoveLink.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpBoxRemoveLink.Controls.Add(Me.LstViewResources)
         Me.GrpBoxRemoveLink.Controls.Add(Me.BtnRemoveLink)
-        Me.GrpBoxRemoveLink.Location = New System.Drawing.Point(241, 51)
+        Me.GrpBoxRemoveLink.Location = New System.Drawing.Point(238, 51)
         Me.GrpBoxRemoveLink.Name = "GrpBoxRemoveLink"
         Me.GrpBoxRemoveLink.Size = New System.Drawing.Size(220, 174)
         Me.GrpBoxRemoveLink.TabIndex = 12
@@ -158,6 +170,9 @@ Partial Class FormAddResourceLink
         '
         'LstViewResources
         '
+        Me.LstViewResources.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LstViewResources.FullRowSelect = True
         Me.LstViewResources.Location = New System.Drawing.Point(6, 19)
         Me.LstViewResources.MultiSelect = False
@@ -165,9 +180,12 @@ Partial Class FormAddResourceLink
         Me.LstViewResources.Size = New System.Drawing.Size(208, 97)
         Me.LstViewResources.TabIndex = 7
         Me.LstViewResources.UseCompatibleStateImageBehavior = False
+        Me.LstViewResources.View = System.Windows.Forms.View.List
         '
         'BtnRemoveLink
         '
+        Me.BtnRemoveLink.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnRemoveLink.Location = New System.Drawing.Point(6, 121)
         Me.BtnRemoveLink.Name = "BtnRemoveLink"
         Me.BtnRemoveLink.RightToLeft = System.Windows.Forms.RightToLeft.No

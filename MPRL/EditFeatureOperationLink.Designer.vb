@@ -76,6 +76,9 @@ Partial Class EditFeatureOperationLink
         '
         'GrpBoxRemoveLink
         '
+        Me.GrpBoxRemoveLink.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpBoxRemoveLink.Controls.Add(Me.LstViewFeatures)
         Me.GrpBoxRemoveLink.Controls.Add(Me.BtnRemoveLink)
         Me.GrpBoxRemoveLink.Location = New System.Drawing.Point(245, 83)
@@ -87,6 +90,9 @@ Partial Class EditFeatureOperationLink
         '
         'LstViewFeatures
         '
+        Me.LstViewFeatures.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LstViewFeatures.FullRowSelect = True
         Me.LstViewFeatures.Location = New System.Drawing.Point(6, 19)
         Me.LstViewFeatures.MultiSelect = False
@@ -97,6 +103,9 @@ Partial Class EditFeatureOperationLink
         '
         'BtnRemoveLink
         '
+        Me.BtnRemoveLink.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnRemoveLink.Location = New System.Drawing.Point(6, 121)
         Me.BtnRemoveLink.Name = "BtnRemoveLink"
         Me.BtnRemoveLink.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -107,6 +116,8 @@ Partial Class EditFeatureOperationLink
         '
         'GrpBoxAdd
         '
+        Me.GrpBoxAdd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GrpBoxAdd.Controls.Add(Me.LblDuplicate)
         Me.GrpBoxAdd.Controls.Add(Me.LblFilter)
         Me.GrpBoxAdd.Controls.Add(Me.Txtboxfilter)
@@ -164,6 +175,9 @@ Partial Class EditFeatureOperationLink
         '
         'btnAddLink
         '
+        Me.btnAddLink.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAddLink.Location = New System.Drawing.Point(6, 121)
         Me.btnAddLink.Name = "btnAddLink"
         Me.btnAddLink.RightToLeft = System.Windows.Forms.RightToLeft.No

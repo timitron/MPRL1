@@ -203,10 +203,11 @@ Public Class CustFunctions
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 
-        returnListView.View = View.List ' defines the format of the listview
+        returnListView.View = View.Details ' defines the format of the listview
 
         Dim row As DataRow
-        Dim count As Integer = 0        'counter for indexing images
+
+        returnListView.Columns.Add("Name")
 
         'for each result in the query creat a new list view item, get the picture from a website and then put 
         'it into a image list And apply the correct image index to the list view item. Finally add the list view item to the list view. 
@@ -217,12 +218,17 @@ Public Class CustFunctions
 
             'add the new item to the list view
             returnListView.Items.Add(NextListItem)
-
-            'increase count to incriment index 
-            count = count + 1
-
         Next
+
+
+
+        returnListView.Columns(0).Width = returnListView.Size.Width - 20
+
+
+        returnListView.FullRowSelect = True
+
         returnListView.Update()
+
     End Sub
     Shared Sub SetImage(cnn As OleDbConnection, Type As String, TargetID As String, returnPictureBox As PictureBox, ds As DataSet)
         'This sub takes the inputs and applies the correct image to the speciefied page. 

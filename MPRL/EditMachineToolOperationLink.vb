@@ -97,6 +97,8 @@ Public Class FormEditMachineLink
 
     Sub update_linked_operations()
 
+
+
         LstViewFeatures.Items.Clear()
 
         Dim Table_ As String = "LinkedOperations"
@@ -113,6 +115,8 @@ Public Class FormEditMachineLink
 
         LstViewFeatures.View = View.List ' defines the format of the listview
 
+
+
         Dim row As DataRow
         Dim count As Integer = 0        'counter for indexing images
 
@@ -127,6 +131,8 @@ Public Class FormEditMachineLink
             LstViewFeatures.Items.Add(NextListItem)
 
         Next
+        LstViewFeatures.Columns(0).Width = LstViewFeatures.Size.Width - 20
+
         LstViewFeatures.Update()
 
 
