@@ -35,17 +35,15 @@ Partial Class AddItem
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.LblDuplicate = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LblDescriptionMax = New System.Windows.Forms.Label()
-        Me.LblTitleMax = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PctureboxIcon = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.LblDescriptionMax = New System.Windows.Forms.Label()
+        Me.LblTitleMax = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PctureboxIcon, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,14 +143,6 @@ Partial Class AddItem
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
-        '
-        'Timer2
-        '
-        '
         'LblDuplicate
         '
         Me.LblDuplicate.AutoSize = True
@@ -195,6 +185,34 @@ Partial Class AddItem
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label6.Location = New System.Drawing.Point(6, 355)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 17)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "Icon Image"
+        '
+        'PctureboxIcon
+        '
+        Me.PctureboxIcon.Location = New System.Drawing.Point(9, 375)
+        Me.PctureboxIcon.Name = "PctureboxIcon"
+        Me.PctureboxIcon.Size = New System.Drawing.Size(71, 66)
+        Me.PctureboxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PctureboxIcon.TabIndex = 16
+        Me.PctureboxIcon.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(6, 447)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(76, 25)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Browse"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'LblDescriptionMax
         '
         Me.LblDescriptionMax.AutoSize = True
@@ -214,34 +232,6 @@ Partial Class AddItem
         Me.LblTitleMax.Size = New System.Drawing.Size(53, 13)
         Me.LblTitleMax.TabIndex = 12
         Me.LblTitleMax.Text = "(254 max)"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(6, 447)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(76, 25)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Browse"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(6, 355)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(76, 17)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "Icon Image"
-        '
-        'PctureboxIcon
-        '
-        Me.PctureboxIcon.Location = New System.Drawing.Point(9, 375)
-        Me.PctureboxIcon.Name = "PctureboxIcon"
-        Me.PctureboxIcon.Size = New System.Drawing.Size(71, 66)
-        Me.PctureboxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PctureboxIcon.TabIndex = 16
-        Me.PctureboxIcon.TabStop = False
         '
         'AddItem
         '
@@ -276,8 +266,6 @@ Partial Class AddItem
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents Timer1 As Timer
-    Friend WithEvents Timer2 As Timer
     Friend WithEvents LblDuplicate As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents NotifyIcon1 As NotifyIcon

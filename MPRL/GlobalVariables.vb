@@ -25,7 +25,7 @@ Public Class GlobalVariables
     Public Shared MethodStart As String
 
     'define connection string and create connection object 
-    Public Shared cnn As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Images\MPRL.accdb")
+    Public Shared cnn As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Images\MPRL.accdb;")
 
 End Class
 

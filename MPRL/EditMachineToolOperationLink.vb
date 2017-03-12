@@ -21,7 +21,13 @@ Public Class FormEditMachineLink
 
     Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemoveLink.Click
 
-        Dim index As Integer = LstViewFeatures.FocusedItem.Index
+        Dim index As Integer
+
+        Try
+            index = LstViewFeatures.FocusedItem.Index
+        Catch ex As Exception
+            Exit Sub
+        End Try
 
         Dim query As String = "DELETE FROM [MachineTool-OperationsLink] WHERE(MachineToolID = '" & TargetID & "') And (OperationsID =  '" & ds.Tables("LinkedOperations").Rows(index)("Name") & "')"
 

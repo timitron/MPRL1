@@ -74,6 +74,17 @@ Namespace My
                 Return CType(Me("MPRLConnectionString1"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\bin\Debug\Images\MP"& _ 
+            "RL.accdb")>  _
+        Public ReadOnly Property MPRLConnectionString2() As String
+            Get
+                Return CType(Me("MPRLConnectionString2"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

@@ -22,7 +22,6 @@ Partial Class FormMachineToolDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMachineToolDetails))
         Me.LblTitle = New System.Windows.Forms.Label()
         Me.PictureMachineOverview = New System.Windows.Forms.PictureBox()
@@ -42,7 +41,6 @@ Partial Class FormMachineToolDetails
         Me.BtnEditClampingLinks = New System.Windows.Forms.Button()
         Me.LstClampingMethods = New System.Windows.Forms.ListView()
         Me.TabResources = New System.Windows.Forms.TabPage()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureMachineOverview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TabMachines.SuspendLayout()
@@ -293,5 +291,4 @@ Partial Class FormMachineToolDetails
     Friend WithEvents TabResources As TabPage
     Friend WithEvents LstClampingMethods As ListView
     Friend WithEvents BtnEditClampingLinks As Button
-    Friend WithEvents Timer1 As Timer
 End Class

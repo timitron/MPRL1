@@ -7,10 +7,10 @@ Public Class FormMachineToolDetails
     'Get what to open from the global click variable
     Dim Machine As String = Global.MPRL.GlobalVariables.Click
     Dim ds As New DataSet                       'defines dataset for data table
-    Dim loadtime As Integer
+
 
     Private Sub FormMachineToolDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Start()
+
         If GlobalVariables.fromadd = True Then
             Button1.Hide()
         End If
@@ -39,16 +39,6 @@ Public Class FormMachineToolDetails
             BtnEditMachiningMethodsLink.Visible = False
             BtnEditResourcesLink.Visible = False
         End If
-
-        Threading.Thread.Sleep(500)
-
-        Dim timequery = "INSERT INTO `LoadTimes` (`FormName`, `FormLoadTime`) VALUES ('MachineTool', '" & loadtime & "')"
-        Dim TimerCMD As New OleDbCommand(timequery, GlobalVariables.cnn)
-
-        GlobalVariables.cnn.Open()
-        TimerCMD.ExecuteNonQuery()
-        GlobalVariables.cnn.Close()
-
 
     End Sub
     Public Sub connect()
@@ -341,10 +331,6 @@ Public Class FormMachineToolDetails
         newform = FormAddResourceLink
 
         newform.Show()
-    End Sub
-    Private Sub Timer_Clock_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        ' Update clock label Format (HH:MM:SS)
-        loadtime = loadtime + 1
     End Sub
 
 End Class

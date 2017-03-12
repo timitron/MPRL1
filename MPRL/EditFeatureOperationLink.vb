@@ -128,7 +128,14 @@ Public Class EditFeatureOperationLink
 
     Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemoveLink.Click
 
-        Dim index As Integer = LstViewFeatures.FocusedItem.Index
+        Dim index As Integer
+
+        Try
+            index = LstViewFeatures.FocusedItem.Index
+        Catch ex As Exception
+            Exit Sub
+        End Try
+
 
         Dim query As String = "DELETE FROM [Operation-FeatureLink] WHERE(OperationID = '" & TargetID & "') And (FeatureID =  '" & ds.Tables("LinkedFeatures").Rows(index)("Name") & "')"
         Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)

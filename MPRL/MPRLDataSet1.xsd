@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MPRLConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MPRLConnectionString1 (MySettings)" PropertyReference="ApplicationSettings.MPRL.My.MySettings.GlobalReference.Default.MPRLConnectionString1" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MPRLConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MPRLConnectionString2 (MySettings)" PropertyReference="ApplicationSettings.MPRL.My.MySettings.GlobalReference.Default.MPRLConnectionString2" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AdditionalResourcesTableAdapter" GeneratorDataComponentClassName="AdditionalResourcesTableAdapter" Name="AdditionalResources" UserDataComponentName="AdditionalResourcesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="AdditionalResources" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="AdditionalResources" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `AdditionalResources` WHERE ((`Name` = ?) AND ((? = 1 AND `Type` IS NULL) OR (`Type` = ?)))</CommandText>
@@ -60,7 +60,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AdminTableAdapter" GeneratorDataComponentClassName="AdminTableAdapter" Name="Admin" UserDataComponentName="AdminTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Admin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Admin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO `Admin` (`Version`, `WebAddress`, `DisplayONStart`, `RequestFeedBack`) VALUES (?, ?, ?, ?)</CommandText>
@@ -90,7 +90,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EntitiesTableAdapter" GeneratorDataComponentClassName="EntitiesTableAdapter" Name="Entities" UserDataComponentName="EntitiesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Entities" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Entities" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Entities` WHERE ((`EntityName` = ?) AND ((? = 1 AND `EntityDbName` IS NULL) OR (`EntityDbName` = ?)))</CommandText>
@@ -138,7 +138,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Entity-ResourceLinkTableAdapter" GeneratorDataComponentClassName="Entity_ResourceLinkTableAdapter" Name="Entity-ResourceLink" UserDataComponentName="Entity-ResourceLinkTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Entity-ResourceLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Entity-ResourceLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Entity-ResourceLink` WHERE ((`ID` = ?) AND (`Entities` = ?) AND (`EntitiesID` = ?) AND (`ResourceID` = ?))</CommandText>
@@ -192,7 +192,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FeaturesTableAdapter" GeneratorDataComponentClassName="FeaturesTableAdapter" Name="Features" UserDataComponentName="FeaturesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Features" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Features" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Features` WHERE ((`Name` = ?))</CommandText>
@@ -239,7 +239,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FeedbackTableAdapter" GeneratorDataComponentClassName="FeedbackTableAdapter" Name="Feedback" UserDataComponentName="FeedbackTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Feedback" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Feedback" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Feedback` WHERE ((`ID` = ?) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType` = ?)) AND ((? = 1 AND `Entity` IS NULL) OR (`Entity` = ?)) AND ((? = 1 AND `Useful` IS NULL) OR (`Useful` = ?)))</CommandText>
@@ -297,9 +297,62 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LoadTimesTableAdapter" GeneratorDataComponentClassName="LoadTimesTableAdapter" Name="LoadTimes" UserDataComponentName="LoadTimesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="LoadTimes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `LoadTimes` WHERE ((`ID` = ?) AND ((? = 1 AND `FormName` IS NULL) OR (`FormName` = ?)) AND ((? = 1 AND `FormLoadTime` IS NULL) OR (`FormLoadTime` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_FormName" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="FormName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FormName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="FormName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_FormLoadTime" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="FormLoadTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_FormLoadTime" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="FormLoadTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `LoadTimes` (`FormName`, `FormLoadTime`) VALUES (?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FormName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="FormName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="FormLoadTime" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="FormLoadTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, FormName, FormLoadTime FROM LoadTimes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `LoadTimes` SET `FormName` = ?, `FormLoadTime` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `FormName` IS NULL) OR (`FormName` = ?)) AND ((? = 1 AND `FormLoadTime` IS NULL) OR (`FormLoadTime` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FormName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="FormName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="FormLoadTime" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="FormLoadTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_FormName" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="FormName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FormName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="FormName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_FormLoadTime" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="FormLoadTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_FormLoadTime" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="FormLoadTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="FormName" DataSetColumn="FormName" />
+              <Mapping SourceColumn="FormLoadTime" DataSetColumn="FormLoadTime" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Machine-MachineToolLinkTableAdapter" GeneratorDataComponentClassName="Machine_MachineToolLinkTableAdapter" Name="Machine-MachineToolLink" UserDataComponentName="Machine-MachineToolLinkTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Machine-MachineToolLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Machine-MachineToolLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Machine-MachineToolLink` WHERE ((`MachineToolID` = ?) AND (`MachineID` = ?))</CommandText>
@@ -345,7 +398,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Machine-PPELinkTableAdapter" GeneratorDataComponentClassName="Machine_PPELinkTableAdapter" Name="Machine-PPELink" UserDataComponentName="Machine-PPELinkTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Machine-PPELink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Machine-PPELink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Machine-PPELink` WHERE ((`MachineID` = ?) AND (`PPEID` = ?) AND (`Required` = ?) AND ((? = 1 AND `Hidden` IS NULL) OR (`Hidden` = ?)))</CommandText>
@@ -403,7 +456,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachinesTableAdapter" GeneratorDataComponentClassName="MachinesTableAdapter" Name="Machines" UserDataComponentName="MachinesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Machines" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Machines" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Machines` WHERE ((`Name` = ?) AND ((? = 1 AND `MachineRoom` IS NULL) OR (`MachineRoom` = ?)) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType` = ?)))</CommandText>
@@ -467,7 +520,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachineToolTableAdapter" GeneratorDataComponentClassName="MachineToolTableAdapter" Name="MachineTool" UserDataComponentName="MachineToolTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="MachineTool" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="MachineTool" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `MachineTool` WHERE ((`ID` = ?))</CommandText>
@@ -505,7 +558,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachineTool-OperationsLinkTableAdapter" GeneratorDataComponentClassName="MachineTool_OperationsLinkTableAdapter" Name="MachineTool-OperationsLink" UserDataComponentName="MachineTool-OperationsLinkTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="MachineTool-OperationsLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="MachineTool-OperationsLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `MachineTool-OperationsLink` WHERE ((`MachineToolID` = ?) AND (`OperationsID` = ?) AND ((? = 1 AND `Accuracy` IS NULL) OR (`Accuracy` = ?)))</CommandText>
@@ -558,7 +611,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachineToolsTableAdapter" GeneratorDataComponentClassName="MachineToolsTableAdapter" Name="MachineTools" UserDataComponentName="MachineToolsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="MachineTools" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="MachineTools" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `MachineTools` WHERE ((`Name` = ?))</CommandText>
@@ -608,7 +661,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachineTool-SetupLinkTableAdapter" GeneratorDataComponentClassName="MachineTool_SetupLinkTableAdapter" Name="MachineTool-SetupLink" UserDataComponentName="MachineTool-SetupLinkTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="MachineTool-SetupLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="MachineTool-SetupLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `MachineTool-SetupLink` WHERE ((`MachineToolID` = ?) AND (`SetupID` = ?))</CommandText>
@@ -654,7 +707,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Operation-FeatureLinkTableAdapter" GeneratorDataComponentClassName="Operation_FeatureLinkTableAdapter" Name="Operation-FeatureLink" UserDataComponentName="Operation-FeatureLinkTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Operation-FeatureLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Operation-FeatureLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Operation-FeatureLink` WHERE ((`OperationID` = ?) AND (`FeatureID` = ?))</CommandText>
@@ -700,7 +753,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OperationsTableAdapter" GeneratorDataComponentClassName="OperationsTableAdapter" Name="Operations" UserDataComponentName="OperationsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Operations" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Operations" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Operations` WHERE ((`Name` = ?))</CommandText>
@@ -750,7 +803,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PPETableAdapter" GeneratorDataComponentClassName="PPETableAdapter" Name="PPE" UserDataComponentName="PPETableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="PPE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="PPE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `PPE` WHERE ((`Name` = ?) AND ((? = 1 AND `Description` IS NULL) OR (`Description` = ?)))</CommandText>
@@ -801,7 +854,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SetupsTableAdapter" GeneratorDataComponentClassName="SetupsTableAdapter" Name="Setups" UserDataComponentName="SetupsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Setups" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MPRLConnectionString2 (MySettings)" DbObjectName="Setups" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Setups` WHERE ((`Name` = ?))</CommandText>
@@ -846,126 +899,6 @@
               <Mapping SourceColumn="Description" DataSetColumn="Description" />
               <Mapping SourceColumn="ImageURL" DataSetColumn="ImageURL" />
               <Mapping SourceColumn="DetailURL" DataSetColumn="DetailURL" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TimesTableAdapter" GeneratorDataComponentClassName="TimesTableAdapter" Name="Times" UserDataComponentName="TimesTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="Times" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `Times` WHERE ((`ID` = ?) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType` = ?)) AND ((? = 1 AND `Entity` IS NULL) OR (`Entity` = ?)) AND ((? = 1 AND `TimeElapsed` IS NULL) OR (`TimeElapsed` = ?)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntityType" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_EntityType" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Entity" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Entity" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Entity" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Entity" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `Times` (`EntityType`, `Entity`, `TimeElapsed`) VALUES (?, ?, ?)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="EntityType" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Entity" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Entity" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, EntityType, Entity, TimeElapsed FROM Times</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `Times` SET `EntityType` = ?, `Entity` = ?, `TimeElapsed` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType` = ?)) AND ((? = 1 AND `Entity` IS NULL) OR (`Entity` = ?)) AND ((? = 1 AND `TimeElapsed` IS NULL) OR (`TimeElapsed` = ?)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="EntityType" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Entity" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Entity" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntityType" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_EntityType" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Entity" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Entity" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Entity" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Entity" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="EntityType" DataSetColumn="EntityType" />
-              <Mapping SourceColumn="Entity" DataSetColumn="Entity" />
-              <Mapping SourceColumn="TimeElapsed" DataSetColumn="TimeElapsed" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TimingRecordsTableAdapter" GeneratorDataComponentClassName="TimingRecordsTableAdapter" Name="TimingRecords" UserDataComponentName="TimingRecordsTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MPRLConnectionString1 (MySettings)" DbObjectName="TimingRecords" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `TimingRecords` WHERE ((`ID` = ?) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType` = ?)) AND ((? = 1 AND `New Entity Name` IS NULL) OR (`New Entity Name` = ?)) AND ((? = 1 AND `TimeElapsed` IS NULL) OR (`TimeElapsed` = ?)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntityType" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_EntityType" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_New_Entity_Name" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="New Entity Name" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_New_Entity_Name" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="New Entity Name" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `TimingRecords` (`EntityType`, `New Entity Name`, `TimeElapsed`) VALUES (?, ?, ?)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="EntityType" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="New_Entity_Name" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="New Entity Name" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, EntityType, [New Entity Name], TimeElapsed FROM TimingRecords</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `TimingRecords` SET `EntityType` = ?, `New Entity Name` = ?, `TimeElapsed` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `EntityType` IS NULL) OR (`EntityType` = ?)) AND ((? = 1 AND `New Entity Name` IS NULL) OR (`New Entity Name` = ?)) AND ((? = 1 AND `TimeElapsed` IS NULL) OR (`TimeElapsed` = ?)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="EntityType" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="New_Entity_Name" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="New Entity Name" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntityType" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_EntityType" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityType" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_New_Entity_Name" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="New Entity Name" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_New_Entity_Name" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="New Entity Name" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TimeElapsed" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TimeElapsed" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="EntityType" DataSetColumn="EntityType" />
-              <Mapping SourceColumn="New Entity Name" DataSetColumn="New Entity Name" />
-              <Mapping SourceColumn="TimeElapsed" DataSetColumn="TimeElapsed" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1114,6 +1047,21 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Useful" msprop:Generator_ColumnVarNameInTable="columnUseful" msprop:Generator_ColumnPropNameInRow="Useful" msprop:Generator_ColumnPropNameInTable="UsefulColumn" msprop:Generator_UserColumnName="Useful" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LoadTimes" msprop:Generator_TableClassName="LoadTimesDataTable" msprop:Generator_TableVarName="tableLoadTimes" msprop:Generator_RowChangedName="LoadTimesRowChanged" msprop:Generator_TablePropName="LoadTimes" msprop:Generator_RowDeletingName="LoadTimesRowDeleting" msprop:Generator_RowChangingName="LoadTimesRowChanging" msprop:Generator_RowEvHandlerName="LoadTimesRowChangeEventHandler" msprop:Generator_RowDeletedName="LoadTimesRowDeleted" msprop:Generator_RowClassName="LoadTimesRow" msprop:Generator_UserTableName="LoadTimes" msprop:Generator_RowEvArgName="LoadTimesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="FormName" msprop:Generator_ColumnVarNameInTable="columnFormName" msprop:Generator_ColumnPropNameInRow="FormName" msprop:Generator_ColumnPropNameInTable="FormNameColumn" msprop:Generator_UserColumnName="FormName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormLoadTime" msprop:Generator_ColumnVarNameInTable="columnFormLoadTime" msprop:Generator_ColumnPropNameInRow="FormLoadTime" msprop:Generator_ColumnPropNameInTable="FormLoadTimeColumn" msprop:Generator_UserColumnName="FormLoadTime" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1404,50 +1352,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Times" msprop:Generator_TableClassName="TimesDataTable" msprop:Generator_TableVarName="tableTimes" msprop:Generator_RowChangedName="TimesRowChanged" msprop:Generator_TablePropName="Times" msprop:Generator_RowDeletingName="TimesRowDeleting" msprop:Generator_RowChangingName="TimesRowChanging" msprop:Generator_RowEvHandlerName="TimesRowChangeEventHandler" msprop:Generator_RowDeletedName="TimesRowDeleted" msprop:Generator_RowClassName="TimesRow" msprop:Generator_UserTableName="Times" msprop:Generator_RowEvArgName="TimesRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="EntityType" msprop:Generator_ColumnVarNameInTable="columnEntityType" msprop:Generator_ColumnPropNameInRow="EntityType" msprop:Generator_ColumnPropNameInTable="EntityTypeColumn" msprop:Generator_UserColumnName="EntityType" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Entity" msprop:Generator_ColumnVarNameInTable="columnEntity" msprop:Generator_ColumnPropNameInRow="Entity" msprop:Generator_ColumnPropNameInTable="EntityColumn" msprop:Generator_UserColumnName="Entity" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TimeElapsed" msprop:Generator_ColumnVarNameInTable="columnTimeElapsed" msprop:Generator_ColumnPropNameInRow="TimeElapsed" msprop:Generator_ColumnPropNameInTable="TimeElapsedColumn" msprop:Generator_UserColumnName="TimeElapsed" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="TimingRecords" msprop:Generator_TableClassName="TimingRecordsDataTable" msprop:Generator_TableVarName="tableTimingRecords" msprop:Generator_RowChangedName="TimingRecordsRowChanged" msprop:Generator_TablePropName="TimingRecords" msprop:Generator_RowDeletingName="TimingRecordsRowDeleting" msprop:Generator_RowChangingName="TimingRecordsRowChanging" msprop:Generator_RowEvHandlerName="TimingRecordsRowChangeEventHandler" msprop:Generator_RowDeletedName="TimingRecordsRowDeleted" msprop:Generator_RowClassName="TimingRecordsRow" msprop:Generator_UserTableName="TimingRecords" msprop:Generator_RowEvArgName="TimingRecordsRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="EntityType" msprop:Generator_ColumnVarNameInTable="columnEntityType" msprop:Generator_ColumnPropNameInRow="EntityType" msprop:Generator_ColumnPropNameInTable="EntityTypeColumn" msprop:Generator_UserColumnName="EntityType" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="New_x0020_Entity_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnNew_Entity_Name" msprop:Generator_ColumnPropNameInRow="New_Entity_Name" msprop:Generator_ColumnPropNameInTable="New_Entity_NameColumn" msprop:Generator_UserColumnName="New Entity Name" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TimeElapsed" msprop:Generator_ColumnVarNameInTable="columnTimeElapsed" msprop:Generator_ColumnPropNameInRow="TimeElapsed" msprop:Generator_ColumnPropNameInTable="TimeElapsedColumn" msprop:Generator_UserColumnName="TimeElapsed" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1471,6 +1375,10 @@
     </xs:unique>
     <xs:unique name="Feedback_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Feedback" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="LoadTimes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LoadTimes" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
     <xs:unique name="Machine-MachineToolLink_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
@@ -1522,14 +1430,6 @@
     <xs:unique name="Setups_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Setups" />
       <xs:field xpath="mstns:Name" />
-    </xs:unique>
-    <xs:unique name="Times_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Times" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
-    <xs:unique name="TimingRecords_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:TimingRecords" />
-      <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

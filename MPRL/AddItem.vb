@@ -13,7 +13,6 @@ Public Class AddItem
     Dim responsetime As Integer = 0
 
     Private Sub AddPPE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Start()
 
         PictureBox1.ImageLocation = Application.StartupPath & "\Images\default\noimage.jpg"
         PctureboxIcon.ImageLocation = Application.StartupPath & "\Images\default\noimage.jpg"
@@ -162,15 +161,6 @@ Public Class AddItem
         OpenFileDialog1.ShowDialog()
 
         PictureBox1.ImageLocation = OpenFileDialog1.FileName
-
-    End Sub
-
-    Private Sub Timer_Clock_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        ' Update clock label Format (HH:MM:SS)
-        responsetime = responsetime + 1
-    End Sub
-
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
 
     End Sub
 

@@ -122,6 +122,9 @@ Public Class FormResource
             response = cmd.ExecuteNonQuery()
             GlobalVariables.cnn.Close()
 
+            NotifyIcon1.ShowBalloonTip(500, "Resource Added", response & " Resources Added", ToolTipIcon.Info)
+
+
             Me.Close()                                              'closes from
 
         End If
