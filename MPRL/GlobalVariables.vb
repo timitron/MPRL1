@@ -185,6 +185,7 @@ Public Class CustFunctions
         Dim Table_ As String = "Resources"
 
         returnListView.Items.Clear()
+        returnListView.Columns.Clear()
 
         If type = "Setup" Then
             query = "SELECT AdditionalResources.Name, AdditionalResources.Hyperlink FROM ((AdditionalResources INNER JOIN [Entity-ResourceLink] ON AdditionalResources.Name = [Entity-ResourceLink].ResourceID) INNER JOIN Setups ON [Entity-ResourceLink].EntitiesID = Setups.Name) WHERE ([Entity-ResourceLink].Entities = 'Setup') AND (Setups.Name = '" & targetID & "');"

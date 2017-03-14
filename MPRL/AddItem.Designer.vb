@@ -90,9 +90,11 @@ Partial Class AddItem
         '
         'DescriptionTextBox
         '
+        Me.DescriptionTextBox.CausesValidation = False
         Me.DescriptionTextBox.Location = New System.Drawing.Point(9, 79)
         Me.DescriptionTextBox.Multiline = True
         Me.DescriptionTextBox.Name = "DescriptionTextBox"
+        Me.DescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DescriptionTextBox.Size = New System.Drawing.Size(301, 146)
         Me.DescriptionTextBox.TabIndex = 2
         '

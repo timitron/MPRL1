@@ -99,6 +99,7 @@ Partial Class FormEditMachineLink
         Me.LstViewFeatures.Size = New System.Drawing.Size(208, 130)
         Me.LstViewFeatures.TabIndex = 7
         Me.LstViewFeatures.UseCompatibleStateImageBehavior = False
+        Me.LstViewFeatures.View = System.Windows.Forms.View.Details
         '
         'BtnRemoveLink
         '

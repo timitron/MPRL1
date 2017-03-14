@@ -55,9 +55,18 @@ Public Class AddItem
             DescriptionTextBox.Text = "Description Goes Here"
         End If
 
-        'save picture if it is not inside the folder alread
 
-        Dim folder As String
+
+
+        Dim result As Integer = MessageBox.Show("Are you sure you want to add " & NameTextBox.Text & " to " & GlobalVariables.Click & "?", "Submit Changes?", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            Exit Sub
+        ElseIf result = DialogResult.Yes Then
+
+
+            'save picture if it is not inside the folder alread
+
+            Dim folder As String
 
             If GlobalVariables.Click = "Machine Tools" Then
                 folder = "MachineTools"
@@ -65,23 +74,21 @@ Public Class AddItem
                 folder = GlobalVariables.Click
             End If
 
-        If GlobalVariables.Click <> "PPE" And GlobalVariables.Click <> "Features" Then
-            Dim FileToSaveAs As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & ".Jpeg")
-            PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
-            PictureBox1.ImageLocation = FileToSaveAs
-            PictureBox1.Refresh()
-        End If
 
-        'if this image already exists this will cause an error
-        Dim FileToSaveAs1 As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & "-icon" & ".Jpeg")
-        PctureboxIcon.Image.Save(FileToSaveAs1, System.Drawing.Imaging.ImageFormat.Jpeg)
+            If GlobalVariables.Click <> "PPE" And GlobalVariables.Click <> "Features" Then
+                Dim FileToSaveAs As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & ".Jpeg")
+                PictureBox1.Image.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
+                PictureBox1.ImageLocation = FileToSaveAs
+                PictureBox1.Refresh()
+            End If
+
+            'if this image already exists this will cause an error
+            Dim FileToSaveAs1 As String = System.IO.Path.Combine(Application.StartupPath, "Images", folder, NameTextBox.Text.ToString & "-icon" & ".Jpeg")
+            PctureboxIcon.Image.Save(FileToSaveAs1, System.Drawing.Imaging.ImageFormat.Jpeg)
             PctureboxIcon.ImageLocation = FileToSaveAs1
             PctureboxIcon.Refresh()
 
-        Dim result As Integer = MessageBox.Show("Are you sure you want to add " & NameTextBox.Text & " to " & GlobalVariables.Click & "?", "Submit Changes?", MessageBoxButtons.YesNo)
-        If result = DialogResult.No Then
-            Exit Sub
-        ElseIf result = DialogResult.Yes Then
+
             GlobalVariables.Clicked = NameTextBox.Text
             PictureBox1.ImageLocation = Replace(PictureBox1.ImageLocation, Application.StartupPath, "")
             PctureboxIcon.ImageLocation = Replace(PctureboxIcon.ImageLocation, Application.StartupPath, "")
@@ -99,7 +106,7 @@ Public Class AddItem
             ElseIf GlobalVariables.Click = "Setups" Then
                 query = "INSERT INTO [Setups] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Machine Tools" Then
-                query = "INSERT INTO [MachineTools] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
+                query = "INSERT INTO [MachineTools] (`Name`, `Description`, `ImageURL`, DetailURL) VALUES ('" & NameTextBox.Text & "', '" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "', '" & PictureBox1.ImageLocation & "')"
             ElseIf GlobalVariables.Click = "Features" Then
                 query = "INSERT INTO [Features] (`Name`, `Description`, `ImageURL`) VALUES ('" & NameTextBox.Text & "','" & DescriptionTextBox.Text & "', '" & PctureboxIcon.ImageLocation & "')"
             End If
@@ -107,12 +114,8 @@ Public Class AddItem
             Dim cmd As New OleDbCommand(query, GlobalVariables.cnn)
             Dim response As Integer
 
-            Dim ResponseQuery = "INSERT INTO `Times` (`EntityType`, `Entity`, `TimeElapsed`) VALUES ('" & GlobalVariables.Click & "', '" & NameTextBox.Text & "', '" & responsetime & "')"
-            Dim TimerCMD As New OleDbCommand(ResponseQuery, GlobalVariables.cnn)
-
             GlobalVariables.cnn.Open()
             response = cmd.ExecuteNonQuery()
-            TimerCMD.ExecuteNonQuery()
             GlobalVariables.cnn.Close()
 
 
@@ -211,4 +214,6 @@ Public Class AddItem
 
         PctureboxIcon.ImageLocation = OpenFileDialog1.FileName
     End Sub
+
+
 End Class

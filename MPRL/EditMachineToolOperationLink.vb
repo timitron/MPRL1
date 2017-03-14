@@ -100,6 +100,7 @@ Public Class FormEditMachineLink
 
 
         LstViewFeatures.Items.Clear()
+        LstViewFeatures.Columns.Clear()
 
         Dim Table_ As String = "LinkedOperations"
 
@@ -113,12 +114,13 @@ Public Class FormEditMachineLink
         Dim data As New OleDbDataAdapter(cmd)                               'this executes the interpreted query on the connection object and returns it to the da object
         data.Fill(ds, Table_)                                       'This inserts the returned data into the table name defined above in a useable matrix format
 
-        LstViewFeatures.View = View.List ' defines the format of the listview
+        LstViewFeatures.View = View.Details ' defines the format of the listview
 
 
 
         Dim row As DataRow
-        Dim count As Integer = 0        'counter for indexing images
+
+        LstViewFeatures.Columns.Add("Name")
 
         'for each result in the query creat a new list view item, get the picture from a website and then put 
         'it into a image list And apply the correct image index to the list view item. Finally add the list view item to the list view. 
@@ -131,6 +133,7 @@ Public Class FormEditMachineLink
             LstViewFeatures.Items.Add(NextListItem)
 
         Next
+
         LstViewFeatures.Columns(0).Width = LstViewFeatures.Size.Width - 20
 
         LstViewFeatures.Update()
